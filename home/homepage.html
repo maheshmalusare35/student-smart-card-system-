@@ -23,8 +23,7 @@
   <body>
 
 <!-- Navbar -->
-    
-    <nav class="navbar navbar-expand-md navbar-light bg-light ">
+     <nav class="navbar navbar-expand-md navbar-light">
       <div class="container-fluid">
         <a class="navbar-brand" href="#"><img src="logo1.png" width="120" height="70"> </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -32,46 +31,38 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav  mb-2 mb-lg-0 ms-auto fs-5">
-
             <li class="nav-item">
               <a class="nav-link active text-center fw-bold" aria-current="page" href="#" >Home</a>
             </li>
-
             <li class="nav-item">
               <a class="nav-link text-center fw-bold" href="#">Our Apps</a>
             </li>
-
             <li class="nav-item ">
-              <a class="nav-link text-center fw-bold" href="#">Features</a>
+              <a class="nav-link text-center fw-bold" href="#Features">Features</a>
             </li>
-
             <li class="nav-item">
               <a class="nav-link text-center fw-bold" href="#">About Us </a>
             </li>
-
             <li class="nav-item">
-              <a class="nav-link text-center fw-bold" href="#contact">Contact</a>
+              <a class="nav-link text-center fw-bold" href="#contact">Contact Us</a>
             </li>
-
+            <li class="nav-item">
+              <a class="nav-link text-center fw-bold" href="#feedback">Feedback</a>
+            </li>
             <li class="nav-item">
               <a class="nav-link text-center fw-bold" href="login.html">Login</a>
             </li>
-
             <li class="nav-item">
               <a class="nav-link text-center fw-bold" href="#"><i class="fa fa-search"></i></a>
-            </li>
-            
+            </li>            
           </ul>
         </div>
       </div>
     </nav>
 
-
-    
+   
 <!-- Home -->
-<section
-      class="bg-dark text-light p-5 p-lg-0 pt-lg-5 text-center text-sm-start"
-    >
+<section class="bg-dark text-light p-5 p-lg-0 pt-lg-5 text-center text-sm-start">
       <div class="container">
         <div class="d-sm-flex align-items-center justify-content-between">
           <div>
@@ -79,29 +70,135 @@
             <p class="lead my-4">
               We focus on teaching our students the fundamentals of the latest
               and greatest technologies to prepare them for their first dev role
-            </p>
-            <button
-              class="btn btn-primary btn-lg"
-              data-bs-toggle="modal"
-              data-bs-target="#enroll"
-            >
-              Start The Enrollment
-            </button>
-          </div>
-          <img
-            class="img-fluid w-50 d-none d-sm-block"
-            src="img/showcase.svg"
-            alt=""
-          />
+            </p>            
+          </div>          
         </div>
       </div>
     </section>
 
-    
-
-<!-- Contact Us -->
-<section class="bg-light p-4" id="contact">
+ <!-- Features-->
+ <section class="p-5" id="Features">
   <div class="container">
+    <h2 class="text-center mb-5">Features</h2>
+    <div class="row text-center g-4">
+      <div class="col-md">
+        <div class="card bg-dark text-light">
+          <div class="card-body text-center">
+            <div class="h1 mb-3">
+              <i class="fas fa-books"></i>
+            </div>
+            <h3 class="card-title mb-3">Library</h3>
+            <p class="card-text">
+              Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+              Iure, quas quidem possimus dolorum esse eligendi?
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md">
+        <div class="card bg-secondary text-light">
+          <div class="card-body text-center">
+            <div class="h1 mb-3">
+              <i class="far fa-building"></i>
+            </div>
+            <h3 class="card-title mb-3">Office</h3>
+            <p class="card-text">
+              Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+              Iure, quas quidem possimus dolorum esse eligendi?
+            </p>
+           </div>
+        </div>
+      </div>
+      <div class="col-md">
+        <div class="card bg-dark text-light">
+          <div class="card-body text-center">
+            <div class="h1 mb-3">
+              <i class="fas fa-utensils"></i>
+            </div>
+            <h3 class="card-title mb-3">Cafeteria</h3>
+            <p class="card-text">
+              Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+              Iure, quas quidem possimus dolorum esse eligendi?
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+<div class="container">
+    <div class="row text-center g-4 mt-2">
+      <div class="col-md">
+        <div class="card bg-dark text-light">
+          <div class="card-body text-center">
+            <div class="h1 mb-3">
+              <i class="fas fa-clipboard-user"></i>
+            </div>
+            <h3 class="card-title mb-3">Classroom Attendance</h3>
+            <p class="card-text">
+              Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+              Iure, quas quidem possimus dolorum esse eligendi?
+            </p>
+          </div>
+        </div>
+      </div>
+     
+      <div class="col-md">
+        <div class="card bg-dark text-light">
+          <div class="card-body text-center">
+            <div class="h1 mb-3">
+              <i class="fas fa-clipboard-user"></i>
+            </div>
+            <h3 class="card-title mb-3">Bus Attendance</h3>
+            <p class="card-text">
+              Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+              Iure, quas quidem possimus dolorum esse eligendi?
+            </p>
+           </div>
+        </div>
+      </div>
+    </div>
+  </div> 
+</section>
+
+
+<!-- Contact & Map -->
+    <section class="p-5" id="contact">
+      <div class="container">
+        <div class="row g-4">
+          <div class="col-md">
+            <h2 class="text-center mb-5">Contact Info</h2>
+            <ul class="list-group list-group-flush lead">
+              <li class="list-group-item mb-4">
+                <span class="fw-bold">Enrollment Phone:</span> (555) 555-5555
+              </li>
+              <li class="list-group-item mb-4">
+                <span class="fw-bold">Student Phone:</span> (111) 111-1111
+              </li>
+              <li class="list-group-item mb-4">
+                <span class="fw-bold">Enrollment Email:</span>
+                enroll@helpdesk.com
+              </li>
+              <li class="list-group-item mb-4">
+                <span class="fw-bold">Student Email:</span>
+                student@helpdesk.com
+              </li>
+            </ul>
+          </div>
+          <div class="col-md">
+            <div class="map"><iframe class="googlemap" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1887.1744717909244!2d73.3417582001529!3d18.915942778568645!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7fb0353655121%3A0x665102db024b2c9!2sKonkan%20Gyanpeeth%20College%20of%20Engineering%2C%20Karjat%20-%20410201%2C%20Raigad.!5e0!3m2!1sen!2sin!4v1624364823727!5m2!1sen!2sin" width="450" height="400" style="border: 1px solid rgb(35, 194, 223);" allowfullscreen="" loading="lazy"></iframe></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    
+<!-- Feedback -->
+<section class="bg-light p-4" id="feedback">
+  <div class="container">
+    <h2 class="text-center mb-4 fs-2  ">Feedback</h2>
     <form>
       <div class="form-floating mb-3">
         <input type="Name" class="form-control" id="floatingName" placeholder="Name">
@@ -115,7 +212,6 @@
         <input type="Phone" class="form-control" id="floatingPhone" placeholder="Phone No:">
         <label for="floatingPassword">Phone No</label>
       </div>
-
       <div class="form-floating mb-3">
         <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea"></textarea>
         <label for="floatingTextarea">Comments</label>
@@ -127,12 +223,10 @@
   </div>
 </section>
 
-   <!-- Footer -->
-
-   <footer class="p-5 bg-dark text-white text-center position-relative border border-warning border-2 ">
+<!-- Footer -->
+   <footer class="p-2 bg-dark text-white text-center position-relative border border-warning border-2 ">
     <div class="container">
       <p class="lead">Copyright &copy; 2021 Student Smart Card</p>
-
      </div>
   </footer>
 
