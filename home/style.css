@@ -2,8 +2,9 @@ body {
   background-color: rgb(235, 245, 244);
 }
 .navbar {
-  background-color: rgb(58, 240, 240);
+  background-image: linear-gradient(-90deg, #eba440, #f03ba7);
 }
+
 .map {
   width: 100%;
   height: 100%;
