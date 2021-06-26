@@ -13,6 +13,7 @@ body {
   height: 350px;
   margin: 20px;
   display: flex;
+  transition: 0.5s;
   justify-content: flex-start;
   align-items: center;
   background: linear-gradient(45deg, #1a2f3f, #7094ce);
@@ -78,7 +79,13 @@ body {
 }
 
 /* Extra small devices (phones, 600px and down) */
-@media (max-width: 400px) {
+@media (max-width: 420px) {
+  .container1 .card1 .content {
+    padding: 30px;
+  }
+  .container1 .card1:hover img {
+    height: 280px;
+  }
 }
 
 /* Small devices (portrait tablets and large phones, 600px and up) */
@@ -86,11 +93,17 @@ body {
 }
 
 /* Medium devices (landscape tablets, 768px and up) */
-@media (min-width: 768px) {
+@media (max-width: 768px) {
+  .container1 {
+    flex-direction: column;
+  }
+  .container1 .card1 {
+    margin: 40px 20px;
+  }
 }
 
 /* Large devices (laptops/desktops, 992px and up) */
-@media (min-width: 992px) {
+@media (max-width: 992px) {
   .container1 .card1 {
     width: auto;
     max-width: 600px;
@@ -98,6 +111,15 @@ body {
   }
   .container1 .card1:hover {
     height: 600px;
+  }
+  .container1 .card1:hover img {
+    left: 50%;
+    height: 330px;
+  }
+  .container1 .card1 .content {
+    width: 100%;
+    left: 0;
+    padding: 40px;
   }
 }
 
