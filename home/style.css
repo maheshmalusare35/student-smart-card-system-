@@ -1,5 +1,14 @@
+html {
+  scroll-behavior: smooth;
+}
 body {
   background-color: hsl(216, 100%, 95%);
+}
+#home {
+  /* width: 100vw;
+  height: 100vh;
+  background-image: url(wall1.png);
+  background-size: cover; */
 }
 
 .navbar {
