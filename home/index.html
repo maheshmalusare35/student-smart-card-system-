@@ -4,13 +4,13 @@
 <head>
   <!-- Required meta tags -->
   <meta charset="utf-8">
+  <!-- <meta http-equiv="refresh" content="10"> -->
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <!-- Bootstrap CSS -->
   <link href="css/bootstrap.min.css" rel="stylesheet">
 
-  <!-- Bootstrap JS -->
-  <script type="text/javascript" src="js/bootstrap.bundle.min.js"> </script>
+
 
   <!-- Bootstrap Icons -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css" />
@@ -22,7 +22,7 @@
   <!-- Stylesheet CSS -->
   <link href="style.css" rel="stylesheet">
 
-
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
   <title>Student Smart Card</title>
 
@@ -31,47 +31,47 @@
 <body class="pt-5">
 
   <!-- Navbar -->
-
-  <nav class="navbar navbar-expand-md navbar-light fixed-top">
-    <div class="container-fluid">
-      <a class="navbar-brand " href="#"><img src="logo1.png" width="120" height="70"> </a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav  mb-2 mb-lg-0 ms-auto fs-5">
-          <li class="nav-item">
-            <a class="nav-link active text-center fw-bold text-white js-scroll-trigger" aria-current="page"
-              href="#">Home</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link text-center fw-bold text-white js-scroll-trigger" href="#">Our Apps</a>
-          </li>
-          <li class="nav-item ">
-            <a class="nav-link text-center fw-bold text-white js-scroll-trigger" href="#Features">Features</a>
-          </li>
-          <!-- <li class="nav-item">
-            <a class="nav-link text-center fw-bold text-white js-scroll-trigger" href="#">About Us </a>
+  <div class="main">
+    <nav class="navbar navbar-expand-md navbar-light fixed-top">
+      <div class="container-fluid">
+        <a class="navbar-brand " href="#"><img src="logo1.png" width="120" height="70"> </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav  mb-2 mb-lg-0 ms-auto fs-5">
+            <li class="nav-item">
+              <a class="nav-link active text-center fw-bold text-white" aria-current="page" href="#">Home
+                <span class="sr-only">(current)</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-center fw-bold text-white" href="#">Our Apps</a>
+            </li>
+            <li class="nav-item ">
+              <a class="nav-link text-center fw-bold text-white" href="#Features">Features</a>
+            </li>
+            <!-- <li class="nav-item">
+            <a class="nav-link text-center fw-bold text-white" href="#">About Us </a>
           </li> -->
-          <li class="nav-item">
-            <a class="nav-link text-center fw-bold text-white js-scroll-trigger" href="#contact">Contact Us</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link text-center fw-bold text-white js-scroll-trigger" href="#feedback">Feedback</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link text-center fw-bold text-white js-scroll-trigger" href="#">Login</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link text-center fw-bold text-white js-scroll-trigger" href="#"><i
-                class="fa fa-search"></i></a>
-          </li>
-        </ul>
+            <li class="nav-item">
+              <a class="nav-link text-center fw-bold text-white" href="#contact">Contact Us</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-center fw-bold text-white" href="#feedback">Feedback</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-center fw-bold text-white" href="#">Login</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-center fw-bold text-white" href="#"><i class="fa fa-search"></i></a>
+            </li>
+          </ul>
+        </div>
       </div>
-    </div>
-  </nav>
-
+    </nav>
+  </div>
 
   <!-- Home -->
   <section class="bg-dark text-light p-5 p-lg-0 pt-lg-5 mt-5 text-center text-sm-start" id="home">
@@ -295,24 +295,20 @@
 
 
 
+
+
+  <!-- Bootstrap JS -->
+  <script type="text/javascript" src="js/bootstrap.bundle.min.js"> </script>
+
+
   <!-- javascript -->
-  <script type="text/javascript" src="smartcard.js"></script>
+  <script type="text/javascript" src="smartcard.js">
+  </script>
 
 
 
 
-  <!-- 
-  <script type="text/javascript">
-    document.getElementById("btn1").addEventListener("click", function () {
-      var box1 = document.getElementById("green");
-      if (box1.style.display == "none") {
-        box1.style.display == "block";
-      }
-      else {
-        box1.style.display == "none";
-      }
-    })
-  </script> -->
+
 
 
 </body>
