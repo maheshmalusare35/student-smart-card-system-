@@ -27,6 +27,24 @@ body {
   background: #00ff00;
   width: 0%;
 }
+.main1 {
+  width: 100wh;
+  height: 100vh;
+  display: grid;
+  place-items: center;
+  position: relative;
+  background-color: #fff;
+}
+.main1::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  clip-path: polygon(49% 100%, 100% 73%, 100% 0, 0 0, 0 74%);
+  background: #ff00b2;
+  /*background: linear-gradient(90deg, rgba(9,115,121,1) 4%, rgba(218,156,4,1) 19%, rgba(9,255,0,1) 65%, rgba(255,0,178,1) 89%, rgba(2,0,36,1) 98%);*/
+  z-index: 1;
+}
 
 .map {
   width: 100%;
