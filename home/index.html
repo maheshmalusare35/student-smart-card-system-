@@ -28,8 +28,7 @@
 
 </head>
 
-<body class="pt-5">
-
+<body>
   <!-- Navbar -->
   <div class="header" style="z-index: 3;">
     <nav class="navbar navbar-expand-md navbar-light fixed-top">
@@ -62,7 +61,8 @@
               <a class="nav-link text-center fw-bold text-white" href="#feedback">Feedback</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link text-center fw-bold text-white" href="#">Login</a>
+              <a class="nav-link text-center fw-bold text-white" data-bs-toggle="modal" data-bs-target="#login"
+                href="#login">Login</a>
             </li>
             <li class="nav-item">
               <a class="nav-link text-center fw-bold text-white" href="#"><i class="fa fa-search"></i></a>
@@ -296,8 +296,83 @@
 
 
 
+  <!-- login form  -->
+  <div class="modal fade" id="login" tabindex="-1" aria-labelledby="enrollLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Login</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form class="row g-3">
+            <div class="mb-3">
+              <label for="first-name" class="col-form-label">First Name:</label>
+              <input type="text" class="form-control" id="first-name" />
+            </div>
+            <div class="mb-3">
+              <label for="last-name" class="col-form-label">Last Name:</label>
+              <input type="text" class="form-control" id="last-name" />
+            </div>
+            <div class="mb-3">
+              <label for="email" class="col-form-label">Email:</label>
+              <input type="email" class="form-control" id="email" />
+            </div>
+            <div class="mb-3">
+              <label for="phone" class="col-form-label">Phone:</label>
+              <input type="tel" class="form-control" id="phone" />
+            </div>
+            <div class="input-group mb-3">
+              <label for="inputyear" class="form-label">Year:</label><br>
+              <select id="inputyear" class="form-select">
+                <option selected>Choose...</option>
+                <option value="1">FE</option>
+                <option value="2">SE</option>
+                <option value="3">TE</option>
+                <option value="4">BE</option>
+              </select>
+            </div>
 
-
+            <div class="col-md-6">
+              <label for="inputEmail4" class="form-label">Email</label>
+              <input type="email" class="form-control" id="inputEmail4">
+            </div>
+            <div class="col-md-6">
+              <label for="inputPassword4" class="form-label">Password</label>
+              <input type="password" class="form-control" id="inputPassword4">
+            </div>
+            <div class="col-12">
+              <label for="inputAddress" class="form-label">Address</label>
+              <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
+            </div>
+            <div class="col-12">
+              <label for="inputAddress2" class="form-label">Address 2</label>
+              <input type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor">
+            </div>
+            <div class="col-md-6">
+              <label for="inputCity" class="form-label">City</label>
+              <input type="text" class="form-control" id="inputCity">
+            </div>
+            <div class="col-md-4">
+              <label for="inputState" class="form-label">State</label>
+              <select id="inputState" class="form-select">
+                <option selected>Choose...</option>
+                <option>...</option>
+              </select>
+            </div>
+            <div class="col-md-2">
+              <label for="inputZip" class="form-label">Zip</label>
+              <input type="text" class="form-control" id="inputZip">
+            </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary">Register</button>
+          <button type="button" class="btn btn-primary">Submit</button>
+        </div>
+      </div>
+    </div>
+  </div>
 
 
 
