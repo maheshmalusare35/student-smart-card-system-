@@ -294,36 +294,40 @@
     </div>
   </footer>
 
+  <!-- login form -->
 
 
-  <!-- login form  -->
+
+
+  <!-- register form  -->
   <div class="modal fade" id="login" tabindex="-1" aria-labelledby="enrollLabel" aria-hidden="true">
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title">Login</h5>
+          <h2 class="modal-title">Register</h2>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
           <form class="row g-3">
-            <div class="mb-3">
+            <div class="mb-0">
               <label for="first-name" class="col-form-label">First Name:</label>
               <input type="text" class="form-control" id="first-name" />
             </div>
-            <div class="mb-3">
+            <div class="mb-1">
               <label for="last-name" class="col-form-label">Last Name:</label>
               <input type="text" class="form-control" id="last-name" />
             </div>
-            <div class="mb-3">
+            <div class="mb-1">
               <label for="email" class="col-form-label">Email:</label>
               <input type="email" class="form-control" id="email" />
             </div>
-            <div class="mb-3">
+            <div class="mb-1">
               <label for="phone" class="col-form-label">Phone:</label>
               <input type="tel" class="form-control" id="phone" />
             </div>
-            <div class="input-group mb-3">
-              <label for="inputyear" class="form-label">Year:</label><br>
+            <div class="input-group">
+              <label for="inputyear" class="form-label p-1">Year:</label>
+
               <select id="inputyear" class="form-select">
                 <option selected>Choose...</option>
                 <option value="1">FE</option>
@@ -333,12 +337,8 @@
               </select>
             </div>
 
-            <div class="col-md-6">
-              <label for="inputEmail4" class="form-label">Email</label>
-              <input type="email" class="form-control" id="inputEmail4">
-            </div>
-            <div class="col-md-6">
-              <label for="inputPassword4" class="form-label">Password</label>
+            <div class="mb-1">
+              <label for="inputPassword4" class="col-form-label">Password:</label>
               <input type="password" class="form-control" id="inputPassword4">
             </div>
             <div class="col-12">
@@ -361,7 +361,7 @@
               </select>
             </div>
             <div class="col-md-2">
-              <label for="inputZip" class="form-label">Zip</label>
+              <label for="inputZip" class="form-label">Pin code</label>
               <input type="text" class="form-control" id="inputZip">
             </div>
           </form>
