@@ -372,7 +372,8 @@
 
             <div class="mb-1">
               <label for="inputPassword4" class="col-form-label">Password:</label>
-              <input type="password" class="form-control" id="inputPassword4">
+              <input type="password" class="form-control" id="inputPassword" data-toggle="tooltip"
+                data-placement="bottom" title="password must contain">
             </div>
             <div class="col-12">
               <label for="inputAddress" class="form-label">Address</label>
@@ -430,6 +431,12 @@
       document.getElementById("myBar").style.width = scrolled + "%";
     }</script>
 
+
+  <script>
+    $(document).ready(function () {
+      $('[data-toggle="tooltip"]').tooltip();
+    });
+  </script>
 
 
 
