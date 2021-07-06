@@ -40,7 +40,7 @@ body {
   position: absolute;
   width: 100%;
   height: 100%;
-  clip-path: polygon(0 0, 100% 100%, 100% 0);
+  clip-path: polygon(0 0, 0% 100%, 100% 0);
   background: #ff00b2;
   /*background: linear-gradient(90deg, rgba(9,115,121,1) 4%, rgba(218,156,4,1) 19%, rgba(9,255,0,1) 65%, rgba(255,0,178,1) 89%, rgba(2,0,36,1) 98%);*/
   z-index: 1;
@@ -57,7 +57,7 @@ body {
   height: 100%;
   height: 100%;
   height: 100%;
-  clip-path: polygon(0 0, 100% 100%, 100% 0);
+  clip-path: polygon(0 0, 0% 100%, 100% 0);
   border-radius: 16px;
   background: rgb(1, 4, 64);
   background-image: url("images.jpg");
