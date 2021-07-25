@@ -108,9 +108,15 @@
                                 <label for="exampleInputPassword1" class="form-label">Password:</label>
                                 <input type="password" class="form-control" id="exampleInputPassword1">
                             </div>
-                            <div class="form-group mb-3">
-                                <p class="text-center">By signing up you accept our <a href="#">Terms Of Use</a></p>
+
+                            <div class="mb-1">
+                                <label class="form-label">Select User Type:</label>
                             </div>
+                            <select class="form-select mb-3" name="role" aria-label="Default select example">
+                                <option selected value="user">User</option>
+                                <option value="admin">Admin</option>
+                            </select>
+
                             <div class="col-md-12 text-center mb-3 ">
                                 <button type="submit" class=" btn btn-block mybtn btn-primary">Login</button>
                             </div>
