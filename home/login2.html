@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <!-- <meta http-equiv="refresh" content="10"> -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- font awesome icons link -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <!-- Stylesheet CSS -->
+    <link href="style.css" rel="stylesheet">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    <title>Login form</title>
+</head>
+
+<body>
+
+
+
+    <!-- Navbar -->
+    <div class="header" style="z-index: 3;">
+        <nav class="navbar navbar-expand-md navbar-light fixed-top">
+            <div class="container-fluid">
+                <a class="navbar-brand " href="#"><img src="logo1.png" width="120" height="70"> </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav  mb-2 mb-lg-0 ms-auto fs-5">
+                        <li class="nav-item">
+                            <a class="nav-link active text-center fw-bold text-white" aria-current="page"
+                                href="#home">Home
+                                <span class="sr-only">(current)</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-center fw-bold text-white" href="#">Our Apps</a>
+                        </li>
+                        <li class="nav-item ">
+                            <a class="nav-link text-center fw-bold text-white" href="#Features">Features</a>
+                        </li>
+                        <!-- <li class="nav-item">
+            <a class="nav-link text-center fw-bold text-white" href="#">About Us </a>
+          </li> -->
+                        <li class="nav-item">
+                            <a class="nav-link text-center fw-bold text-white" href="#contact">Contact Us</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-center fw-bold text-white" href="#feedback">Feedback</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-center fw-bold text-white" data-bs-toggle="modal"
+                                data-bs-target="#login" href="#">Login</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-center fw-bold text-white" href="#"><i class="fa fa-search"></i></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+    </div>
+
+    <!-- login form -->
+    <!-- add in login in class   data-bs-toggle="modal" data-bs-target="#login" -->
+    <div class="modal fade1" id="login" tabindex="-1" aria-labelledby="enrollLabel" aria-hidden="true"> -->
+
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Login</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="mb-3">
+                            <label for="exampleInputEmail1" class="form-label">Email address:</label>
+                            <input type="email" class="form-control" id="exampleInputEmail1"
+                                aria-describedby="emailHelp">
+                        </div>
+                        <div class="mb-3">
+                            <label for="exampleInputPassword1" class="form-label">Password:</label>
+                            <input type="password" class="form-control" id="exampleInputPassword1">
+                        </div>
+
+                        <div class="modal-footer justify-content-center">
+                            <button type="button" class="btn btn-secondary" data-bs-toggle="modal"
+                                data-bs-target="#register">Register</button>
+                            <button type="button" class="btn btn-primary">Submit</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+
+
+    <!-- register form  -->
+    <div class="modal fade2" id="register" tabindex="-1" aria-labelledby="enrollLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2 class="modal-title">Register</h2>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form class="row g-3">
+                        <div class="mb-0">
+                            <label for="first-name" class="col-form-label">First Name:</label>
+                            <input type="text" class="form-control" id="first-name" />
+                        </div>
+                        <div class="mb-1">
+                            <label for="last-name" class="col-form-label">Last Name:</label>
+                            <input type="text" class="form-control" id="last-name" />
+                        </div>
+                        <div class="mb-1">
+                            <label for="email" class="col-form-label">Email:</label>
+                            <input type="email" class="form-control" id="email" />
+                        </div>
+                        <div class="mb-1">
+                            <label for="phone" class="col-form-label">Phone:</label>
+                            <input type="tel" class="form-control" id="phone" />
+                        </div>
+                        <div class="mb-1">
+                            <label for="gender" class="col-form-label">Gender:</label>
+                            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1"
+                                value="option1">
+                            <label class="form-check-label" for="inlineRadio1">Male</label>
+                            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2"
+                                value="option2">
+                            <label class="form-check-label" for="inlineRadio1">Female</label>
+                        </div>
+                        <div class="input-group">
+                            <label for="inputyear" class="form-label">Year:</label>
+                            <select id="inputyear" class="form-select">
+                                <option selected>Choose...</option>
+                                <option value="1">FE</option>
+                                <option value="2">SE</option>
+                                <option value="3">TE</option>
+                                <option value="4">BE</option>
+                            </select>
+                        </div>
+
+                        <div class="mb-1">
+                            <label for="inputPassword4" class="col-form-label">Password:</label>
+                            <input type="password" class="form-control" id="inputPassword" data-toggle="tooltip"
+                                data-placement="top" title="Passwords must contain:
+
+                a minimum of 1 lower case letter [a-z] and
+                a minimum of 1 upper case letter [A-Z] and
+                a minimum of 1 numeric character [0-9] and
+                a minimum of 1 special character: ~`!@#$%^&*()-_+={}[]|\;:">
+                        </div>
+                        <div class="col-12">
+                            <label for="inputAddress" class="form-label">Address</label>
+                            <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
+                        </div>
+                        <div class="col-12">
+                            <label for="inputAddress2" class="form-label">Address 2</label>
+                            <input type="text" class="form-control" id="inputAddress2"
+                                placeholder="Apartment, studio, or floor">
+                        </div>
+                        <div class="col-md-6">
+                            <label for="inputCity" class="form-label">City</label>
+                            <input type="text" class="form-control" id="inputCity">
+                        </div>
+                        <div class="col-md-4">
+                            <label for="inputState" class="form-label">State</label>
+                            <select id="inputState" class="form-select">
+                                <option selected>Choose...</option>
+                                <option>...</option>
+                            </select>
+                        </div>
+                        <div class="col-md-2">
+                            <label for="inputZip" class="form-label">Pin code</label>
+                            <input type="text" class="form-control" id="inputZip">
+                        </div>
+                        <div>
+                            <label for="formFileSm" class="form-label">Image:</label>
+                            <input class="form-control form-control-sm" id="formFileSm" type="file">
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-toggle="modal"
+                        data-bs-target="#login">Login</button>
+                    <button type="button" class="btn btn-primary">Submit</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Bootstrap JS -->
+    <script type="text/javascript" src="js/bootstrap.bundle.min.js"> </script>
+
+
+
+
+
+
+</body>
+
+</html>
