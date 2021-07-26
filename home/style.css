@@ -184,6 +184,11 @@ body {
   color: rgb(0, 0, 0);
 }
 
+/* login form part*/
+#second {
+  display: none;
+}
+
 /* Extra small devices (phones, 600px and down) */
 @media (max-width: 420px) {
 }
