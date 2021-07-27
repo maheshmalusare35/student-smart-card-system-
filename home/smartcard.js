@@ -1,3 +1,4 @@
+/*Navbar hide */
 $(function(){ 
     var navMain = $(".navbar-collapse");
 
@@ -7,7 +8,24 @@ $(function(){
 });
 
 
+/*password hint show */
 
 $(document).ready(function () {
     $('[data-toggle="tooltip"]').tooltip();
+  });
+
+
+
+  /*login form hide and show */
+
+  $("#signup").click(function () {
+    $("#first").fadeOut("fast", function () {
+      $("#second").fadeIn("fast");
+    });
+  });
+
+  $("#signin").click(function () {
+    $("#second").fadeOut("fast", function () {
+      $("#first").fadeIn("fast");
+    });
   });

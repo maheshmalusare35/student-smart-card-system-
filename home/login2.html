@@ -74,7 +74,7 @@
 
     </div>
 
-    <!-- login form -->
+    <!-- login and register form -->
     <!-- add in login in class   data-bs-toggle="modal" data-bs-target="#login" -->
     <div class="modal fade1" id="login" tabindex="-1" aria-labelledby="enrollLabel" aria-hidden="true">
 
@@ -178,11 +178,11 @@
                                 <input type="text" class="form-control" id="inputAddress2"
                                     placeholder="Apartment, studio, or floor">
                             </div>
-                            <div class="col-md-6">
+                            <div class="col-12">
                                 <label for="inputCity" class="form-label">City</label>
                                 <input type="text" class="form-control" id="inputCity">
                             </div>
-                            <div class="col-md-4">
+                            <div class="col-md-6">
                                 <label for="inputState" class="form-label">State</label>
                                 <select id="inputState" class="form-select">
                                     <option selected>Choose...</option>
@@ -216,28 +216,26 @@
                                     <option>West Bengal</option>
                                 </select>
                             </div>
-                            <div class="col-md-2">
+                            <div class="col-md-6">
                                 <label for="inputZip" class="form-label">Pin code</label>
                                 <input type="text" class="form-control" id="inputZip">
                             </div>
-                            <div>
-                                <label for="formFileSm" class="form-label">Image:</label>
+                            <div class="mb-3">
+                                <label for="formFileSm" class="form-label">Profile picture:</label>
                                 <input class="form-control form-control-sm" id="formFileSm" type="file">
+                            </div>
+
+                            <div class="col-md-12 text-center mb-1">
+                                <button type="submit" class=" btn btn-block mybtn btn-primary">Register </button>
+                            </div>
+
+                            <div class="col-md-12 ">
+                                <div class="form-group">
+                                    <p class="text-center"><a href="#" id="signin">Already have an account?</a></p>
+                                </div>
                             </div>
                         </form>
                     </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-toggle="modal"
-                            data-bs-target="#login">Login</button>
-                        <button type="button" class="btn btn-primary">Submit</button>
-                    </div>
-
-                    <div class="col-md-12 ">
-                        <div class="form-group">
-                            <p class="text-center"><a href="#" id="signin">Already have an account?</a></p>
-                        </div>
-                    </div>
-
                 </div>
             </div>
         </div>
@@ -247,7 +245,7 @@
 
 
     <!-- register form  -->
-    <div class="modal fade2" id="register" tabindex="-1" aria-labelledby="enrollLabel" aria-hidden="true">
+    <!-- <div class="modal fade2" id="register" tabindex="-1" aria-labelledby="enrollLabel" aria-hidden="true">
 
 
         <div class="modal-dialog">
@@ -256,7 +254,7 @@
             </div>
         </div>
     </div>
-    </div>
+    </div> -->
 
 
 
