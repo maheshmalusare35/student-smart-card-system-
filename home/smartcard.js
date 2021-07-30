@@ -8,14 +8,6 @@ $(function(){
 });
 
 
-/*password hint show */
-
-$(document).ready(function () {
-    $('[data-toggle="tooltip"]').tooltip();
-  });
-
-
-
   /*login form hide and show */
 
   $("#signup").click(function () {
@@ -28,4 +20,11 @@ $(document).ready(function () {
     $("#second").fadeOut("fast", function () {
       $("#first").fadeIn("fast");
     });
+  });
+  
+  
+  /*password hint show */
+
+$(document).ready(function () {
+    $('[data-toggle="tooltip"]').tooltip();
   });
