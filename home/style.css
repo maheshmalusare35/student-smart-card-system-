@@ -5,10 +5,10 @@ body {
   background-color: hsl(184, 100%, 97%);
 }
 
-#home {
+/* #home {
   width: 100vw;
   height: 100vh;
-}
+} */
 
 .header {
   position: fixed;
