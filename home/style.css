@@ -5,6 +5,15 @@ body {
   background-color: hsl(184, 100%, 97%);
 }
 
+section {
+  padding: 100px 0;
+}
+.max-width {
+  max-width: 1300px;
+  padding: 0 80px;
+  margin: auto;
+}
+
 /* #home {
   width: 100vw;
   height: 100vh;
