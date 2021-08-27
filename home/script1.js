@@ -15,6 +15,7 @@ $(document).ready(function(){
         }
     });
 
+
     // slide-up script
     $('.scroll-up-btn').click(function(){
         $('html').animate({scrollTop: 0});
@@ -27,11 +28,13 @@ $(document).ready(function(){
         $('html').css("scrollBehavior", "smooth");
     });
 
+
     // toggle menu/navbar script
     $('.menu-btn').click(function(){
         $('.navbar .menu').toggleClass("active");
         $('.menu-btn i').toggleClass("active");
     });
+
 
     // typing text animation script
     var typed = new Typed(".typing", {
@@ -48,6 +51,7 @@ $(document).ready(function(){
         loop: true
     });
 
+    
     // owl carousel script
     $('.carousel').owlCarousel({
         margin: 20,
