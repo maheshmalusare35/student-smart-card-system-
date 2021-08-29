@@ -142,7 +142,7 @@ section .title::after {
   position: fixed;
   height: 45px;
   width: 42px;
-  background: crimson;
+  background: linear-gradient(45deg, #ffaf00, #bb02ff);
   right: 30px;
   bottom: 10px;
   text-align: center;

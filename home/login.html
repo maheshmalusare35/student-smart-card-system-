@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <!-- <meta http-equiv="refresh" content="10"> -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="ie-edge">
+
+    <!-- Bootstrap CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- font awesome icons link -->
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+        integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+
+    <!-- Stylesheet CSS -->
+    <link href="" rel="stylesheet">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    <title>Student Smart Card</title>
+
+</head>
+
+<body>
+
+    <div class="container">
+        <h1 class=" text-center text-warning">Login form</h1>
+
+        <div class="col-lg-8 m-auto d-block">
+
+            <form action="" method="POST">
+
+                <div class="form-group mb-3">
+                    <label for="user"> UserName:</label>
+                    <input type="text" name="username" id="username" class="form-control">
+                    <h5 id="usercheck"></h5>
+                </div>
+
+                <div class="form-group  mb-3">
+                    <label for="pass"> Password:</label>
+                    <input type="pass" name="password" id="password" class="form-control">
+                    <h5 id="passcheck"></h5>
+                </div>
+
+                <div class="form-group mb-3">
+                    <label class="form-label">Select User Type:</label>
+                    <h5 id="selectcheck"></h5>
+
+                    <select class="form-select mb-3" name="role" aria-label="Default select example">
+                        <option selected value="user">Select</option>
+                        <option value="admin">Admin</option>
+                        <option value="office">Office</option>
+                        <option value="cafeteria">Cafeteria</option>
+                        <option value="student">Student</option>
+                        <option value="teacher">Teacher</option>
+                        <option value="parents">Parents</option>
+                    </select>
+                </div>
+
+                <div class="d-grid gap-2 col-6 mx-auto mb-3">
+                    <button type="submit" id="submitbtn" value="submit" class="btn btn-primary btn-lg">Sign In</button>
+                </div>
+
+                <div class="form-group">
+                    <p class="text-center">Don't have account? <a href="#" id="signup">Sign up here</a></p>
+                </div>
+            </form>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- Bootstrap JS -->
+    <script type="text/javascript" src="js/bootstrap.bundle.min.js"> </script>
+
+
+    <!-- javascript -->
+    <script type="text/javascript" src="">
+
+        $(document).ready(function () {
+            $('#usercheck').hide();
+            $('#passcheck').hide();
+            $('#selectcheck').hide();
+
+            var user_err = true;
+            var pass_err = true;
+            var select_err = true;
+
+            $('#user')
+
+        });
+    </script>
+
+
+
+
+
+
+
+</body>
+
+</html>

@@ -23,8 +23,3 @@ $(function(){
   });
   
   
-  /*password hint show */
-
-$(document).ready(function () {
-    $('[data-toggle="tooltip"]').tooltip();
-  });
