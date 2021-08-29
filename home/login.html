@@ -91,7 +91,12 @@
             var pass_err = true;
             var select_err = true;
 
-            $('#user')
+            $('#username').keyup(function () {
+                username_check();
+            });
+            function username_check() {
+                var user_val = $('#username').val();
+            }
 
         });
     </script>
