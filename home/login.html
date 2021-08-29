@@ -31,7 +31,7 @@
 
         <div class="col-lg-8 m-auto d-block">
 
-            <form action="" method="POST">
+            <form>
 
                 <div class="form-group mb-3">
                     <label for="user" class="mb-1"> UserName:</label>
@@ -47,10 +47,9 @@
 
                 <div class="form-group mb-3">
                     <label class="form-label" class="mb-0">Select User Type:</label>
-                    <h5 id="selectcheck"></h5>
 
-                    <select class="form-select mb-3" name="role" aria-label="Default select example">
-                        <option selected value="user">Select</option>
+                    <select class="form-select mb-3" name="role" aria-label="Default select example" id="select">
+                        <option value="">Select</option>
                         <option value="admin">Admin</option>
                         <option value="office">Office</option>
                         <option value="cafeteria">Cafeteria</option>
@@ -58,6 +57,8 @@
                         <option value="teacher">Teacher</option>
                         <option value="parents">Parents</option>
                     </select>
+                    <h5 id="selectcheck"></h5>
+
                 </div>
 
                 <div class="d-grid gap-2 col-6 mx-auto mb-3">
@@ -110,20 +111,89 @@
                     $('#usercheck').hide();
                 }
 
-                if ((user_val.length < 3)(user_val.length > 10)) {
-                    $('#usercheck').show();
-                    $('#usercheck').html("*please fill the username*");
-                    $('#usercheck').focus();
-                    $('#usercheck').css("color", "red");
-                    user_err = false;
-                    return false;
-                } else {
-                    $('#usercheck').hide();
-                }
+                // if ((user_val.length < 3) || (user_val.length > 10)) {
+                //     $('#usercheck').show();
+                //     $('#usercheck').html("*username length between 3 to 10*");
+                //     $('#usercheck').focus();
+                //     $('#usercheck').css("color", "red");
+                //     user_err = false;
+                //     return false;
+                // } else {
+                //     $('#usercheck').hide();
+                // }
 
 
             }
 
+
+            $('#password').keyup(function () {
+                password_check();
+            });
+
+            function password_check() {
+
+                var passwrdstr = $('#password').val();
+
+                if (passwrdstr.length == '') {
+                    $('#passcheck').show();
+                    $('#passcheck').html("*please fill the password*");
+                    $('#passcheck').focus();
+                    $('#passcheck').css("color", "red");
+                    pass_err = false;
+                    return false;
+                }
+                else {
+                    $('#passcheck').hide();
+                }
+
+            }
+
+
+
+            $('#select').click(function () {
+                select_check();
+            });
+            function select_check() {
+
+                var selectstr = $('#select');
+
+                if (selectstr.val() === '') {
+                    $('#selectcheck').show();
+                    $('#selectcheck').html("*please select the user option*");
+                    $('#selectcheck').focus();
+                    $('#selectcheck').css("color", "red");
+                    select_err = false;
+                    return false;
+                }
+                else {
+                    $('#selectcheck').hide();
+                }
+
+            }
+
+
+
+
+
+            $('#submitbtn').click(function () {
+
+                user_err = true;
+                pass_err = true;
+                select_err = true;
+
+
+                username_check();
+                password_check();
+                select_check();
+
+
+                if ((user_err == true) && (pass_err == true) && (select_err == true)) {
+                    return true;
+                }
+                else {
+                    return false;
+                }
+            });
         });
     </script>
 
