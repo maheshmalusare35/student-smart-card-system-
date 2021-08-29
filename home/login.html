@@ -34,19 +34,19 @@
             <form action="" method="POST">
 
                 <div class="form-group mb-3">
-                    <label for="usernames"> UserName:</label>
-                    <input type="text" name="username" id="usernames" class="form-control">
+                    <label for="user" class="mb-1"> UserName:</label>
+                    <input type="text" name="username" id="usernames" class="form-control" autocomplete="off">
                     <h5 id="usercheck"></h5>
                 </div>
 
                 <div class="form-group  mb-3">
-                    <label for="password"> Password:</label>
+                    <label for="password" class="mb-1"> Password:</label>
                     <input type="password" name="pass" id="password" class="form-control">
                     <h5 id="passcheck"></h5>
                 </div>
 
                 <div class="form-group mb-3">
-                    <label class="form-label">Select User Type:</label>
+                    <label class="form-label" class="mb-0">Select User Type:</label>
                     <h5 id="selectcheck"></h5>
 
                     <select class="form-select mb-3" name="role" aria-label="Default select example">
@@ -80,9 +80,10 @@
 
 
     <!-- javascript -->
-    <script type="text/javascript" src="">
+    <script type="text/javascript">
 
         $(document).ready(function () {
+
             $('#usercheck').hide();
             $('#passcheck').hide();
             $('#selectcheck').hide();
@@ -91,12 +92,35 @@
             var pass_err = true;
             var select_err = true;
 
-            $('#username').keyup(function () {
+            $('#usernames').keyup(function () {
                 username_check();
             });
+
             function username_check() {
-                var user_val = $('#username').val();
-                alert(user_val);
+                var user_val = $('#usernames').val();
+
+                if (user_val.length == '') {
+                    $('#usercheck').show();
+                    $('#usercheck').html("*please fill the username*");
+                    $('#usercheck').focus();
+                    $('#usercheck').css("color", "red");
+                    user_err = false;
+                    return false;
+                } else {
+                    $('#usercheck').hide();
+                }
+
+                if ((user_val.length < 3)(user_val.length > 10)) {
+                    $('#usercheck').show();
+                    $('#usercheck').html("*please fill the username*");
+                    $('#usercheck').focus();
+                    $('#usercheck').css("color", "red");
+                    user_err = false;
+                    return false;
+                } else {
+                    $('#usercheck').hide();
+                }
+
 
             }
 
