@@ -22,56 +22,97 @@
 
     <title>Student Smart Card</title>
 
+    <style type="text/css">
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            /* background: linear-gradient(45deg, #ffaf00, #bb02ff); */
+            background-attachment: fixed;
+        }
+
+        .multicolortext {
+            background-image: linear-gradient(45deg, #ffaf00, #bb02ff);
+            -webkit-background-clip: text;
+            -moz-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        /* .container-fluid {
+            position: relative;
+            border: 10px solid rgb(219, 212, 212);
+            border-radius: 10px;
+            background-color: rgb(255, 255, 255);
+            justify-content: center;
+            align-items: center;
+            margin-left: 100px;
+            margin-right: 100px;
+        } */
+    </style>
+
 </head>
 
 <body>
 
-    <div class="container"><br><br>
-        <h1 class=" text-center text-warning">Login form</h1>
+    <div class="container-fluid">
+        <div class=" align-items-center">
 
-        <div class="col-lg-8 m-auto d-block">
-
-            <form>
-
-                <div class="form-group mb-3">
-                    <label for="user" class="mb-1"> UserName:</label>
-                    <input type="text" name="username" id="usernames" class="form-control" autocomplete="off">
-                    <h5 id="usercheck"></h5>
+            <div class="col-md-6  mx-auto shadow-lg p-4 bg-light border border-1 rounded-3">
+                <div class="d-grid gap-2 d-md-flex justify-content-end">
+                    <button type="button" class="btn-close " aria-label="Close"></button>
                 </div>
 
-                <div class="form-group  mb-3">
-                    <label for="password" class="mb-1"> Password:</label>
-                    <input type="password" name="pass" id="password" class="form-control">
-                    <h5 id="passcheck"></h5>
-                </div>
+                <h1 class="text-center fw-bold"><span class="multicolortext">Login form</span> </h1>
+                <form>
 
-                <div class="form-group mb-3">
-                    <label class="form-label" class="mb-0">Select User Type:</label>
+                    <div class="form-group mb-3">
+                        <label for="user" class="mb-1"> UserName:</label>
+                        <input type="text" name="username" id="usernames" class="form-control" autocomplete="off">
+                        <h6 id="usercheck"></h6>
+                    </div>
 
-                    <select class="form-select mb-3" name="role" aria-label="Default select example" id="select">
-                        <option value="">Select</option>
-                        <option value="admin">Admin</option>
-                        <option value="office">Office</option>
-                        <option value="cafeteria">Cafeteria</option>
-                        <option value="student">Student</option>
-                        <option value="teacher">Teacher</option>
-                        <option value="parents">Parents</option>
-                    </select>
-                    <h5 id="selectcheck"></h5>
+                    <div class="form-group  mb-3">
+                        <label for="password" class="mb-1"> Password:</label>
+                        <input type="password" name="pass" id="password" class="form-control">
+                        <h6 id="passcheck"></h6>
+                    </div>
+                    <div class="form-check mb-3">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                        <label class="form-check-label" for="flexCheckDefault">
+                            Show Password
+                        </label>
+                    </div>
 
-                </div>
+                    <div class="form-group mb-3">
+                        <label class="form-label" class="mb-0">Select User Type:</label>
 
-                <div class="d-grid gap-2 col-6 mx-auto mb-3">
-                    <button type="submit" id="submitbtn" value="submit" class="btn btn-primary btn-lg">Sign In</button>
-                </div>
+                        <select class="form-select" name="role" aria-label="Default select example" id="select">
+                            <option value="">Select</option>
+                            <option value="admin">Admin</option>
+                            <option value="office">Office</option>
+                            <option value="cafeteria">Cafeteria</option>
+                            <option value="student">Student</option>
+                            <option value="teacher">Teacher</option>
+                            <option value="parents">Parents</option>
+                        </select>
+                        <h6 id="selectcheck" class="mb-3"></h6>
 
-                <div class="form-group">
-                    <p class="text-center">Don't have account? <a href="#" id="signup">Sign up here</a></p>
-                </div>
-            </form>
+                    </div>
 
+                    <div class="d-grid gap-2 col-6 mx-auto mb-3">
+                        <button type="submit" id="submitbtn" value="submit" class="btn btn-primary btn-lg">Sign
+                            In</button>
+                    </div>
+
+                    <div class="form-group">
+                        <p class="text-center">Don't have account? <a href="#" id="signup">Sign up here</a></p>
+                    </div>
+                </form>
+
+            </div>
         </div>
-
     </div>
 
 
