@@ -139,13 +139,14 @@
 
         $(document).ready(function () {
 
+
+
+
+            //for the username
+
             $('#usercheck').hide();
-            $('#passcheck').hide();
-            $('#selectcheck').hide();
 
             var user_err = true;
-            var pass_err = true;
-            var select_err = true;
 
             $('#usernames').keyup(function () {
                 username_check();
@@ -167,6 +168,11 @@
 
             }
 
+            // for the password
+
+            $('#passcheck').hide();
+
+            var pass_err = true;
 
             $('#password').keyup(function () {
                 password_check();
@@ -190,7 +196,12 @@
 
             }
 
+            // for the select option
 
+
+            $('#selectcheck').hide();
+
+            var select_err = true;
 
             $('#select').click(function () {
                 select_check();

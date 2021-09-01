@@ -212,10 +212,16 @@ section {
 
 /* Medium devices (landscape tablets, 768px and up) */
 @media (max-width: 768px) {
+  .max-width {
+    padding: 0 23px;
+  }
 }
 
 /* Large devices (laptops/desktops, 992px and up) */
 @media (max-width: 992px) {
+  .max-width {
+    padding: 0 50px;
+  }
 }
 
 /* Extra large devices (large laptops and desktops, 1200px and up) */
