@@ -70,9 +70,10 @@
                 <form>
 
                     <div class="form-group mb-3">
-                        <label for="user" class="mb-1"> UserName:</label>
-                        <input type="text" name="username" id="usernames" class="form-control" autocomplete="off">
-                        <h6 id="usercheck"></h6>
+                        <label for="email" class="mb-1"> Email Address:</label>
+                        <input type="text" name="emailname" id="emailnames" class="form-control"
+                            placeholder="name@example.com" autocomplete="off">
+                        <h6 id="emailcheck"></h6>
                     </div>
 
                     <div class="form-group  mb-3">
@@ -84,12 +85,13 @@
                         <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault"
                             onclick="myFunction()">
                         <label class="form-check-label" for="flexCheckDefault">
-                            <p class="text-center">Show Password <a href="#">Forget Password?</a></p>
+                            <p class="text-center">Show Password </p>
                         </label>
+                        <a class="float-end" href="#">Forget Password?</a>
                     </div>
 
                     <div class="form-group mb-3">
-                        <label class="form-label" class="mb-0">Select User Type:</label>
+                        <label class="form-label" class="mb-0">Select user Type:</label>
 
                         <select class="form-select" name="role" aria-label="Default select example" id="select">
                             <option value="">Select</option>
@@ -142,28 +144,28 @@
 
 
 
-            //for the username
+            //for the emailname
 
-            $('#usercheck').hide();
+            $('#emailcheck').hide();
 
-            var user_err = true;
+            var email_err = true;
 
-            $('#usernames').keyup(function () {
-                username_check();
+            $('#emailnames').keyup(function () {
+                emailname_check();
             });
 
-            function username_check() {
-                var user_val = $('#usernames').val();
+            function emailname_check() {
+                var email_val = $('#emailnames').val();
 
-                if (user_val.length == '') {
-                    $('#usercheck').show();
-                    $('#usercheck').html("*please fill the username*");
-                    $('#usercheck').focus();
-                    $('#usercheck').css("color", "red");
-                    user_err = false;
+                if (email_val.length == '') {
+                    $('#emailcheck').show();
+                    $('#emailcheck').html("*please fill the email address*");
+                    $('#emailcheck').focus();
+                    $('#emailcheck').css("color", "red");
+                    email_err = false;
                     return false;
                 } else {
-                    $('#usercheck').hide();
+                    $('#emailcheck').hide();
                 }
 
             }
@@ -230,17 +232,17 @@
 
             $('#submitbtn').click(function () {
 
-                user_err = true;
+                email_err = true;
                 pass_err = true;
                 select_err = true;
 
 
-                username_check();
+                emailname_check();
                 password_check();
                 select_check();
 
 
-                if ((user_err == true) && (pass_err == true) && (select_err == true)) {
+                if ((email_err == true) && (pass_err == true) && (select_err == true)) {
                     return true;
                 }
                 else {
