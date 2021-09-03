@@ -87,23 +87,51 @@
                         </div>
                     </div>
 
-                    <div class=" form-group mb-3">
-                        <label for="email" class="form-label">Email address:</label>
-                        <input type="email" name="email" class="form-control" id="email" placeholder="name@example.com"
-                            autocomplete="off">
-                        <h6 id="emailcheck"></h6>
+                    <div class="row">
+                        <div class=" form-group mb-3 col-md-6">
+                            <label for="email" class="form-label">Email address:</label>
+                            <input type="email" name="email" class="form-control" id="email"
+                                placeholder="name@example.com" autocomplete="off">
+                            <h6 id="emailcheck"></h6>
+                        </div>
+
+                        <div class=" form-group mb-3 col-md-6">
+                            <label for="phone" class="form-label">Contact No:</label>
+                            <input type="phone" name="phone" class="form-control" id="phone" autocomplete="off">
+                            <h6 id="phonecheck"></h6>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class=" form-group mb-3 col-md-6">
+                            <label class="form-label" class="mb-0">Gender</label>
+
+                            <select class="form-select" name="gender" aria-label="Default select example" id="gender">
+                                <option value="">Select</option>
+                                <option value="Male">Male</option>
+                                <option value="Female">Female</option>
+                                <option value="Other">Other</option>
+                            </select>
+                            <h6 id="gendercheck" class="mb-3"></h6>
+                        </div>
+
+                        <div class=" form-group mb-3 col-md-6">
+                            <label for="date" class="form-label">Date Of Birth:</label>
+                            <input type="date" name="date" class="form-control" id="date" autocomplete="off">
+                            <h6 id="datecheck"></h6>
+                        </div>
                     </div>
 
                     <div class="row">
                         <div class="form-group  mb-3 col-md-6 ">
                             <label for="password" class="mb-1"> Password:</label>
-                            <input type="password" name="pass" id="password" class="form-control">
+                            <input type="password" name="pass" id="password" class="form-control" autocomplete="off">
                             <h6 id="passcheck"></h6>
                         </div>
-
                         <div class="form-group  mb-3 col-md-6 ">
                             <label for=" confirmpassword" class="mb-1">Confirm Password:</label>
-                            <input type="password" name="confirmpass" id="confirmpassword" class="form-control">
+                            <input type="password" name="confirmpass" id="confirmpassword" class="form-control"
+                                autocomplete="off">
                             <h6 id="confirmpasscheck"></h6>
                         </div>
                     </div>
@@ -118,7 +146,7 @@
                     <div class="form-group mb-3">
                         <label class="form-label" class="mb-0">Select year:</label>
 
-                        <select class="form-select" name="role" aria-label="Default select example" id="select">
+                        <select class="form-select" name="year" aria-label="Default select example" id="select">
                             <option value="">Select</option>
                             <option value="FE">FE</option>
                             <option value="SE">SE</option>
@@ -280,6 +308,83 @@
                 }
             }
 
+            // for the phone jquery
+
+            $('#phonecheck').hide();
+
+            var phone_err = true;
+
+            $('#phone').keyup(function () {
+                phone_check();
+            });
+
+            function phone_check() {
+                var phone_val = $('#phone').val();
+
+                if (phone_val.length == '') {
+                    $('#phonecheck').show();
+                    $('#phonecheck').html("*please fill the phone no*");
+                    $('#phonecheck').focus();
+                    $('#phonecheck').css("color", "red");
+                    phone_err = false;
+                    return false;
+                } else {
+                    $('#phonecheck').hide();
+                }
+            }
+
+            //for the gender check
+
+            $('#gendercheck').hide();
+
+            var gender_err = true;
+
+            $('#gender').click(function () {
+                gender_check();
+            });
+            function gender_check() {
+
+                var genderstr = $('#gender');
+
+                if (genderstr.val() === '') {
+                    $('#gendercheck').show();
+                    $('#gendercheck').html("*please select the gender option*");
+                    $('#gendercheck').focus();
+                    $('#gendercheck').css("color", "red");
+                    gender_err = false;
+                    return false;
+                }
+                else {
+                    $('#gendercheck').hide();
+                }
+
+            }
+
+            // for the date jquery
+
+            $('#datecheck').hide();
+
+            var date_err = true;
+
+            $('#date').keyup(function () {
+                date_check();
+            });
+
+            function date_check() {
+                var date_val = $('#date').val();
+
+                if (date_val.length == '') {
+                    $('#datecheck').show();
+                    $('#datecheck').html("*please select the date of birth*");
+                    $('#datecheck').focus();
+                    $('#datecheck').css("color", "red");
+                    date_err = false;
+                    return false;
+                } else {
+                    $('#datecheck').hide();
+                }
+            }
+
             // for password jquery
 
             $('#passcheck').hide();
@@ -388,6 +493,9 @@
                 middle_err = true;
                 last_err = true;
                 email_err = true;
+                phone_err = true;
+                gender_err = true;
+                date_err = true;
                 pass_err = true;
                 confirmpass_err = true;
                 select_err = true;
@@ -397,12 +505,15 @@
                 middlename_check();
                 lastname_check();
                 email_check();
+                phone_check();
+                gender_check();
+                date_check();
                 password_check();
                 confirmpassword_check();
                 select_check();
 
 
-                if ((first_err == true) && (middle_err == true) && (last_err == true) && (email_err == true) && (pass_err == true) && (confirmpass_err == true) && (select_err == true)) {
+                if ((first_err == true) && (middle_err == true) && (last_err == true) && (email_err == true) && (phone_err == true) && (gender_err == true) && (date_err == true) && (pass_err == true) && (confirmpass_err == true) && (select_err == true)) {
                     return true;
                 }
                 else {

@@ -71,8 +71,8 @@
 
                     <div class="form-group mb-3">
                         <label for="email" class="mb-1"> Email Address:</label>
-                        <input type="text" name="emailname" id="emailnames" class="form-control"
-                            placeholder="name@example.com" autocomplete="off">
+                        <input type="text" name="email" id="email" class="form-control" placeholder="name@example.com"
+                            autocomplete="off">
                         <h6 id="emailcheck"></h6>
                     </div>
 
@@ -150,12 +150,12 @@
 
             var email_err = true;
 
-            $('#emailnames').keyup(function () {
-                emailname_check();
+            $('#email').keyup(function () {
+                email_check();
             });
 
-            function emailname_check() {
-                var email_val = $('#emailnames').val();
+            function email_check() {
+                var email_val = $('#email').val();
 
                 if (email_val.length == '') {
                     $('#emailcheck').show();
@@ -237,7 +237,7 @@
                 select_err = true;
 
 
-                emailname_check();
+                email_check();
                 password_check();
                 select_check();
 
