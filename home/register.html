@@ -124,7 +124,9 @@
                     <div class="row">
                         <div class="form-group  mb-3 col-md-6 ">
                             <label for="password" class="mb-1"> Password:</label>
-                            <input type="password" name="pass" id="password" class="form-control" autocomplete="off">
+                            <input type="password" name="pass" id="password" class="form-control" data-toggle="popover"
+                                data-trigger="hover" data-placement="bottom" data-content="My popover content."
+                                autocomplete="off">
                             <h6 id="passcheck"></h6>
                         </div>
                         <div class="form-group  mb-3 col-md-6 ">
@@ -205,6 +207,9 @@
         $(document).ready(function () {
 
 
+            $('#password').tooltip({ 'trigger': 'hover', 'title': 'Password Must contain at least one number and one uppercase and lowercase letter, and at least 8 characters and one special symbol  Hint: Xyz@1kgs' });
+
+
             // for the first name jquery
 
             $('#firstcheck').hide();
@@ -221,6 +226,28 @@
                 if (first_val.length == '') {
                     $('#firstcheck').show();
                     $('#firstcheck').html("*please fill the firstname*");
+                    $('#firstcheck').focus();
+                    $('#firstcheck').css("color", "red");
+                    first_err = false;
+                    return false;
+                } else {
+                    $('#firstcheck').hide();
+                }
+
+                if (first_val.match(/([0-9])/)) {
+                    $('#firstcheck').show();
+                    $('#firstcheck').html("*please fill the valid firstname*");
+                    $('#firstcheck').focus();
+                    $('#firstcheck').css("color", "red");
+                    first_err = false;
+                    return false;
+                } else {
+                    $('#firstcheck').hide();
+                }
+
+                if (first_val.match(/([~,`,!,@,#,$,%,^,&,*,(,),_,-,+,=,{,[,},|,\,/,:,;,",',<,>,.,?,])/)) {
+                    $('#firstcheck').show();
+                    $('#firstcheck').html("*please fill the valid firstname*");
                     $('#firstcheck').focus();
                     $('#firstcheck').css("color", "red");
                     first_err = false;
@@ -253,6 +280,28 @@
                 } else {
                     $('#middlecheck').hide();
                 }
+
+                if (middle_val.match(/([0-9])/)) {
+                    $('#middlecheck').show();
+                    $('#middlecheck').html("*please fill the valid middlename*");
+                    $('#middlecheck').focus();
+                    $('#middlecheck').css("color", "red");
+                    middle_err = false;
+                    return false;
+                } else {
+                    $('#middlecheck').hide();
+                }
+
+                if (middle_val.match(/([~,`,!,@,#,$,%,^,&,*,(,),_,-,+,=,{,[,},|,\,/,:,;,",',<,>,.,?,])/)) {
+                    $('#middlecheck').show();
+                    $('#middlecheck').html("*please fill the valid middlename*");
+                    $('#middlecheck').focus();
+                    $('#middlecheck').css("color", "red");
+                    middle_err = false;
+                    return false;
+                } else {
+                    $('#middlecheck').hide();
+                }
             }
 
             // for the last name jquery
@@ -271,6 +320,28 @@
                 if (last_val.length == '') {
                     $('#lastcheck').show();
                     $('#lastcheck').html("*please fill the lastname*");
+                    $('#lastcheck').focus();
+                    $('#lastcheck').css("color", "red");
+                    last_err = false;
+                    return false;
+                } else {
+                    $('#lastcheck').hide();
+                }
+
+                if (last_val.match(/([0-9])/)) {
+                    $('#lastcheck').show();
+                    $('#lastcheck').html("*please fill the valid lastname*");
+                    $('#lastcheck').focus();
+                    $('#lastcheck').css("color", "red");
+                    last_err = false;
+                    return false;
+                } else {
+                    $('#lastcheck').hide();
+                }
+
+                if (last_val.match(/([~,`,!,@,#,$,%,^,&,*,(,),_,-,+,=,{,[,},|,\,/,:,;,",',<,>,.,?,])/)) {
+                    $('#lastcheck').show();
+                    $('#lastcheck').html("*please fill the valid lastname*");
                     $('#lastcheck').focus();
                     $('#lastcheck').css("color", "red");
                     last_err = false;
@@ -306,6 +377,8 @@
                 }
             }
 
+
+
             // for the phone jquery
 
             $('#phonecheck').hide();
@@ -321,7 +394,40 @@
 
                 if (phone_val.length == '') {
                     $('#phonecheck').show();
-                    $('#phonecheck').html("*please fill the phone no*");
+                    $('#phonecheck').html("*please fill the contact no*");
+                    $('#phonecheck').focus();
+                    $('#phonecheck').css("color", "red");
+                    phone_err = false;
+                    return false;
+                } else {
+                    $('#phonecheck').hide();
+                }
+
+                if (phone_val.match(/^([012345]\d{2}([ -]?)\d{3}([ -]?)\d{4})$/)) {
+                    $('#phonecheck').show();
+                    $('#phonecheck').html("*contact number start with 6,7,8,9*");
+                    $('#phonecheck').focus();
+                    $('#phonecheck').css("color", "red");
+                    phone_err = false;
+                    return false;
+                } else {
+                    $('#phonecheck').hide();
+                }
+
+
+                if (phone_val.length == 11) {
+                    $('#phonecheck').show();
+                    $('#phonecheck').html("*please fill the valid contact no*");
+                    $('#phonecheck').focus();
+                    $('#phonecheck').css("color", "red");
+                    phone_err = false;
+                    return false;
+                } else {
+                    $('#phonecheck').hide();
+                }
+                if (phone_val.match(/([a-zA-Z])/)) {
+                    $('#phonecheck').show();
+                    $('#phonecheck').html("*please fill the valid phone no*");
                     $('#phonecheck').focus();
                     $('#phonecheck').css("color", "red");
                     phone_err = false;
@@ -400,6 +506,18 @@
                 if (passwrdstr.length == '') {
                     $('#passcheck').show();
                     $('#passcheck').html("*please fill the password*");
+                    $('#passcheck').focus();
+                    $('#passcheck').css("color", "red");
+                    pass_err = false;
+                    return false;
+                }
+                else {
+                    $('#passcheck').hide();
+                }
+
+                if (passwrdstr.length < 8) {
+                    $('#passcheck').show();
+                    $('#passcheck').html("*password length must be greater then 8*");
                     $('#passcheck').focus();
                     $('#passcheck').css("color", "red");
                     pass_err = false;
