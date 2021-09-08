@@ -2,7 +2,7 @@ html {
   scroll-behavior: smooth;
 }
 body {
-  background-color: hsl(184, 100%, 97%);
+  background-color: #8ee4af;
 }
 
 section {
@@ -85,7 +85,7 @@ section {
   height: 100%;
   display: grid;
   place-items: center;
-  background-color: hsl(184, 100%, 97%);
+  background-color: #8ee4af;
 }
 .center_div {
   width: 300px;
