@@ -144,18 +144,6 @@
                         </label>
                     </div>
 
-                    <div class="form-group mb-3">
-                        <label class="form-label" class="mb-0">Select year:</label>
-                        <select class="form-select" name="year" aria-label="Default select example" id="select">
-                            <option value="">Select</option>
-                            <option value="FE">FE</option>
-                            <option value="SE">SE</option>
-                            <option value="TE">TE</option>
-                            <option value="BE">BE</option>
-                        </select>
-                        <h6 id="selectcheck" class="mb-3"></h6>
-                    </div>
-
 
                     <div class="d-grid gap-2 col-6 mx-auto mb-3">
                         <button type="submit" id="submitbtn" value="submit" class="btn btn-primary btn-lg">Sign
@@ -541,7 +529,6 @@
             }
 
 
-
             // for confirm password jquery
 
             $('#confirmpasscheck').hide();
@@ -584,32 +571,6 @@
             }
 
 
-            //for the select check
-
-            $('#selectcheck').hide();
-
-            var select_err = true;
-
-            $('#select').click(function () {
-                select_check();
-            });
-            function select_check() {
-
-                var selectstr = $('#select');
-
-                if (selectstr.val() === '') {
-                    $('#selectcheck').show();
-                    $('#selectcheck').html("*please select the year option*");
-                    $('#selectcheck').focus();
-                    $('#selectcheck').css("color", "red");
-                    select_err = false;
-                    return false;
-                }
-                else {
-                    $('#selectcheck').hide();
-                }
-
-            }
 
 
 
@@ -628,7 +589,7 @@
                 date_err = true;
                 pass_err = true;
                 confirmpass_err = true;
-                select_err = true;
+
 
 
                 firstname_check();
@@ -640,10 +601,10 @@
                 date_check();
                 password_check();
                 confirmpassword_check();
-                select_check();
 
 
-                if ((first_err == true) && (middle_err == true) && (last_err == true) && (email_err == true) && (phone_err == true) && (gender_err == true) && (date_err == true) && (pass_err == true) && (confirmpass_err == true) && (select_err == true)) {
+
+                if ((first_err == true) && (middle_err == true) && (last_err == true) && (email_err == true) && (phone_err == true) && (gender_err == true) && (date_err == true) && (pass_err == true) && (confirmpass_err == true)) {
                     return true;
                 }
                 else {
