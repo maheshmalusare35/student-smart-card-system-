@@ -178,7 +178,6 @@ img{
     max-width: 50%;
 }
 
-
 .navbar-sticky-on .navbar-nav .navbar-link:hover,
 .navbar-sticky-on .navbar-nav .navbar-link:active{
     color: var(--text-light-pink)!important;
@@ -229,7 +228,7 @@ img{
 #home{
     min-height: 700px;
     height: 100%;
-    background:rgba(0, 0, 0, 0) url(../images/linear.jpg) no-repeat scroll left center;
+    background:rgba(0, 0, 0, 0) url(../images/ff0600.png) no-repeat scroll left center;
     background-size:cover ;
     display: flex;
     align-items: center;

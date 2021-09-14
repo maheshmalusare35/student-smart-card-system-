@@ -1,3 +1,22 @@
+:root{
+    --bg-white: #fff;
+    --bg-black: #2c2c2c;
+    --bg-light-pink:#ff007a;
+    --bg-light-gray:#f6f9fe;
+    --bg-gradient:linear-gradient(to top, #ff007f 0%, rgba(142,0,116,1) 100%);
+    --bg-card-shadow:0 0.188rem 1.25rem 0px rgba(0,0,0,0.06);
+    --bg-card-shadow:0 2rem 5rem rgb(0,0,0,0.06);
+    --bg-light-gray-1:#eee;
+    
+    --primary-font:"Poppins", sans-serif;
+    --text-white:#fff;
+    --text-black:#2c2c2c;
+    --text-light-black:#444;
+    --text-light-pink:#ff007a;
+    --text-light-gray:#7e8085;
+    }
+    
+
 @media(max-width:1030px){
 
 }
@@ -26,8 +45,8 @@
         max-width: 60%;
     }
 
-    .navbar-toggler{
-        padding-right:0 ;
+    .navbar-toggler{       
+        padding-right:0;
     }
 
     .navbar-toggler:focus{
@@ -36,8 +55,8 @@
 
     .navbar-toggler-icon{
         color:var(--text-white);
-        width: 1em;
-        height: 1em;
+        width: 1rem;
+        height: 1rem;
     }
 
     .navbar-sticky-on .navbar-toggler-icon{
@@ -54,5 +73,23 @@
         padding:0.625rem 1.5rem;
         color: var(--text-light-gray);
     }
+
+    /* Home css */
+    #home{
+        padding-top: 7rem;
+    }
+    #home .row{
+flex-direction: column-reverse;
+    }
+
+
+
     
+}
+
+@media (max-width:767px) {
+    /* common css */
+    .mobile_px_20{
+        padding: 0 1.25rem;
+    }
 }
