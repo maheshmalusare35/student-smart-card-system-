@@ -41,10 +41,11 @@ font-weight: 400;
 }
 
 h2{
-    color: var(--text-black);
+color: var(--text-black);
 font-size: 2.875rem;
 line-height: 3.75rem;
 font-weight: 400;
+/* margin-top: 30%; */
 }
 
 h3{
@@ -68,12 +69,12 @@ section,
     position: relative;
 }
 
-.container{
+.container{    
     width: 100%;
     margin: 0 auto;
 }
 
-p{
+p{    
     margin-bottom: 0;
 }
 
@@ -222,4 +223,82 @@ img{
     transition: .3s;
     -webkit-box-shadow: rgba(0,0,0,0.1) 0px 0px 20px;
     box-shadow: rgba(0,0,0,0.1) 0px 0px 20px;
+}
+
+/* Home css */
+#home{
+    min-height: 700px;
+    height: 100%;
+    background:rgba(0, 0, 0, 0) url(../images/linear.jpg) no-repeat scroll left center;
+    background-size:cover ;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+#home .home_text h2{
+    font-size: 3.938rem;
+    font-weight: 700;
+    line-height: 4.938rem;
+    color: var(--text-white);
+    padding: 1.063rem 0;
+}
+
+#home .home_text p{
+    font-size: 1rem ;
+color:var(--text-white);
+padding: 1.063rem 0;
+}
+
+#home .home-download-btn{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+}
+
+#home .home-download-btn .btn{
+    padding: 1.5rem 3rem;
+    margin-left:1.5rem;
+    color: var(--text-white);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#home .home-download-btn .btn:first-child{
+    margin-left: 0;
+}
+
+#home .home-download-btn .btn:hover{
+    transform:  translateY(-0.313rem);
+    -webkit-transition: all .5s ease-out;
+    -moz-transition: all .5s ease-out;
+    -ms-transition: all .5s ease-out;
+    -o-transition: all .5s ease-out;
+    transition: all .5s ease-out;
+}
+
+#home .home-download-btn span{
+    font-size:1.688rem;
+    margin-right: 0.625rem;
+}
+
+.home-image{
+    text-align: right;
+    transform: rotate(-1deg);
+}
+
+.home-image img{
+    animation: float 3s linear infinite;
+}
+
+@keyframes float {
+    0%, 100%{
+        transform: translateY(0rem);
+    }
+    50%{
+        transform: translateY(-3.5rem);
+    }
 }
