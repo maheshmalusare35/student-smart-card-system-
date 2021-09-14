@@ -45,7 +45,8 @@
         max-width: 60%;
     }
 
-    .navbar-toggler{       
+    .navbar-toggler{  
+        color: var(--text-black);     
         padding-right:0;
     }
 
