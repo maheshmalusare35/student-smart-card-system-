@@ -198,8 +198,34 @@ section {
   color: rgb(0, 0, 0);
 }
 
+/*=============================
+      HOME STYLING 
+ ==============================*/
+
+ .home-image{
+  text-align: right;
+  transform: rotate(-1deg);
+}
+
+.home-image img{
+  animation: float 3s linear infinite;
+}
+
+@keyframes float {
+  0%, 100%{
+      transform: translateY(0rem);
+  }
+  50%{
+      transform: translateY(-1.5rem);
+  }
+}
+
+
+
+
+
 /* login form part*/
-#second {
+#second{
   display: none;
 }
 
@@ -222,6 +248,21 @@ section {
   .max-width {
     padding: 0 50px;
   }
+
+
+  #home .row{
+    flex-direction: column-reverse;
+        }
+
+              
+        @keyframes float {
+          0%, 100%{
+              transform: translateY(0rem);
+          }
+          25%{
+              transform: translateY(-1.5rem);
+          }
+        }
 }
 
 /* Extra large devices (large laptops and desktops, 1200px and up) */

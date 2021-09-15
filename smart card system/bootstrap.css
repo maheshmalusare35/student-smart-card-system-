@@ -301,3 +301,101 @@ padding: 1.063rem 0;
         transform: translateY(-3.5rem);
     }
 }
+
+
+
+
+/*=============================
+      RESPONSIVE STYLING 
+ ==============================*/
+
+ @media(max-width:1030px){
+
+}
+
+@media (max-width:991px) {
+
+    h1,h2{
+        font-size: 2.5rem;
+    }
+    .ipad_px_30{
+        padding: 0 1.875rem;
+    }
+
+
+    /* header css */
+    .navbar{
+        padding-top: 0.625rem ;
+        padding-bottom: 0.75rem;
+    }
+
+    .navbar-brand{
+        width: 50%;
+    }
+
+    .navbar-brand img{
+        max-width: 60%;
+    }
+
+    .navbar-toggler{             
+        padding-right:0;
+    }
+
+    .navbar-toggler:focus{
+        box-shadow: none;
+    }
+
+    .navbar-toggler-icon{
+        color:var(--text-white);
+        width: 1em;
+        height: 1em;
+    }
+
+    .navbar-sticky-on .navbar-toggler-icon{
+        color: var(--text-black);
+    }
+
+    .navbar .navbar-nav{
+        background: var(--bg-white);
+        border-radius: 0.188rem;
+        text-align: center;
+    }
+
+    .navbar .navbar-nav .nav-link{
+        padding:0.625rem 1.5rem;
+        color: var(--text-light-gray);
+    }
+
+    /* Home css */
+    #home{
+        padding-top: 7rem;
+    }
+    #home .row{
+flex-direction: column-reverse;
+    }
+    #home .home-text{
+        text-align: center;
+        margin-bottom: 2rem;
+    }
+    #home .home-download-btn{
+        justify-content: center;
+    }
+    .home-image{
+        text-align: center;
+    }
+
+
+
+    
+}
+
+@media (max-width:767px) {
+    /* common css */
+    .mobile_px_20{
+        padding: 0 1.25rem;
+    }
+
+    .margin_top_up{
+        margin-top: 0rem;
+    }
+}
