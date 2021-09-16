@@ -383,6 +383,9 @@ flex-direction: column-reverse;
     .home-image{
         text-align: center;
     }
+    .home-image img{
+        max-width: 60%;
+    }
 
 
 
