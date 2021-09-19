@@ -14,13 +14,22 @@ section {
   margin: auto;
 }
 
+.navbar .navbar-nav .nav-item a{
+  color: #ffaf00;
+}
+.navbar-toggler:focus {
+  outline: none;
+  box-shadow: none;
+  }
+
+
 
 /* scroll effect */
 .scroll-up-btn{
   position: fixed;
   height: 45px;
   width: 42px;
-  background: linear-gradient(45deg, #ffaf00, #bb02ff);
+  background: linear-gradient(-45deg, #ffaf00, #bb02ff);
   right: 30px;
   bottom: 10px;
   text-align: center;
@@ -277,6 +286,11 @@ background: linear-gradient(180deg, rgba(144,254,222,1) 8%, rgba(190,255,236,1) 
 @media (max-width: 768px) {
   .max-width {
     padding: 0 23px;
+  }
+
+  .navbar .navbar-nav{
+    background-color:whitesmoke;
+    text-align: center;  
   }
 }
 
