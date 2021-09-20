@@ -36,11 +36,11 @@ $(document).ready(function(){
             // $('.navbar').css('background', 'linear-gradient(-45deg, #ffaf00, #bb02ff)'); 
             $('.navbar').css('background', '#336699'); 
             $('.navbar .navbar-toggler-icon').css('color', '#fff'); 
-                              
+            $('.navbar .navbar-nav .nav-item a').css('color', '#fcb10ffa');
         }else{           
             $('.navbar').css('background', ''); 
-            $('.navbar .navbar-toggler-icon').css('color', ''); 
-                             
+            $('.navbar .navbar-toggler-icon').css('color', '');  
+            $('.navbar .navbar-nav .nav-item a').css('color', '');                            
         }
         
         // scroll-up button show/hide script
