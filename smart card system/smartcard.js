@@ -34,9 +34,13 @@ $(document).ready(function(){
 
         if(this.scrollY > 100){            
             // $('.navbar').css('background', 'linear-gradient(-45deg, #ffaf00, #bb02ff)'); 
-            $('.navbar').css('background', '#336699');                     
+            $('.navbar').css('background', '#336699'); 
+            $('.navbar .navbar-toggler-icon').css('color', '#fff'); 
+                              
         }else{           
-            $('.navbar').css('background', '');                    
+            $('.navbar').css('background', ''); 
+            $('.navbar .navbar-toggler-icon').css('color', ''); 
+                             
         }
         
         // scroll-up button show/hide script

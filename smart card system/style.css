@@ -15,7 +15,8 @@ section {
 }
 
 .navbar .navbar-nav .nav-item a{
-  color: #ffaf00;
+  color: #000000;
+  font-weight: 500;
 }
 .navbar-toggler:focus {
   outline: none;
