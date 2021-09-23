@@ -26,17 +26,17 @@ $(function(){
 $(document).ready(function(){
     $(window).scroll(function(){
         // sticky navbar on scroll script
-        // if(this.scrollY > 20){
-        //     $('.navbar').addClass("sticky");
-        // }else{
-        //     $('.navbar').removeClass("sticky");
-        // }
+        if(this.scrollY > 20){
+            $('.navbar').addClass("sticky");          
+        }else{
+            $('.navbar').removeClass("sticky");            
+        }
 
         if(this.scrollY > 100){            
-            // $('.navbar').css('background', 'linear-gradient(-45deg, #ffaf00, #bb02ff)'); 
-            $('.navbar').css('background', '#336699'); 
+            $('.navbar').css('background', 'linear-gradient(45deg, #ffaf00, #bb02ff)'); 
+            // $('.navbar').css('background', '#006dff'); 
             $('.navbar .navbar-toggler-icon').css('color', '#fff'); 
-            $('.navbar .navbar-nav .nav-item a').css('color', '#fcb10ffa');
+            $('.navbar .navbar-nav .nav-item a').css('color', ' #fff');
         }else{           
             $('.navbar').css('background', ''); 
             $('.navbar .navbar-toggler-icon').css('color', '');  
