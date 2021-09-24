@@ -10,12 +10,12 @@ section {
 }
 .max-width {
   max-width: 1300px;
-  padding: 0 80px;
+  padding: 0 50px;
   margin: auto;
 }
 
-.navbar .navbar-nav .nav-item a{
-  color: #000000;
+.nav-link{
+  color: black;
   font-weight: 500;
 }
 
@@ -24,7 +24,13 @@ section {
   box-shadow: none;
   }
 
-
+/* card css */
+.cardclip {
+  width: 30%;
+  height: 40%;
+  background-color: #77cce9;
+  clip-path: inset(20px 20px 50px round 15px 0);
+}
 
 /* scroll effect */
 .scroll-up-btn{
@@ -58,6 +64,7 @@ section {
 #home{
   min-height: 800px;
   height: 100%;
+  width: 100%;
   background: url(../images/grad4.png) no-repeat scroll left center;
   background-size: cover;  
   display: flex;
@@ -72,8 +79,7 @@ section {
   position: fixed;
   top: 0;
   z-index: 1;
-  width: 100%;
- 
+  width: 100%; 
 }
 
 
@@ -286,13 +292,21 @@ section {
 /* Medium devices (landscape tablets, 768px and up) */
 @media (max-width: 768px) {
   .max-width {
-    padding: 0 23px;
+    padding: 0 15px;
   }
- 
+ .navbar .navbar-nav .nav-item a{
+    color: #ffffff;
+    font-weight: 500;
+  }
 
   .navbar .navbar-nav{
     background:linear-gradient(45deg, #ffaf00, #bb02ff);
     text-align: center;  
+  }
+
+  .home_text p{
+    color: white;
+    font-weight: 400;
   }
   
 }
@@ -302,6 +316,9 @@ section {
   .max-width {
     padding: 0 50px;
   }
+
+  
+  
 
   #home .row{
     flex-direction: column-reverse;
@@ -320,5 +337,10 @@ section {
 
 /* Extra large devices (large laptops and desktops, 1200px and up) */
 @media (min-width: 1200px) {
+  
+}
+
+
+@media (max-width:768px) and (min-width:1200px) {
   
 }
