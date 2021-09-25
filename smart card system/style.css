@@ -1,19 +1,34 @@
+/* html css */
 html {
   scroll-behavior: smooth;
 }
+
+/* body css */
 body {
   background-color: #8ee4af;
 }
 
+/* header css */
+.header {
+  position: fixed;
+  top: 0;
+  z-index: 1;
+  width: 100%; 
+}
+
+/* section css */
 section {
   padding: 100px 0;
 }
+
+/* max width css */
 .max-width {
   max-width: 1300px;
   padding: 0 50px;
   margin: auto;
 }
 
+/* nav css */
 .nav-link{
   color: black;
   font-weight: 500;
@@ -24,13 +39,7 @@ section {
   box-shadow: none;
   }
 
-/* card css */
-.cardclip {
-  width: 30%;
-  height: 40%;
-  background-color: #77cce9;
-  clip-path: inset(20px 20px 50px round 15px 0);
-}
+
 
 /* scroll effect */
 .scroll-up-btn{
@@ -61,28 +70,35 @@ section {
   filter: brightness(90%);
 }
 
+/* home css*/
 #home{
-  min-height: 800px;
+  min-height: 750px;
   height: 100%;
   width: 100%;
-  background: url(../images/grad4.png) no-repeat scroll left center;
+  background-image: url(../images/magic1.png);  
   background-size: cover;  
   display: flex;
   align-items: center;
   justify-content: center;
-  overflow: hidden;  
-  z-index: 999;
+  overflow: hidden; 
+}
+
+.home_text h1{
+  font-size: 42px;
+  font-weight: 500;
+}
+
+.home_text p{
+  color: white;
+  font-weight: 500;
 }
 
 
-.header {
-  position: fixed;
-  top: 0;
-  z-index: 1;
-  width: 100%; 
-}
 
 
+/* feature css */
+
+/* card css in feature */
 .main1 {
   width: 100%;
   height: 100%;
@@ -278,12 +294,21 @@ section {
 
 
 /* login form part*/
-#second{
+/* #second{
   display: none;
-}
+} */
 
 /* Extra small devices (phones, 600px and down) */
 @media (max-width: 420px) {
+  .home_text h1{
+    font-size: 35px;
+    font-weight: 500;
+  }
+  
+  .home_text p{
+    color: white;
+    font-weight: 500;
+  }
 }
 /* Small devices (portrait tablets and large phones, 600px and up) */
 @media (min-width: 600px) {
@@ -304,10 +329,7 @@ section {
     text-align: center;  
   }
 
-  .home_text p{
-    color: white;
-    font-weight: 400;
-  }
+
   
 }
 
