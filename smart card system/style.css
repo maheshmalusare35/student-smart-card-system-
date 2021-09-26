@@ -98,6 +98,7 @@ section {
 
 /* feature css */
 
+
 /* card css in feature */
 .main1 {
   width: 100%;
@@ -270,7 +271,6 @@ section {
 /*=============================
       HOME STYLING 
  ==============================*/
-
  .home-image{
   text-align: right;
   transform: rotate(-1deg);
@@ -316,9 +316,15 @@ section {
 
 /* Medium devices (landscape tablets, 768px and up) */
 @media (max-width: 768px) {
+
+  #home .row{
+    flex-direction: column-reverse;
+   }
+
   .max-width {
     padding: 0 15px;
   }
+
  .navbar .navbar-nav .nav-item a{
     color: #ffffff;
     font-weight: 500;
