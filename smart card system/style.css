@@ -372,3 +372,10 @@ section {
 @media (max-width:768px) and (min-width:1200px) {
   
 }
+
+.test {
+  width: 500px;
+  height: 500px;
+  background: linear-gradient(-45deg, #ffaf00, #bb02ff);
+
+}
