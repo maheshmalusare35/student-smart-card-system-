@@ -34,9 +34,9 @@ $(document).ready(function(){
 
         if(this.scrollY > 100){            
             $('.navbar').css('background', 'linear-gradient(45deg, #ffaf00, #bb02ff)'); 
-            // $('.navbar').css('background', '#006dff'); 
+            // $('.navbar').css('background', 'red'); 
             $('.navbar .navbar-toggler-icon').css('color', '#fff'); 
-            $('.navbar .navbar-nav .nav-item a').css('color', ' #fff');
+            $('.navbar .navbar-nav .nav-item a').css('color', '#fff');
         }else{           
             $('.navbar').css('background', ''); 
             $('.navbar .navbar-toggler-icon').css('color', '');  

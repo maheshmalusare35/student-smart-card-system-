@@ -5,7 +5,7 @@ html {
 
 /* body css */
 body {
-  background-color: #8ee4af;
+  background-color: #ffffff;
 }
 
 /* header css */
@@ -24,7 +24,13 @@ section {
 /* max width css */
 .max-width {
   max-width: 1300px;
-  padding: 0 50px;
+  padding:0 50px;
+  margin: auto;
+}
+
+.max-width1{
+  max-width: 1300px;
+  padding:0;
   margin: auto;
 }
 
@@ -340,11 +346,17 @@ section {
 }
 
 /* Large devices (laptops/desktops, 992px and up) */
-@media (max-width: 992px) {
-  .max-width {
-    padding: 0 50px;
+@media (max-width: 992px) 
+{
+  section {
+    padding: 75px 0;
   }
 
+  .max-width {
+    padding: 0 25px;
+  }
+
+  
   
   
 
@@ -373,9 +385,3 @@ section {
   
 }
 
-.test {
-  width: 500px;
-  height: 500px;
-  background: linear-gradient(-45deg, #ffaf00, #bb02ff);
-
-}
