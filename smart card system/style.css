@@ -380,31 +380,34 @@ section {
 
 @media (max-width: 768px)
  {
+     /* navbar css */
+      .navbar .navbar-nav .nav-item a
+      {
+       color: #ffffff;
+       font-weight: 500;
+      }
 
- .navbar .navbar-nav .nav-item a{
-    color: #ffffff;
-    font-weight: 500;
+     .navbar .navbar-nav
+     {
+      background:linear-gradient(45deg, #ffaf00, #bb02ff);
+      text-align: center;  
+     }
+
+   /* max width */
+   .max-width
+    {
+     padding: 0 15px;
+    }
+
+      /* home css */
+      #home .row
+      {
+          flex-direction: column-reverse;
+      }
+
   }
-
-  .navbar .navbar-nav{
-    background:linear-gradient(45deg, #ffaf00, #bb02ff);
-    text-align: center;  
-  }
-
-.max-width {
-    padding: 0 15px;
-  }
-
-
-  #home .row{
-    flex-direction: column-reverse;
-   }
-
 
   
-}
-
-
 
 
 /*=============================
@@ -418,9 +421,7 @@ Large devices (laptops/desktops, 992px and up)
 
   .max-width {
     padding: 0 25px;
-  }
-
-    
+  }    
   
 
   #home .row{
@@ -446,13 +447,3 @@ Extra large devices (large laptops and desktops, 1200px and up)
   
 }
 
-.overlay-text 
-{
-  /* these two are needed - the align self makes the column not stretch the whole height of the image column and the translate moves the column over the image */
-  align-self: flex-start;
-  position: relative;
-  transform: translateX(-20%);
-  margin-left: 2px;  
-  width: 280px;
-  height: 360px;
-}
