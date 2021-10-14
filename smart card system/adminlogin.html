@@ -1,637 +1,873 @@
-<!doctype html>
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
-    <!-- Favicon -->
-    <link rel="icon" href="logo/icons8-bank-cards-48.png">
-
-    <!-- Required meta tags -->
     <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta http-equiv="X-UA-Compatible" content="ie-edge">
+    <meta name="description"
+        content="Responsive sidebar template with sliding effect and dropdown menu based on bootstrap 3">
+    <title>Sidebar template</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
 
-    <!-- Bootstrap CSS -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        @keyframes swing {
+            0% {
+                transform: rotate(0deg);
+            }
 
-    <!-- font awesome icons link -->
-    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
-        integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+            10% {
+                transform: rotate(10deg);
+            }
 
-    <!-- Stylesheet CSS -->
-    <link href="admin.css" rel="stylesheet">
+            30% {
+                transform: rotate(0deg);
+            }
 
-    <!-- JQuery plugin-->
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
-        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+            40% {
+                transform: rotate(-10deg);
+            }
+
+            50% {
+                transform: rotate(0deg);
+            }
+
+            60% {
+                transform: rotate(5deg);
+            }
+
+            70% {
+                transform: rotate(0deg);
+            }
+
+            80% {
+                transform: rotate(-5deg);
+            }
+
+            100% {
+                transform: rotate(0deg);
+            }
+        }
+
+        @keyframes sonar {
+            0% {
+                transform: scale(0.9);
+                opacity: 1;
+            }
+
+            100% {
+                transform: scale(2);
+                opacity: 0;
+            }
+        }
+
+        body {
+            font-size: 0.9rem;
+        }
+
+        .page-wrapper .sidebar-wrapper,
+        .sidebar-wrapper .sidebar-brand>a,
+        .sidebar-wrapper .sidebar-dropdown>a:after,
+        .sidebar-wrapper .sidebar-menu .sidebar-dropdown .sidebar-submenu li a:before,
+        .sidebar-wrapper ul li a i,
+        .page-wrapper .page-content,
+        .sidebar-wrapper .sidebar-search input.search-menu,
+        .sidebar-wrapper .sidebar-search .input-group-text,
+        .sidebar-wrapper .sidebar-menu ul li a,
+        #show-sidebar,
+        #close-sidebar {
+            -webkit-transition: all 0.3s ease;
+            -moz-transition: all 0.3s ease;
+            -ms-transition: all 0.3s ease;
+            -o-transition: all 0.3s ease;
+            transition: all 0.3s ease;
+        }
+
+        /*----------------page-wrapper----------------*/
+
+        .page-wrapper {
+            height: 100vh;
+        }
+
+        .page-wrapper .theme {
+            width: 40px;
+            height: 40px;
+            display: inline-block;
+            border-radius: 4px;
+            margin: 2px;
+        }
+
+        .page-wrapper .theme.chiller-theme {
+            background: #1e2229;
+        }
+
+        /*----------------toggeled sidebar----------------*/
+
+        .page-wrapper.toggled .sidebar-wrapper {
+            left: 0px;
+        }
+
+        @media screen and (min-width: 768px) {
+            .page-wrapper.toggled .page-content {
+                padding-left: 300px;
+            }
+        }
+
+        /*----------------show sidebar button----------------*/
+        #show-sidebar {
+            position: fixed;
+            left: 0;
+            top: 10px;
+            border-radius: 0 4px 4px 0px;
+            width: 35px;
+            transition-delay: 0.3s;
+        }
+
+        .page-wrapper.toggled #show-sidebar {
+            left: -40px;
+        }
+
+        /*----------------sidebar-wrapper----------------*/
+
+        .sidebar-wrapper {
+            width: 260px;
+            height: 100%;
+            max-height: 100%;
+            position: fixed;
+            top: 0;
+            left: -300px;
+            z-index: 999;
+        }
+
+        .sidebar-wrapper ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .sidebar-wrapper a {
+            text-decoration: none;
+        }
+
+        /*----------------sidebar-content----------------*/
+
+        .sidebar-content {
+            max-height: calc(100% - 30px);
+            height: calc(100% - 30px);
+            overflow-y: auto;
+            position: relative;
+        }
+
+        .sidebar-content.desktop {
+            overflow-y: hidden;
+        }
+
+        /*--------------------sidebar-brand----------------------*/
+
+        .sidebar-wrapper .sidebar-brand {
+            padding: 10px 20px;
+            display: flex;
+            align-items: center;
+        }
+
+        .sidebar-wrapper .sidebar-brand>a {
+            text-transform: uppercase;
+            font-weight: bold;
+            flex-grow: 1;
+        }
+
+        .sidebar-wrapper .sidebar-brand #close-sidebar {
+            cursor: pointer;
+            font-size: 20px;
+        }
+
+        /*--------------------sidebar-header----------------------*/
+
+        .sidebar-wrapper .sidebar-header {
+            padding: 20px;
+            overflow: hidden;
+        }
+
+        .sidebar-wrapper .sidebar-header .user-pic {
+            float: left;
+            width: 60px;
+            padding: 2px;
+            border-radius: 12px;
+            margin-right: 15px;
+            overflow: hidden;
+        }
+
+        .sidebar-wrapper .sidebar-header .user-pic img {
+            object-fit: cover;
+            height: 100%;
+            width: 100%;
+        }
+
+        .sidebar-wrapper .sidebar-header .user-info {
+            float: left;
+        }
+
+        .sidebar-wrapper .sidebar-header .user-info>span {
+            display: block;
+        }
+
+        .sidebar-wrapper .sidebar-header .user-info .user-role {
+            font-size: 12px;
+        }
+
+        .sidebar-wrapper .sidebar-header .user-info .user-status {
+            font-size: 11px;
+            margin-top: 4px;
+        }
+
+        .sidebar-wrapper .sidebar-header .user-info .user-status i {
+            font-size: 8px;
+            margin-right: 4px;
+            color: #5cb85c;
+        }
+
+        /*-----------------------sidebar-search------------------------*/
+
+        .sidebar-wrapper .sidebar-search>div {
+            padding: 10px 20px;
+        }
+
+        /*----------------------sidebar-menu-------------------------*/
+
+        .sidebar-wrapper .sidebar-menu {
+            padding-bottom: 10px;
+        }
+
+        .sidebar-wrapper .sidebar-menu .header-menu span {
+            font-weight: bold;
+            font-size: 14px;
+            padding: 15px 20px 5px 20px;
+            display: inline-block;
+        }
+
+        .sidebar-wrapper .sidebar-menu ul li a {
+            display: inline-block;
+            width: 100%;
+            text-decoration: none;
+            position: relative;
+            padding: 8px 30px 8px 20px;
+        }
+
+        .sidebar-wrapper .sidebar-menu ul li a i {
+            margin-right: 10px;
+            font-size: 12px;
+            width: 30px;
+            height: 30px;
+            line-height: 30px;
+            text-align: center;
+            border-radius: 4px;
+        }
+
+        .sidebar-wrapper .sidebar-menu ul li a:hover>i::before {
+            display: inline-block;
+            animation: swing ease-in-out 0.5s 1 alternate;
+        }
+
+        .sidebar-wrapper .sidebar-menu .sidebar-dropdown>a:after {
+            font-family: "Font Awesome 5 Free";
+            font-weight: 900;
+            content: "\f105";
+            font-style: normal;
+            display: inline-block;
+            font-style: normal;
+            font-variant: normal;
+            text-rendering: auto;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            text-align: center;
+            background: 0 0;
+            position: absolute;
+            right: 15px;
+            top: 14px;
+        }
+
+        .sidebar-wrapper .sidebar-menu .sidebar-dropdown .sidebar-submenu ul {
+            padding: 5px 0;
+        }
+
+        .sidebar-wrapper .sidebar-menu .sidebar-dropdown .sidebar-submenu li {
+            padding-left: 25px;
+            font-size: 13px;
+        }
+
+        .sidebar-wrapper .sidebar-menu .sidebar-dropdown .sidebar-submenu li a:before {
+            content: "\f111";
+            font-family: "Font Awesome 5 Free";
+            font-weight: 400;
+            font-style: normal;
+            display: inline-block;
+            text-align: center;
+            text-decoration: none;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            margin-right: 10px;
+            font-size: 8px;
+        }
+
+        .sidebar-wrapper .sidebar-menu ul li a span.label,
+        .sidebar-wrapper .sidebar-menu ul li a span.badge {
+            float: right;
+            margin-top: 8px;
+            margin-left: 5px;
+        }
+
+        .sidebar-wrapper .sidebar-menu .sidebar-dropdown .sidebar-submenu li a .badge,
+        .sidebar-wrapper .sidebar-menu .sidebar-dropdown .sidebar-submenu li a .label {
+            float: right;
+            margin-top: 0px;
+        }
+
+        .sidebar-wrapper .sidebar-menu .sidebar-submenu {
+            display: none;
+        }
+
+        .sidebar-wrapper .sidebar-menu .sidebar-dropdown.active>a:after {
+            transform: rotate(90deg);
+            right: 17px;
+        }
+
+        /*--------------------------side-footer------------------------------*/
+
+        .sidebar-footer {
+            position: absolute;
+            width: 100%;
+            bottom: 0;
+            display: flex;
+        }
+
+        .sidebar-footer>a {
+            flex-grow: 1;
+            text-align: center;
+            height: 30px;
+            line-height: 30px;
+            position: relative;
+        }
+
+        .sidebar-footer>a .notification {
+            position: absolute;
+            top: 0;
+        }
+
+        .badge-sonar {
+            display: inline-block;
+            background: #980303;
+            border-radius: 50%;
+            height: 8px;
+            width: 8px;
+            position: absolute;
+            top: 0;
+        }
+
+        .badge-sonar:after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            border: 2px solid #980303;
+            opacity: 0;
+            border-radius: 50%;
+            width: 100%;
+            height: 100%;
+            animation: sonar 1.5s infinite;
+        }
+
+        /*--------------------------page-content-----------------------------*/
+
+        .page-wrapper .page-content {
+            display: inline-block;
+            width: 100%;
+            padding-left: 0px;
+            padding-top: 20px;
+        }
+
+        .page-wrapper .page-content>div {
+            padding: 20px 40px;
+        }
+
+        .page-wrapper .page-content {
+            overflow-x: hidden;
+        }
+
+        /*------scroll bar---------------------*/
+
+        ::-webkit-scrollbar {
+            width: 5px;
+            height: 7px;
+        }
+
+        ::-webkit-scrollbar-button {
+            width: 0px;
+            height: 0px;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #525965;
+            border: 0px none #ffffff;
+            border-radius: 0px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: #525965;
+        }
+
+        ::-webkit-scrollbar-thumb:active {
+            background: #525965;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: transparent;
+            border: 0px none #ffffff;
+            border-radius: 50px;
+        }
+
+        ::-webkit-scrollbar-track:hover {
+            background: transparent;
+        }
+
+        ::-webkit-scrollbar-track:active {
+            background: transparent;
+        }
+
+        ::-webkit-scrollbar-corner {
+            background: transparent;
+        }
 
 
-    <!--google material icon-->
-    <link href="https://fonts.googleapis.com/css2?family=Material+Icons" rel="stylesheet">
+        /*-----------------------------chiller-theme-------------------------------------------------*/
 
-    <title>Admin login smart card system</title>
+        .chiller-theme .sidebar-wrapper {
+            background: #31353D;
+        }
 
+        .chiller-theme .sidebar-wrapper .sidebar-header,
+        .chiller-theme .sidebar-wrapper .sidebar-search,
+        .chiller-theme .sidebar-wrapper .sidebar-menu {
+            border-top: 1px solid #3a3f48;
+        }
+
+        .chiller-theme .sidebar-wrapper .sidebar-search input.search-menu,
+        .chiller-theme .sidebar-wrapper .sidebar-search .input-group-text {
+            border-color: transparent;
+            box-shadow: none;
+        }
+
+        .chiller-theme .sidebar-wrapper .sidebar-header .user-info .user-role,
+        .chiller-theme .sidebar-wrapper .sidebar-header .user-info .user-status,
+        .chiller-theme .sidebar-wrapper .sidebar-search input.search-menu,
+        .chiller-theme .sidebar-wrapper .sidebar-search .input-group-text,
+        .chiller-theme .sidebar-wrapper .sidebar-brand>a,
+        .chiller-theme .sidebar-wrapper .sidebar-menu ul li a,
+        .chiller-theme .sidebar-footer>a {
+            color: #818896;
+        }
+
+        .chiller-theme .sidebar-wrapper .sidebar-menu ul li:hover>a,
+        .chiller-theme .sidebar-wrapper .sidebar-menu .sidebar-dropdown.active>a,
+        .chiller-theme .sidebar-wrapper .sidebar-header .user-info,
+        .chiller-theme .sidebar-wrapper .sidebar-brand>a:hover,
+        .chiller-theme .sidebar-footer>a:hover i {
+            color: #b8bfce;
+        }
+
+        .page-wrapper.chiller-theme.toggled #close-sidebar {
+            color: #bdbdbd;
+        }
+
+        .page-wrapper.chiller-theme.toggled #close-sidebar:hover {
+            color: #ffffff;
+        }
+
+        .chiller-theme .sidebar-wrapper ul li:hover a i,
+        .chiller-theme .sidebar-wrapper .sidebar-dropdown .sidebar-submenu li a:hover:before,
+        .chiller-theme .sidebar-wrapper .sidebar-search input.search-menu:focus+span,
+        .chiller-theme .sidebar-wrapper .sidebar-menu .sidebar-dropdown.active a i {
+            color: #16c7ff;
+            text-shadow: 0px 0px 10px rgba(22, 199, 255, 0.5);
+        }
+
+        .chiller-theme .sidebar-wrapper .sidebar-menu ul li a i,
+        .chiller-theme .sidebar-wrapper .sidebar-menu .sidebar-dropdown div,
+        .chiller-theme .sidebar-wrapper .sidebar-search input.search-menu,
+        .chiller-theme .sidebar-wrapper .sidebar-search .input-group-text {
+            background: #3a3f48;
+        }
+
+        .chiller-theme .sidebar-wrapper .sidebar-menu .header-menu span {
+            color: #6c7b88;
+        }
+
+        .chiller-theme .sidebar-footer {
+            background: #3a3f48;
+            box-shadow: 0px -1px 5px #282c33;
+            border-top: 1px solid #464a52;
+        }
+
+        .chiller-theme .sidebar-footer>a:first-child {
+            border-left: none;
+        }
+
+        .chiller-theme .sidebar-footer>a:last-child {
+            border-right: none;
+        }
+    </style>
 </head>
 
 <body>
-    <!-- <div id="wrapper">
-        <div class="overlay">
-
-        </div> -->
-    <!-- sidebar -->
-    <!-- <nav class="fixed-top align-top" id="sidebar-wrapper" role="navigation">
-        <div class="simplebar-content p-0">
-            <a class="sidebar-brand" href="">
-                <span class="align-middle">Sys</span>
-            </a>
-            <ul class="navbar-nav align-self-stretch">
-                <li class="sidebar-header"> Pages</li>
-                <li><a class="nav-link text-left active" role="button"><i class="flaticon-bar-chart-1"></i>Dashboard</a>
-                </li>
-                <li class="has-sub"><a class="nav-link collapsed text-left" href="#collapseExample2" role="button"
-                        data-toggle="collapse"><i class="flaticon-user"></i>Profile</a>
-                    <div class="collapse menu mega-dropdown" id="collapseExample2">
-                        <div class="dropdown" aria-labelledby="navbarDropdown">
-                            <div class="container-fluid">
-                                <div class="row">
-                                    <div class="col-lg-12 px-2">
-                                        <div class="submenu-box">
-                                            <ul class="list-unstyled m-0">
-                                                <li><a href="">Parents</a></li>
-                                                <li><a href="">Teacher</a></li>
-                                                <li><a href="">office</a></li>
-                                                <li><a href="">student</a></li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
+    <div class="page-wrapper chiller-theme toggled">
+        <a id="show-sidebar" class="btn btn-sm btn-dark" href="#">
+            <i class="fas fa-bars"></i>
+        </a>
+        <nav id="sidebar" class="sidebar-wrapper">
+            <div class="sidebar-content">
+                <div class="sidebar-brand">
+                    <a href="#">pro sidebar</a>
+                    <div id="close-sidebar">
+                        <i class="fas fa-times"></i>
+                    </div>
+                </div>
+                <div class="sidebar-header">
+                    <div class="user-pic">
+                        <img class="img-responsive img-rounded"
+                            src="https://raw.githubusercontent.com/azouaoui-med/pro-sidebar-template/gh-pages/src/img/user.jpg"
+                            alt="User picture" style="width: 50px; height: 50px;">
+                    </div>
+                    <div class="user-info">
+                        <span class="user-name">Jhon
+                            <strong>Smith</strong>
+                        </span>
+                        <span class="user-role">Administrator</span>
+                        <span class="user-status">
+                            <i class="fa fa-circle"></i>
+                            <span>Online</span>
+                        </span>
+                    </div>
+                </div>
+                <!-- sidebar-header  -->
+                <div class="sidebar-search">
+                    <div>
+                        <div class="input-group">
+                            <input type="text" class="form-control search-menu" placeholder="Search...">
+                            <div class="input-group-append">
+                                <span class="input-group-text">
+                                    <i class="fa fa-search" aria-hidden="true"></i>
+                                </span>
                             </div>
                         </div>
                     </div>
-                </li>
-                <li><a href="" class="nav-link text-left" role="button"><i class="flaticon-bar-chart-1"></i></a>
-                </li>
-
-            </ul>
-        </div>
-
-    </nav>
-    </div> -->
-
-
-    <div class="wrapper">
-
-
-        <div class="body-overlay"></div>
-
-
-        <!-- Sidebar  -->
-        <nav id="sidebar">
-            <div class="sidebar-header">
-                <h3><img src="img/logo.png" class="img-fluid" /><span>Vishweb design</span></h3>
-            </div>
-            <ul class="list-unstyled components">
-                <li class="active">
-                    <a href="#" class="dashboard"><i class="material-icons">dashboard</i><span>Dashboard</span></a>
-                </li>
-
-                <div class="small-screen navbar-display">
-                    <li class="dropdown d-lg-none d-md-block d-xl-none d-sm-block">
-                        <a href="#homeSubmenu0" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
-                            <i class="material-icons">notifications</i><span> 4 notification</span></a>
-                        <ul class="collapse list-unstyled menu" id="homeSubmenu0">
-                            <li>
-                                <a href="#">You have 5 new messages</a>
-                            </li>
-                            <li>
-                                <a href="#">You're now friend with Mike</a>
-                            </li>
-                            <li>
-                                <a href="#">Wish Mary on her birthday!</a>
-                            </li>
-                            <li>
-                                <a href="#">5 warnings in Server Console</a>
-                            </li>
-                        </ul>
-                    </li>
-
-                    <li class="d-lg-none d-md-block d-xl-none d-sm-block">
-                        <a href="#"><i class="material-icons">apps</i><span>apps</span></a>
-                    </li>
-
-                    <li class="d-lg-none d-md-block d-xl-none d-sm-block">
-                        <a href="#"><i class="material-icons">person</i><span>user</span></a>
-                    </li>
-
-                    <li class="d-lg-none d-md-block d-xl-none d-sm-block">
-                        <a href="#"><i class="material-icons">settings</i><span>setting</span></a>
-                    </li>
                 </div>
+                <!-- sidebar-search  -->
+                <div class="sidebar-menu">
+                    <ul>
+                        <li class="header-menu">
+                            <span>General</span>
+                        </li>
+                        <li class="sidebar-dropdown">
+                            <a href="#">
+                                <i class="fa fa-tachometer-alt"></i>
+                                <span>Dashboard</span>
+                                <span class="badge badge-pill badge-warning">New</span>
+                            </a>
+                            <div class="sidebar-submenu">
+                                <ul>
+                                    <li>
+                                        <a href="#">Dashboard 1
+                                            <span class="badge badge-pill badge-success">Pro</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Dashboard 2</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Dashboard 3</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="sidebar-dropdown">
+                            <a href="#">
+                                <i class="fa fa-shopping-cart"></i>
+                                <span>E-commerce</span>
+                                <span class="badge badge-pill badge-danger">3</span>
+                            </a>
+                            <div class="sidebar-submenu">
+                                <ul>
+                                    <li>
+                                        <a href="#">Products
 
-
-                <li class="dropdown">
-                    <a href="#homeSubmenu1" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
-                        <i class="material-icons">aspect_ratio</i><span>Layouts</span></a>
-                    <ul class="collapse list-unstyled menu" id="homeSubmenu1">
-                        <li>
-                            <a href="#">Home 1</a>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Orders</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Credit cart</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="sidebar-dropdown">
+                            <a href="#">
+                                <i class="far fa-gem"></i>
+                                <span>Components</span>
+                            </a>
+                            <div class="sidebar-submenu">
+                                <ul>
+                                    <li>
+                                        <a href="#">General</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Panels</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Tables</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Icons</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Forms</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="sidebar-dropdown">
+                            <a href="#">
+                                <i class="fa fa-chart-line"></i>
+                                <span>Charts</span>
+                            </a>
+                            <div class="sidebar-submenu">
+                                <ul>
+                                    <li>
+                                        <a href="#">Pie chart</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Line chart</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Bar chart</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Histogram</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="sidebar-dropdown">
+                            <a href="#">
+                                <i class="fa fa-globe"></i>
+                                <span>Maps</span>
+                            </a>
+                            <div class="sidebar-submenu">
+                                <ul>
+                                    <li>
+                                        <a href="#">Google maps</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Open street map</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="header-menu">
+                            <span>Extra</span>
                         </li>
                         <li>
-                            <a href="#">Home 2</a>
+                            <a href="#">
+                                <i class="fa fa-book"></i>
+                                <span>Documentation</span>
+                                <span class="badge badge-pill badge-primary">Beta</span>
+                            </a>
                         </li>
                         <li>
-                            <a href="#">Home 3</a>
+                            <a href="#">
+                                <i class="fa fa-calendar"></i>
+                                <span>Calendar</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <i class="fa fa-folder"></i>
+                                <span>Examples</span>
+                            </a>
                         </li>
                     </ul>
-                </li>
-
-                <li class="dropdown">
-                    <a href="#pageSubmenu2" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
-                        <i class="material-icons">apps</i><span>widgets</span></a>
-                    <ul class="collapse list-unstyled menu" id="pageSubmenu2">
-                        <li>
-                            <a href="#">Page 1</a>
-                        </li>
-                        <li>
-                            <a href="#">Page 2</a>
-                        </li>
-                        <li>
-                            <a href="#">Page 3</a>
-                        </li>
-                    </ul>
-                </li>
-
-                <li class="dropdown">
-                    <a href="#pageSubmenu3" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
-                        <i class="material-icons">equalizer</i>
-
-
-                        <span>chart</span></a>
-                    <ul class="collapse list-unstyled menu" id="pageSubmenu3">
-                        <li>
-                            <a href="#">Page 1</a>
-                        </li>
-                        <li>
-                            <a href="#">Page 2</a>
-                        </li>
-                        <li>
-                            <a href="#">Page 3</a>
-                        </li>
-                    </ul>
-                </li>
-                <li class="dropdown">
-                    <a href="#pageSubmenu4" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
-                        <i class="material-icons">extension</i><span>ui element</span></a>
-                    <ul class="collapse list-unstyled menu" id="pageSubmenu4">
-                        <li>
-                            <a href="#">Page 1</a>
-                        </li>
-                        <li>
-                            <a href="#">Page 2</a>
-                        </li>
-                        <li>
-                            <a href="#">Page 3</a>
-                        </li>
-                    </ul>
-                </li>
-
-                <li class="dropdown">
-                    <a href="#pageSubmenu5" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
-                        <i class="material-icons">border_color</i><span>forms</span></a>
-                    <ul class="collapse list-unstyled menu" id="pageSubmenu5">
-                        <li>
-                            <a href="#">Page 1</a>
-                        </li>
-                        <li>
-                            <a href="#">Page 2</a>
-                        </li>
-                        <li>
-                            <a href="#">Page 3</a>
-                        </li>
-                    </ul>
-                </li>
-
-
-
-                <li class="dropdown">
-                    <a href="#pageSubmenu6" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
-                        <i class="material-icons">grid_on</i><span>tables</span></a>
-                    <ul class="collapse list-unstyled menu" id="pageSubmenu6">
-                        <li>
-                            <a href="#">Page 1</a>
-                        </li>
-                        <li>
-                            <a href="#">Page 2</a>
-                        </li>
-                        <li>
-                            <a href="#">Page 3</a>
-                        </li>
-                    </ul>
-                </li>
-
-
-                <li class="dropdown">
-                    <a href="#pageSubmenu7" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
-                        <i class="material-icons">content_copy</i><span>Pages</span></a>
-                    <ul class="collapse list-unstyled menu" id="pageSubmenu7">
-                        <li>
-                            <a href="#">Page 1</a>
-                        </li>
-                        <li>
-                            <a href="#">Page 2</a>
-                        </li>
-                        <li>
-                            <a href="#">Page 3</a>
-                        </li>
-                    </ul>
-                </li>
-
-                <li class="">
-                    <a href="#"><i class="material-icons">date_range</i><span>copy</span></a>
-                </li>
-
-                <li class="">
-                    <a href="#"><i class="material-icons">library_books</i><span>Calender</span></a>
-                </li>
-
-
-            </ul>
-
-
+                </div>
+                <!-- sidebar-menu  -->
+            </div>
+            <!-- sidebar-content  -->
+            <div class="sidebar-footer">
+                <a href="#">
+                    <i class="fa fa-bell"></i>
+                    <span class="badge badge-pill badge-warning notification">3</span>
+                </a>
+                <a href="#">
+                    <i class="fa fa-envelope"></i>
+                    <span class="badge badge-pill badge-success notification">7</span>
+                </a>
+                <a href="#">
+                    <i class="fa fa-cog"></i>
+                    <span class="badge-sonar"></span>
+                </a>
+                <a href="#">
+                    <i class="fa fa-power-off"></i>
+                </a>
+            </div>
         </nav>
-
-
-
-        <!-- Page Content  -->
-        <div id="content">
-
-            <div class="top-navbar">
-                <nav class="navbar navbar-expand-lg">
-                    <div class="container-fluid">
-
-                        <button type="button" id="sidebarCollapse" class="d-xl-block d-lg-block d-md-mone d-none">
-                            <span class="material-icons">arrow_back_ios</span>
-                        </button>
-
-                        <a class="navbar-brand" href="#"> Dashboard </a>
-
-                        <button class="d-inline-block d-lg-none ml-auto more-button" type="button"
-                            data-toggle="collapse" data-target="#navbarSupportedContent"
-                            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                            <span class="material-icons">more_vert</span>
-                        </button>
-
-                        <div class="collapse navbar-collapse d-lg-block d-xl-block d-sm-none d-md-none d-none"
-                            id="navbarSupportedContent">
-                            <ul class="nav navbar-nav ml-auto">
-                                <li class="dropdown nav-item active">
-                                    <a href="#" class="nav-link" data-toggle="dropdown">
-                                        <span class="material-icons">notifications</span>
-                                        <span class="notification">4</span>
-                                    </a>
-                                    <ul class="dropdown-menu">
-                                        <li>
-                                            <a href="#">You have 5 new messages</a>
-                                        </li>
-                                        <li>
-                                            <a href="#">You're now friend with Mike</a>
-                                        </li>
-                                        <li>
-                                            <a href="#">Wish Mary on her birthday!</a>
-                                        </li>
-                                        <li>
-                                            <a href="#">5 warnings in Server Console</a>
-                                        </li>
-
-                                    </ul>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="#">
-                                        <span class="material-icons">apps</span>
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="#">
-                                        <span class="material-icons">person</span>
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="#">
-                                        <span class="material-icons">settings</span>
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </nav>
-            </div>
-
-
-            <div class="main-content">
-
+        <!-- sidebar-wrapper  -->
+        <main class="page-content">
+            <div class="container-fluid">
+                <h2>Pro Sidebar</h2>
+                <hr>
                 <div class="row">
-                    <div class="col-lg-3 col-md-6 col-sm-6">
-                        <div class="card card-stats">
-                            <div class="card-header">
-                                <div class="icon icon-warning">
-                                    <span class="material-icons">equalizer</span>
-                                </div>
-                            </div>
-                            <div class="card-content">
-                                <p class="category"><strong>Visits</strong></p>
-                                <h3 class="card-title">70,340</h3>
-                            </div>
-                            <div class="card-footer">
-                                <div class="stats">
-                                    <i class="material-icons text-info">info</i>
-                                    <a href="#pablo">See detailed report</a>
-                                </div>
+                    <div class="form-group col-md-12">
+                        <p>This is a responsive sidebar template with dropdown menu based on bootstrap 4 framework.</p>
+                        <p> You can find the complete code on <a
+                                href="https://github.com/azouaoui-med/pro-sidebar-template" target="_blank">
+                                Github</a>, it contains more themes and background image option</p>
+                    </div>
+                    <div class="form-group col-md-12">
+                        <iframe
+                            src="https://ghbtns.com/github-btn.html?user=azouaoui-med&repo=pro-sidebar-template&type=star&count=true&size=small"
+                            frameborder="0" scrolling="0" width="90px" height="30px"></iframe>
+                        <iframe
+                            src="https://ghbtns.com/github-btn.html?user=azouaoui-med&repo=pro-sidebar-template&type=fork&count=true&size=small"
+                            frameborder="0" scrolling="0" width="90px" height="30px"></iframe>
+                    </div>
+                    <div class="form-group col-md-12">
+                        <div class="alert alert-success" role="alert">
+                            <h4 class="alert-heading">New !</h4>
+                            <p>New react pro sidebar library is now available on <a
+                                    href="https://www.npmjs.com/package/react-pro-sidebar" target="_blank">npm</a> <a
+                                    href="https://github.com/azouaoui-med/react-pro-sidebar" target="_blank">
+                                    <img alt="GitHub stars"
+                                        src="https://img.shields.io/github/stars/azouaoui-med/react-pro-sidebar?style=social" />
+                                </a></p>
+                            <a href="https://github.com/azouaoui-med/react-pro-sidebar" target="_blank"
+                                class="btn btn-sm btn-primary mr-2">
+                                Github</a>
+                            <a href="https://azouaoui-med.github.io/react-pro-sidebar" target="_blank"
+                                class="btn btn-sm btn-success">
+                                Demo</a>
+
+                        </div>
+
+                    </div>
+                </div>
+                <h5>More templates</h5>
+                <hr>
+                <div class="row">
+                    <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4">
+                        <div class="card rounded-0 p-0 shadow-sm">
+                            <img src="https://user-images.githubusercontent.com/25878302/58369568-a49b2480-7efc-11e9-9ca9-2be44afacda1.png"
+                                class="card-img-top rounded-0" alt="Angular pro sidebar">
+                            <div class="card-body text-center">
+                                <h6 class="card-title">Angular Pro Sidebar</h6>
+                                <a href="https://github.com/azouaoui-med/angular-pro-sidebar" target="_blank"
+                                    class="btn btn-primary btn-sm">Github</a>
+                                <a href="https://azouaoui-med.github.io/angular-pro-sidebar/demo/" target="_blank"
+                                    class="btn btn-success btn-sm">Preview</a>
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-3 col-md-6 col-sm-6">
-                        <div class="card card-stats">
-                            <div class="card-header">
-                                <div class="icon icon-rose">
-                                    <span class="material-icons">shopping_cart</span>
-
-                                </div>
-                            </div>
-                            <div class="card-content">
-                                <p class="category"><strong>Orders</strong></p>
-                                <h3 class="card-title">102</h3>
-                            </div>
-                            <div class="card-footer">
-                                <div class="stats">
-                                    <i class="material-icons">local_offer</i> Product-wise sales
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6 col-sm-6">
-                        <div class="card card-stats">
-                            <div class="card-header">
-                                <div class="icon icon-success">
-                                    <span class="material-icons">
-                                        attach_money
-                                    </span>
-
-                                </div>
-                            </div>
-                            <div class="card-content">
-                                <p class="category"><strong>Revenue</strong></p>
-                                <h3 class="card-title">$23,100</h3>
-                            </div>
-                            <div class="card-footer">
-                                <div class="stats">
-                                    <i class="material-icons">date_range</i> Weekly sales
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6 col-sm-6">
-                        <div class="card card-stats">
-                            <div class="card-header">
-                                <div class="icon icon-info">
-
-                                    <span class="material-icons">
-                                        follow_the_signs
-                                    </span>
-                                </div>
-                            </div>
-                            <div class="card-content">
-                                <p class="category"><strong>Followers</strong></p>
-                                <h3 class="card-title">+245</h3>
-                            </div>
-                            <div class="card-footer">
-                                <div class="stats">
-                                    <i class="material-icons">update</i> Just Updated
-                                </div>
+                    <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4">
+                        <div class="card rounded-0 p-0 shadow-sm">
+                            <img src="https://user-images.githubusercontent.com/25878302/58369258-33f20900-7ef8-11e9-8ff3-b277cb7ed7b4.PNG"
+                                class="card-img-top rounded-0" alt="Angular pro sidebar">
+                            <div class="card-body text-center">
+                                <h6 class="card-title">Angular Dashboard</h6>
+                                <a href="https://github.com/azouaoui-med/lightning-admin-angular" target="_blank"
+                                    class="btn btn-primary btn-sm">Github</a>
+                                <a href="https://azouaoui-med.github.io/lightning-admin-angular/demo/" target="_blank"
+                                    class="btn btn-success btn-sm">Preview</a>
                             </div>
                         </div>
                     </div>
                 </div>
+                <hr>
 
-
-                <div class="row ">
-                    <div class="col-lg-7 col-md-12">
-                        <div class="card" style="min-height: 485px">
-                            <div class="card-header card-header-text">
-                                <h4 class="card-title">Employees Stats</h4>
-                                <p class="category">New employees on 15th December, 2016</p>
-                            </div>
-                            <div class="card-content table-responsive">
-                                <table class="table table-hover">
-                                    <thead class="text-primary">
-                                        <tr>
-                                            <th>ID</th>
-                                            <th>Name</th>
-                                            <th>Salary</th>
-                                            <th>Country</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                            <td>1</td>
-                                            <td>Bob Williams</td>
-                                            <td>$23,566</td>
-                                            <td>USA</td>
-                                        </tr>
-                                        <tr>
-                                            <td>2</td>
-                                            <td>Mike Tyson</td>
-                                            <td>$10,200</td>
-                                            <td>Canada</td>
-                                        </tr>
-                                        <tr>
-                                            <td>3</td>
-                                            <td>Tim Sebastian</td>
-                                            <td>$32,190</td>
-                                            <td>Netherlands</td>
-                                        </tr>
-                                        <tr>
-                                            <td>4</td>
-                                            <td>Philip Morris</td>
-                                            <td>$31,123</td>
-                                            <td>Korea, South</td>
-                                        </tr>
-                                        <tr>
-                                            <td>5</td>
-                                            <td>Minerva Hooper</td>
-                                            <td>$23,789</td>
-                                            <td>South Africa</td>
-                                        </tr>
-                                        <tr>
-                                            <td>6</td>
-                                            <td>Hulk Hogan</td>
-                                            <td>$43,120</td>
-                                            <td>Netherlands</td>
-                                        </tr>
-                                        <tr>
-                                            <td>7</td>
-                                            <td>Angelina Jolie </td>
-                                            <td>$12,140</td>
-                                            <td>Australia</td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
+                <footer class="text-center">
+                    <div class="mb-2">
+                        <small>
+                            © 2020 made with <i class="fa fa-heart" style="color:red"></i> by - <a target="_blank"
+                                rel="noopener noreferrer" href="https://azouaoui.netlify.com">
+                                Mohamed Azouaoui
+                            </a>
+                        </small>
                     </div>
-
-                    <div class="col-lg-5 col-md-12">
-                        <div class="card" style="min-height: 485px">
-                            <div class="card-header card-header-text">
-                                <h4 class="card-title">Activities</h4>
-                            </div>
-                            <div class="card-content">
-                                <div class="streamline">
-                                    <div class="sl-item sl-primary">
-                                        <div class="sl-content">
-                                            <small class="text-muted">5 mins ago</small>
-                                            <p>Williams has just joined Project X</p>
-                                        </div>
-                                    </div>
-                                    <div class="sl-item sl-danger">
-                                        <div class="sl-content">
-                                            <small class="text-muted">25 mins ago</small>
-                                            <p>Jane has sent a request for access to the project folder</p>
-                                        </div>
-                                    </div>
-                                    <div class="sl-item sl-success">
-                                        <div class="sl-content">
-                                            <small class="text-muted">40 mins ago</small>
-                                            <p>Kate added you to her team</p>
-                                        </div>
-                                    </div>
-                                    <div class="sl-item">
-                                        <div class="sl-content">
-                                            <small class="text-muted">45 minutes ago</small>
-                                            <p>John has finished his task</p>
-                                        </div>
-                                    </div>
-                                    <div class="sl-item sl-warning">
-                                        <div class="sl-content">
-                                            <small class="text-muted">55 mins ago</small>
-                                            <p>Jim shared a folder with you</p>
-                                        </div>
-                                    </div>
-                                    <div class="sl-item">
-                                        <div class="sl-content">
-                                            <small class="text-muted">60 minutes ago</small>
-                                            <p>John has finished his task</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                        </div>
-                    </div>
-                </div>
-
-
-
-                <footer class="footer">
-                    <div class="container-fluid">
-                        <div class="row">
-                            <div class="col-md-6">
-                                <nav class="d-flex">
-                                    <ul class="m-0 p-0">
-                                        <li>
-                                            <a href="#">
-                                                Home
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="#">
-                                                Company
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="#">
-                                                Portfolio
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="#">
-                                                Blog
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </nav>
-
-                            </div>
-                            <div class="col-md-6">
-                                <p class="copyright d-flex justify-content-end"> &copy 2021 Design by
-                                    <a href="#">Vishweb Design</a> BootStrap Admin Dashboard
-                                </p>
-                            </div>
-                        </div>
+                    <div>
+                        <a href="https://github.com/azouaoui-med" target="_blank">
+                            <img alt="GitHub followers"
+                                src="https://img.shields.io/github/followers/azouaoui-med?label=github&style=social" />
+                        </a>
+                        <a href="https://twitter.com/azouaoui_med" target="_blank">
+                            <img alt="Twitter Follow"
+                                src="https://img.shields.io/twitter/follow/azouaoui_med?label=twitter&style=social" />
+                        </a>
                     </div>
                 </footer>
-
             </div>
-
-
-
-        </div>
+        </main>
+        <!-- page-content" -->
     </div>
+    <!-- page-wrapper -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
 
 
+    <script>
+        jQuery(function ($) {
 
-
-
-
-
-
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="js/jquery-3.3.1.slim.min.js"></script>
-    <script src="js/popper.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/jquery-3.3.1.min.js"></script>
-
-
-    <script type="text/javascript">
-        $(document).ready(function () {
-            $('#sidebarCollapse').on('click', function () {
-                $('#sidebar').toggleClass('active');
-                $('#content').toggleClass('active');
+            $(".sidebar-dropdown > a").click(function () {
+                $(".sidebar-submenu").slideUp(200);
+                if (
+                    $(this)
+                        .parent()
+                        .hasClass("active")
+                ) {
+                    $(".sidebar-dropdown").removeClass("active");
+                    $(this)
+                        .parent()
+                        .removeClass("active");
+                } else {
+                    $(".sidebar-dropdown").removeClass("active");
+                    $(this)
+                        .next(".sidebar-submenu")
+                        .slideDown(200);
+                    $(this)
+                        .parent()
+                        .addClass("active");
+                }
             });
 
-            $('.more-button,.body-overlay').on('click', function () {
-                $('#sidebar,.body-overlay').toggleClass('show-nav');
+            $("#close-sidebar").click(function () {
+                $(".page-wrapper").removeClass("toggled");
             });
+            $("#show-sidebar").click(function () {
+                $(".page-wrapper").addClass("toggled");
+            });
+
+
+
 
         });
-
-
-
-
-
     </script>
-
-
-
-
-
-
-
-
-
-
-
-
-    <!-- Bootstrap JS -->
-    <!-- <script type="text/javascript" src="js/bootstrap.bundle.min.js"> </script> -->
-
-
-    <!-- javascript -->
-    <!-- <script type="text/javascript" src=""></script> -->
-
-
-
-
-
 </body>
 
 </html>
