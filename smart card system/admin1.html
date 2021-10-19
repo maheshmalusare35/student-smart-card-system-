@@ -29,6 +29,18 @@
         #sidebar-wrapper {
             width: 350px;
         }
+
+        .rotate {
+            -moz-transition: all .5s linear;
+            -webkit-transition: all .5s linear;
+            transition: all .5s linear;
+        }
+
+        .rotate.down {
+            -moz-transform: rotate(90deg);
+            -webkit-transform: rotate(90deg);
+            transform: rotate(90deg);
+        }
     </style>
 
 </head>
@@ -51,7 +63,7 @@
                     <a class="list-group-item list-group-item-action list-group-item-light p-3"
                         data-bs-toggle="collapse" href="#collapseExample1" role="button" aria-expanded="false"
                         aria-controls="collapseExample" href="#">
-                        Dashboard <div class="float-end"><i class="fas fa-chevron-right"></i></div>
+                        Dashboard <div class="float-end"><i class="fas fa-chevron-right rotate"></i></div>
                     </a>
                     <div class="collapse" id="collapseExample1">
                         <a class="dropdown-item" href="#">Page 1</a>
@@ -213,6 +225,7 @@
     </script>
 
     <script>
+        // Sidebar hide/close
         function myFunction() {
             var x = document.getElementById("sidebar-wrapper");
             if (x.style.display === "none") {
@@ -221,6 +234,11 @@
                 x.style.display = "none";
             }
         }
+
+        // icon rotate
+        $(".rotate").click(function () {
+            $(this).toggleClass("down");
+        })
     </script>
 
 

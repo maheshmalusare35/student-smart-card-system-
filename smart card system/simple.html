@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Favicon -->
+    <link rel="icon" href="logo/icons8-bank-cards-48.png">
+
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="ie-edge">
+
+    <!-- Bootstrap CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- font awesome icons link -->
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+        integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+
+    <!-- Stylesheet CSS -->
+    <link href="simple.css" rel="stylesheet">
+
+    <!-- JQuery plugin-->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
+    <title>Admin Login Student Smart Card</title>
+
+</head>
+
+<body>
+    <header>
+        <nav>
+            <a href="">Dropdown</a>
+            <a href="">Dropdown</a>
+            <a href="">Dropdown</a>
+            <div class="dropdown">
+                <a class="drop" href="#">Dropdown<span class="down-caret"></span></a>
+                <ul class="dropdown-menu">
+                    <li><a href="#">Link</a></li>
+                    <li><a href="#">Link</a></li>
+                    <li><a href="#">Link</a></li>
+                    <li><a href="#">Link</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <div class="wrap">
+        <div class="dropdown left-float">
+            <a class="drop" href="javascript:void(0);">Dropdown<span class="down-caret"></span></a>
+            <ul class="dropdown-menu">
+                <li><a href="#">Link</a></li>
+                <li><a href="#">Link</a></li>
+                <li><a href="#">Link</a></li>
+                <li><a href="#">Link</a></li>
+            </ul>
+        </div>
+
+        <div class="dropdown right-float">
+            <a class="drop" href="javascript:void(0);">Dropdown<span class="down-caret"></span></a>
+            <ul class="dropdown-menu">
+                <li><a href="#">Link</a></li>
+                <li><a href="#">Link</a></li>
+                <li><a href="#">Link</a></li>
+                <li><a href="#">Link</a></li>
+            </ul>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+    <!-- Bootstrap JS -->
+    <script type="text/javascript" src="js/bootstrap.bundle.min.js"> </script>
+
+
+    <!-- javascript -->
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('.dropdown').click(function (e) {
+                $(this).find('.dropdown-menu').toggleClass('open');
+                $($(e.target).find('.down-caret').toggleClass('open-caret'));
+                e.preventDefault();
+                e.stopPropagation();
+                $(document).click(function () {
+                    $('.dropdown-menu').removeClass('open');
+                    $('.down-caret').removeClass('open-caret');
+                });
+            });
+        });
+    </script>
+
+
+
+
+</body>
+
+</html>
