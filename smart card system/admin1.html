@@ -30,7 +30,7 @@
             width: 350px;
         }
 
-        .rotate {
+        /* .rotate {
             -moz-transition: all .5s linear;
             -webkit-transition: all .5s linear;
             transition: all .5s linear;
@@ -40,7 +40,7 @@
             -moz-transform: rotate(90deg);
             -webkit-transform: rotate(90deg);
             transform: rotate(90deg);
-        }
+        } */
     </style>
 
 </head>
@@ -60,11 +60,11 @@
                 <!-- example1 -->
 
                 <div class="example1">
-                    <a class="list-group-item list-group-item-action list-group-item-light p-3"
+                    <button class="list-group-item list-group-item-action list-group-item-light p-3"
                         data-bs-toggle="collapse" href="#collapseExample1" role="button" aria-expanded="false"
-                        aria-controls="collapseExample" href="#">
-                        Dashboard <div class="float-end"><i class="fas fa-chevron-right rotate"></i></div>
-                    </a>
+                        aria-controls="collapseExample" href="#" onclick="myFunctionrotate()">
+                        Dashboard <div class="float-end"><i class="fas fa-chevron-right" id="iconrotate"></i></div>
+                    </button>
                     <div class="collapse" id="collapseExample1">
                         <a class="dropdown-item" href="#">Page 1</a>
                         <a class="dropdown-item" href="#">Page 2</a>
@@ -159,6 +159,9 @@
                 <a class="list-group-item-action list-group-item-light p-3" href="#!"></a>
                 <a class="list-group-item-action list-group-item-light p-3" href="#!"></a>
                 <a class="list-group-item-action list-group-item-light p-3" href="#!"></a>
+                <a class="list-group-item-action list-group-item-light p-3" href="#!"></a>
+                <a class="list-group-item-action list-group-item-light p-3" href="#!"></a>
+              
 
             </div>
         </div>
@@ -235,12 +238,19 @@
                 x.style.display = "none";
             }
         }
-        
+
 
         // icon rotate
         $(".rotate").click(function () {
             $(this).toggleClass("down");
         })
+
+        // icon rotate with javascript
+       function myFunctionrotate()
+       {
+         var icon = document.getElementById("iconrotate");
+         icon.rotate(20*Math.PI/180);
+       }
     </script>
 
 
