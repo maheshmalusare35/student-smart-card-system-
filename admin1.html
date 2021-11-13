@@ -1,0 +1,276 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Favicon -->
+    <link rel="icon" href="logo/icons8-bank-cards-48.png">
+
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="ie-edge">
+
+    <!-- Bootstrap CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- font awesome icons link -->
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+        integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+
+    <!-- Stylesheet CSS -->
+    <link href="" rel="stylesheet">
+
+    <!-- JQuery plugin-->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
+    <title>Admin Login Student Smart Card</title>
+    <style>
+        #sidebar-wrapper {
+            width: 350px;
+        }
+
+        .rotate {
+            -moz-transition: all .5s linear;
+            -webkit-transition: all .5s linear;
+            transition: all .5s linear;
+        }
+
+        .rotate.down {
+            -moz-transform: rotate(90deg);
+            -webkit-transform: rotate(90deg);
+            transform: rotate(90deg);
+        }
+    </style>
+
+</head>
+
+<body>    
+
+    <div class="d-flex" id="wrapper">
+        <!-- Sidebar-->
+        <div class="border-end bg-white" id="sidebar-wrapper">
+            <div class="sidebar-heading bg-light text-center justify-content-center align-items-center p-3">
+                <img src="logo/logo1.png">
+                <p>Student Smart Card</p>
+            </div>
+
+            <div class="list-group list-group-flush">
+
+                <!-- example1 -->
+
+                <div class="example1">
+                    <button class="list-group-item list-group-item-action list-group-item-light p-3"
+                        data-bs-toggle="collapse" href="#collapseExample1" role="button" aria-expanded="false"
+                        aria-controls="collapseExample" href="#" onclick="myFunctionrotate()">
+                        Students <div class="float-end"><i class="fas fa-chevron-right rotate" id="iconrotate"></i></div>
+                    </button>
+                    <div class="collapse" id="collapseExample1">
+                        <a class="dropdown-item" href="#">FE</a>
+                        <a class="dropdown-item" href="#">SE</a>
+                        <a class="dropdown-item" href="#">TE</a>
+                        <a class="dropdown-item" href="#">BE</a>
+                    </div>
+                </div>
+
+
+                <!-- example2 -->
+
+                <div class="example2">
+                    <a class="list-group-item list-group-item-action list-group-item-light p-3"
+                        data-bs-toggle="collapse" href="#collapseExample2" role="button" aria-expanded="false"
+                        aria-controls="collapseExample" href="#">
+                        Teachers<div class="float-end"><i class="fas fa-chevron-right" id="iconrotate"></i></div>
+                    </a>
+                    <div class="collapse" id="collapseExample2">
+                        <a class="dropdown-item" href="#">FE</a>
+                        <a class="dropdown-item" href="#">SE</a>
+                        <a class="dropdown-item" href="#">TE</a>
+                        <a class="dropdown-item" href="#">BE</a>
+                    </div>
+                </div>
+
+
+                <!-- example3 -->
+
+                <div class="example3">
+                    <a class="list-group-item list-group-item-action list-group-item-light p-3"
+                        data-bs-toggle="collapse" href="#collapseExample3" role="button" aria-expanded="false"
+                        aria-controls="collapseExample" href="#">
+                        Office<div class="float-end"><i class="fas fa-chevron-right" id="iconrotate"></i></div>
+                    </a>
+                    <div class="collapse" id="collapseExample3">
+                        <a class="dropdown-item" href="#">Page 1</a>
+                        <a class="dropdown-item" href="#">Page 2</a>
+                        <a class="dropdown-item" href="#">Page 3</a>
+                    </div>
+                </div>
+
+
+                <!-- example4 -->
+
+                <div class="example4">
+                    <a class="list-group-item list-group-item-action list-group-item-light p-3"
+                        data-bs-toggle="collapse" href="#collapseExample4" role="button" aria-expanded="false"
+                        aria-controls="collapseExample" href="#">
+                        Cafeteria<div class="float-end"><i class="fas fa-chevron-right" id="iconrotate"></i></div>
+                    </a>
+                    <div class="collapse" id="collapseExample4">
+                        <a class="dropdown-item" href="#">Page 1</a>
+                        <a class="dropdown-item" href="#">Page 2</a>
+                        <a class="dropdown-item" href="#">Page 3</a>
+                    </div>
+                </div>
+
+
+                <!-- example5 -->
+
+                <div class="example5">
+                    <a class="list-group-item list-group-item-action list-group-item-light p-3"
+                        data-bs-toggle="collapse" href="#collapseExample5" role="button" aria-expanded="false"
+                        aria-controls="collapseExample" href="#">
+                        Mangement<div class="float-end"><i class="fas fa-chevron-right" id="iconrotate"></i></div>
+                    </a>
+                    <div class="collapse" id="collapseExample5">
+                        <a class="dropdown-item" href="#">Page 1</a>
+                        <a class="dropdown-item" href="#">Page 2</a>
+                        <a class="dropdown-item" href="#">Page 3</a>
+                    </div>
+                </div>
+
+
+                <!-- example6 -->
+
+                <div class="example6">
+                    <a class="list-group-item list-group-item-action list-group-item-light p-3"
+                        data-bs-toggle="collapse" href="#collapseExample6" role="button" aria-expanded="false"
+                        aria-controls="collapseExample" href="#">
+                        Others<div class="float-end"><i class="fas fa-chevron-right" id="iconrotate"></i></div>
+                    </a>
+                    <div class="collapse" id="collapseExample6">
+                        <a class="dropdown-item" href="#">Page 1</a>
+                        <a class="dropdown-item" href="#">Page 2</a>
+                        <a class="dropdown-item" href="#">Page 3</a>
+                    </div>
+                </div>
+
+
+                <a class="list-group-item-action list-group-item-light p-3" href="#!"></a>
+                <a class="list-group-item-action list-group-item-light p-3" href="#!"></a>
+                <a class="list-group-item-action list-group-item-light p-3" href="#!"></a>
+                <a class="list-group-item-action list-group-item-light p-3" href="#!"></a>
+                <a class="list-group-item-action list-group-item-light p-3" href="#!"></a>
+                <a class="list-group-item-action list-group-item-light p-3" href="#!"></a>
+                <a class="list-group-item-action list-group-item-light p-3" href="#!"></a>                          
+
+            </div>
+        </div>
+
+
+        <!-- Page content wrapper-->
+        <div id="page-content-wrapper">
+            <!-- Top navigation-->
+            <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
+                <div class="container-fluid">
+
+                    <button class="btn btn-primary" id="sidebarToggle" onclick="myFunction()"><i
+                            class="fas fa-bars"></i> Menu</button>
+
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation"><span
+                            class="navbar-toggler-icon"></span></button>
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav ms-auto mt-2 mt-lg-0">
+                            <li class="nav-item"><a class="nav-link" href="#"><i class="fas fa-search"></i></a></li>
+                            <li class="nav-item"><a class="nav-link" href="#"><i class="fas fa-bell"></i></a></li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button"
+                                    data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i
+                                        class="fas fa-user-circle"></i></a>
+                                <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                                    <a class="dropdown-item" href="#"><i class="fas fa-user"></i> Profile</a>
+                                    <a class="dropdown-item" href="#"><i class="fas fa-cog"></i> Setting</a>
+                                    <a class="dropdown-item" href="#"><i class="fas fa-sign-out-alt"></i> Logout</a>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+
+            <!-- Page content-->
+            <div class="container-fluid p-4">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi unde quos voluptatem porro nostrum. Ipsa architecto quae aliquid ducimus magnam pariatur aspernatur quia qui? Ut, neque. Harum necessitatibus obcaecati eos.</p>
+            
+                <div class="row">
+                    <div class="col-sm-4">
+                      <div class="card">
+                        <div class="card-body">
+                          <h5 class="card-title">Students enroll</h5>
+                                                
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="col-sm-4">
+                      <div class="card">
+                        <div class="card-body">
+                          <h5 class="card-title">Teachers enroll</h5>
+                                                 
+                        </div>
+                      </div>
+                    </div>
+                                     
+
+                    <div class="col-sm-4">
+                        <div class="card">
+                          <div class="card-body">
+                            <h5 class="card-title">Parents enroll</h5>
+                                                     
+                          </div>
+                        </div>
+                      </div>                      
+                  </div>
+
+            </div>
+        </div>
+    </div>
+
+        
+
+
+ <!-- Bootstrap JS -->
+    <script type="text/javascript" src="js/bootstrap.bundle.min.js"> </script>
+
+
+    <!-- javascript -->
+    <script type="text/javascript" src="">
+
+    </script>
+
+    <script>
+        // Sidebar hide/close
+        function myFunction() {
+            var x = document.getElementById("sidebar-wrapper");
+            if (x.style.display === "none") {
+                x.style.display = "block";
+            } else {
+                x.style.display = "none";
+            }
+        }
+
+
+        // icon rotate
+        $(".rotate").click(function () {
+            $(this).toggleClass("down");
+        })
+
+      
+    </script>
+
+
+
+</body>
+
+</html>
