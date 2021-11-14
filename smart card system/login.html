@@ -1,0 +1,264 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Favicon -->
+    <link rel="icon" href="logo/icons8-bank-cards-48.png">
+
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="ie-edge">
+
+    <!-- Bootstrap CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- font awesome icons link -->
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+        integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+
+    <!-- Stylesheet CSS -->
+    <link href="" rel="stylesheet">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    <title> login form Student Smart Card</title>
+
+    <style type="text/css">
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: rgb(169, 250, 182);
+            /* background: linear-gradient(45deg, #ffaf00, #bb02ff); */
+            background-attachment: fixed;
+        }
+
+        .multicolortext {
+            background-image: linear-gradient(45deg, #ffaf00, #bb02ff);
+            -webkit-background-clip: text;
+            -moz-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        /* .container-fluid {
+            position: relative;
+            border: 10px solid rgb(219, 212, 212);
+            border-radius: 10px;
+            background-color: rgb(255, 255, 255);
+            justify-content: center;
+            align-items: center;
+            margin-left: 100px;
+            margin-right: 100px;
+        } */
+    </style>
+
+</head>
+
+<body>
+
+    <div class="container-fluid">
+        <div class=" align-items-center">
+
+            <div class="col-md-6  mx-auto shadow-lg p-4 bg-light border border-1 rounded-3">
+                <div class="d-grid gap-2 d-md-flex justify-content-end">
+                    <a href="index.html"> <button type="button" class="btn-close"></button></a>
+                </div>
+
+                <h1 class="text-center fw-bold mb-2"><span class="multicolortext">Login form</span> </h1>
+                <hr>
+                <form>
+
+                    <div class="form-group mb-3">
+                        <label for="email" class="mb-1"> Email Address:</label>
+                        <input type="text" name="email" id="email" class="form-control" placeholder="name@example.com"
+                            autocomplete="off">
+                        <h6 id="emailcheck"></h6>
+                    </div>
+
+                    <div class="form-group  mb-3">
+                        <label for="password" class="mb-1"> Password:</label>
+                        <input type="password" name="pass" id="password" class="form-control">
+                        <h6 id="passcheck"></h6>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault"
+                            onclick="myFunction()">
+                        <label class="form-check-label" for="flexCheckDefault">
+                            <p class="text-center">Show Password </p>
+                        </label>
+                        <a class="float-end text-decoration-none" href="#">Forgot Password?</a>
+                    </div>
+
+                    <div class="form-group mb-3">
+                        <label class="form-label" class="mb-0">Select user Type:</label>
+
+                        <select class="form-select" name="role" aria-label="Default select example" id="select">
+                            <option value="">Select</option>
+                            <option value="admin">Admin</option>
+                            <option value="office">Office</option>
+                            <option value="cafeteria">Cafeteria</option>
+                            <option value="student">Student</option>
+                            <option value="teacher">Teacher</option>
+                            <option value="parents">Parents</option>
+                        </select>
+                        <h6 id="selectcheck" class="mb-3"></h6>
+                    </div>
+
+                    <div class="d-grid gap-2 col-6 mx-auto mb-3">
+                        <button type="submit" id="submitbtn" value="submit" class="btn btn-primary btn-lg">Sign
+                            In</button>
+                    </div>
+                    <hr>
+                    <div class="form-group">
+                        <p class="text-center">Don't have account? <a href="register.html" id="signup">Sign up
+                                here</a>
+                        </p>
+                    </div>
+                </form>
+
+            </div>
+        </div>
+    </div>
+
+
+
+    <!-- Bootstrap JS -->
+    <script type="text/javascript" src="js/bootstrap.bundle.min.js"> </script>
+
+
+    <!-- javascript -->
+    <script type="text/javascript">
+        function myFunction() {
+            var show = document.getElementById('password');
+            if (show.type == 'password') {
+                show.type = 'text';
+            }
+            else {
+                show.type = 'password';
+            }
+        }
+
+        $(document).ready(function () {
+
+
+
+
+            //for the emailname
+
+            $('#emailcheck').hide();
+
+            var email_err = true;
+
+            $('#email').keyup(function () {
+                email_check();
+            });
+
+            function email_check() {
+                var email_val = $('#email').val();
+
+                if (email_val.length == '') {
+                    $('#emailcheck').show();
+                    $('#emailcheck').html("*please fill the email address*");
+                    $('#emailcheck').focus();
+                    $('#emailcheck').css("color", "red");
+                    email_err = false;
+                    return false;
+                } else {
+                    $('#emailcheck').hide();
+                }
+
+            }
+
+            // for the password
+
+            $('#passcheck').hide();
+
+            var pass_err = true;
+
+            $('#password').keyup(function () {
+                password_check();
+            });
+
+            function password_check() {
+
+                var passwrdstr = $('#password').val();
+
+                if (passwrdstr.length == '') {
+                    $('#passcheck').show();
+                    $('#passcheck').html("*please fill the password*");
+                    $('#passcheck').focus();
+                    $('#passcheck').css("color", "red");
+                    pass_err = false;
+                    return false;
+                }
+                else {
+                    $('#passcheck').hide();
+                }
+
+            }
+
+            // for the select option
+
+
+            $('#selectcheck').hide();
+
+            var select_err = true;
+
+            $('#select').click(function () {
+                select_check();
+            });
+            function select_check() {
+
+                var selectstr = $('#select');
+
+                if (selectstr.val() === '') {
+                    $('#selectcheck').show();
+                    $('#selectcheck').html("*please select the user option*");
+                    $('#selectcheck').focus();
+                    $('#selectcheck').css("color", "red");
+                    select_err = false;
+                    return false;
+                }
+                else {
+                    $('#selectcheck').hide();
+                }
+
+            }
+
+
+
+
+
+            $('#submitbtn').click(function () {
+
+                email_err = true;
+                pass_err = true;
+                select_err = true;
+
+
+                email_check();
+                password_check();
+                select_check();
+
+
+                if ((email_err == true) && (pass_err == true) && (select_err == true)) {
+                    return true;
+                }
+                else {
+                    return false;
+                }
+            });
+        });
+    </script>
+
+
+
+
+
+
+
+</body>
+
+</html>

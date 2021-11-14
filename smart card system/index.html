@@ -1,0 +1,541 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!-- Favicon -->
+  <link rel="icon" href="logo/icons8-bank-cards-48.png">
+
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="ie-edge">
+
+  <!-- Bootstrap CSS -->
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- font awesome icons link -->
+  <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+    integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+
+  <!-- Stylesheet CSS -->
+  <link href="style.css" rel="stylesheet">
+
+  <!-- JQuery plugin-->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+    integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
+  <title>Student Smart Card</title>
+
+</head>
+
+<body>
+
+  
+  
+  <!-- scroll up btn -->
+  <div class="scroll-up-btn">
+    <i class="fas fa-angle-up"></i>
+  </div>
+  
+
+  <!-- Navbar -->
+  <div class="header" style="z-index: 3;">
+    <nav class="navbar navbar-expand-md sticky-top">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#"><img src="logo/logo1.png" class="img-fluid"
+            style="width: 100px; height: 50px;">
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"><i class="fas fa-bars"></i></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav  mb-2 mb-lg-0 ms-auto fs-5">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#home">Home</a>
+            </li>
+            <!-- <li class="nav-item">
+              <a class="nav-link" href="#apps">Our Apps</a>
+            </li> -->
+            <li class="nav-item">
+              <a class="nav-link" href="#facilities">Facilities</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#features">Features</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#contact">Contact Us</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="login.html">Login</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#"><i class="fa fa-search"></i></a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </div>
+
+
+  <!-- Home -->
+  <section id="home">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-sm-12 col-lg-6">
+          <div class="home_text">
+            <h1 class="text-center">SMART CARD <span class="text-danger text-uppercase">system</span></h1>
+            <p>
+              Smart cards improve the convenience and security of any transaction. They provide tamper-proof storage of user and account identity. Multifunction cards can also be used to manage network system access and store value and other data. The card data is transacted via a reader that is part of a computing system. Systems that are enhanced with smart cards are in use today throughout several key applications, including healthcare, banking, entertainment, and transportation. All applications can benefit from the added features and security that smart cards provide.
+            </p>
+            
+          </div>
+        </div>
+        <div class="col-sm-12 col-lg-6">
+          <div class="home-image">
+            <img src="images/smartcard-technology.svg" class="img-fluid">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+  <!-- Our Apps -->
+  <!-- <section class="apps bg-white" id="apps">
+    <div class="max-width1 mb-3">
+      <div class="container-fluid">
+        <h1 class="text-center mb-5">Our Apps</h1>
+
+
+        <div class="parentapp p-3 p-lg-0">
+          <div class="row justify-content-center align-items-center mb-3">
+            <div class="col-8 col-lg-6 text-center bg-primary p-2">
+              <img class="img-fluid" src="images/parentapp.png" style="height: 250px;">
+            </div>
+            <div class="cardapp col-12 col-lg-6 bg-secondary text-white p-4">
+              <h3 class="text-center">Parent App</h3>
+              <p>Parents app where they can see their son/daughter Attendance, their progress and results and
+                some
+                all parts which connect their son/daughter progress in class. A simple and convenient way to keep in
+                touch with the teachers and keep track of their child’s attendance, results, fees, school bus location
+                and daily activities.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="teacherapp p-3 p-lg-0">
+          <div class="row justify-content-center align-items-center mb-3 flex-column-reverse flex-lg-row">
+            <div class="col-12 col-lg-6 bg-secondary p-4 text-white">
+              <h3 class="text-center">Teacher App</h3>
+              <p>Teacher app where teacher share the assignment and period wise attendance mark and edit. Teachers can
+                easy access create and assign the assignment to student. Teacher can communicate with the parents.
+                The teacher can send push notifications for events,emergencies, etc. </p>
+            </div>
+            <div class="col-8 col-lg-6 text-center bg-primary p-2">
+              <img class="img-fluid" src="images/teacherapp.png" style="height: 250px;">
+            </div>
+          </div>
+        </div>
+
+        <div class="studentapp p-3 p-lg-0">
+          <div class="row justify-content-center align-items-center mb-3">
+            <div class="col-8 col-lg-6 text-center bg-primary p-2">
+              <img class="img-fluid" src="images/studentapp.png" style="height: 250px;">
+            </div>
+            <div class="col-12 col-lg-6 bg-secondary p-4 text-white">
+              <h3 class="text-center">Student App</h3>
+              <p>In the student app student can get their assignment and lecture which can schedule by the teacher and
+                their examination timetables. In this app student can see their fees and what transaction do by the
+                student to
+                office and cafeteria. </p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section> -->
+
+
+
+  <!-- Facilities-->
+  <section class="bg-warning" id="facilities">
+    <div class="max-width">
+      <div class="container">
+        <h1 class="text-center mb-5">SMART CARD <span class="text-danger"> FACILITIES</span></h1>
+
+        <div class="row justify-content-center">
+          <div class="col-md-4">
+            <div class="card text-center p-2 mb-3 bg-danger">
+              <div class="h1">
+                <i class="fas fa-clipboard-user"></i>
+              </div>
+              <h5 class="card-title text-white">Classroom Attendance</h5>
+              <p class="card-text text-white">
+                The smart card is detected by barcode the scanner installed at the classroom entry point.
+              </p>
+            </div>
+          </div>
+
+          <div class="col-md-4">
+            <div class="card text-center p-2 mb-3 bg-danger">
+              <div class="h1">
+                <i class="fas fa-clipboard-user"></i>
+              </div>
+              <h5 class="card-title text-white">Bus Attendance</h5>
+              <p class="card-text text-white">
+                The smart card is detected by barcode the scanner installed at the bus entry point.
+              </p>
+            </div>
+          </div>
+        </div>
+
+
+        <div class="row">
+          <div class="col-md-4">
+            <div class="card text-center p-3 mb-3 bg-danger">
+              <div class="h1">
+                <i class="fas fa-books"></i>
+              </div>
+              <h3 class="card-title text-white">Library</h3>
+              <p class="card-text text-white">
+                Student have to borrow and the return the book they have carry the library card bt in this system they
+                have to carry only student smart card for the borrow , return and student pay the fine through the
+                student smart card.
+              </p>
+            </div>
+          </div>
+
+          <div class="col-md-4">
+            <div class="card text-center p-3 mb-3 bg-danger">
+              <div class="h1">
+                <i class="fas fa-building"></i>
+              </div>
+              <h3 class="card-title text-white">Office</h3>
+              <p class="card-text text-white">
+                Parents can pay fees through the student smart card.The encoded information in the smart cards can be
+                used to pull up the student payment information and parents can accordingly carry out the transaction.
+              </p>
+            </div>
+          </div>
+
+          <div class="col-md-4">
+            <div class="card text-center p-3 mb-3 bg-danger">
+              <div class="h1">
+                <i class="fas fa-utensils"></i>
+              </div>
+              <h3 class="card-title text-white">Cafeteria</h3>
+              <p class="card-text text-white">
+                It is common to student have not carry the cash all time they can also payment through smart system
+                the
+                student smart
+                card. The payment system is the also encoded end-to-end and smart useful for the student in their
+                daily
+                life.
+              </p>
+            </div>
+          </div>
+        </div>
+
+
+      </div>
+    </div>
+  </section>
+
+
+  
+  <!-- Features -->
+  <section id="features">
+    <div class="max-width">
+      <div class="mb-3">
+        <h1 class="text-center mb-5">Features</h1>
+        <div class="row g-4">
+          <div class="col-md">
+            <ul class="fs-4">
+              <li>Cashless Transactions</li>
+              <li>Student management on premises made easy.</li>
+              <li>Cost effective</li>
+              <li>Manageable</li>
+              <li>Saves a lot of paper work</li>
+            </ul>
+          </div>
+          <div class="col-md">
+            <div class="main_div">
+              <div class="center_div">
+                <div class="top_div">
+                  <h2>Smart card</h2>
+                  <h1><i class="fas fa-user-circle"></i></h1>
+                </div>
+                <div class="bottom_div">
+                  <h2>Student Name</h2>
+                  <p><img src="images/barcode.png" style="width:200px ; height:30px ;"></p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+  <!-- Contact -->
+  <section class="contact justify-content-center" id="contact">
+    <div class="max-width">
+
+      <div class="container bg-white">
+        <div class="row p-4 flex-column-reverse flex-lg-row">
+          <div class="col-12 col-md-4 overlay-text bg-success text-white">
+            <h3 class="text-center p-4">Contact Info</h3>
+            <ul>
+              <li><i class="fas fa-map-marked-alt"></i>
+                <p>Konkan Gyanpeeth college of engineering,karjat</p>
+              </li>
+              <li><i class="fas fa-envelope-open-text"></i>
+                <p>helpdesk@gmail.com</p>
+              </li>
+              <li><i class="fas fa-phone-alt"></i>
+                <p>000-0000</p>
+              </li>
+            </ul>
+
+            <div class="text-center mb-3">
+              <i class="fab fa-google p-2"></i>
+              <i class="fab fa-facebook-f p-2"></i>
+              <i class="fab fa-twitter p-2"></i>
+              <i class="fab fa-linkedin-in p-2"></i>
+            </div>
+          </div>
+
+          <div class="col col-md-8  p-4 justify-content-center">
+            <h3 class="text-center mb-3">Send a message</h3>
+            <form>
+              <div class="form-floating mb-3">
+                <input type="Name" class="form-control" id="floatingName" placeholder="Name">
+                <label for="floatingPassword">Name</label>
+              </div>
+              <div class="form-floating mb-3">
+                <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
+                <label for="floatingInput">Email address</label>
+              </div>
+              <div class="form-floating mb-3">
+                <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea"></textarea>
+                <label for="floatingTextarea">Comments</label>
+              </div>
+              <div class="d-grid gap-2 col-6 mx-auto">
+                <button type="submit" class="btn btn-primary btn-lg">Submit</button>
+              </div>
+            </form>
+          </div>
+
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- Footer -->
+  <footer class="p-2 bg-dark text-white text-center position-relative border border-warning border-2 ">
+    <div class="container">
+      <p class="lead">Copyright &copy; 2021 Student Smart Card</p>
+    </div>
+  </footer>
+
+
+
+
+  <!-- login and register form -->
+  <!-- add in login in class   data-bs-toggle="modal" data-bs-target="#login" -->
+  <!-- <div class="modal fade1" id="login" tabindex="-1" aria-labelledby="enrollLabel" aria-hidden="true">
+
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div id="first">
+          <div class="modal-header">
+            <h2 class="modal-title">Login</h2>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <form action="" method="POST">
+              <div class="mb-3">
+                <label for="exampleInputusername" class="form-label">User Name:</label>
+                <input type="text" class="form-control" id="exampleInputusername">
+                <h5 id="usercheck"></h5>
+              </div>
+              <div class="mb-3">
+                <label for="exampleInputPassword1" class="form-label">Password:</label>
+                <input type="password" class="form-control" id="exampleInputPassword1">
+                <h5 id="passcheck"></h5>
+              </div>
+
+              <div class="mb-3">
+                <label class="form-label">Select User Type:</label>
+                <h5 id="selectcheck"></h5>
+              </div>
+              <select class="form-select mb-3" name="role" aria-label="Default select example">
+                <option selected value="user">Select</option>
+                <option value="admin">Admin</option>
+                <option value="office">Office</option>
+                <option value="cafeteria">Cafeteria</option>
+                <option value="student">Student</option>
+                <option value="teacher">Teacher</option>
+                <option value="parents">Parents</option>
+              </select>
+              <div class="d-grid gap-2 col-6 mx-auto mb-3 ">
+                <button type="submit" id="submitbtn" value="submit" class="btn btn-primary btn-lg">Sign In</button>
+              </div>
+              <div class="form-group">
+                <p class="text-center">Don't have account? <a href="#" id="signup">Sign up here</a></p>
+              </div>
+            </form>
+          </div>
+        </div>
+
+        <div id="second">
+          <div class="modal-header">
+            <h2 class="modal-title">Register</h2>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <form class="row g-3" action="" method="POST">
+              <div class="mb-0 col-md-6">
+                <label for="first-name" class="col-form-label">First Name:</label>
+                <input type="text" class="form-control" id="first-name" />
+              </div>
+              <div class="mb-1 col-md-6">
+                <label for="middle-name" class="col-form-label">Middle Name:</label>
+                <input type="text" class="form-control" id="middle-name" />
+              </div>
+              <div class="mb-1">
+                <label for="last-name" class="col-form-label">Last Name:</label>
+                <input type="text" class="form-control" id="last-name" />
+              </div>
+              <div class="mb-1">
+                <label for="email" class="col-form-label">Email:</label>
+                <input type="email" class="form-control" id="email" />
+              </div>
+              <div class="mb-1">
+                <label for="phone" class="col-form-label">Phone:</label>
+                <input type="tel" class="form-control" id="phone" />
+              </div>
+              <div class="mb-1">
+                <label for="gender" class="col-form-label">Gender:</label>
+                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1"
+                  value="option1">
+                <label class="form-check-label" for="inlineRadio1">Male</label>
+                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2"
+                  value="option2">
+                <label class="form-check-label" for="inlineRadio1">Female</label>
+              </div>
+              <div class="mb-1">
+                <label for="inputyear" class="form-label">Year</label>
+                <select id="inputyear" class="form-select">
+                  <option selected>Choose...</option>
+                  <option value="1">FE</option>
+                  <option value="2">SE</option>
+                  <option value="3">TE</option>
+                  <option value="4">BE</option>
+                </select>
+              </div>
+
+              <div class="mb-1">
+                <label for="inputPassword4" class="col-form-label">Password:</label>
+                <input type="password" class="form-control" id="inputPassword">
+              </div>
+
+              <div class="mb-1">
+                <label for="inputPassword4" class="col-form-label">Confirm Password:</label>
+                <input type="password" class="form-control" id="inputPassword">
+              </div>
+              <!-- <div class="col-12">
+                <label for="inputAddress" class="form-label">Address</label>
+                <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
+              </div>
+              <div class="col-12">
+                <label for="inputAddress2" class="form-label">Address 2</label>
+                <input type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor">
+              </div>
+              <div class="col-12">
+                <label for="inputCity" class="form-label">City</label>
+                <input type="text" class="form-control" id="inputCity">
+              </div>
+              <div class="col-md-6">
+                <label for="inputState" class="form-label">State</label>
+                <select id="inputState" class="form-select">
+                  <option selected>Choose...</option>
+                  <option>Andhra Pradesh</option>
+                  <option>Arunachal Pradesh</option>
+                  <option>Assam</option>
+                  <option>Bihar</option>
+                  <option>Chhattisgarh</option>
+                  <option>Goa</option>
+                  <option>Gujarat</option>
+                  <option>Haryana</option>
+                  <option>Himachal Pradesh</option>
+                  <option>Jharkhand</option>
+                  <option>Karnataka</option>
+                  <option>Kerala</option>
+                  <option>Madhya Pradesh</option>
+                  <option>Maharashtra</option>
+                  <option>Manipur</option>
+                  <option>Meghalaya</option>
+                  <option>Mizoram</option>
+                  <option>Nagaland</option>
+                  <option>Odisha</option>
+                  <option>Punjab</option>
+                  <option>Rajasthan</option>
+                  <option>Sikkim</option>
+                  <option>Tamil Nadu</option>
+                  <option>Telangana</option>
+                  <option>Tripura</option>
+                  <option>Uttar Pradesh</option>
+                  <option>Uttarakhand</option>
+                  <option>West Bengal</option>
+                </select>
+              </div>
+              <div class="col-md-6">
+                <label for="inputZip" class="form-label">Pin code</label>
+                <input type="text" class="form-control" id="inputZip">
+              </div>
+              <div class="mb-3">
+                <label for="formFileSm" class="form-label">Profile picture:</label>
+                <input class="form-control form-control-sm" id="formFileSm" type="file">
+              </div> -->
+
+  <!-- <div class="d-grid gap-2 col-6 mx-auto text-center mb-1">
+                <button type="submit" class="btn btn-primary btn-lg">Sign Up </button>
+              </div>
+
+              <div class="col-md-12 ">
+                <div class="form-group">
+                  <p class="text-center">Already have an account?<a href="#" id="signin">Sign in here</a></p>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div> -->
+
+
+
+  <!-- Bootstrap JS -->
+  <script type="text/javascript" src="js/bootstrap.bundle.min.js"> </script>
+
+
+  <!-- javascript -->
+  <script type="text/javascript" src="smartcard.js">
+  </script>
+
+
+
+
+</body>
+
+</html>

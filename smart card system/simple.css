@@ -1,0 +1,144 @@
+   /*----------------------------*\
+  @Colors
+\*----------------------------*/
+        
+        @base-blue: #3498db; /* rgb(52, 152, 219);*/
+        @base-teal: #24cabc; /* rgb(36,202,188);*/
+        @base-green: #2ecc71; /* rgb(46, 204, 113) ;*/
+        @base-orange: #f46801; /* rgb(244, 104, 1);*/
+        @base-warning: #f39c12; /* rgb(243, 156, 18);*/
+        @base-danger: #e74c3c; /* rgb(231, 76, 60);*/
+
+        @base-white: #fff;
+
+        @base-size: 1rem;
+
+        body {
+            text-align: center;
+            background-color: whitesmoke;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        ul,
+        ol {
+            list-style: none;
+        }
+
+        header {
+            background-color: #3f3f3f;
+            display: block;
+            padding: 0.50rem;
+        
+            nav a
+             {
+                padding: 1rem 1.5rem;
+                color: @base-white;
+                text-align: left;
+
+                &:hover
+                 {
+                    background-color: #2f2f2f;
+                }
+            }
+
+            .dropdown {
+                display: inline-block;
+
+                .drop {
+                    background-color: #2f2f2f;
+                }
+            }
+        }
+
+        .left-float
+         {
+            float: left;
+        }
+
+        .right-float
+         {
+            float: right;
+        }
+
+        .wrap
+         {
+            width: 23.5rem;
+            display: block;
+            margin: 10rem auto;
+        }
+
+        .dropdown
+         {
+            position: relative;
+            display: inline-block;
+
+            .drop
+             {
+                background-color: @base-blue;
+                color: @base-white;
+                padding: 1rem;
+                border-radius: 6px;
+                position: relative;
+                display: inline-block;
+            }
+
+            >.dropdown-menu 
+            {
+                width: @base-size * 15;
+                list-style: none;
+                margin: 0;
+                margin-top: 8px;
+                padding: 0;
+                position: absolute;
+                float: left;
+                max-height: 0;
+                overflow: hidden;
+                transition: all .55s linear;
+                background-color: @base-white;
+                box-shadow: 0 0 3px rgba(0, 0, 0, .15);
+
+                &.open
+                 {
+                    max-height: 300px;
+                    height: auto;
+                    transition: all .25s linear;
+                }
+
+                >li>a 
+                {
+                    padding: .5rem 1rem;
+                    display: block;
+                    color: #555;
+                    text-align: left;
+                    transition: all .25s linear;
+
+                    &:hover
+                     {
+                        background-color: @base-blue;
+                        color: @base-white;
+                    }
+                }
+            }
+        }
+
+        .down-caret {
+            width: 0;
+            height: 0;
+            border-style: solid;
+            border-width: 5px 5px 0 5px;
+            border-color: #ffffff transparent transparent transparent;
+            display: inline-block;
+            margin-left: 6px;
+            top: -3px;
+            position: relative;
+            transform: rotate(0deg);
+            transition: all .25s ease-in;
+        }
+
+        .open-caret {
+            transform: rotate(180deg);
+            transition: all .25s ease-out;
+        }
