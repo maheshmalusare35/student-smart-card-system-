@@ -1,11 +1,11 @@
 <?php
-
+$servername = 'localhost';
 $username = 'root';
 $password = '';
-$database_name = '';  //give the database name
+$database_name = 'register_student_smart_card';  //give the database name
 
 
-$conn = new mysqli('localhost' ,$username, $password, $database_name);
+$conn = mysqli_connect($servername ,$username, $password, $database_name);
 
  if($conn)
   {
