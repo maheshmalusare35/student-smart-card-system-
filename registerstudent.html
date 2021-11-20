@@ -69,7 +69,7 @@
 
                 <h1 class="text-center fw-bold p-2"><span class="multicolortext">Register form for student</span> </h1>
                 <hr>
-                <form action="registerstudent.php" method="post">
+                <form action="../php/registerstudent.php" method="post">
                     <div class="row mt-4">
                         <div class="form-group mb-3 col-md-4">
                             <label for="first" class="mb-1"> First Name:</label>
@@ -130,7 +130,7 @@
                             <label for="password" class="mb-1"> Password:</label>
                             <input type="password" name="pass" id="password" class="form-control" data-toggle="popover"
                                 data-trigger="hover" data-placement="bottom" data-content="My popover content."
-                                autocomplete="off" placeholder="Xyz@1kos">
+                                autocomplete="off">
                             <h6 id="passcheck"></h6>
                         </div>
                         <div class="form-group  mb-3 col-md-6 ">
@@ -418,7 +418,7 @@
                     $('#phonecheck').hide();
                 }
 
-                if (phone_val.match(/^([012345]\d{2}([ -]?)\d{3}([ -]?)\d{4})$/)) {
+                if (phone_val.match( /^(\+91[\-\s]?)?[0]?(91)?[012345]\d{9}$/)) {
                     $('#phonecheck').show();
                     $('#phonecheck').html("*contact number start with 6,7,8,9*");
                     $('#phonecheck').focus();
@@ -430,9 +430,9 @@
                 }
 
 
-                if (phone_val.length == 11) {
+                if (phone_val.length >= 11) {
                     $('#phonecheck').show();
-                    $('#phonecheck').html("*please fill the valid contact no*");
+                    $('#phonecheck').html("*please fill the 10 digit contact no*");
                     $('#phonecheck').focus();
                     $('#phonecheck').css("color", "red");
                     phone_err = false;
