@@ -15,7 +15,7 @@
 
 
 
-         $query= mysqli_query($conn,"SELECT * FROM students WHERE email='$email'");
+         $query= mysqli_query($conn,"SELECT * FROM parents WHERE email='$email'");
         if (mysqli_num_rows($query)>0) 
         {
                        ?>
@@ -25,14 +25,14 @@
                        <?php
                       ?>
                       <script >
-                        location.replace("../registerstudent.html");
+                        location.replace("../registerparent.html");
                        </script>
                        <?php
         }
         else
         {
 
-        $query= mysqli_query($conn,"SELECT * FROM students WHERE phoneno='$phoneno'");
+        $query= mysqli_query($conn,"SELECT * FROM parents WHERE phoneno='$phoneno'");
         if (mysqli_num_rows($query)>0) 
         {
                        ?>
@@ -42,7 +42,7 @@
                        <?php
                         ?>
                         <script >
-                          location.replace("../registerstudent.html");
+                          location.replace("../registerparent.html");
                          </script>
                          <?php
         }
@@ -50,7 +50,7 @@
 
 
 
-            $sql = mysqli_query($conn,"INSERT INTO students VALUES('$firstname','$middlename','$lastname','$email','$phone','$gender','$date','$pass','$year')");
+            $sql = mysqli_query($conn,"INSERT INTO parents VALUES('$firstname','$middlename','$lastname','$email','$phone','$gender','$date','$pass','$year')");
 
             if($sql)
             {
@@ -61,7 +61,7 @@
                        <?php
                        ?>
                        <script >
-                         location.replace("../registerstudent.html");
+                         location.replace("../registerparent.html");
                         </script>
                         <?php
             }
@@ -74,7 +74,7 @@
                        <?php
                         ?>
                         <script >
-                          location.replace("../registerstudent.html");
+                          location.replace("../registerparent.html");
                          </script>
                          <?php
                        
