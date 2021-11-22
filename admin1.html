@@ -30,17 +30,6 @@
             width: 350px;
         }
 
-        .rotate {
-            -moz-transition: all .5s linear;
-            -webkit-transition: all .5s linear;
-            transition: all .5s linear;
-        }
-
-        .rotate.down {
-            -moz-transform: rotate(90deg);
-            -webkit-transform: rotate(90deg);
-            transform: rotate(90deg);
-        }
     </style>
 
 </head>
@@ -256,14 +245,6 @@
                 x.style.display = "none";
             }
         }
-
-
-        // icon rotate
-        $(".rotate").click(function () {
-            $(this).toggleClass("down");
-        })
-
-      
     </script>
 
 
