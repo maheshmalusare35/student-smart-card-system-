@@ -36,13 +36,16 @@
 
 <body>    
 
+
+
+
     <div class="d-flex" id="wrapper">
+
         <!-- Sidebar-->
         <div class="border-end bg-white" id="sidebar-wrapper">
-            <div class="sidebar-heading bg-light text-center justify-content-center align-items-center p-3">
-                <img src="logo/logo1.png">
-                <p>Student Smart Card</p>
-            </div>
+            <div class="sidebar-heading bg-light text-center justify-content-center align-items-center p-2">
+        <img src="logo/logo1.png">        
+    </div>
            <div class="list-group">
 
                 <div class="accordion" id="accordionExample">  
@@ -155,35 +158,40 @@
 
         <!-- Page content wrapper-->
         <div id="page-content-wrapper">
-            <!-- Top navigation-->
-            <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
-                <div class="container-fluid">
 
-                    <button class="btn btn-primary" id="sidebarToggle" onclick="myFunction()"><i
-                            class="fas fa-bars"></i> Menu</button>
+          
+   <!-- Top navigation-->
+   <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
+    <div class="container-fluid">
+      
+    <div class="mx-5">
+        <button class="btn btn-primary" id="sidebarToggle" onclick="myFunction()"><i
+                class="fas fa-bars"></i> Menu</button></div>
 
-                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                        data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation"><span
-                            class="navbar-toggler-icon"></span></button>
-                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                        <ul class="navbar-nav ms-auto mt-2 mt-lg-0">
-                            <li class="nav-item"><a class="nav-link" href="#"><i class="fas fa-search"></i></a></li>
-                            <li class="nav-item"><a class="nav-link" href="#"><i class="fas fa-bell"></i></a></li>
-                            <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button"
-                                    data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i
-                                        class="fas fa-user-circle"></i></a>
-                                <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item" href="#"><i class="fas fa-user"></i> Profile</a>
-                                    <a class="dropdown-item" href="#"><i class="fas fa-cog"></i> Setting</a>
-                                    <a class="dropdown-item" href="#"><i class="fas fa-sign-out-alt"></i> Logout</a>
-                                </div>
-                            </li>
-                        </ul>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+            aria-expanded="false" aria-label="Toggle navigation"><span
+                class="navbar-toggler-icon"></span></button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ms-auto mt-2 mt-lg-0">
+                <li class="nav-item"><a class="nav-link" href="#"><i class="fas fa-search"></i></a></li>
+                <li class="nav-item"><a class="nav-link" href="#"><i class="fas fa-bell"></i></a></li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button"
+                        data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i
+                            class="fas fa-user-circle"></i></a>
+                    <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="#"><i class="fas fa-user"></i> Profile</a>
+                        <a class="dropdown-item" href="#"><i class="fas fa-cog"></i> Setting</a>
+                        <a class="dropdown-item" href="#"><i class="fas fa-sign-out-alt"></i> Logout</a>
                     </div>
-                </div>
-            </nav>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+           
 
             <!-- Page content-->
             <div class="container-fluid p-4">
