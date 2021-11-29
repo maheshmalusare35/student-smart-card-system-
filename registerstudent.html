@@ -95,13 +95,31 @@
                         <div class=" form-group mb-3 col-md-6">
                             <label for="email" class="form-label">Email address:</label>
                             <input type="email" name="email" class="form-control" id="email"
-                                placeholder="name@example.com" autocomplete="off">
-                            <h6 id="emailcheck"></h6>
+                                placeholder="name@example.com" autocomplete="off">                               
+                            <h6 id="emailcheck mb-3"></h6>
+                             <button type="button" class="btn btn-primary ">Send Otp</button>
                         </div>
+                        
                         <div class=" form-group mb-3 col-md-6">
+                            <label for="emailvalid" class="form-label"> Check Your Email get otp: </label>
+                            <input type="email" name="email" class="form-control" id="email"
+                             autocomplete="off">
+                            <h6 id="emailcheck mb-3"></h6>
+                            <button type="button" class="btn btn-primary ">Verify email</button>
+                        </div>
+                        
+                    </div>
+                    
+                    <div class="row">
+                      <div class=" form-group mb-3 col-md-6">
                             <label for="phone" class="form-label">Contact No:</label>
                             <input type="phone" name="phone" class="form-control" id="phone" autocomplete="off">
                             <h6 id="phonecheck"></h6>
+                        </div>  
+                          <div class=" form-group mb-3 col-md-6">
+                            <label for="role" class="form-label">Role:</label>                            
+                            <input class="form-control" type="text" name="role" placeholder="Student" aria-label="Disabled input example" disabled>
+                            <h6 id="rolecheck"></h6>
                         </div>
                     </div>
 
@@ -129,7 +147,7 @@
                         <div class="form-group  mb-3 col-md-6 ">
                             <label for="password" class="mb-1"> Password:</label>
                             <input type="password" name="pass" id="password" class="form-control" data-toggle="popover"
-                                data-trigger="hover" data-placement="bottom" data-content="My popover content."
+                                data-trigger="hover" data-placement="bottom" data-content="My popover content." placeholder="Xyz@1kos"
                                 autocomplete="off">
                             <h6 id="passcheck"></h6>
                         </div>
