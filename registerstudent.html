@@ -94,20 +94,21 @@
                     <div class="row">
                         <div class=" form-group mb-3 col-md-6">
                             <label for="email" class="form-label">Email address:</label>
-                            <input type="email" name="email" class="form-control" id="email"
+                            <input type="email" name="email" class="form-control mb-2" id="email"
                                 placeholder="name@example.com" autocomplete="off">                               
-                            <h6 id="emailcheck mb-3"></h6>
-                             <button type="button" class="btn btn-primary ">Send Otp</button>
-                        </div>
-                        
-                        <div class=" form-group mb-3 col-md-6">
-                            <label for="emailvalid" class="form-label"> Check Your Email get otp: </label>
-                            <input type="email" name="email" class="form-control" id="email"
-                             autocomplete="off">
-                            <h6 id="emailcheck mb-3"></h6>
+                            <h6 id="emailcheck"></h6>                                      
+                         <div class="d-grid gap-2 d-md-block">
+                            <button type="button" class="btn btn-primary" id="otpbtn">Send Otp</button>
+                          </div>    
+                        </div>                    
+                                            
+                        <div class=" form-group mb-3 col-md-6" id="otpvalid">
+                            <label for="otpvalid" class="form-label"> Check Your Email get otp to verify email: </label>
+                            <input type="otpvalid" name="otpvalid" class="form-control mb-2" 
+                             autocomplete="off" >                           
                             <button type="button" class="btn btn-primary ">Verify email</button>
                         </div>
-                        
+                         
                     </div>
                     
                     <div class="row">
@@ -229,7 +230,7 @@
 
         $(document).ready(function () {
 
-
+           
             $('#password').tooltip({ 'trigger': 'hover', 'title': 'Password Must contain 8 characters at least 1 number, 1 uppercase, 1 lowercase letter and 1 special symbol  (example: Xyz@1kos)' });
 
 
@@ -378,8 +379,12 @@
             // for the email jquery
 
             $('#emailcheck').hide();
+            
+            $('#otpbtn').hide();
+            $('#otpvalid').hide();
 
-            var email_err = true;
+
+             var email_err = true;
 
             $('#email').keyup(function () {
                 email_check();
@@ -401,6 +406,8 @@
 
                 if (!(email_val.match(/^\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/))) {
                     $('#emailcheck').show();
+                    $('#otpbtn').hide();
+                    $('#otpvalid').hide();
                     $('#emailcheck').html("*please fill the valid email address*");
                     $('#emailcheck').focus();
                     $('#emailcheck').css("color", "red");
@@ -408,7 +415,17 @@
                     return false;
                 } else {
                     $('#emailcheck').hide();
-                }
+                }  
+                
+                if ((email_val.match(/^\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/))) {                    
+                     $('#otpbtn').show();
+                     $('#otpvalid').show();                                       
+                } else {                     
+                     $('#otpbtn').hide();
+                    $('#otpvalid').hide();
+                }   
+
+
             }
 
 
