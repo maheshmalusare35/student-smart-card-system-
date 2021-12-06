@@ -67,21 +67,59 @@
                     <a href="index.html"> <button type="button" class="btn-close"></button></a>
                 </div>
 
-                <h1 class="text-center fw-bold mb-2"><span class="multicolortext">Email Verification</span> </h1>
-                <hr>
-                <form>
+               
+                <form>      
 
+                <?php 
+			       if($success == 1)
+                    { 
+        		?>
+            
+                     <h1 class="text-center fw-bold mb-2"><span class="multicolortext">Email Verification</span> </h1>
+                     <hr>
+                      <div class="form-group mb-3">
+                        <label for="otp" class="mb-3">Check your Email to get otp:</label>
+                        <input type="text" name="otp" id="otp" class="form-control" 
+                            autocomplete="off">
+                      </div>                
+                                      
+                       <div class="d-grid gap-2 col-6 mx-auto mb-3">
+                        <button type="submit" id="submitbtn" value="submit" class="btn btn-primary btn-lg">Verify OTP</button>
+                       </div>
+                    }
+
+               <?php 
+			      } else if ($success == 2)
+                   {
+				?>
+                   <script >
+                    location.replace("index.html");
+                   </script>
+                 <?php
+			    
+                 ?>
+	
+		        <?php
+		        	}
+
+			   else {
+		       ?>
+		
+                        
+                    <h1 class="text-center fw-bold mb-2"><span class="multicolortext">Email Verification</span> </h1>
+                    <hr>
                     <div class="form-group mb-3">
                         <label for="email" class="mb-3">Enter your Email id use in registration:</label>
                         <input type="text" name="email" id="email" class="form-control" placeholder="name@example.com"
                             autocomplete="off">
-                        <h6 id="emailcheck"></h6>
                     </div>                
                                       
                     <div class="d-grid gap-2 col-6 mx-auto mb-3">
                         <button type="submit" id="submitbtn" value="submit" class="btn btn-primary btn-lg">Submit</button>
                     </div>
-                  
+                    <?php 
+			}
+		?> 
                    
                 </form>
 
