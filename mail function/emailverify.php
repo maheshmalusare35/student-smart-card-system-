@@ -1,3 +1,48 @@
+<?php
+include "mail_function.php";
+date_default_timezone_set("Asia/Kolkata");
+$success = "";
+$error_message = "";
+$conn = mysqli_connect("localhost","root","","my_db");
+if(!empty($_POST["submit_email"])) {
+    $email=$_POST["email"];
+    $_SESSION['email']=$_POST["email"];
+    $result = mysqli_query($conn,"SELECT * FROM register WHERE email='" . $_POST["email"] . "'");
+    /*$count  = mysqli_num_rows($result);*/
+    if(mysqli_num_rows($result)>0) {
+        // generate OTP
+        $otp = rand(100000,999999);
+        
+        // Send OTP
+        require_once("mail_function.php");
+        $mail_status = sendOTP($_POST["email"],$otp);
+         $mail_status=1; 
+        if($mail_status == 1) {
+            $result = mysqli_query($conn,"UPDATE register SET otp='".$otp."',is_expired='0' WHERE email='".$email."' ");
+            $current_id = mysqli_insert_id($conn);
+        
+                $success=1;
+            
+        }
+    } else {
+        $error_message = "Email not exists!";
+    }
+}
+if(!empty($_POST["submit_otp"])) {
+    $result = mysqli_query($conn,"SELECT * FROM register WHERE otp='" . $_POST["otp"] . "' AND is_expired!=1 AND NOW() <= DATE_ADD(create_at, INTERVAL 24 HOUR)");
+    // $count  = mysqli_num_rows($result);
+    if(!empty(mysqli_num_rows($result))) {
+        $result = mysqli_query($conn,"UPDATE register SET is_expired = 1 WHERE otp = '" . $_POST["otp"] . "'");
+        $success = 2;   
+    } else {
+        $success = 1;
+        $error_message = "Invalid OTP!";
+    }   
+}
+?>
+
+
+
 <!doctype html>
 <html lang="en">
 
@@ -54,9 +99,16 @@
             margin-right: 100px;
         } */
     </style>
+    
 
 </head>
-
+<?php
+        if(!empty($error_message)) {
+    ?>
+    <div class="message error_message"><?php echo $error_message; ?></div>
+    <?php
+        }
+    ?>
 <body>
 
     <div class="container-fluid">
@@ -68,7 +120,7 @@
                 </div>
 
                
-                <form>      
+                <form method="POST">      
 
                 <?php 
 			       if($success == 1)
@@ -84,16 +136,19 @@
                       </div>                
                                       
                        <div class="d-grid gap-2 col-6 mx-auto mb-3">
-                        <button type="submit" id="submitbtn" value="submit" class="btn btn-primary btn-lg">Verify OTP</button>
+                        <button type="submit" name="submit_otp" value="submit" class="btn btn-primary btn-lg">Verify OTP</button>
                        </div>
-                    }
+                    
 
                <?php 
-			      } else if ($success == 2)
+			      }
+
+
+                   else if ($success == 2)
                    {
 				?>
                    <script >
-                    location.replace("index.html");
+                    location.replace("index.php");
                    </script>
                  <?php
 			    
@@ -115,7 +170,7 @@
                     </div>                
                                       
                     <div class="d-grid gap-2 col-6 mx-auto mb-3">
-                        <button type="submit" id="submitbtn" value="submit" class="btn btn-primary btn-lg">Submit</button>
+                        <button type="submit" name="submit_email" value="submit" class="btn btn-primary btn-lg">Submit</button>
                     </div>
                     <?php 
 			}
