@@ -98,23 +98,39 @@ if(!empty($_POST["submit_otp"])) {
             margin-left: 100px;
             margin-right: 100px;
         } */
+
+      
     </style>
-    
 
 </head>
-<?php
-        if(!empty($error_message)) {
-    ?>
-    <div class="message error_message"><?php echo $error_message; ?></div>
-    <?php
-        }
-    ?>
+
+             
+          
 <body>
 
+
     <div class="container-fluid">
+
+       
+ <?php
+ if(!empty($error_message)) {
+    ?>
+<div class=" col-md-4 mx-auto text-center bg-danger text-white mb-3 rounded-3 p-2">  
+        
+    <?php echo $error_message; ?>  
+      
+</div>
+<?php
+        }
+    
+?>
         <div class=" align-items-center">
 
+            
             <div class="col-md-6  mx-auto shadow-lg p-4 bg-light border border-1 rounded-3">
+
+
+
                 <div class="d-grid gap-2 d-md-flex justify-content-end">
                     <a href="index.html"> <button type="button" class="btn-close"></button></a>
                 </div>
@@ -131,7 +147,7 @@ if(!empty($_POST["submit_otp"])) {
                      <hr>
                       <div class="form-group mb-3">
                         <label for="otp" class="mb-3">Check your Email to get otp:</label>
-                        <input type="text" name="otp" id="otp" class="form-control" 
+                        <input type="text" name="otp" id="otp" class="form-control" placeholder="Type otp" 
                             autocomplete="off">
                       </div>                
                                       
@@ -187,8 +203,6 @@ if(!empty($_POST["submit_otp"])) {
     <!-- Bootstrap JS -->
     <script type="text/javascript" src="js/bootstrap.bundle.min.js"> </script>
 
-
-   
 
 
 </body>
