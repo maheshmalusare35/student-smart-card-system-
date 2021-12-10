@@ -33,12 +33,12 @@
         else
         {
 
-        $query= mysqli_query($conn,"SELECT * FROM register WHERE phoneno='$phoneno'");
+        $query= mysqli_query($conn,"SELECT * FROM register WHERE phone='$phone'");
         if (mysqli_num_rows($query)>0) 
         {
                        ?>
                        <script >
-                       alert("Phoneno is already use....");
+                       alert("contact no is already use....");
                        </script>
                        <?php
                         ?>

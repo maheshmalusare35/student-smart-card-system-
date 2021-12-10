@@ -10,18 +10,18 @@ $conn = mysqli_connect($servername ,$username, $password, $database_name);
 //  if($conn)
 //   {
 //     ?>
-//     <!-- <script >
+   <!-- <script >
 //       alert("Connection succesfully");
 //     </script> -->
-//     <?php
+   <?php
 //   }
 //   else
 //   {
 //     ?>
-//     <!-- <script >
+   <!-- <script >
 //       alert("No Connection");
 //     </script> -->
-//     <?php
+  <?php
 //   }
 
 

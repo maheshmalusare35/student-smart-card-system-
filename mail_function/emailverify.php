@@ -56,7 +56,7 @@ if(!empty($_POST["submit_otp"])) {
     <meta http-equiv="X-UA-Compatible" content="ie-edge">
 
     <!-- Bootstrap CSS -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
 
     <!-- font awesome icons link -->
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
@@ -201,7 +201,7 @@ if(!empty($_POST["submit_otp"])) {
 
     
     <!-- Bootstrap JS -->
-    <script type="text/javascript" src="js/bootstrap.bundle.min.js"> </script>
+    <script type="text/javascript" src="../js/bootstrap.bundle.min.js"> </script>
 
 
 
