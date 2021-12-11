@@ -132,7 +132,7 @@ if(!empty($_POST["submit_otp"])) {
 
 
                 <div class="d-grid gap-2 d-md-flex justify-content-end">
-                    <a href="index.html"> <button type="button" class="btn-close"></button></a>
+                    <a href="../index.html"> <button type="button" class="btn-close"></button></a>
                 </div>
 
                
@@ -164,7 +164,7 @@ if(!empty($_POST["submit_otp"])) {
                    {
 				?>
                    <script >
-                    location.replace("index.php");
+                    location.replace("../index.html");
                    </script>
                  <?php
 			    
