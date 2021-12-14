@@ -59,25 +59,25 @@
 
 <body>
 
-    <div class="container-fluid">
+    <div class="container-fluid p-4">
         <div class=" align-items-center">
 
-            <div class="col-md  mx-auto shadow-lg p-3 bg-light border border-1 rounded-3">
+            <div class="col-md-8  mx-auto shadow-lg p-3 bg-light border border-1 rounded-3">
                 <div class="d-grid gap-2 d-md-flex justify-content-end">
                     <a href="index.html"> <button type="button" class="btn-close"></button></a>
                 </div>
 
-                <h1 class="text-center fw-bold p-2"><span class="multicolortext">Register form for student smart card</span> </h1>
+                <h3 class="text-center fw-bold p-1"><span class="multicolortext">Register form for student smart card</span> </h3>
                 <hr>
-                <form action="../php/register.php" method="post">
+                <form action="../php/register.php" method="post" >
                     <div class="row mt-4">
-                        <div class="form-group mb-3 col-md-6">
+                        <div class="form-group mb-2 col-md-6">
                             <label for="first" class="mb-1"> First Name:</label>
                             <input type="text" name="firstname" id="firstnames" class="form-control text-uppercase"
                                >
                             <h6 id="firstcheck"></h6>
                         </div>
-                        <div class="form-group mb-3 col-md-6">
+                        <div class="form-group mb-2 col-md-6">
                             <label for="middle" class="mb-1"> Middle Name:</label>
                             <input type="text" name="middlename" id="middlenames" class="form-control text-uppercase"
                                >
@@ -87,13 +87,13 @@
                     </div>
 
                     <div class="row">
-                        <div class="form-group mb-3 col-md-6">
+                        <div class="form-group mb-2 col-md-6">
                             <label for="last" class="mb-1"> Last Name:</label>
                             <input type="text" name="lastname" id="lastnames" class="form-control text-uppercase"
                                >
                             <h6 id="lastcheck"></h6>
                         </div>
-                        <div class=" form-group mb-3 col-md-6">
+                        <div class=" form-group mb-2 col-md-6">
                             <label for="email" class="form-label">Email address:</label>
                             <input type="email" name="email" class="form-control mb-2" id="email"
                                 placeholder="name@example.com" autocomplete="off">                               
@@ -103,12 +103,12 @@
                     </div>
                     
                     <div class="row">
-                      <div class=" form-group mb-3 col-md-6">
+                      <div class=" form-group mb-2 col-md-6">
                             <label for="phone" class="form-label">Contact No:</label>
                             <input type="phone" name="phone" class="form-control" id="phone" autocomplete="off">
                             <h6 id="phonecheck"></h6>
                         </div>  
-                          <div class=" form-group mb-3 col-md-6">
+                          <div class=" form-group mb-2 col-md-6">
                             <label class="form-label" class="mb-0">Select user Type:</label>
                         <select class="form-select" name="role" aria-label="Default select example" id="role">
                             <option value="">Select</option>                            
@@ -116,12 +116,12 @@
                             <option value="teacher">Teacher</option>
                             <option value="parent">Parent</option>
                         </select>
-                        <h6 id="rolecheck" class="mb-3"></h6>
+                        <h6 id="rolecheck" class="mb-2"></h6>
                         </div>
                     </div>
 
-                    <div class="row">
-                        <div class=" form-group mb-3 col-md-6">
+                    <!-- <div class="row">
+                        <div class=" form-group mb-2 col-md-6">
                             <label class="form-label" class="mb-0">Gender</label>
 
                             <select class="form-select" name="gender" aria-label="Default select example" id="gender">
@@ -130,31 +130,32 @@
                                 <option value="Female">Female</option>
                                 <option value="Other">Other</option>
                             </select>
-                            <h6 id="gendercheck" class="mb-3"></h6>
+                            <h6 id="gendercheck" class="mb-2"></h6>
                         </div>
 
-                        <div class=" form-group mb-3 col-md-6">
+                        <div class=" form-group mb-2 col-md-6">
                             <label for="date" class="form-label">Date Of Birth:</label>
                             <input type="date" name="date" class="form-control" id="date" autocomplete="off">
                             <h6 id="datecheck"></h6>
                         </div>
-                    </div>
+                    </div> -->
 
                     <div class="row">
-                        <div class="form-group  mb-3 col-md-6 ">
+                        <div class="form-group  mb-2 col-md-6 ">
                             <label for="password" class="mb-1"> Password:</label>
                             <input type="password" name="pass" id="password" class="form-control" data-toggle="popover"
                                 data-trigger="hover" data-placement="bottom" data-content="My popover content." placeholder="Xyz@1kos"
                                 autocomplete="off">
                             <h6 id="passcheck"></h6>
                         </div>
-                        <div class="form-group  mb-3 col-md-6 ">
+                        <div class="form-group  mb-2 col-md-6 ">
                             <label for=" confirmpassword" class="mb-1">Confirm Password:</label>
                             <input type="password" name="confirmpass" id="confirmpassword" class="form-control"
                                 autocomplete="off">
                             <h6 id="confirmpasscheck"></h6>
                         </div>
                     </div>
+
                     <div class="form-check">
                         <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault"
                             onclick="myFunction()">
@@ -163,7 +164,7 @@
                         </label>
                     </div>
 
-                    <div class="form-group mb-3">
+                    <!-- <div class="form-group mb-2">
                         <label class="form-label" class="mb-0">Select year:</label>
                         <select class="form-select" name="year" aria-label="Default select example" id="select">
                             <option value="">Select</option>
@@ -172,14 +173,16 @@
                             <option value="TE">TE</option>
                             <option value="BE">BE</option>
                         </select>
-                        <h6 id="selectcheck" class="mb-3"></h6>
-                    </div>
+                        <h6 id="selectcheck" class="mb-2"></h6>
+                    </div> -->
 
 
-                    <div class="d-grid gap-2 col-6 mx-auto mb-3">
+                    <div class="d-grid gap-2 col-6 mx-auto mb-1">
                         <button type="submit" id="submitbtn" name="submit" value="submit" class="btn btn-primary btn-lg">Sign
                             Up</button>
                     </div>
+
+                    <hr>
 
                     <div class="form-group">
                         <p class="text-center">Already have an account?<a href="login.html" id="signin">Sign in here</a>
