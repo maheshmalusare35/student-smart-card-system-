@@ -69,7 +69,7 @@
 
                 <h3 class="text-center fw-bold p-1"><span class="multicolortext">Register form for student smart card</span> </h3>
                 <hr>
-                <form action="../php/register.php" method="post" >
+                <form action="register.html" method="post" >
                     <div class="row mt-4">
                         <div class="form-group mb-2 col-md-6">
                             <label for="first" class="mb-1"> First Name:</label>
@@ -230,8 +230,7 @@
         $(document).ready(function () {
 
            
-            $('#password').tooltip({ 'trigger': 'hover', 'title': 'Password Must contain 8 characters at least 1 number, 1 uppercase, 1 lowercase letter and 1 special symbol  (example: Xyz@1kos)' });
-
+            
 
             // for the first name jquery
 
@@ -570,6 +569,9 @@
             }
 
             // for password jquery
+
+            $('#password').tooltip({ 'trigger': 'hover', 'title': 'Password Must contain 8 characters at least 1 number, 1 uppercase, 1 lowercase letter and 1 special symbol  (example: Xyz@1kos)' });
+
 
             $('#passcheck').hide();
 
