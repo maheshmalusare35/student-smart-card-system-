@@ -3,16 +3,14 @@
 
         if(isset($_POST['submit']))
         {
-         $firstname=$_POST['firstname'];
-         $middlename=$_POST['middlename'];
-         $lastname=$_POST['lastname'];
-         $email=$_POST['email'];
-         $phone=$_POST['phone'];
-         $role=$_POST['role'];
-         $gender=$_POST['gender'];
-         $date=$_POST['date'];
-         $pass=$_POST['pass'];
-         $year=$_POST['year'];
+         $firstname = $_POST['firstname'];
+         $middlename = $_POST['middlename'];
+         $lastname = $_POST['lastname'];
+         $email = $_POST['email'];
+         $phone = $_POST['phone'];
+         $role = $_POST['role'];        
+         $pass = md5($_POST['pass']);
+       
 
 
 
@@ -51,9 +49,14 @@
 
 
 
-            $sql = mysqli_query($conn,"INSERT INTO register VALUES('$firstname','$middlename','$lastname','$email','$phone','$role','$gender','$date','$pass','$year')");
+            
 
-            if($sql)
+
+
+            $sql="INSERT INTO register(firstname,middlename,lastname,email,phone,role,pass) VALUES('$firstname','$middlename','$lastname','$email','$phone','$role','$pass')";
+
+            if($conn->query($sql))
+
             {
                 ?>
                        <script >

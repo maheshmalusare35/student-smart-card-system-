@@ -105,9 +105,9 @@
                             <option value="admin">Admin</option>
                             <option value="office">Office</option>
                             <option value="cafeteria">Cafeteria</option>
-                            <option value="students">Students</option>
-                            <option value="teachers">Teachers</option>
-                            <option value="parents">Parents</option>
+                            <option value="student">Student</option>
+                            <option value="teacher">Teacher</option>
+                            <option value="parent">Parent</option>
                         </select>
                         <h6 id="selectcheck" class="mb-3"></h6>
                     </div>
@@ -136,6 +136,9 @@
 
     <!-- javascript -->
     <script type="text/javascript">
+
+          //for the show/hide password
+
         function myFunction() {
             var show = document.getElementById('password');
             if (show.type == 'password') {
@@ -148,16 +151,20 @@
 
 
 
+    // for validation check
+
+        $(document).ready(function () {
 
 
-        $(document).submit(function (e) {
-
-
-            //for the emailname
+            // for the email jquery
 
             $('#emailcheck').hide();
+            
+            $('#otpbtn').hide();
+            $('#otpvalid').hide();
 
-            var email_err = true;
+
+             var email_err = true;
 
             $('#email').keyup(function () {
                 email_check();
@@ -177,6 +184,16 @@
                     $('#emailcheck').hide();
                 }
 
+                if (!(email_val.match(/^\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/))) {
+                    $('#emailcheck').show();
+                    $('#emailcheck').html("*please fill the valid email address*");
+                    $('#emailcheck').focus();
+                    $('#emailcheck').css("color", "red");
+                    email_err = false;
+                    return false;
+                } else {
+                    $('#emailcheck').hide();
+                }           
             }
 
             // for the password

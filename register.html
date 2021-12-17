@@ -69,7 +69,7 @@
 
                 <h3 class="text-center fw-bold p-1"><span class="multicolortext">Register form for student smart card</span> </h3>
                 <hr>
-                <form action="register.html" method="post" >
+                <form action="../php/register.php" method="post" >
                     <div class="row mt-4">
                         <div class="form-group mb-2 col-md-6">
                             <label for="first" class="mb-1"> First Name:</label>
@@ -95,7 +95,7 @@
                         </div>
                         <div class=" form-group mb-2 col-md-6">
                             <label for="email" class="form-label">Email address:</label>
-                            <input type="email" name="email" class="form-control mb-2" id="email"
+                            <input type="email" name="email" class="form-control" id="email"
                                 placeholder="name@example.com" autocomplete="off">                               
                             <h6 id="emailcheck"></h6>                                      
                         </div>                
@@ -105,7 +105,7 @@
                     <div class="row">
                       <div class=" form-group mb-2 col-md-6">
                             <label for="phone" class="form-label">Contact No:</label>
-                            <input type="phone" name="phone" class="form-control" id="phone" autocomplete="off">
+                            <input type="phone" name="phone" class="form-control" id="phone" maxlength="10" autocomplete="off">
                             <h6 id="phonecheck"></h6>
                         </div>  
                           <div class=" form-group mb-2 col-md-6">
@@ -404,8 +404,6 @@
 
                 if (!(email_val.match(/^\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/))) {
                     $('#emailcheck').show();
-                    $('#otpbtn').hide();
-                    $('#otpvalid').hide();
                     $('#emailcheck').html("*please fill the valid email address*");
                     $('#emailcheck').focus();
                     $('#emailcheck').css("color", "red");
@@ -413,17 +411,8 @@
                     return false;
                 } else {
                     $('#emailcheck').hide();
-                }  
-                
-                if ((email_val.match(/^\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/))) {                    
-                     $('#otpbtn').show();
-                     $('#otpvalid').show();                                       
-                } else {                     
-                     $('#otpbtn').hide();
-                    $('#otpvalid').hide();
-                }   
-
-
+                }           
+            
             }
 
 
@@ -463,17 +452,6 @@
                     $('#phonecheck').hide();
                 }
 
-
-                if (phone_val.length >= 11) {
-                    $('#phonecheck').show();
-                    $('#phonecheck').html("*please fill the 10 digit contact no*");
-                    $('#phonecheck').focus();
-                    $('#phonecheck').css("color", "red");
-                    phone_err = false;
-                    return false;
-                } else {
-                    $('#phonecheck').hide();
-                }
                 if (phone_val.match(/([a-zA-Z])/)) {
                     $('#phonecheck').show();
                     $('#phonecheck').html("*please fill the valid phone no*");
@@ -518,55 +496,59 @@
 
             //for the gender check
 
-            $('#gendercheck').hide();
+            // $('#gendercheck').hide();
 
-            var gender_err = true;
+            // var gender_err = true;
 
-            $('#gender').click(function () {
-                gender_check();
-            });
-            function gender_check() {
+            // $('#gender').click(function () {
+            //     gender_check();
+            // });
+            // function gender_check() {
 
-                var genderstr = $('#gender');
+            //     var genderstr = $('#gender');
 
-                if (genderstr.val() === '') {
-                    $('#gendercheck').show();
-                    $('#gendercheck').html("*please select the gender option*");
-                    $('#gendercheck').focus();
-                    $('#gendercheck').css("color", "red");
-                    gender_err = false;
-                    return false;
-                }
-                else {
-                    $('#gendercheck').hide();
-                }
+            //     if (genderstr.val() === '') {
+            //         $('#gendercheck').show();
+            //         $('#gendercheck').html("*please select the gender option*");
+            //         $('#gendercheck').focus();
+            //         $('#gendercheck').css("color", "red");
+            //         gender_err = false;
+            //         return false;
+            //     }
+            //     else {
+            //         $('#gendercheck').hide();
+            //     }
 
-            }
+            // }
+
+
 
             // for the date jquery
 
-            $('#datecheck').hide();
+            // $('#datecheck').hide();
 
-            var date_err = true;
+            // var date_err = true;
 
-            $('#date').keyup(function () {
-                date_check();
-            });
+            // $('#date').keyup(function () {
+            //     date_check();
+            // });
 
-            function date_check() {
-                var date_val = $('#date').val();
+            // function date_check() {
+            //     var date_val = $('#date').val();
 
-                if (date_val.length == '') {
-                    $('#datecheck').show();
-                    $('#datecheck').html("*please select the date of birth*");
-                    $('#datecheck').focus();
-                    $('#datecheck').css("color", "red");
-                    date_err = false;
-                    return false;
-                } else {
-                    $('#datecheck').hide();
-                }
-            }
+            //     if (date_val.length == '') {
+            //         $('#datecheck').show();
+            //         $('#datecheck').html("*please select the date of birth*");
+            //         $('#datecheck').focus();
+            //         $('#datecheck').css("color", "red");
+            //         date_err = false;
+            //         return false;
+            //     } else {
+            //         $('#datecheck').hide();
+            //     }
+            // }
+
+
 
             // for password jquery
 
@@ -657,30 +639,30 @@
 
             //for the select check
 
-            $('#selectcheck').hide();
+            // $('#selectcheck').hide();
 
-            var select_err = true;
+            // var select_err = true;
 
-            $('#select').click(function () {
-                select_check();
-            });
-            function select_check() {
+            // $('#select').click(function () {
+            //     select_check();
+            // });
+            // function select_check() {
 
-                var selectstr = $('#select');
+            //     var selectstr = $('#select');
 
-                if (selectstr.val() === '') {
-                    $('#selectcheck').show();
-                    $('#selectcheck').html("*please select the year option*");
-                    $('#selectcheck').focus();
-                    $('#selectcheck').css("color", "red");
-                    select_err = false;
-                    return false;
-                }
-                else {
-                    $('#selectcheck').hide();
-                }
+            //     if (selectstr.val() === '') {
+            //         $('#selectcheck').show();
+            //         $('#selectcheck').html("*please select the year option*");
+            //         $('#selectcheck').focus();
+            //         $('#selectcheck').css("color", "red");
+            //         select_err = false;
+            //         return false;
+            //     }
+            //     else {
+            //         $('#selectcheck').hide();
+            //     }
 
-            }
+            // }
 
 
 
@@ -695,11 +677,12 @@
                 last_err = true;
                 email_err = true;
                 phone_err = true;
-                gender_err = true;
-                date_err = true;
+                role_err = true;
+                // gender_err = true;
+                // date_err = true;
                 pass_err = true;
                 confirmpass_err = true;
-                select_err = true;
+                // select_err = true;
 
 
                 firstname_check();
@@ -707,14 +690,19 @@
                 lastname_check();
                 email_check();
                 phone_check();
-                gender_check();
-                date_check();
+                role_check();
+                // gender_check();
+                // date_check();
                 password_check();
                 confirmpassword_check();
-                select_check();
+                // select_check();
 
 
-                if ((first_err == true) && (middle_err == true) && (last_err == true) && (email_err == true) && (phone_err == true) && (gender_err == true) && (date_err == true) && (pass_err == true) && (confirmpass_err == true) && (select_err == true)) {
+                // if ((first_err == true) && (middle_err == true) && (last_err == true) && (email_err == true) && (phone_err == true) && (gender_err == true) && (date_err == true) && (pass_err == true) && (confirmpass_err == true) && (select_err == true)) {
+
+                
+             if ((first_err == true) && (middle_err == true) && (last_err == true) && (email_err == true) && (phone_err == true)  && (role_err == true)  && (pass_err == true) && (confirmpass_err == true)) {
+
                     return true;
                 }
                 else {
