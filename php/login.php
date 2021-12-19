@@ -1,3 +1,54 @@
+<?php 
+session_start();
+  include("../database/databaseconnection.php");
+
+   
+   $output = "";
+
+  if (isset($_POST['submit'])) {
+       
+       $email = $_POST['email'];
+       $role = $_POST['role'];
+       $pass = $_POST['pass'];
+
+       if (empty($email)) {
+        
+       }else if(empty($role)){
+
+       }else if(empty($pass)){
+
+       }else{
+
+         $query = "SELECT * FROM users WHERE email='$email' AND role='$role' AND password='$pass'";
+         $res = mysqli_query($connect,$query);
+
+         if (mysqli_num_rows($res) == 1) {
+
+              if ($role == "Student")
+               {
+                    $_SESSION['student'] = $email;
+                    header("Location: student.php");                
+               }
+              else if($role == "Teacher")
+              {
+                
+                $_SESSION['teacher'] = $email;
+                header("Location: teacher.php");
+
+              }
+             $output .= "you have logged-In";
+         }else
+         {
+             $output .= "Failed to login";
+         }
+
+       }
+  }
+ ?>
+
+
+
+
 <!doctype html>
 <html lang="en">
 
@@ -70,7 +121,9 @@
                 <hr>
                 <form action="../php/login.php" method="POST">
 
-              
+                <!-- for error show -->
+                
+                <?php echo $output; ?>
 
                     <div class="form-group mb-3">
                         <label for="email" class="mb-1"> Email Address:</label>
@@ -279,11 +332,6 @@
             });
         });
     </script>
-
-
-
-
-
 
 
 </body>
