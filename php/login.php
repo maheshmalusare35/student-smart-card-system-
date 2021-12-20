@@ -19,7 +19,7 @@ session_start();
 
        }else{
 
-         $query = "SELECT * FROM users WHERE email='$email' AND role='$role' AND password='$pass'";
+         $query = "SELECT * FROM register WHERE email='$email' AND role='$role' AND password='$pass'";
          $res = mysqli_query($connect,$query);
 
          if (mysqli_num_rows($res) == 1) {
