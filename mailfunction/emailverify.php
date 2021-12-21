@@ -1,9 +1,10 @@
 <?php
 include "mail_function.php";
+include "../database/databaseconnection.php";
 date_default_timezone_set("Asia/Kolkata");
 $success = "";
 $error_message = "";
-$conn = mysqli_connect("localhost","root","","my_db");
+
 if(!empty($_POST["submit_email"])) {
     $email=$_POST["email"];
     $_SESSION['email']=$_POST["email"];
