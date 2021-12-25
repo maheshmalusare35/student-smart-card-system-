@@ -1,4 +1,12 @@
-<!doctype html>
+<?php session_start();
+if (!isset($_SESSION['username'])) {
+    header("Location: indexnew.php");
+}
+
+ ?>    
+
+
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -24,12 +32,8 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"
         integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 
-    <title> Student Smart Card</title>
+    <title>Admin Login Student Smart Card</title>
     <style>
-        body{
-            background: rgb(169, 250, 182);
-        }
-        
         #sidebar-wrapper {
             width: 350px;
         }
@@ -38,14 +42,18 @@
 
 </head>
 
-<body>           
-          
-   <!-- Top navigation-->
+<body>    
+
+
+
+
+  <!-- Top navigation-->
    <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom p-0 mb-3">
     <div class="container-fluid">
        <a class="navbar-brand" href="#"><img src="logo/logo1.png" class="img-fluid"
             style="width: 100px; height: 50px;">
         </a>
+        <?php echo "<h5>Welcome " . $_SESSION['username'] . "</h5>"; ?>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
             data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
             aria-expanded="false" aria-label="Toggle navigation"><span
@@ -79,47 +87,15 @@
                     <div class="dropdown-menu dropdown-menu-end mb-2" aria-labelledby="navbarDropdown">
                         <a class="dropdown-item" href="#"><i class="fas fa-user"></i> Profile</a>
                         <a class="dropdown-item" href="#"><i class="fas fa-cog"></i> Setting</a>
-                        <a class="dropdown-item" href="#"><i class="fas fa-sign-out-alt"></i> Logout</a>
+                        <a class="dropdown-item" href="logout.php"><i class="fas fa-sign-out-alt"></i> Logout</a>
                     </div>
                 </li>
             </ul>
         </div>
     </div>
-</nav>
+</nav>          
 
-    <!-- <div class="container-fluid  mb-3">
-
-        <nav class="navbar navbar-expand-lg navbar-light p-0">
-                   
-                    <ul class="navbar-nav mx-auto mt-2 mt-lg-0">
-                         <li class="nav-item p-2">
-                           <a class="nav-link fw-bold" href="#"><i class="fas fa-tasks"></i> To-do</a>
-                         </li>
-                         <li class="nav-item p-2">
-                            <a class="nav-link fw-bold" href="#"><i class="far fa-calendar-week"></i> Calender</a>
-                          </li>
-                          <li class="nav-item p-2">
-                            <a class="nav-link fw-bold" href="#"><i class="fas fa-comments-dollar"></i> Your Transaction</a>
-                          </li>
-                          <li class="nav-item p-2">
-                            <a class="nav-link fw-bold" href="#"><i class="fas fa-poll-h"></i> Result</a>
-                          </li>                          
-                    </ul>
-                </div>
-            </div>
-        </nav>
-
-    </div> -->
-
-
-
-
-
-    
-
-   
-
-        
+           
 
 
  <!-- Bootstrap JS -->

@@ -24,12 +24,8 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"
         integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 
-    <title> Student Smart Card</title>
+    <title>Admin Login Student Smart Card</title>
     <style>
-        body{
-            background: rgb(169, 250, 182);
-        }
-        
         #sidebar-wrapper {
             width: 350px;
         }
@@ -39,9 +35,10 @@
 </head>
 
 <body>           
+
           
    <!-- Top navigation-->
-   <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom p-0 mb-3">
+   <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom p-0">
     <div class="container-fluid">
        <a class="navbar-brand" href="#"><img src="logo/logo1.png" class="img-fluid"
             style="width: 100px; height: 50px;">
@@ -53,30 +50,16 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
 
             <ul class="navbar-nav ms-auto mt-2 mt-lg-0">
-
-                <li class="nav-item ">
-                    <a class="nav-link fw-bold" href="#"><i class="fas fa-tasks"></i> To-do</a>
-                  </li>
-                  <li class="nav-item ">
-                     <a class="nav-link fw-bold" href="#"><i class="far fa-calendar-week"></i> Calender</a>
-                   </li>
-                   <li class="nav-item ">
-                     <a class="nav-link fw-bold" href="#"><i class="fas fa-comments-dollar"></i> Your Transaction</a>
-                   </li>
-                   <li class="nav-item ">
-                     <a class="nav-link fw-bold" href="#"><i class="fas fa-poll-h"></i> Result</a>
-                   </li>     
-
                  <li class="nav-item">
-                    <a class="nav-link fw-bold" href="#">Your Balance:</a>
-                 </li>
+              <a class="nav-link" href="#">Your Balance:</a>
+            </li>
                 <!-- <li class="nav-item"><a class="nav-link" href="#"><i class="fas fa-search"></i></a></li>
                 <li class="nav-item"><a class="nav-link" href="#"><i class="fas fa-bell"></i></a></li>
                 <li class="nav-item dropdown"> -->
                     <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button"
                         data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i
                             class="fas fa-user-circle"></i></a>
-                    <div class="dropdown-menu dropdown-menu-end mb-2" aria-labelledby="navbarDropdown">
+                    <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
                         <a class="dropdown-item" href="#"><i class="fas fa-user"></i> Profile</a>
                         <a class="dropdown-item" href="#"><i class="fas fa-cog"></i> Setting</a>
                         <a class="dropdown-item" href="#"><i class="fas fa-sign-out-alt"></i> Logout</a>
@@ -87,37 +70,10 @@
     </div>
 </nav>
 
-    <!-- <div class="container-fluid  mb-3">
+<div class="container-fluid">
 
-        <nav class="navbar navbar-expand-lg navbar-light p-0">
-                   
-                    <ul class="navbar-nav mx-auto mt-2 mt-lg-0">
-                         <li class="nav-item p-2">
-                           <a class="nav-link fw-bold" href="#"><i class="fas fa-tasks"></i> To-do</a>
-                         </li>
-                         <li class="nav-item p-2">
-                            <a class="nav-link fw-bold" href="#"><i class="far fa-calendar-week"></i> Calender</a>
-                          </li>
-                          <li class="nav-item p-2">
-                            <a class="nav-link fw-bold" href="#"><i class="fas fa-comments-dollar"></i> Your Transaction</a>
-                          </li>
-                          <li class="nav-item p-2">
-                            <a class="nav-link fw-bold" href="#"><i class="fas fa-poll-h"></i> Result</a>
-                          </li>                          
-                    </ul>
-                </div>
-            </div>
-        </nav>
+ </div>
 
-    </div> -->
-
-
-
-
-
-    
-
-   
 
         
 
@@ -131,7 +87,18 @@
 
     </script>
 
-   
+    <script>
+        // Sidebar hide/close
+        function myFunction() {
+            var x = document.getElementById("sidebar-wrapper");
+            if (x.style.display === "none") {
+                x.style.display = "block";
+            } else {
+                x.style.display = "none";
+            }
+        }
+    </script>
+
 
 
 </body>
