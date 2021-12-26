@@ -3,8 +3,10 @@ include "mail_function.php";
 include "../database/databaseconnection.php";
 date_default_timezone_set("Asia/Kolkata");
 $success = "";
-$error_message = "";
 
+
+// $error_message = "";
+$conn = mysqli_connect("localhost","root","","my_db");
 if(!empty($_POST["submit_email"])) {
     $email=$_POST["email"];
     $_SESSION['email']=$_POST["email"];
@@ -18,7 +20,7 @@ if(!empty($_POST["submit_email"])) {
         require_once("mail_function.php");
         $mail_status = sendOTP($_POST["email"],$otp);
          $mail_status=1; 
-        if($mail_status == 1) {
+         if($mail_status == 1) {
             $result = mysqli_query($conn,"UPDATE register SET otp='".$otp."',is_expired='0', create_at='" .date("Y-m-d H:i:s"). "' WHERE email='".$email."' ");
             // $current_id = mysqli_insert_id($conn);
         
@@ -71,7 +73,7 @@ if(!empty($_POST["submit_otp"])) {
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
-    <title>  Student Smart Card Email Verification</title>
+    <title>  Student Smart Card forgot password</title>
 
     <style type="text/css">
         body {
@@ -115,19 +117,7 @@ if(!empty($_POST["submit_otp"])) {
 
     <div class="container-fluid">
 
-       
- <?php
- if(!empty($error_message)) {
-    ?>
-<div class=" col-md-4 mx-auto text-center bg-danger text-white mb-3 rounded-3 p-2">  
-        
-    <?php echo $error_message; ?>  
-      
-</div>
-<?php
-        }
-    
-?>
+
         <div class=" align-items-center">
 
             
@@ -147,7 +137,7 @@ if(!empty($_POST["submit_otp"])) {
                     { 
         		?>
             
-                     <h1 class="text-center fw-bold mb-2"><span class="multicolortext">Email Verification</span> </h1>
+                     <h1 class="text-center fw-bold mb-2"><span class="multicolortext">Forgot Password</span> </h1>
                      <hr>
                       <div class="form-group mb-3">
                         <label for="otp" class="mb-3">Check your Email to get otp:</label>
@@ -155,9 +145,8 @@ if(!empty($_POST["submit_otp"])) {
                             autocomplete="off">
                       </div>                
                                       
-                       <div class=" gap-2 mb-3 row align-items-center justify-content-center">
-                        <button type="submit" name="submit_otp" value="submit" class="btn btn-primary btn-lg col-md-4">Verify OTP</button>                  
-                        <a href="#" class="btn btn-primary btn-lg col-md-4" type="submit" name="send_otp" value="send_otp">Send OTP</a>
+                       <div class="d-grid gap-2 col-6 mx-auto mb-3">
+                        <button type="submit" name="submit_otp" value="submit" class="btn btn-primary btn-lg">Verify OTP</button>
                        </div>
                     
 
@@ -182,7 +171,7 @@ if(!empty($_POST["submit_otp"])) {
 		       ?>
 		
                         
-                    <h1 class="text-center fw-bold mb-2"><span class="multicolortext">Email Verification</span> </h1>
+                    <h1 class="text-center fw-bold mb-2"><span class="multicolortext">Forgot Password</span> </h1>
                     <hr>
                     <div class="form-group mb-3">
                         <label for="email" class="mb-3">Enter your Email id use in registration:</label>
