@@ -1,12 +1,13 @@
 <?php
 include "mail_function.php";
-include "../database/databaseconnection.php";
 date_default_timezone_set("Asia/Kolkata");
 $success = "";
 
-
 // $error_message = "";
 $conn = mysqli_connect("localhost","root","","my_db");
+
+
+
 if(!empty($_POST["submit_email"])) {
     $email=$_POST["email"];
     $_SESSION['email']=$_POST["email"];
@@ -20,8 +21,8 @@ if(!empty($_POST["submit_email"])) {
         require_once("mail_function.php");
         $mail_status = sendOTP($_POST["email"],$otp);
          $mail_status=1; 
-         if($mail_status == 1) {
-            $result = mysqli_query($conn,"UPDATE register SET otp='".$otp."',is_expired='0', create_at='" .date("Y-m-d H:i:s"). "' WHERE email='".$email."' ");
+        if($mail_status == 1) {
+            $result = mysqli_query($conn,"UPDATE register SET otp = '" . $otp . "', is_expired = '0', create_at = '" . date("Y-m-d H:i:s") . "' WHERE email = '" .  $_POST["email"] . "' "); 
             // $current_id = mysqli_insert_id($conn);
         
                 $success=1;
@@ -45,11 +46,28 @@ if(!empty($_POST["submit_otp"])) {
 
     }   
 }
+
+ if(!empty($_POST["reset_password"])) {
+ $email = $_POST['email'];
+    $result = mysqli_query($conn," SELECT * FROM register WHERE email= '" . $_POST["email"] . "' ");
+
+    if(!empty(mysqli_num_rows($result))) {
+        $result = mysqli_query($conn," UPDATE register SET password = '" .$_POST["password"] . "'  WHERE email= '" . $_POST["email"] . "' ");
+        $success = 3;   
+        echo "<script>alert('wow! Password Reset Successfully!')</script>";
+    } else {
+        $success = 2;
+       
+         echo "<script>alert('oops! Password Not reset!')</script>";
+
+    }   
+}
+
 ?>
 
 
 
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -142,7 +160,7 @@ if(!empty($_POST["submit_otp"])) {
                       <div class="form-group mb-3">
                         <label for="otp" class="mb-3">Check your Email to get otp:</label>
                         <input type="text" name="otp" id="otp" class="form-control" placeholder="Type otp" 
-                            autocomplete="off">
+                            autocomplete="off" maxlength="6">
                       </div>                
                                       
                        <div class="d-grid gap-2 col-6 mx-auto mb-3">
@@ -157,15 +175,59 @@ if(!empty($_POST["submit_otp"])) {
                    else if ($success == 2)
                    {
 				?>
+                 <h1 class="text-center fw-bold mb-2"><span class="multicolortext">Forgot Password</span> </h1>
+                    <hr>
+                    <div class="form-group mb-3">
+                        <label for="email"  class="mb-3">Reset Your Password:</label>
+                         <div class="form-group  mb-2 col-md ">
+                            <label for="password" class="mb-1"> Password:</label>
+                            <input type="password" name="password" id="password" class="form-control" data-toggle="popover"
+                                data-trigger="hover" data-placement="bottom" data-content="My popover content." placeholder="Xyz@1kos"
+                                autocomplete="off">
+                            <h6 id="passcheck"></h6>
+                        </div>
+                        <div class="form-group  mb-2 col-md ">
+                            <label for=" confirmpassword" class="mb-1">Confirm Password:</label>
+                            <input type="password" name="confirmpass" id="confirmpassword" class="form-control"
+                                autocomplete="off">
+                            <h6 id="confirmpasscheck"></h6>
+                        </div>
+                         
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault"
+                            onclick="myFunction()">
+                        <label class="form-check-label" for="flexCheckDefault">
+                            <p class="text-center">Show Password</p>
+                        </label>
+                    </div>                   
+
+                    </div>                
+                                      
+                    <div class="d-grid gap-2 col-6 mx-auto mb-3">
+                        <button type="submit" name="reset_password" id="reset_password" value="reset_password" class="btn btn-primary btn-lg">Reset</button>
+                    </div>
+                  <!--  <script >
+                    location.replace("../resetpassword.php");
+                   </script> -->
+                 
+	
+		        <?php
+		        	}
+                       else if ($success == 3)
+                   {
+                ?>
                    <script >
                     location.replace("../index.html");
                    </script>
                  <?php
-			    
+                
                  ?>
-	
-		        <?php
-		        	}
+    
+                <?php
+                    }
+
+
+
 
 			   else {
 		       ?>
@@ -197,7 +259,150 @@ if(!empty($_POST["submit_otp"])) {
     <!-- Bootstrap JS -->
     <script type="text/javascript" src="../js/bootstrap.bundle.min.js"> </script>
 
+ <!-- javascript -->
+    <script type="text/javascript">
 
+        //for the show/hide password
+
+        function myFunction() {
+
+            var show = document.getElementById('password');
+            if (show.type == 'password') {
+                show.type = 'text';
+            }
+            else {
+                show.type = 'password';
+            }
+
+            var show = document.getElementById('confirmpassword');
+            if (show.type == 'password') {
+                show.type = 'text';
+            }
+            else {
+                show.type = 'password';
+            }
+        }
+
+        // for the check the form
+
+        $(document).ready(function () {         
+            
+
+
+
+            // for password jquery
+
+            $('#password').tooltip({ 'trigger': 'hover', 'title': 'Password Must contain 8 characters at least 1 number, 1 uppercase, 1 lowercase letter and 1 special symbol  (example: Xyz@1kos)' });
+
+
+            $('#passcheck').hide();
+
+            var pass_err = true;
+
+            $('#password').keyup(function () {
+                password_check();
+            });
+
+            function password_check() {
+
+                var passwrdstr = $('#password').val();
+
+                if (passwrdstr.length == '') {
+                    $('#passcheck').show();
+                    $('#passcheck').html("*please fill the password*");
+                    $('#passcheck').focus();
+                    $('#passcheck').css("color", "red");
+                    pass_err = false;
+                    return false;
+                }
+                else {
+                    $('#passcheck').hide();
+                }
+
+
+                if (!(passwrdstr.match(/^.*(?=.{8,})(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[~,`,!,@,#,$,%,^,&,*,(,),_,-,+,=,{,[,},|,\,/,:,;,",',<,>,.,?,]).*$/))) {
+                    $('#passcheck').show();
+                    $('#passcheck').html("*please fill the proper format password*");
+                    $('#passcheck').focus();
+                    $('#passcheck').css("color", "red");
+                    pass_err = false;
+                    return false;
+                }
+                else {
+                    $('#passcheck').hide();
+                }
+            }
+
+
+
+            // for confirm password jquery
+
+            $('#confirmpasscheck').hide();
+
+            var confirmpass_err = true;
+
+            $('#confirmpassword').keyup(function () {
+                confirmpassword_check();
+            });
+
+            function confirmpassword_check() {
+
+
+                var confirmpasswrdstr = $('#confirmpassword').val();
+                var passwrdstr = $('#password').val();
+
+                if (confirmpasswrdstr.length == '') {
+                    $('#confirmpasscheck').show();
+                    $('#confirmpasscheck').html("*please fill the confirm password*");
+                    $('#confirmpasscheck').focus();
+                    $('#confirmpasscheck').css("color", "red");
+                    confirmpass_err = false;
+                    return false;
+                }
+                else {
+                    $('#confirmpasscheck').hide();
+                }
+
+                if (passwrdstr != confirmpasswrdstr) {
+                    $('#confirmpasscheck').show();
+                    $('#confirmpasscheck').html("*password not match*");
+                    $('#confirmpasscheck').focus();
+                    $('#confirmpasscheck').css("color", "red");
+                    pass_err = false;
+                    return false;
+                }
+                else {
+                    $('#confirmpasscheck').hide();
+                }
+            }
+
+
+
+            // for the check submit
+
+
+            $('#reset_password').click(function () {
+
+               
+                pass_err = true;
+                confirmpass_err = true;
+               
+
+                password_check();
+                confirmpassword_check();
+              
+
+                
+             if ( (pass_err == true) && (confirmpass_err == true)) {
+
+                    return true;
+                }
+                else {
+                    return false;
+                }
+            });
+        });
+    </script>
 
 </body>
 

@@ -3,7 +3,7 @@ include "mail_function.php";
 include "../database/databaseconnection.php";
 date_default_timezone_set("Asia/Kolkata");
 $success = "";
-$error_message = "";
+
 
 if(!empty($_POST["submit_email"])) {
     $email=$_POST["email"];
@@ -26,7 +26,7 @@ if(!empty($_POST["submit_email"])) {
             
         }
     } else {
-        // $error_message = "Email not exists!";
+      
         echo "<script>alert('oops! Email not exists!')</script>";
     }
 }
@@ -38,7 +38,7 @@ if(!empty($_POST["submit_otp"])) {
         $success = 2;   
     } else {
         $success = 1;
-        // $error_message = "Invalid OTP!";
+       
          echo "<script>alert('oops! Invalid OTP!')</script>";
 
     }   
@@ -47,7 +47,7 @@ if(!empty($_POST["submit_otp"])) {
 
 
 
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -114,20 +114,8 @@ if(!empty($_POST["submit_otp"])) {
 
 
     <div class="container-fluid">
-
-       
- <?php
- if(!empty($error_message)) {
-    ?>
-<div class=" col-md-4 mx-auto text-center bg-danger text-white mb-3 rounded-3 p-2">  
-        
-    <?php echo $error_message; ?>  
-      
-</div>
-<?php
-        }
-    
-?>
+     
+ 
         <div class=" align-items-center">
 
             
@@ -151,7 +139,7 @@ if(!empty($_POST["submit_otp"])) {
                      <hr>
                       <div class="form-group mb-3">
                         <label for="otp" class="mb-3">Check your Email to get otp:</label>
-                        <input type="text" name="otp" id="otp" class="form-control" placeholder="Type otp" 
+                        <input type="text" name="otp" id="otp" class="form-control" placeholder="Type otp" maxlength="6"
                             autocomplete="off">
                       </div>                
                                       

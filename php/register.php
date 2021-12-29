@@ -9,7 +9,7 @@
          $email = $_POST['email'];
          $phone = $_POST['phone'];
          $role = $_POST['role'];        
-         $pass = md5($_POST['pass']);
+         $pass = ($_POST['pass']);
        
 
 
