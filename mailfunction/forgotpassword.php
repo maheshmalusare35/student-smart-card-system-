@@ -163,8 +163,9 @@ if(!empty($_POST["submit_otp"])) {
                             autocomplete="off" maxlength="6">
                       </div>                
                                       
-                       <div class="d-grid gap-2 col-6 mx-auto mb-3">
-                        <button type="submit" name="submit_otp" value="submit" class="btn btn-primary btn-lg">Verify OTP</button>
+                      <div class=" gap-2 mb-3 row align-items-center justify-content-center">
+                        <button type="submit" name="submit_otp" value="submit" class="btn btn-primary btn-lg col-md-4">Verify OTP</button>                  
+                        <a href="#" class="btn btn-primary btn-lg col-md-4" type="submit" name="send_otp" value="send_otp">Resend OTP</a>
                        </div>
                     
 
