@@ -100,11 +100,11 @@
               <label for="password" class="mb-1"> Password:</label>
               <input
                 type="password"
-                name="pass"
+                name="password"
                 id="password"
                 class="form-control"
               />
-              <h6 id="passcheck"></h6>
+              <h6 id="passwordcheck"></h6>
             </div>
 
             <div class="form-check">
@@ -125,7 +125,9 @@
                 href="../mailfunction/emailverify.php"
                 >Verify Email</a
               >
-              <a class="float-end text-decoration-none" href="#"
+              <a
+                class="float-end text-decoration-none"
+                href="../mailfunction/forgotpassword.php"
                 >Forgot Password?</a
               >
             </div>
@@ -234,28 +236,28 @@
           }
         }
 
-        // for the password
+        // for password jquery
 
-        $("#passcheck").hide();
+        $("#passwordcheck").hide();
 
-        var pass_err = true;
+        var password_err = true;
 
         $("#password").keyup(function () {
           password_check();
         });
 
         function password_check() {
-          var passwrdstr = $("#password").val();
+          var passwordstr = $("#password").val();
 
-          if (passwrdstr.length == "") {
-            $("#passcheck").show();
-            $("#passcheck").html("*please fill the password*");
-            $("#passcheck").focus();
-            $("#passcheck").css("color", "red");
-            pass_err = false;
+          if (passwordstr.length == "") {
+            $("#passwordcheck").show();
+            $("#passwordcheck").html("*please fill the password*");
+            $("#passwordcheck").focus();
+            $("#passwordcheck").css("color", "red");
+            password_err = false;
             return false;
           } else {
-            $("#passcheck").hide();
+            $("#passwordcheck").hide();
           }
         }
 
@@ -285,14 +287,14 @@
 
         $("#submitbtn").click(function () {
           email_err = true;
-          pass_err = true;
+          password_err = true;
           select_err = true;
 
           email_check();
           password_check();
           select_check();
 
-          if (email_err == true && pass_err == true && select_err == true) {
+          if (email_err == true && password_err == true && select_err == true) {
             return true;
           } else {
             return false;

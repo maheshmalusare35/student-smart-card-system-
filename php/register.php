@@ -9,7 +9,7 @@
          $email = $_POST['email'];
          $phone = $_POST['phone'];
          $role = $_POST['role'];        
-         $pass = ($_POST['pass']);
+         $password = ($_POST['password']);
        
 
 
@@ -51,7 +51,7 @@
 
 
 
-            $sql="INSERT INTO register(firstname,middlename,lastname,email,phone,role,pass) VALUES('$firstname','$middlename','$lastname','$email','$phone','$role','$pass')";
+            $sql="INSERT INTO register(firstname,middlename,lastname,email,phone,role,password) VALUES('$firstname','$middlename','$lastname','$email','$phone','$role','$password')";
 
             if($conn->query($sql))
 

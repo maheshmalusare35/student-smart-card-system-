@@ -1,3 +1,17 @@
+<?php session_start();
+if (!isset($_SESSION['username'])) {
+    header("Location: ../login.html");
+}
+
+ ?>
+
+
+<body>
+   
+</body>
+</body>
+
+
 <!doctype html>
 <html lang="en">
 
@@ -168,6 +182,7 @@
     <div class="mx-5">
         <button class="btn btn-primary" id="sidebarToggle" onclick="myFunction()"><i
                 class="fas fa-bars"></i> Menu</button></div>
+                <?php echo "<h5>Welcome " . $_SESSION['username'] . "</h5>"; ?>  
 
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
             data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
@@ -175,6 +190,9 @@
                 class="navbar-toggler-icon"></span></button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav ms-auto mt-2 mt-lg-0">
+                
+               
+    
                 <li class="nav-item"><a class="nav-link" href="#"><i class="fas fa-search"></i></a></li>
                 <li class="nav-item"><a class="nav-link" href="#"><i class="fas fa-bell"></i></a></li>
                 <li class="nav-item dropdown">
@@ -184,7 +202,7 @@
                     <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
                         <a class="dropdown-item" href="#"><i class="fas fa-user"></i> Profile</a>
                         <a class="dropdown-item" href="#"><i class="fas fa-cog"></i> Setting</a>
-                        <a class="dropdown-item" href="#"><i class="fas fa-sign-out-alt"></i> Logout</a>
+                        <a class="dropdown-item" href="logout.php"><i class="fas fa-sign-out-alt"></i> Logout</a>
                     </div>
                 </li>
             </ul>

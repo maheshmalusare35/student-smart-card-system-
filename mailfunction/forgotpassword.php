@@ -49,21 +49,29 @@ if(isset($_POST["submit_otp"])) {
     }   
 }
 
- if(isset($_POST["reset_password"])) {
-     // $email = $_POST['email'] ;
-   $email = $_SESSION['EMAIL'];
-    $result = mysqli_query($conn," SELECT * FROM register WHERE email= '" . $email . "' ");
+if(isset($_POST["reset_password"])) {
+    // $email = $_POST['email'] ;
+  $email = $_SESSION['EMAIL'];
+   $password = $_POST['password'];
 
-    if(!empty(mysqli_num_rows($result))) {
-        $result = mysqli_query($conn," UPDATE register SET password = '" .$_POST["password"] . "'  WHERE email= '" . $email . "' ");
-        $success = 3;   
-        echo "<script>alert('wow! Password Reset Successfully!')</script>";
-    } else {
-        $success = 2;
-       
-         echo "<script>alert('oops! Password Not reset!')</script>";
+//for the encryption password
+$encpass = password_hash($password, PASSWORD_BCRYPT);
 
-    }   
+   $result = mysqli_query($conn," SELECT * FROM register WHERE email= '$email' ");
+
+   if(!empty(mysqli_num_rows($result))) 
+   {
+
+$result = mysqli_query($conn," UPDATE register SET password = '$encpass' WHERE email= '$email ' ");
+
+       $success = 3;   
+       echo "<script>alert('wow! Password Reset Successfully!')</script>";
+   } else {
+       $success = 2;
+      
+        echo "<script>alert('oops! Password Not reset!')</script>";
+
+   }   
 }
 
 
@@ -231,7 +239,7 @@ if(isset($_POST["submit_otp"])) {
                             <input type="password" name="password" id="password" class="form-control" data-toggle="popover"
                                 data-trigger="hover" data-placement="bottom" data-content="My popover content." placeholder="Xyz@1kos"
                                 autocomplete="off">
-                            <h6 id="passcheck"></h6>
+                            <h6 id="passwordcheck"></h6>
                         </div>
                         <div class="form-group  mb-2 col-md ">
                             <label for=" confirmpassword" class="mb-1">Confirm Password:</label>
@@ -263,12 +271,9 @@ if(isset($_POST["submit_otp"])) {
                        else if ($success == 3)
                    {
                 ?>
-                   <?php
-                        session_start();
-                        session_unset();
-                        session_destroy();
-                        header('location: ../login.html');
-                        ?>
+                    <script >
+                location.replace("../login.html");
+               </script>
                  <?php
                 
                  ?>
@@ -427,9 +432,9 @@ if(isset($_POST["submit_otp"])) {
             $('#password').tooltip({ 'trigger': 'hover', 'title': 'Password Must contain 8 characters at least 1 number, 1 uppercase, 1 lowercase letter and 1 special symbol  (example: Xyz@1kos)' });
 
 
-            $('#passcheck').hide();
+            $('#passwordcheck').hide();
 
-            var pass_err = true;
+            var password_err = true;
 
             $('#password').keyup(function () {
                 password_check();
@@ -437,31 +442,31 @@ if(isset($_POST["submit_otp"])) {
 
             function password_check() {
 
-                var passwrdstr = $('#password').val();
+                var passwordstr = $('#password').val();
 
-                if (passwrdstr.length == '') {
-                    $('#passcheck').show();
-                    $('#passcheck').html("*please fill the password*");
-                    $('#passcheck').focus();
-                    $('#passcheck').css("color", "red");
-                    pass_err = false;
+                if (passwordstr.length == '') {
+                    $('#passwordcheck').show();
+                    $('#passwordcheck').html("*please fill the password*");
+                    $('#passwordcheck').focus();
+                    $('#passwordcheck').css("color", "red");
+                    password_err = false;
                     return false;
                 }
                 else {
-                    $('#passcheck').hide();
+                    $('#passwordcheck').hide();
                 }
 
 
-                if (!(passwrdstr.match(/^.*(?=.{8,})(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[~,`,!,@,#,$,%,^,&,*,(,),_,-,+,=,{,[,},|,\,/,:,;,",',<,>,.,?,]).*$/))) {
-                    $('#passcheck').show();
-                    $('#passcheck').html("*please fill the proper format password*");
-                    $('#passcheck').focus();
-                    $('#passcheck').css("color", "red");
-                    pass_err = false;
+                if (!(passwordstr.match(/^.*(?=.{8,})(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[~,`,!,@,#,$,%,^,&,*,(,),_,-,+,=,{,[,},|,\,/,:,;,",',<,>,.,?,]).*$/))) {
+                    $('#passwordcheck').show();
+                    $('#passwordcheck').html("*please fill the proper format password*");
+                    $('#passwordcheck').focus();
+                    $('#passwordcheck').css("color", "red");
+                    password_err = false;
                     return false;
                 }
                 else {
-                    $('#passcheck').hide();
+                    $('#passwordcheck').hide();
                 }
             }
 
@@ -495,7 +500,7 @@ if(isset($_POST["submit_otp"])) {
                     $('#confirmpasscheck').hide();
                 }
 
-                if (passwrdstr != confirmpasswrdstr) {
+                if (passwordstr != confirmpasswrdstr) {
                     $('#confirmpasscheck').show();
                     $('#confirmpasscheck').html("*password not match*");
                     $('#confirmpasscheck').focus();
@@ -554,7 +559,7 @@ if(isset($_POST["submit_otp"])) {
             $('#reset_password').click(function () {
 
                
-                pass_err = true;
+                password_err = true;
                 confirmpass_err = true;
                
 
@@ -563,7 +568,7 @@ if(isset($_POST["submit_otp"])) {
               
 
                 
-             if ( (pass_err == true) && (confirmpass_err == true)) {
+             if ( (password_err == true) && (confirmpass_err == true)) {
 
                     return true;
                 }

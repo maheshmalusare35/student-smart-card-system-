@@ -6,7 +6,7 @@
   $message_body = "One Time Password for E-library login authentication is:<br/><br/>" . $otp;
   $mail = new PHPMailer();
   $mail->IsSMTP();
-  $mail->SMTPDebug = 3;
+  $mail->SMTPDebug = 0;
   $mail->SMTPAuth = TRUE;
   $mail->SMTPSecure = 'tls'; // tls or ssl
   $mail->Port     = "587";
