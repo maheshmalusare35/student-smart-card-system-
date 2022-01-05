@@ -3,7 +3,7 @@ session_start();
   include("../database/databaseconnection.php");
 
    
-  if (isset($_SESSION['username'])) {
+  if (isset($_SESSION['firstname'])) {
     
 }
    
@@ -29,7 +29,7 @@ session_start();
          if ($res->num_rows > 0) 
          {
             $row = mysqli_fetch_assoc($res);
-            $_SESSION['username'] = $row['username'];
+            $_SESSION['firstname'] = $row['firstname'];
             // header("Location: student.php");        
             
          }

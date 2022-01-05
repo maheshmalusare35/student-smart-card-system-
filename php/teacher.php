@@ -1,5 +1,5 @@
 <?php session_start();
-if (!isset($_SESSION['username'])) {
+if (!isset($_SESSION['firstname'])) {
     header("Location: ../login.html");
 }
 
@@ -53,7 +53,7 @@ if (!isset($_SESSION['username'])) {
        <a class="navbar-brand" href="#"><img src="logo/logo1.png" class="img-fluid"
             style="width: 100px; height: 50px;">
         </a>
-        <?php echo "<h5>Welcome " . $_SESSION['username'] . "</h5>"; ?>
+        <?php echo "<h5>Welcome " . $_SESSION['firstname'] . "</h5>"; ?>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
             data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
             aria-expanded="false" aria-label="Toggle navigation"><span

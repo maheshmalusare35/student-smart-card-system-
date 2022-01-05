@@ -1,5 +1,5 @@
 <?php session_start();
-if (!isset($_SESSION['username'])) {
+if (!isset($_SESSION['firstname'])) {
     header("Location: ../login.html");
 }
 
@@ -182,7 +182,7 @@ if (!isset($_SESSION['username'])) {
     <div class="mx-5">
         <button class="btn btn-primary" id="sidebarToggle" onclick="myFunction()"><i
                 class="fas fa-bars"></i> Menu</button></div>
-                <?php echo "<h5>Welcome " . $_SESSION['username'] . "</h5>"; ?>  
+                <?php echo "<h5>Welcome " . $_SESSION['firstname'] . "</h5>"; ?>  
 
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
             data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
