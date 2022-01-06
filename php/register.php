@@ -49,8 +49,6 @@
 
             
 
-
-
             $sql="INSERT INTO register(firstname,middlename,lastname,email,phone,role,password) VALUES('$firstname','$middlename','$lastname','$email','$phone','$role','$password')";
 
             if($conn->query($sql))
