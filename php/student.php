@@ -20,7 +20,7 @@ if (!isset($_SESSION['firstname'])) {
     <meta http-equiv="X-UA-Compatible" content="ie-edge">
 
     <!-- Bootstrap CSS -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
 
     <!-- font awesome icons link -->
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
@@ -51,7 +51,7 @@ if (!isset($_SESSION['firstname'])) {
   <!-- Top navigation-->
    <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom p-0 mb-3">
     <div class="container-fluid">
-       <a class="navbar-brand" href="#"><img src="logo/logo1.png" class="img-fluid"
+       <a class="navbar-brand" href="#"><img src="../logo/logo1.png" class="img-fluid"
             style="width: 100px; height: 50px;">
         </a>
         <?php echo "<h5>Welcome " . $_SESSION['firstname'] . "</h5>"; ?>
@@ -100,7 +100,7 @@ if (!isset($_SESSION['firstname'])) {
 
 
  <!-- Bootstrap JS -->
-    <script type="text/javascript" src="js/bootstrap.bundle.min.js"> </script>
+    <script type="text/javascript" src="../js/bootstrap.bundle.min.js"> </script>
 
 
     <!-- javascript -->

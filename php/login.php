@@ -2,12 +2,6 @@
 session_start();
   include("../database/databaseconnection.php");
 
-   
-  if (isset($_SESSION['firstname'])) {
-    
-}
-   
-   // $output = "";
 
   if (isset($_POST['submit'])) {
        
@@ -19,60 +13,92 @@ session_start();
         
        }else if(empty($role)){
 
-       }else if(empty($pass)){
+       }else if(empty($password)){
 
        }else{
 
-         $query = "SELECT * FROM users WHERE email='$email' AND role='$role' AND password='$password'";
-         $res = mysqli_query($connect,$query);
+            $query = "SELECT * FROM register WHERE email = '".$email."' AND role = '".$role."' AND password = '".$password."'";
+         $res = mysqli_query($conn,$query);
+         
+         $check = mysqli_num_rows($res);
 
-         if ($res->num_rows > 0) 
+          if($check > 0)
          {
-            $row = mysqli_fetch_assoc($res);
-            $_SESSION['firstname'] = $row['firstname'];
-            // header("Location: student.php");        
+            while ( $row = mysqli_fetch_assoc($res))
+             {
+                 $_SESSION['firstname'] = $row['firstname'];
             
-         }
-
+            }
+        }
 
          if (mysqli_num_rows($res) == 1)
           {
+            
 
               if ($role == "Student")
                {
                 // $_SESSION['student'] = $row['username'];
-                header("Location: student.php");                
+                ?>
+           <script>
+                location.replace("student.php");
+           </script>
+                <?php                
               }
               else if($role == "Teacher")
               {                
                 // $_SESSION['teacher'] = $row['username'];
-                header("Location: teacher.php");
+                 ?>
+           <script>
+                location.replace("teacher.php");
+           </script>
+                <?php
               }
               else if($role == "Admin")
               {                
                 // $_SESSION['admin'] = $row['username'];
                 header("Location: admin.php");
+                ?>
+           <script>
+                location.replace("admin.php");
+           </script>
+                <?php
               }
               else if($role == "Office")
               {               
                 // $_SESSION['office'] = $row['username'];
                 header("Location: office.php");
+                ?>
+           <script>
+                location.replace("office.php");
+           </script>
+                <?php
               }
               else if($role == "Cafeteria")
               {                
                 // $_SESSION['cafeteria'] = $row['username'];
                 header("Location: cafeteria.php");
+                ?>
+           <script>
+                location.replace("cafeteria.php");
+           </script>
+                <?php
               }
               else if($role == "Library")
               {                
                 // $_SESSION['library'] = $row['username'];
-                header("Location: library.php");
+                
+                ?>
+           <script>
+                location.replace("library.php");
+           </script>
+                <?php
               }
 
 
               echo "<script>alert('You have logged-In Successfully.')</script>";
              // $output .= "you have logged-In";
-         }
+            }
+         
          else
          {
              // $output .= "Failed to login";
@@ -83,7 +109,3 @@ session_start();
   }
 
  ?>
-
-
-
-
