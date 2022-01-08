@@ -10,6 +10,7 @@
          $phone = $_POST['phone'];
          $role = $_POST['role'];        
          $password = ($_POST['password']);
+          $encpass = password_hash($password, PASSWORD_BCRYPT);
        
 
 
@@ -49,7 +50,7 @@
 
             
 
-            $sql="INSERT INTO register(firstname,middlename,lastname,email,phone,role,password) VALUES('$firstname','$middlename','$lastname','$email','$phone','$role','$password')";
+            $sql="INSERT INTO register(firstname,middlename,lastname,email,phone,role,password) VALUES('$firstname','$middlename','$lastname','$email','$phone','$role','$encpass')";
 
             if($conn->query($sql))
 
