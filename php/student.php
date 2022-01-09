@@ -96,7 +96,201 @@ if (!isset($_SESSION['firstname'])) {
     </div>
 </nav>          
 
-           
+
+  <!-- Modal -->
+  <div class="modal fade col-md-12" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header mb-0">
+          <h5 class="modal-title" id="exampleModalLabel"> 
+              Profile</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            <form action="" method="post">
+                <div class="row mt-4">
+                  <div class="form-group mb-2 col-md-6">
+                    <label for="first" class="mb-1"> First Name:</label>
+                    <input
+                      type="text"
+                      name="firstname"
+                      id="firstnames"
+                      class="form-control text-uppercase"
+                      aria-label="Disabled input example" disabled
+                    />
+                   
+                  </div>
+                  <div class="form-group mb-2 col-md-6">
+                    <label for="middle" class="mb-1"> Middle Name:</label>
+                    <input
+                      type="text"
+                      name="middlename"
+                      id="middlenames"
+                      class="form-control text-uppercase"
+                      aria-label="Disabled input example" disabled
+                    />
+                    
+                  </div>
+                </div>
+    
+                <div class="row">
+                  <div class="form-group mb-2 col-md-6">
+                    <label for="last" class="mb-1"> Last Name:</label>
+                    <input
+                      type="text"
+                      name="lastname"
+                      id="lastnames"
+                      class="form-control text-uppercase"
+                      aria-label="Disabled input example" disabled
+                    />
+                   
+                  </div>
+                  <div class="form-group mb-2 col-md-6">
+                    <label for="email" class="form-label">Email address:</label>
+                    <input
+                      type="email"
+                      name="email"
+                      class="form-control"
+                      id="email"
+                      placeholder="name@example.com"
+                      autocomplete="off"
+                      aria-label="Disabled input example" disabled
+                    />
+                    
+                  </div>
+                </div>
+    
+                <div class="row">
+                  <div class="form-group mb-2 col-md-6">
+                    <label for="phone" class="form-label">Contact No:</label>
+                    <input
+                      type="phone"
+                      name="phone"
+                      class="form-control"
+                      id="phone"
+                      maxlength="10"
+                      autocomplete="off"
+                      aria-label="Disabled input example" disabled
+                    />
+                  
+                  </div>
+                  <div class="form-group mb-2 col-md-6">
+                    <label class="form-label" class="mb-0">Select user Type:</label>
+                    <input
+                    type="text"
+                    name="role"
+                    id="role"
+                    class="form-control"
+                    aria-label="Disabled input example" disabled
+                  />
+                  </div>
+                </div>
+    
+                <div class="row">
+                            <div class=" form-group mb-2 col-md-6">
+                                <label class="form-label" class="mb-0">Gender</label>
+    
+                                <select class="form-select" name="gender" aria-label="Default select example" id="gender">
+                                    <option value="">Select</option>
+                                    <option value="Male">Male</option>
+                                    <option value="Female">Female</option>
+                                    <option value="Other">Other</option>
+                                </select>
+                                <h6 id="gendercheck" class="mb-2"></h6>
+                            </div>
+    
+                            <div class=" form-group mb-2 col-md-6">
+                                <label for="date" class="form-label">Date Of Birth:</label>
+                                <input type="date" name="date" class="form-control" id="date" autocomplete="off">
+                                <h6 id="datecheck"></h6>
+                            </div>
+                        </div>
+    
+                
+             <div class="row">
+                <div class="form-group mb-2 col-md-6">
+                            <label class="form-label" class="mb-0">Select year:</label>
+                            <select class="form-select" name="year" aria-label="Default select example" id="select">
+                                <option value="">Select</option>
+                                <option value="FE">FE</option>
+                                <option value="SE">SE</option>
+                                <option value="TE">TE</option>
+                                <option value="BE">BE</option>
+                            </select>
+                            <h6 id="selectcheck" class="mb-2"></h6>
+                        </div>
+                        <div class=" form-group mb-2 col-md-6">
+                            <label for="bloodgroup" class="form-label">Blood Group:</label>
+                            <input type="text" name="bloodgroup" class="form-control" id="bloodgroup" autocomplete="off">
+                            <h6 id="bloodgroupcheck"></h6>
+                        </div>
+            </div>
+                        <div class="form-group col-12 mb-2">
+                            <label for="inputAddress" class="form-label">Address</label>
+                            <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
+                          </div>
+                          <div class="form-group col-12 mb-2">
+                            <label for="inputAddress2" class="form-label">Address 2</label>
+                            <input type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor">
+                          </div>
+                          <div class="form-group col-12 mb-2">
+                            <label for="inputCity" class="form-label">City</label>
+                            <input type="text" class="form-control" id="inputCity">
+                          </div>
+                          <div class="row mb-2">
+                          <div class="form-group col-md-6">
+                            <label for="inputState" class="form-label">State</label>
+                            <select id="inputState" class="form-select">
+                              <option selected>Choose...</option>
+                              <option>Andhra Pradesh</option>
+                              <option>Arunachal Pradesh</option>
+                              <option>Assam</option>
+                              <option>Bihar</option>
+                              <option>Chhattisgarh</option>
+                              <option>Goa</option>
+                              <option>Gujarat</option>
+                              <option>Haryana</option>
+                              <option>Himachal Pradesh</option>
+                              <option>Jharkhand</option>
+                              <option>Karnataka</option>
+                              <option>Kerala</option>
+                              <option>Madhya Pradesh</option>
+                              <option>Maharashtra</option>
+                              <option>Manipur</option>
+                              <option>Meghalaya</option>
+                              <option>Mizoram</option>
+                              <option>Nagaland</option>
+                              <option>Odisha</option>
+                              <option>Punjab</option>
+                              <option>Rajasthan</option>
+                              <option>Sikkim</option>
+                              <option>Tamil Nadu</option>
+                              <option>Telangana</option>
+                              <option>Tripura</option>
+                              <option>Uttar Pradesh</option>
+                              <option>Uttarakhand</option>
+                              <option>West Bengal</option>
+                            </select>
+                          </div>
+                          <div class="form-group col-md-6">
+                            <label for="inputZip" class="form-label">Pin code</label>
+                            <input type="text" class="form-control" id="inputZip">
+                          </div>
+                        </div>
+                          <div class="form-group mb-3">
+                            <label for="formFileSm" class="form-label">Profile picture:</label>
+                            <input class="form-control form-control-sm" id="formFileSm" type="file">
+                          </div>
+    
+              </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary">Save changes</button>
+        </div>
+      </div>
+    </div>
+  </div>
 
 
  <!-- Bootstrap JS -->
