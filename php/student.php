@@ -97,8 +97,7 @@ if (!isset($_SESSION['firstname'])) {
 </nav>          
 
 
-  <!-- Modal -->
-  <div class="modal fade col-md-12" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade col-md-12" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header mb-0">
@@ -117,8 +116,7 @@ if (!isset($_SESSION['firstname'])) {
                       id="firstnames"
                       class="form-control text-uppercase"
                       aria-label="Disabled input example" disabled
-                    />
-                   
+                    />                   
                   </div>
                   <div class="form-group mb-2 col-md-6">
                     <label for="middle" class="mb-1"> Middle Name:</label>
@@ -128,11 +126,9 @@ if (!isset($_SESSION['firstname'])) {
                       id="middlenames"
                       class="form-control text-uppercase"
                       aria-label="Disabled input example" disabled
-                    />
-                    
+                    />                    
                   </div>
-                </div>
-    
+                </div>    
                 <div class="row">
                   <div class="form-group mb-2 col-md-6">
                     <label for="last" class="mb-1"> Last Name:</label>
@@ -142,8 +138,7 @@ if (!isset($_SESSION['firstname'])) {
                       id="lastnames"
                       class="form-control text-uppercase"
                       aria-label="Disabled input example" disabled
-                    />
-                   
+                    />                   
                   </div>
                   <div class="form-group mb-2 col-md-6">
                     <label for="email" class="form-label">Email address:</label>
@@ -155,11 +150,9 @@ if (!isset($_SESSION['firstname'])) {
                       placeholder="name@example.com"
                       autocomplete="off"
                       aria-label="Disabled input example" disabled
-                    />
-                    
+                    />                    
                   </div>
-                </div>
-    
+                </div>    
                 <div class="row">
                   <div class="form-group mb-2 col-md-6">
                     <label for="phone" class="form-label">Contact No:</label>
@@ -171,8 +164,7 @@ if (!isset($_SESSION['firstname'])) {
                       maxlength="10"
                       autocomplete="off"
                       aria-label="Disabled input example" disabled
-                    />
-                  
+                    />                  
                   </div>
                   <div class="form-group mb-2 col-md-6">
                     <label class="form-label" class="mb-0">Select user Type:</label>
@@ -184,8 +176,7 @@ if (!isset($_SESSION['firstname'])) {
                     aria-label="Disabled input example" disabled
                   />
                   </div>
-                </div>
-    
+                </div>    
                 <div class="row">
                             <div class=" form-group mb-2 col-md-6">
                                 <label class="form-label" class="mb-0">Gender</label>
@@ -225,14 +216,27 @@ if (!isset($_SESSION['firstname'])) {
                             <h6 id="bloodgroupcheck"></h6>
                         </div>
             </div>
+
+            <div class="form-group mb-2">
+              <label class="form-label" >Select your Department:</label>
+              <select class="form-select" name="department" aria-label="Default select example" id="department">
+                  <option value="">Select</option>
+                  <option value="Mechanical">Mechanical</option>
+                  <option value="Computer Science">Computer Science</option>
+                  <option value="Information Technology">Information Technology</option>
+                  <option value="Production Engineering">Production Engineering</option>
+              </select>
+              <h6 id="selectcheck" class="mb-2"></h6>
+          </div>
+
                         <div class="form-group col-12 mb-2">
                             <label for="inputAddress" class="form-label">Address</label>
-                            <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
+                            <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St Apartment, studio, or floor">
                           </div>
-                          <div class="form-group col-12 mb-2">
+                          <!-- <div class="form-group col-12 mb-2">
                             <label for="inputAddress2" class="form-label">Address 2</label>
-                            <input type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor">
-                          </div>
+                            <input type="text" class="form-control" id="inputAddress2" placeholder="">
+                          </div> -->
                           <div class="form-group col-12 mb-2">
                             <label for="inputCity" class="form-label">City</label>
                             <input type="text" class="form-control" id="inputCity">
@@ -277,20 +281,32 @@ if (!isset($_SESSION['firstname'])) {
                             <input type="text" class="form-control" id="inputZip">
                           </div>
                         </div>
-                          <div class="form-group mb-3">
+                        <div class="row">
+                          <div class="form-group mb-3 col-md-6">
                             <label for="formFileSm" class="form-label">Profile picture:</label>
                             <input class="form-control form-control-sm" id="formFileSm" type="file">
                           </div>
-    
-              </form>
+                          <div class="form-group mb-3 col-md-6">
+                            <label for="formFileSm" class="form-label">Signature:</label>
+                            <input class="form-control form-control-sm" id="formFileSm" type="file">
+                          </div>
+                        </div>
+                            <hr>
+
+                          <div class="d-grid gap-2 col-6 mx-auto mb-1">
+                            <button type="submit" id="submitbtn" name="submit" value="submit" class="btn btn-primary btn-lg">Save changes
+                            </button>
+                          </div>
+                  </form>
         </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-primary">Save changes</button>
-        </div>
+        <!-- <div class="modal-footer">
+          
+        </div> -->
       </div>
     </div>
   </div>
+
+
 
 
  <!-- Bootstrap JS -->
