@@ -16,8 +16,8 @@ session_start();
        }else if(empty($password)){
 
        }else{
-
-            $query = "SELECT * FROM register WHERE email = '".$email."' AND role = '".$role."' AND password = '".$password."'";
+             
+            $query = "SELECT * FROM register WHERE email = '$email' AND role = '$role' ";
          $res = mysqli_query($conn,$query);
          
          $check = mysqli_num_rows($res);
@@ -27,10 +27,15 @@ session_start();
             while ( $row = mysqli_fetch_assoc($res))
              {
                  $_SESSION['firstname'] = $row['firstname'];
-            
+              $fetch_pass = $row['password'];
             }
         }
-
+        
+       
+         
+         
+        
+        
          if (mysqli_num_rows($res) == 1)
           {
             
@@ -93,16 +98,28 @@ session_start();
            </script>
                 <?php
               }
+              
+              if(password_verify($password, $fetch_pass))
+              {
 
-
-              echo "<script>alert('You have logged-In Successfully.')</script>";
-             // $output .= "you have logged-In";
+                ?>
+              <script>alert('You have logged-In Successfully.')</script>
+              <?php
+              }
+              else
+              {
+                   ?>
+               <script>alert('oops! Email or Password is Wrong.')</script>
+               <?php
+              }
+              
+              
             }
-         
          else
          {
-             // $output .= "Failed to login";
-            echo "<script>alert('oops! Email or Password is Wrong.')</script>";
+             ?>
+            <script>alert('oops! Email or Password is Wrong.')</script>
+            <?php
          }
 
        }
