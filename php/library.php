@@ -1,5 +1,5 @@
 <?php session_start();
-if (!isset($_SESSION['firstname'])) {
+if (!isset($_SESSION['firstname']) || $_SESSION['role']!= "Library")  {
     header("Location: ../login.html");
 }
 

@@ -10,7 +10,7 @@ if (isset($_POST['submit']))
      $role = $_POST['role'];
      $password = $_POST['password'];
 
-     $query = "SELECT * FROM register WHERE email = '$email' ";
+     $query = "SELECT * FROM register WHERE email='$email' AND role='$role'";
      $res = mysqli_query($conn,$query);
      $check = mysqli_num_rows($res);
 
@@ -20,18 +20,19 @@ if (isset($_POST['submit']))
           while ( $row = mysqli_fetch_assoc($res))
           {
                $_SESSION['firstname'] = $row['firstname'];
+               $_SESSION['role'] = $row['role'];
                $fetch_pass = $row['password'];
           }
      }
-
+           
 
      if (mysqli_num_rows($res) > 0)
           {
-          if(password_verify($password,  $fetch_pass))
-               {
-                    if (mysqli_num_rows(mysqli_query($conn,"SELECT * FROM register WHERE role = '$role'  ")) > 0)
+              if(password_verify($password,  $fetch_pass))
+                {
+                    if (mysqli_num_rows($res) == 1)
                     {
-                         if ($role == "Student")
+                         if ($_SESSION['role'] == "Student")
                          {                         
                               ?>
                                    <script>
@@ -39,7 +40,7 @@ if (isset($_POST['submit']))
                                    </script>
                               <?php                
                          }
-                         else if($role == "Teacher")
+                         else if($_SESSION['role'] == "Teacher")
                          {                
                               ?>
                                    <script>
@@ -47,7 +48,7 @@ if (isset($_POST['submit']))
                                    </script>
                               <?php
                          }
-                         else if($role == "Admin")
+                         else if($_SESSION['role'] == "Admin")
                          {  
                               ?>
                                    <script>
@@ -55,7 +56,7 @@ if (isset($_POST['submit']))
                                    </script>
                               <?php
                          }
-                         else if($role == "Office")
+                         else if($_SESSION['role'] == "Office")
                          { 
                               ?>
                                    <script>
@@ -63,7 +64,7 @@ if (isset($_POST['submit']))
                                    </script>
                               <?php
                          }
-                         else if($role == "Cafeteria")
+                         else if($_SESSION['role'] == "Cafeteria")
                          {
                               ?>
                                    <script>
@@ -71,7 +72,7 @@ if (isset($_POST['submit']))
                                    </script>
                               <?php
                          }
-                         else if($role == "Library")
+                         else if($_SESSION['role'] == "Library")
                          { 
                               ?>
                                    <script>
@@ -83,17 +84,17 @@ if (isset($_POST['submit']))
                          else
                          {
                               ?>
-                                   <script>alert('oops! Select User Wrong.')
-                                        location.replace("../login.html");
+                                  <script>alert('oops! Select User Wrong.')
+                                    location.replace("../login.html");
                                    </script>                              
                               <?php
                          }                         
-               }
+                }
                else
                {
                     ?>
-                         <script>alert('oops! Password Wrong.')
-                              location.replace("../login.html");
+                        <script>alert('oops! Password Wrong.')
+                          location.replace("../login.html");
                          </script>
                     <?php
                }

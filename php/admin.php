@@ -1,5 +1,6 @@
-<?php session_start();
-if (!isset($_SESSION['firstname'])) {
+<?php
+session_start();
+if (!isset($_SESSION['firstname']) || $_SESSION['role']!= "Admin")  {
     header("Location: ../login.html");
 }
 
@@ -25,7 +26,7 @@ if (!isset($_SESSION['firstname'])) {
     <meta http-equiv="X-UA-Compatible" content="ie-edge">
 
     <!-- Bootstrap CSS -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
 
     <!-- font awesome icons link -->
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
@@ -254,7 +255,7 @@ if (!isset($_SESSION['firstname'])) {
 
 
  <!-- Bootstrap JS -->
-    <script type="text/javascript" src="js/bootstrap.bundle.min.js"> </script>
+    <script type="text/javascript" src="../js/bootstrap.bundle.min.js"> </script>
 
 
     <!-- javascript -->
