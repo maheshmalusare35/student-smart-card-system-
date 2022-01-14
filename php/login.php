@@ -1,128 +1,111 @@
 <?php 
 session_start();
-  include("../database/databaseconnection.php");
+include("../database/databaseconnection.php");
 
 
-  if (isset($_POST['submit'])) {
-       
-       $email = $_POST['email'];
-       $role = $_POST['role'];
-       $password = $_POST['password'];
+if (isset($_POST['submit'])) 
+{
 
-       if (empty($email)) {
-        
-       }else if(empty($role)){
+     $email = $_POST['email'];
+     $role = $_POST['role'];
+     $password = $_POST['password'];
 
-       }else if(empty($password)){
+     $query = "SELECT * FROM register WHERE email = '$email' ";
+     $res = mysqli_query($conn,$query);
+     $check = mysqli_num_rows($res);
 
-       }else{
-             
-            $query = "SELECT * FROM register WHERE email = '$email' AND role = '$role' ";
-         $res = mysqli_query($conn,$query);
-         
-         $check = mysqli_num_rows($res);
 
-          if($check > 0)
-         {
-            while ( $row = mysqli_fetch_assoc($res))
-             {
-                 $_SESSION['firstname'] = $row['firstname'];
-              $fetch_pass = $row['password'];
-            }
-        }
-        
-       
-         
-         
-        
-        
-         if (mysqli_num_rows($res) == 1)
+     if($check > 0)
+     {
+          while ( $row = mysqli_fetch_assoc($res))
           {
-            
+               $_SESSION['firstname'] = $row['firstname'];
+               $fetch_pass = $row['password'];
+          }
+     }
 
-              if ($role == "Student")
+
+     if (mysqli_num_rows($res) > 0)
+          {
+          if(password_verify($password,  $fetch_pass))
                {
-                // $_SESSION['student'] = $row['username'];
-                ?>
-           <script>
-                location.replace("student.php");
-           </script>
-                <?php                
-              }
-              else if($role == "Teacher")
-              {                
-                // $_SESSION['teacher'] = $row['username'];
-                 ?>
-           <script>
-                location.replace("teacher.php");
-           </script>
-                <?php
-              }
-              else if($role == "Admin")
-              {                
-                // $_SESSION['admin'] = $row['username'];
-                header("Location: admin.php");
-                ?>
-           <script>
-                location.replace("admin.php");
-           </script>
-                <?php
-              }
-              else if($role == "Office")
-              {               
-                // $_SESSION['office'] = $row['username'];
-                header("Location: office.php");
-                ?>
-           <script>
-                location.replace("office.php");
-           </script>
-                <?php
-              }
-              else if($role == "Cafeteria")
-              {                
-                // $_SESSION['cafeteria'] = $row['username'];
-                header("Location: cafeteria.php");
-                ?>
-           <script>
-                location.replace("cafeteria.php");
-           </script>
-                <?php
-              }
-              else if($role == "Library")
-              {                
-                // $_SESSION['library'] = $row['username'];
-                
-                ?>
-           <script>
-                location.replace("library.php");
-           </script>
-                <?php
-              }
-              
-              if(password_verify($password, $fetch_pass))
-              {
-
-                ?>
-              <script>alert('You have logged-In Successfully.')</script>
-              <?php
-              }
-              else
-              {
-                   ?>
-               <script>alert('oops! Email or Password is Wrong.')</script>
+                    if (mysqli_num_rows(mysqli_query($conn,"SELECT * FROM register WHERE role = '$role'  ")) > 0)
+                    {
+                         if ($role == "Student")
+                         {                         
+                              ?>
+                                   <script>
+                                        location.replace("student.php");
+                                   </script>
+                              <?php                
+                         }
+                         else if($role == "Teacher")
+                         {                
+                              ?>
+                                   <script>
+                                        location.replace("teacher.php");
+                                   </script>
+                              <?php
+                         }
+                         else if($role == "Admin")
+                         {  
+                              ?>
+                                   <script>
+                                        location.replace("admin.php");
+                                   </script>
+                              <?php
+                         }
+                         else if($role == "Office")
+                         { 
+                              ?>
+                                   <script>
+                                        location.replace("office.php");
+                                   </script>
+                              <?php
+                         }
+                         else if($role == "Cafeteria")
+                         {
+                              ?>
+                                   <script>
+                                        location.replace("cafeteria.php");
+                                   </script>
+                              <?php
+                         }
+                         else if($role == "Library")
+                         { 
+                              ?>
+                                   <script>
+                                        location.replace("library.php");
+                                   </script>
+                              <?php
+                         }
+                    }
+                         else
+                         {
+                              ?>
+                                   <script>alert('oops! Select User Wrong.')
+                                        location.replace("../login.html");
+                                   </script>                              
+                              <?php
+                         }                         
+               }
+               else
+               {
+                    ?>
+                         <script>alert('oops! Password Wrong.')
+                              location.replace("../login.html");
+                         </script>
+                    <?php
+               }
+          }
+          else
+          {
+               ?>
+                    <script>alert('oops! Email Wrong.')
+                    location.replace("../login.html");
+                    </script>
+                    
                <?php
-              }
-              
-              
-            }
-         else
-         {
-             ?>
-            <script>alert('oops! Email or Password is Wrong.')</script>
-            <?php
-         }
-
-       }
-  }
-
- ?>
+          }
+}
+?>
