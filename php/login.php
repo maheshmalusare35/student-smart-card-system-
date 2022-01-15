@@ -24,12 +24,12 @@ if (isset($_POST['submit']))
                $fetch_pass = $row['password'];
           }
      }
-           
+
 
      if (mysqli_num_rows($res) > 0)
           {
-              if(password_verify($password,  $fetch_pass))
-                {
+               if(password_verify($password,  $fetch_pass))
+               {
                     if (mysqli_num_rows($res) == 1)
                     {
                          if ($_SESSION['role'] == "Student")
@@ -84,17 +84,17 @@ if (isset($_POST['submit']))
                          else
                          {
                               ?>
-                                  <script>alert('oops! Select User Wrong.')
-                                    location.replace("../login.html");
+                                   <script>alert('oops! Select User Wrong.')
+                                        location.replace("../login.html");
                                    </script>                              
                               <?php
                          }                         
-                }
+               }
                else
                {
                     ?>
-                        <script>alert('oops! Password Wrong.')
-                          location.replace("../login.html");
+                         <script>alert('oops! Password Wrong.')
+                              location.replace("../login.html");
                          </script>
                     <?php
                }

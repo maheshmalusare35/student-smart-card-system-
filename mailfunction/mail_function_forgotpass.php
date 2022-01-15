@@ -3,7 +3,7 @@
   require('phpmailer/class.phpmailer.php');
   require('phpmailer/class.smtp.php');
  
-  $message_body = "One Time Password for Student smart card system Email verification is:<br/><br/>" . $otp;
+  $message_body = "One Time Password for Student smart card system forgot password authentication is:<br/><br/>" . $otp;
   $mail = new PHPMailer();
   $mail->IsSMTP();
   $mail->SMTPDebug = 0;

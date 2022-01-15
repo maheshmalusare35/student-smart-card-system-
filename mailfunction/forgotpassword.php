@@ -1,6 +1,6 @@
 <?php
 session_start();
-include "mail_function.php";
+include "mail_function_forgotpass.php";
 date_default_timezone_set("Asia/Kolkata");
 $success = "";
 $email = "";
