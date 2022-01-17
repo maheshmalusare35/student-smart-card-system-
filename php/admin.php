@@ -59,7 +59,7 @@ if (!isset($_SESSION['firstname']) || $_SESSION['role']!= "Admin")  {
         <!-- Sidebar-->
         <div class="border-end bg-white" id="sidebar-wrapper">
             <div class="sidebar-heading bg-light text-center justify-content-center align-items-center p-3">           
-        <img src="logo/logo1.png"> 
+        <img src="../logo/logo1.png"> 
         <div><h5>Student Smart Card</h5></div>                
     </div>
            <div class="list-group">

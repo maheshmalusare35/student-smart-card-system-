@@ -21,6 +21,8 @@ if (isset($_POST['submit']))
           {
                $_SESSION['firstname'] = $row['firstname'];
                $_SESSION['role'] = $row['role'];
+               $_SESSION['is_expired'] = $row['is_expired'];
+               $is_expired = $row['is_expired'];
                $fetch_pass = $row['password'];
           }
      }
@@ -30,15 +32,17 @@ if (isset($_POST['submit']))
           {
                if(password_verify($password,  $fetch_pass))
                {
-                    if (mysqli_num_rows($res) == 1)
-                    {
-                         if ($_SESSION['role'] == "Student")
-                         {                         
+                   if($is_expired == 1)
+                   {
+                      if (mysqli_num_rows($res) == 1)
+                       {
+                           if ($_SESSION['role'] == "Student")
+                            {                         
                               ?>
                                    <script>
                                         location.replace("student.php");
                                    </script>
-                              <?php                
+                              <?php                     
                          }
                          else if($_SESSION['role'] == "Teacher")
                          {                
@@ -80,7 +84,15 @@ if (isset($_POST['submit']))
                                    </script>
                               <?php
                          }
-                    }
+                         
+                         
+                         
+                             ?>
+                                   <script>alert('wow! successfully logged in.')
+                                        location.replace("../login.html");
+                                   </script>                              
+                              <?php
+                       }
                          else
                          {
                               ?>
@@ -88,7 +100,18 @@ if (isset($_POST['submit']))
                                         location.replace("../login.html");
                                    </script>                              
                               <?php
-                         }                         
+                         } 
+                        
+                    }
+                     else
+                         {
+                             ?>
+                                   <script>alert('oops! Please verify email')
+                                        location.replace("../login.html");
+                                   </script>                              
+                              <?php
+                         }
+                                                 
                }
                else
                {

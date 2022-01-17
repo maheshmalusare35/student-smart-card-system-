@@ -3,31 +3,31 @@
 
         if(isset($_POST['submit']))
         {
-         $firstname = $_POST['firstname'];
-         $middlename = $_POST['middlename'];
-         $lastname = $_POST['lastname'];
-         $email = $_POST['email'];
-         $phone = $_POST['phone'];
-         $role = $_POST['role'];        
-         $password = ($_POST['password']);
+          $firstname = $_POST['firstname'];
+          $middlename = $_POST['middlename'];
+          $lastname = $_POST['lastname'];
+          $email = $_POST['email'];
+          $phone = $_POST['phone'];
+          $role = $_POST['role'];        
+          $password = ($_POST['password']);
           $encpass = password_hash($password, PASSWORD_BCRYPT);
-       
+
 
 
 
          $query= mysqli_query($conn,"SELECT * FROM register WHERE email='$email'");
         if (mysqli_num_rows($query)>0) 
         {
-                       ?>
-                       <script >
-                       alert("Email is already use....");
-                       </script>
-                       <?php
+            ?>
+              <script >
+                        alert("Email is already use....");
+              </script>
+            <?php
                       ?>
                       <script >
                         location.replace("../register.html");
-                       </script>
-                       <?php
+                      </script>
+                      <?php
         }
         else
         {
@@ -56,15 +56,15 @@
 
             {
                 ?>
-                       <script >
-                       alert("Record insert successfully");
-                       </script>
-                       <?php
-                       ?>
-                       <script >
-                         location.replace("../register.html");
-                        </script>
-                        <?php
+                  <script >
+                        alert("Record insert successfully");
+                  </script>
+                <?php
+                ?>
+                  <script >
+                        location.replace("../register.html");
+                  </script>
+                <?php
             }
             else
             {

@@ -18,7 +18,7 @@ if (!isset($_SESSION['firstname']) || $_SESSION['role']!= "Teacher") {
     <meta http-equiv="X-UA-Compatible" content="ie-edge" />
 
     <!-- Bootstrap CSS -->
-    <link href="css/bootstrap.min.css" rel="stylesheet" />
+    <link href="../css/bootstrap.min.css" rel="stylesheet" />
 
     <!-- font awesome icons link -->
     <link
@@ -50,9 +50,10 @@ if (!isset($_SESSION['firstname']) || $_SESSION['role']!= "Teacher") {
      <!-- Top navigation-->
    <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom p-0 mb-3">
     <div class="container-fluid">
-       <a class="navbar-brand" href="#"><img src="logo/logo1.png" class="img-fluid"
+       <a class="navbar-brand" href="#"><img src="../logo/logo1.png" class="img-fluid"
             style="width: 100px; height: 50px;">
         </a>
+        <?php echo "<h5>Welcome " . $_SESSION['firstname'] . "</h5>"; ?>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
             data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
             aria-expanded="false" aria-label="Toggle navigation"><span
@@ -320,7 +321,7 @@ if (!isset($_SESSION['firstname']) || $_SESSION['role']!= "Teacher") {
     
 
     <!-- Bootstrap JS -->
-    <script type="text/javascript" src="js/bootstrap.bundle.min.js"></script>
+    <script type="text/javascript" src="../js/bootstrap.bundle.min.js"></script>
 
     <!-- javascript -->
     <script type="text/javascript">
