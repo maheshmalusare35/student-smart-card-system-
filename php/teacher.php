@@ -1,9 +1,32 @@
-<?php session_start();
-if (!isset($_SESSION['firstname']) || $_SESSION['role']!= "Teacher") {
-    header("Location: ../login.html");
-}
+<?php 
+session_start();
+include("../database/databaseconnection.php");
 
- ?>    
+if (!isset($_SESSION['firstname']) || $_SESSION['role']!= "Teacher") {
+    header('Location: ../login.html');
+}
+ 
+ $email=$_SESSION['email'];
+ 
+ $query = "SELECT * FROM register WHERE email='$email'";
+     $res = mysqli_query($conn,$query);
+     $check = mysqli_num_rows($res);
+
+
+     if($check > 0)
+     {
+          while ( $row = mysqli_fetch_assoc($res))
+          {
+              $firstname = $row['firstname'];
+              $middlename = $row['middlename'];
+              $lastname = $row['lastname'];
+              $email = $row['email'];
+              $phone = $row['phone'];
+              $role = $row['role'];
+          }
+      }
+
+?> 
 
 
 <!DOCTYPE html>
@@ -47,10 +70,10 @@ if (!isset($_SESSION['firstname']) || $_SESSION['role']!= "Teacher") {
   </head>
 
   <body>
-     <!-- Top navigation-->
-   <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom p-0 mb-3">
+    <!-- Top navigation-->
+  <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom p-0 mb-3">
     <div class="container-fluid">
-       <a class="navbar-brand" href="#"><img src="../logo/logo1.png" class="img-fluid"
+      <a class="navbar-brand" href="#"><img src="../logo/logo1.png" class="img-fluid"
             style="width: 100px; height: 50px;">
         </a>
         <?php echo "<h5>Welcome " . $_SESSION['firstname'] . "</h5>"; ?>
@@ -68,7 +91,7 @@ if (!isset($_SESSION['firstname']) || $_SESSION['role']!= "Teacher") {
                   </li>
                   <li class="nav-item">
                      <a class="nav-link fw-bold" href="#"><i class="far fa-calendar-week"></i> Calender</a>
-                   </li>
+                  </li>
                    <li class="nav-item">
                      <a class="nav-link fw-bold" href="#"><i class="fas fa-comments-dollar"></i> Your Transaction</a>
                    </li>
@@ -76,9 +99,9 @@ if (!isset($_SESSION['firstname']) || $_SESSION['role']!= "Teacher") {
                      <a class="nav-link fw-bold" href="#"><i class="fas fa-poll-h"></i> Result</a>
                    </li>      -->
 
-                 <li class="nav-item">
-                    <a class="nav-link fw-bold" href="#">Your Balance:</a>
-                 </li>
+                  <li class="nav-item">
+                      <a class="nav-link fw-bold" href="#">Your Balance:</a>
+                  </li>
                 <!-- <li class="nav-item"><a class="nav-link" href="#"><i class="fas fa-search"></i></a></li>
                 <li class="nav-item"><a class="nav-link" href="#"><i class="fas fa-bell"></i></a></li>
                 <li class="nav-item dropdown"> -->
@@ -109,7 +132,7 @@ if (!isset($_SESSION['firstname']) || $_SESSION['role']!= "Teacher") {
         </div>
         <div class="modal-body">
 
-          <div class="row mt-4">
+        <div class="row mt-4">
             <div class="form-group mb-2 col-md-6">
               <label for="first" class="mb-1"> First Name:</label>
               <input
@@ -117,6 +140,7 @@ if (!isset($_SESSION['firstname']) || $_SESSION['role']!= "Teacher") {
                 name="firstname"
                 id="firstnames"
                 class="form-control text-uppercase"
+                placeholder="<?php echo " " . $firstname . ""; ?>"
                 aria-label="Disabled input example" disabled
               />                   
             </div>
@@ -127,6 +151,7 @@ if (!isset($_SESSION['firstname']) || $_SESSION['role']!= "Teacher") {
                 name="middlename"
                 id="middlenames"
                 class="form-control text-uppercase"
+                placeholder="<?php echo " " . $middlename . ""; ?>"
                 aria-label="Disabled input example" disabled
               />                    
             </div>
@@ -139,6 +164,7 @@ if (!isset($_SESSION['firstname']) || $_SESSION['role']!= "Teacher") {
                 name="lastname"
                 id="lastnames"
                 class="form-control text-uppercase"
+                placeholder="<?php echo " " . $lastname . ""; ?>"
                 aria-label="Disabled input example" disabled
               />                   
             </div>
@@ -149,7 +175,7 @@ if (!isset($_SESSION['firstname']) || $_SESSION['role']!= "Teacher") {
                 name="email"
                 class="form-control"
                 id="email"
-                placeholder="name@example.com"
+                placeholder="<?php echo " " . $email . ""; ?>"
                 autocomplete="off"
                 aria-label="Disabled input example" disabled
               />                    
@@ -165,6 +191,7 @@ if (!isset($_SESSION['firstname']) || $_SESSION['role']!= "Teacher") {
                 id="phone"
                 maxlength="10"
                 autocomplete="off"
+                placeholder="<?php echo " " . $phone . ""; ?>"
                 aria-label="Disabled input example" disabled
               />                  
             </div>
@@ -175,12 +202,11 @@ if (!isset($_SESSION['firstname']) || $_SESSION['role']!= "Teacher") {
               name="role"
               id="role"
               class="form-control"
+              placeholder="<?php echo " " . $role . ""; ?>"
               aria-label="Disabled input example" disabled
             />
             </div>
           </div>  
-
-
 
             <form  method="POST">                  
                       <div class="row">

@@ -1,13 +1,32 @@
 <?php 
-
 session_start();
-
+include("../database/databaseconnection.php");
 
 if (!isset($_SESSION['firstname']) || $_SESSION['role']!= "Student") {
     header('Location: ../login.html');
 }
+ 
+ $email=$_SESSION['email'];
+ 
+ $query = "SELECT * FROM register WHERE email='$email'";
+     $res = mysqli_query($conn,$query);
+     $check = mysqli_num_rows($res);
 
- ?>
+
+     if($check > 0)
+     {
+          while ( $row = mysqli_fetch_assoc($res))
+          {
+               $firstname = $row['firstname'];
+               $middlename = $row['middlename'];
+               $lastname = $row['lastname'];
+               $email = $row['email'];
+               $phone = $row['phone'];
+               $role = $row['role'];
+          }
+     }
+ 
+?>
     
 
 
@@ -58,7 +77,7 @@ if (!isset($_SESSION['firstname']) || $_SESSION['role']!= "Student") {
        <a class="navbar-brand" href="#"><img src="../logo/logo1.png" class="img-fluid"
             style="width: 100px; height: 50px;">
         </a>
-        <?php echo "<h5>Welcome " . $_SESSION['firstname'] . "</h5>"; ?>
+         <?php echo "<h5>Welcome " . $_SESSION['firstname'] . "</h5>"; ?>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
             data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
             aria-expanded="false" aria-label="Toggle navigation"><span
@@ -93,7 +112,7 @@ if (!isset($_SESSION['firstname']) || $_SESSION['role']!= "Student") {
                     <div class="dropdown-menu dropdown-menu-end mb-2" aria-labelledby="navbarDropdown">
                         <a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="fas fa-user"></i> Profile</a>
                         
-                        <a class="dropdown-item" href="#"><i class="fas fa-sign-out-alt"></i> Logout</a>
+                        <a class="dropdown-item" href="logout.php"><i class="fas fa-sign-out-alt"></i> Logout</a>
                     </div>
                 </li>
             </ul>
@@ -122,6 +141,7 @@ if (!isset($_SESSION['firstname']) || $_SESSION['role']!= "Student") {
                 name="firstname"
                 id="firstnames"
                 class="form-control text-uppercase"
+                placeholder="<?php echo " " . $firstname . ""; ?>"
                 aria-label="Disabled input example" disabled
               />                   
             </div>
@@ -132,6 +152,7 @@ if (!isset($_SESSION['firstname']) || $_SESSION['role']!= "Student") {
                 name="middlename"
                 id="middlenames"
                 class="form-control text-uppercase"
+                placeholder="<?php echo " " . $middlename . ""; ?>"
                 aria-label="Disabled input example" disabled
               />                    
             </div>
@@ -144,6 +165,7 @@ if (!isset($_SESSION['firstname']) || $_SESSION['role']!= "Student") {
                 name="lastname"
                 id="lastnames"
                 class="form-control text-uppercase"
+                placeholder="<?php echo " " . $lastname . ""; ?>"
                 aria-label="Disabled input example" disabled
               />                   
             </div>
@@ -154,7 +176,7 @@ if (!isset($_SESSION['firstname']) || $_SESSION['role']!= "Student") {
                 name="email"
                 class="form-control"
                 id="email"
-                placeholder="name@example.com"
+                placeholder="<?php echo " " . $email . ""; ?>"
                 autocomplete="off"
                 aria-label="Disabled input example" disabled
               />                    
@@ -170,6 +192,7 @@ if (!isset($_SESSION['firstname']) || $_SESSION['role']!= "Student") {
                 id="phone"
                 maxlength="10"
                 autocomplete="off"
+                placeholder="<?php echo " " . $phone . ""; ?>"
                 aria-label="Disabled input example" disabled
               />                  
             </div>
@@ -180,6 +203,7 @@ if (!isset($_SESSION['firstname']) || $_SESSION['role']!= "Student") {
               name="role"
               id="role"
               class="form-control"
+              placeholder="<?php echo " " . $role . ""; ?>"
               aria-label="Disabled input example" disabled
             />
             </div>

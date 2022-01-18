@@ -26,6 +26,7 @@ if (isset($_POST['submit']))
                $fetch_pass = $row['password'];
           }
      }
+     $_SESSION['email'] = $email;
 
 
      if (mysqli_num_rows($res) > 0)
@@ -40,14 +41,16 @@ if (isset($_POST['submit']))
                             {                         
                               ?>
                                    <script>
+                                        alert('wow! successfully logged in.')
                                         location.replace("student.php");
                                    </script>
-                              <?php                     
-                         }
+                              <?php                
+                            }
                          else if($_SESSION['role'] == "Teacher")
                          {                
                               ?>
                                    <script>
+                                    alert('wow! successfully logged in.')
                                         location.replace("teacher.php");
                                    </script>
                               <?php
@@ -56,6 +59,7 @@ if (isset($_POST['submit']))
                          {  
                               ?>
                                    <script>
+                                    alert('wow! successfully logged in.')
                                         location.replace("admin.php");
                                    </script>
                               <?php
@@ -64,6 +68,7 @@ if (isset($_POST['submit']))
                          { 
                               ?>
                                    <script>
+                                    alert('wow! successfully logged in.')
                                         location.replace("office.php");
                                    </script>
                               <?php
@@ -72,6 +77,7 @@ if (isset($_POST['submit']))
                          {
                               ?>
                                    <script>
+                                    alert('wow! successfully logged in.')
                                         location.replace("cafeteria.php");
                                    </script>
                               <?php
@@ -80,18 +86,11 @@ if (isset($_POST['submit']))
                          { 
                               ?>
                                    <script>
+                                    alert('wow! successfully logged in.')
                                         location.replace("library.php");
                                    </script>
                               <?php
                          }
-                         
-                         
-                         
-                             ?>
-                                   <script>alert('wow! successfully logged in.')
-                                        location.replace("../login.html");
-                                   </script>                              
-                              <?php
                        }
                          else
                          {
@@ -102,16 +101,16 @@ if (isset($_POST['submit']))
                               <?php
                          } 
                         
-                    }
-                     else
+                    } 
+                    else
                          {
-                             ?>
-                                   <script>alert('oops! Please verify email')
+                              ?>
+                                   <script>alert('oops! Please verify your email.')
                                         location.replace("../login.html");
                                    </script>                              
                               <?php
-                         }
-                                                 
+                         }                   
+
                }
                else
                {
