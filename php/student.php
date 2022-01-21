@@ -3,7 +3,7 @@ session_start();
 include("../database/databaseconnection.php");
 
 if (!isset($_SESSION['firstname']) || $_SESSION['role']!= "Student") {
-    header('Location: ../login.html');
+    header("Location: ../login.html");
 }
  
  $email=$_SESSION['email'];
@@ -27,10 +27,7 @@ if (!isset($_SESSION['firstname']) || $_SESSION['role']!= "Student") {
      }
  
 ?>
-    
-
-
-    <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <!-- Favicon -->
@@ -256,10 +253,10 @@ if (!isset($_SESSION['firstname']) || $_SESSION['role']!= "Student") {
                           <label class="form-label" >Select your Department:</label>
                           <select class="form-select" name="department" aria-label="Default select example" id="department">
                               <option value="">Select</option>
-                              <option value="Mechanical">Mechanical</option>
-                              <option value="Computer Science">Computer Science</option>
-                              <option value="Information Technology">Information Technology</option>
-                              <option value="Production Engineering">Production Engineering</option>
+                              <option value="MECH">Mechanical</option>
+                              <option value="CS">Computer Science</option>
+                              <option value="IT">Information Technology</option>
+                              <option value="EXTC">Electronics and Telecommunication</option>
                           </select>
                           <h6 id="departmentcheck" class="mb-2"></h6>
                       </div>

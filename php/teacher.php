@@ -3,7 +3,7 @@ session_start();
 include("../database/databaseconnection.php");
 
 if (!isset($_SESSION['firstname']) || $_SESSION['role']!= "Teacher") {
-    header('Location: ../login.html');
+    header("Location: ../login.html");
 }
  
  $email=$_SESSION['email'];
@@ -27,8 +27,6 @@ if (!isset($_SESSION['firstname']) || $_SESSION['role']!= "Teacher") {
       }
 
 ?> 
-
-
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -111,7 +109,7 @@ if (!isset($_SESSION['firstname']) || $_SESSION['role']!= "Teacher") {
                     <div class="dropdown-menu dropdown-menu-end mb-2" aria-labelledby="navbarDropdown">
                         <a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="fas fa-user"></i> Profile</a>
                         
-                        <a class="dropdown-item" href="#"><i class="fas fa-sign-out-alt"></i> Logout</a>
+                        <a class="dropdown-item" href="logout.php"><i class="fas fa-sign-out-alt"></i> Logout</a>
                     </div>
                 </li>
             </ul>
@@ -230,8 +228,8 @@ if (!isset($_SESSION['firstname']) || $_SESSION['role']!= "Teacher") {
                         </div>
     
                 
-                      <div class="row">
-                          <div class="form-group mb-2 col-md-6">
+                      <!-- <div class="row"> -->
+                          <!-- <div class="form-group mb-2 col-md-6">
                                       <label class="form-label" class="mb-0">Select year:</label>
                                       <select class="form-select" name="selectyear" aria-label="Default select example" id="selectyear">
                                           <option value="">Select</option>
@@ -241,22 +239,22 @@ if (!isset($_SESSION['firstname']) || $_SESSION['role']!= "Teacher") {
                                           <option value="BE">BE</option>
                                       </select>
                                       <h6 id="selectyearcheck" class="mb-2"></h6>
-                                  </div>
-                                  <div class=" form-group mb-2 col-md-6">
+                                  </div> -->
+                                  <div class=" form-group mb-2 col-md">
                                       <label for="bloodgroup" class="form-label">Blood Group:</label>
                                       <input type="text" name="bloodgroup" class="form-control" id="bloodgroup" autocomplete="off">
                                       <h6 id="bloodgroupcheck"></h6>
                                   </div>
-                      </div>
+                      <!-- </div> -->
 
                         <div class="form-group mb-2">
                           <label class="form-label" >Select your Department:</label>
                           <select class="form-select" name="department" aria-label="Default select example" id="department">
-                              <option value="">Select</option>
-                              <option value="Mechanical">Mechanical</option>
-                              <option value="Computer Science">Computer Science</option>
-                              <option value="Information Technology">Information Technology</option>
-                              <option value="Production Engineering">Production Engineering</option>
+                          <option value="">Select</option>
+                              <option value="MECH">Mechanical</option>
+                              <option value="CS">Computer Science</option>
+                              <option value="IT">Information Technology</option>
+                              <option value="EXTC">Electronics and Telecommunication</option>
                           </select>
                           <h6 id="departmentcheck" class="mb-2"></h6>
                       </div>
@@ -411,30 +409,30 @@ if (!isset($_SESSION['firstname']) || $_SESSION['role']!= "Teacher") {
 
         //for the selectyear check
 
-        $('#selectyearcheck').hide();
+        // $('#selectyearcheck').hide();
 
-        var selectyear_err = true;
+        // var selectyear_err = true;
 
-        $('#selectyear').click(function () {
-            selectyear_check();
-        });
-        function selectyear_check() {
+        // $('#selectyear').click(function () {
+        //     selectyear_check();
+        // });
+        // function selectyear_check() {
 
-            var selectyearstr = $('#selectyear');
+        //     var selectyearstr = $('#selectyear');
 
-            if (selectyearstr.val() === '') {
-                $('#selectyearcheck').show();
-                $('#selectyearcheck').html("*please select the year option*");
-                $('#selectyearcheck').focus();
-                $('#selectyearcheck').css("color", "red");
-                selectyear_err = false;
-                return false;
-            }
-            else {
-                $('#selectyearcheck').hide();
-            }
+        //     if (selectyearstr.val() === '') {
+        //         $('#selectyearcheck').show();
+        //         $('#selectyearcheck').html("*please select the year option*");
+        //         $('#selectyearcheck').focus();
+        //         $('#selectyearcheck').css("color", "red");
+        //         selectyear_err = false;
+        //         return false;
+        //     }
+        //     else {
+        //         $('#selectyearcheck').hide();
+        //     }
 
-        }
+        // }
         
 
          // for the blood group jquery
@@ -669,7 +667,7 @@ if (!isset($_SESSION['firstname']) || $_SESSION['role']!= "Teacher") {
           
           gender_err = true;
           date_err = true;          
-          selectyear_err = true;
+          //selectyear_err = true;
           bloodgroup_err = true;
           department_err = true;
           adress_err = true;
@@ -682,7 +680,7 @@ if (!isset($_SESSION['firstname']) || $_SESSION['role']!= "Teacher") {
           
           gender_check();
           date_check();          
-          selectyear_check();
+         // selectyear_check();
           bloodgroup_check();
           department_check();
           address_check();
@@ -695,10 +693,22 @@ if (!isset($_SESSION['firstname']) || $_SESSION['role']!= "Teacher") {
 
 
          
+          // if (
+          //   gender_err == true &&
+          //   date_err == true &&
+          //   selectyear_err == true &&  
+          //   bloodgroup_err == true &&
+          //   department_err == true &&
+          //   adress_err == true &&
+          //   city_err == true &&
+          //   state_err == true &&
+          //   pincode_err == true &&
+          //   profilepicture_err == true &&
+          //   signature_err == true 
+          // ) 
           if (
             gender_err == true &&
-            date_err == true &&
-            selectyear_err == true &&  
+            date_err == true &&            
             bloodgroup_err == true &&
             department_err == true &&
             adress_err == true &&
