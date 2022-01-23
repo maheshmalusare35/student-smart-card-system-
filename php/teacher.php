@@ -206,7 +206,7 @@ if (!isset($_SESSION['firstname']) || $_SESSION['role']!= "Teacher") {
             </div>
           </div>  
 
-            <form  method="POST">                  
+          <form  method="POST">                  
                       <div class="row">
                             <div class=" form-group mb-2 col-md-6">
                                 <label class="form-label" class="mb-0">Gender</label>
@@ -223,37 +223,36 @@ if (!isset($_SESSION['firstname']) || $_SESSION['role']!= "Teacher") {
                             <div class=" form-group mb-2 col-md-6">
                                 <label for="date" class="form-label">Date Of Birth:</label>
                                 <input type="date" name="date" class="form-control" id="date" autocomplete="off">
-                                <h6 id="datecheck"></h6>
+                                <h6 id="datecheck" aria-required="true"></h6>
                             </div>
                         </div>
     
                 
-                      <!-- <div class="row"> -->
-                          <!-- <div class="form-group mb-2 col-md-6">
-                                      <label class="form-label" class="mb-0">Select year:</label>
-                                      <select class="form-select" name="selectyear" aria-label="Default select example" id="selectyear">
-                                          <option value="">Select</option>
-                                          <option value="FE">FE</option>
-                                          <option value="SE">SE</option>
-                                          <option value="TE">TE</option>
-                                          <option value="BE">BE</option>
-                                      </select>
-                                      <h6 id="selectyearcheck" class="mb-2"></h6>
-                                  </div> -->
-                                  <div class=" form-group mb-2 col-md">
+                                                
+                                  <div class=" form-group mb-2 col-md-6">
                                       <label for="bloodgroup" class="form-label">Blood Group:</label>
-                                      <input type="text" name="bloodgroup" class="form-control" id="bloodgroup" autocomplete="off">
+                                      <select class="form-select" name="bloodgroup" aria-label="Default select example" id="bloodgroup">
+                                        <option value="">Select</option>
+                                        <option value="A+">A+</option>
+                                        <option value="A-">A-</option>
+                                        <option value="B+">B+</option>
+                                        <option value="B-">B-</option>
+                                        <option value="O+">O+</option>
+                                        <option value="O-">O-</option>
+                                        <option value="AB+">AB+</option>
+                                        <option value="AB-">AB-</option>
+                                    </select>
                                       <h6 id="bloodgroupcheck"></h6>
                                   </div>
-                      <!-- </div> -->
+                     
 
                         <div class="form-group mb-2">
                           <label class="form-label" >Select your Department:</label>
                           <select class="form-select" name="department" aria-label="Default select example" id="department">
-                          <option value="">Select</option>
-                              <option value="MECH">Mechanical</option>
-                              <option value="CS">Computer Science</option>
-                              <option value="IT">Information Technology</option>
+                              <option value="">Select</option>
+                              <option value="Mechanical">Mechanical</option>
+                              <option value="Computer Science">Computer Science</option>
+                              <option value="Information Technology">Information Technology</option>
                               <option value="EXTC">Electronics and Telecommunication</option>
                           </select>
                           <h6 id="departmentcheck" class="mb-2"></h6>
@@ -261,7 +260,7 @@ if (!isset($_SESSION['firstname']) || $_SESSION['role']!= "Teacher") {
 
                         <div class="form-group col-12 mb-2">
                             <label for="inputAddress" class="form-label">Address</label>
-                            <input type="text" class="form-control" name="address" id="address" placeholder="1234 Main St Apartment, studio, or floor">
+                            <input type="text" class="form-control" name="address" id="address" placeholder="1234 Main St Apartment, studio, or floor" autocomplete="off">
                             <h6 id="addresscheck" class="mb-2"></h6>
                           </div>
                           <!-- <div class="form-group col-12 mb-2">
@@ -270,7 +269,7 @@ if (!isset($_SESSION['firstname']) || $_SESSION['role']!= "Teacher") {
                           </div> -->
                           <div class="form-group col-12 mb-2">
                             <label for="inputCity" class="form-label">City</label>
-                            <input type="text" class="form-control" name="city" id="city">
+                            <input type="text" class="form-control" name="city" id="city" autocomplete="off">
                             <h6 id="citycheck" class="mb-2"></h6>
                           </div>
 
@@ -312,7 +311,7 @@ if (!isset($_SESSION['firstname']) || $_SESSION['role']!= "Teacher") {
                           </div>
                           <div class="form-group col-md-6">
                             <label for="inputZip" class="form-label">Pin code</label>
-                            <input type="text" class="form-control" name="pincode" id="pincode">
+                            <input type="text" class="form-control" name="pincode" id="pincode" maxlength="6" autocomplete="off">
                             <h6 id="pincodecheck" class="mb-2"></h6>
                           </div>
                         </div>
@@ -345,7 +344,7 @@ if (!isset($_SESSION['firstname']) || $_SESSION['role']!= "Teacher") {
     
 
     <!-- Bootstrap JS -->
-    <script type="text/javascript" src="../js/bootstrap.bundle.min.js"></script>
+    <script type="text/javascript" src="js/bootstrap.bundle.min.js"></script>
 
     <!-- javascript -->
     <script type="text/javascript">
@@ -407,32 +406,7 @@ if (!isset($_SESSION['firstname']) || $_SESSION['role']!= "Teacher") {
         }
 
 
-        //for the selectyear check
-
-        // $('#selectyearcheck').hide();
-
-        // var selectyear_err = true;
-
-        // $('#selectyear').click(function () {
-        //     selectyear_check();
-        // });
-        // function selectyear_check() {
-
-        //     var selectyearstr = $('#selectyear');
-
-        //     if (selectyearstr.val() === '') {
-        //         $('#selectyearcheck').show();
-        //         $('#selectyearcheck').html("*please select the year option*");
-        //         $('#selectyearcheck').focus();
-        //         $('#selectyearcheck').css("color", "red");
-        //         selectyear_err = false;
-        //         return false;
-        //     }
-        //     else {
-        //         $('#selectyearcheck').hide();
-        //     }
-
-        // }
+       
         
 
          // for the blood group jquery
@@ -493,58 +467,80 @@ if (!isset($_SESSION['firstname']) || $_SESSION['role']!= "Teacher") {
 
            // for the address jquery
 
-          $('#addresscheck').hide();
+           $("#addresscheck").hide();
 
-          var address_err = true;
+var address_err = true;
 
-          $('#address').click(function () {
-              address_check();
-          });
-          function address_check() {
+$("#address").keyup(function () {
+  address_check();
+});
 
-              var addressstr = $('#address');
+function address_check() {
+  var address_val = $("#address").val();
 
-              if (addressstr.val() === '') {
-                  $('#addresscheck').show();
-                  $('#addresscheck').html("*please fill the address*");
-                  $('#addresscheck').focus();
-                  $('#addresscheck').css("color", "red");
-                  address_err = false;
-                  return false;
-              }
-              else {
-                  $('#addresscheck').hide();
-              }
+  if (address_val.length == "") {
+    $("#addresscheck").show();
+    $("#addresscheck").html("*please fill the address*");
+    $("#addresscheck").focus();
+    $("#addresscheck").css("color", "red");
+    address_err = false;
+    return false;
+  } else {
+    $("#addresscheck").hide();
+  }
+}
 
-          }
-
-
+ 
             // for the city jquery
 
-              $('#citycheck').hide();
+            $("#citycheck").hide();
 
-              var city_err = true;
+var city_err = true;
 
-              $('#city').click(function () {
-                  city_check();
-              });
-              function city_check() {
+$("#city").keyup(function () {
+  city_check();
+});
 
-                  var citystr = $('#city');
+function city_check() {
+  var city_val = $("#city").val();
 
-                  if (citystr.val() === '') {
-                      $('#citycheck').show();
-                      $('#citycheck').html("*please fill the city*");
-                      $('#citycheck').focus();
-                      $('#citycheck').css("color", "red");
-                      city_err = false;
-                      return false;
-                  }
-                  else {
-                      $('#citycheck').hide();
-                  }
+  if (city_val.length == "") {
+    $("#citycheck").show();
+    $("#citycheck").html("*please fill the city*");
+    $("#citycheck").focus();
+    $("#citycheck").css("color", "red");
+    city_err = false;
+    return false;
+  } else {
+    $("#citycheck").hide();
+  }
 
-              }
+  if (city_val.match(/([0-9])/)) {
+            $("#citycheck").show();
+            $("#citycheck").html("*please fill the valid city*");
+            $("#citycheck").focus();
+            $("#citycheck").css("color", "red");
+            city_err = false;
+            return false;
+          } else {
+            $("#citycheck").hide();
+          }
+
+          if (
+            city_val.match(
+              /([~,`,!,@,#,$,%,^,&,*,(,),_,-,+,=,{,[,},|,\,/,:,;,",',<,>,.,?,])/
+            )
+          ) {
+            $("#citycheck").show();
+            $("#citycheck").html("*please fill the valid city*");
+            $("#citycheck").focus();
+            $("#citycheck").css("color", "red");
+            city_err = false;
+            return false;
+          } else {
+            $("#citycheck").hide();
+          }
+}
 
 
              // for the state jquery
@@ -577,55 +573,105 @@ if (!isset($_SESSION['firstname']) || $_SESSION['role']!= "Teacher") {
 
               // for the pincode jquery
 
-              $('#pincodecheck').hide();
+              $("#pincodecheck").hide();
 
-              var pincode_err = true;
+        var pincode_err = true;
 
-              $('#pincode').click(function () {
-                  pincode_check();
-              });
-              function pincode_check() {
+        $("#pincode").keyup(function () {
+          pincode_check();
+        });
 
-                  var pincodestr = $('#pincode');
+        function pincode_check() {
+          var pincode_val = $("#pincode").val();
 
-                  if (pincodestr.val() === '') {
-                      $('#pincodecheck').show();
-                      $('#pincodecheck').html("*please fill the pincode*");
-                      $('#pincodecheck').focus();
-                      $('#pincodecheck').css("color", "red");
-                      pincode_err = false;
-                      return false;
-                  }
-                  else {
-                      $('#pincodecheck').hide();
-                  }
+          if (pincode_val.length == "") {
+            $("#pincodecheck").show();
+            $("#pincodecheck").html("*please fill the pincode*");
+            $("#pincodecheck").focus();
+            $("#pincodecheck").css("color", "red");
+            pincode_err = false;
+            return false;
+          } else {
+            $("#pincodecheck").hide();
+          }
 
-              }
+          if (pincode_val.match(/([a-zA-Z])/)) {
+            $("#pincodecheck").show();
+            $("#pincodecheck").html("*please fill the valid pincode*");
+            $("#pincodecheck").focus();
+            $("#pincodecheck").css("color", "red");
+            pincode_err = false;
+            return false;
+          } else {
+            $("#pincodecheck").hide();
+          }
 
+          if (
+            pincode_val.match(
+              /([~,`,!,@,#,$,%,^,&,*,(,),_,-,+,=,{,[,},|,\,/,:,;,",',<,>,.,?,])/
+            )
+          ) {
+            $("#pincodecheck").show();
+            $("#pincodecheck").html("*please fill the valid pincode*");
+            $("#pincodecheck").focus();
+            $("#pincodecheck").css("color", "red");
+            pincode_err = false;
+            return false;
+          } else {
+            $("#pincodecheck").hide();
+          }
+        }
 
                // for the profilepicture jquery
 
-               $('#profilepicturecheck').hide();
+               $("#profilepicturecheck").hide();
 
                 var profilepicture_err = true;
 
-                $('#profilepicture').click(function () {
+                $("#profilepicture").click(function () {
                     profilepicture_check();
                 });
                 function profilepicture_check() {
 
-                    var profilepicturestr = $('#profilepicture');
+                    var profilepicturestr = $("#profilepicture").val();
 
-                    if (profilepicturestr.val() === '') {
-                        $('#profilepicturecheck').show();
-                        $('#profilepicturecheck').html("*please fill the profilepicture*");
-                        $('#profilepicturecheck').focus();
-                        $('#profilepicturecheck').css("color", "red");
+                    if (profilepicturestr.length == 0 ) {
+                        $("#profilepicturecheck").show();
+                        $("#profilepicturecheck").html("*please upload the profilepicture*");
+                        $("#profilepicturecheck").focus();
+                        $("#profilepicturecheck").css("color", "red");
                         profilepicture_err = false;
                         return false;
                     }
                     else {
-                        $('#profilepicturecheck').hide();
+                        $("#profilepicturecheck").hide();
+                    }
+
+
+                    if (!profilepicturestr.match(/\.(jpg|jpeg|png)$/)) {
+                        $("#profilepicturecheck").show();
+                        $("#profilepicturecheck").html("*please upload the proper format profilepicture*");
+                        $("#profilepicturecheck").focus();
+                        $("#profilepicturecheck").css("color", "red");
+                        profilepicture_err = false;
+                        return false;
+                    }
+                    else {
+                        $("#profilepicturecheck").hide();
+                    }
+
+                    var profilepicture_str =$('#profilepicture')[0].files[0].size;
+
+                    if (profilepicture_str > 2097152) {
+                        $("#profilepicturecheck").show();
+                        $("#profilepicturecheck").html("*File size is greater than 2MB*");
+                        $("#profilepicturecheck").focus();
+                        $("#profilepicturecheck").css("color", "red");
+                        profilepicture_err = false;
+                        return false;
+                    }
+                    else {
+                        $("#profilepicturecheck").hide();
                     }
 
                 }
@@ -642,11 +688,11 @@ if (!isset($_SESSION['firstname']) || $_SESSION['role']!= "Teacher") {
                   });
                   function signature_check() {
 
-                      var signaturestr = $('#signature');
+                      var signaturestr = $('#signature').val();
 
-                      if (signaturestr.val() === '') {
+                      if (signaturestr.length == 0) {
                           $('#signaturecheck').show();
-                          $('#signaturecheck').html("*please fill the signature*");
+                          $('#signaturecheck').html("*please upload the signature*");
                           $('#signaturecheck').focus();
                           $('#signaturecheck').css("color", "red");
                           signature_err = false;
@@ -655,6 +701,32 @@ if (!isset($_SESSION['firstname']) || $_SESSION['role']!= "Teacher") {
                       else {
                           $('#signaturecheck').hide();
                       }
+
+                      if (!signaturestr.match(/\.(jpg|jpeg|png)$/)) {
+                        $("#signaturecheck").show();
+                        $("#signaturecheck").html("*please upload the proper format signature*");
+                        $("#signaturecheck").focus();
+                        $("#signaturecheck").css("color", "red");
+                        signature_err = false;
+                        return false;
+                    }
+                    else {
+                        $("#signaturecheck").hide();
+                    }
+
+                    var signature_str =$('#signature')[0].files[0].size;
+
+                    if (signature_str > 2097152) {
+                        $("#signaturecheck").show();
+                        $("#signaturecheck").html("*File size is greater than 2MB*");
+                        $("#signaturecheck").focus();
+                        $("#signaturecheck").css("color", "red");
+                        signature_err = false;
+                        return false;
+                    }
+                    else {
+                        $("#signaturecheck").hide();
+                    }
 
                   }
 
@@ -666,56 +738,41 @@ if (!isset($_SESSION['firstname']) || $_SESSION['role']!= "Teacher") {
         $("#submitbtn").click(function () {
           
           gender_err = true;
-          date_err = true;          
-          //selectyear_err = true;
+          date_err = true;         
           bloodgroup_err = true;
           department_err = true;
           adress_err = true;
           city_err = true;
           state_err = true;
           pincode_err = true;
-          profilepicture_err = true;
+         profilepicture_err = true;
           signature_err = true;
 
           
           gender_check();
-          date_check();          
-         // selectyear_check();
+          date_check();    
           bloodgroup_check();
           department_check();
           address_check();
           city_check();
           state_check();
           pincode_check();
-          profilepicture_check();
+           profilepicture_check();
           signature_check();
           
 
 
          
-          // if (
-          //   gender_err == true &&
-          //   date_err == true &&
-          //   selectyear_err == true &&  
-          //   bloodgroup_err == true &&
-          //   department_err == true &&
-          //   adress_err == true &&
-          //   city_err == true &&
-          //   state_err == true &&
-          //   pincode_err == true &&
-          //   profilepicture_err == true &&
-          //   signature_err == true 
-          // ) 
           if (
             gender_err == true &&
-            date_err == true &&            
+           date_err == true &&             
             bloodgroup_err == true &&
             department_err == true &&
             adress_err == true &&
             city_err == true &&
             state_err == true &&
             pincode_err == true &&
-            profilepicture_err == true &&
+             profilepicture_err == true &&
             signature_err == true 
           ) {
             return true;
