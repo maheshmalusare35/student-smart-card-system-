@@ -19,15 +19,15 @@
         if (mysqli_num_rows($query)>0) 
         {
             ?>
-              <script >
-                        alert("Email is already use....");
-              </script>
-            <?php
+<script>
+alert("Email is already use....");
+</script>
+<?php
                       ?>
-                      <script >
-                        location.replace("../register.html");
-                      </script>
-                      <?php
+<script>
+location.replace("../register.html");
+</script>
+<?php
         }
         else
         {
@@ -36,15 +36,15 @@
         if (mysqli_num_rows($query)>0) 
         {
                        ?>
-                       <script >
-                       alert("contact no is already use....");
-                       </script>
-                       <?php
+<script>
+alert("contact no is already use....");
+</script>
+<?php
                         ?>
-                        <script >
-                          location.replace("../register.html");
-                         </script>
-                         <?php
+<script>
+location.replace("../register.html");
+</script>
+<?php
         }
         else{
 
@@ -56,28 +56,28 @@
 
             {
                 ?>
-                  <script >
-                        alert("Record insert successfully");
-                  </script>
-                <?php
+<script>
+alert("Record insert successfully");
+</script>
+<?php
                 ?>
-                  <script >
-                        location.replace("../register.html");
-                  </script>
-                <?php
+<script>
+location.replace("../register.html");
+</script>
+<?php
             }
             else
             {
                 ?>
-                       <script >
-                       alert("Record insert failed");
-                       </script>
-                       <?php
+<script>
+alert("Record insert failed");
+</script>
+<?php
                         ?>
-                        <script >
-                          location.replace("../register.html");
-                         </script>
-                         <?php
+<script>
+location.replace("../register.html");
+</script>
+<?php
                        
             }
         }

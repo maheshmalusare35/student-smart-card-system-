@@ -26,10 +26,11 @@ if (!isset($_SESSION['firstname']) || $_SESSION['role']!= "Teacher") {
           }
       }
 
-?> 
+?>
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+
+<head>
     <!-- Favicon -->
     <link rel="icon" href="logo/icons8-bank-cards-48.png" />
 
@@ -42,12 +43,8 @@ if (!isset($_SESSION['firstname']) || $_SESSION['role']!= "Teacher") {
     <link href="../css/bootstrap.min.css" rel="stylesheet" />
 
     <!-- font awesome icons link -->
-    <link
-      rel="stylesheet"
-      href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
-      integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p"
-      crossorigin="anonymous"
-    />
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+        integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
 
     <!-- Stylesheet CSS -->
     <link href="" rel="stylesheet" />
@@ -57,161 +54,132 @@ if (!isset($_SESSION['firstname']) || $_SESSION['role']!= "Teacher") {
     <title>Register form Student Smart Card</title>
 
     <style type="text/css">
-      body {
-       
-            background: rgb(169, 250, 182);
-        }
-        #sidebar-wrapper {
-            width: 350px;
-        }
+    body {
+
+        background: rgb(169, 250, 182);
+    }
+
+    #sidebar-wrapper {
+        width: 350px;
+    }
     </style>
-  </head>
+</head>
 
-  <body>
+<body>
     <!-- Top navigation-->
-  <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom p-0 mb-3">
-    <div class="container-fluid">
-      <a class="navbar-brand" href="#"><img src="../logo/logo1.png" class="img-fluid"
-            style="width: 100px; height: 50px;">
-        </a>
-        <?php echo "<h5>Welcome " . $_SESSION['firstname'] . "</h5>"; ?>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-            data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-            aria-expanded="false" aria-label="Toggle navigation"><span
-                class="navbar-toggler-icon"></span></button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom p-0 mb-3">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#"><img src="../logo/logo1.png" class="img-fluid"
+                    style="width: 100px; height: 50px;">
+            </a>
+            <?php echo "<h5>Welcome " . $_SESSION['firstname'] . "</h5>"; ?>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
 
-            
-            <ul class="navbar-nav ms-auto mt-2 mt-lg-0">
 
-                <li class="nav-item">
-                    <a class="nav-link fw-bold" href="#"><i class="fas fa-tasks"></i> To-do</a>
-                  </li>
-                  <li class="nav-item">
-                     <a class="nav-link fw-bold" href="#"><i class="far fa-calendar-week"></i> Calender</a>
-                  </li>
-                   <li class="nav-item">
-                     <a class="nav-link fw-bold" href="#"><i class="fas fa-comments-dollar"></i> Your Transaction</a>
-                   </li>
-                   <!-- <li class="nav-item">
-                     <a class="nav-link fw-bold" href="#"><i class="fas fa-poll-h"></i> Result</a>
-                   </li>      -->
+                <ul class="navbar-nav ms-auto mt-2 mt-lg-0">
 
-                  <li class="nav-item">
-                      <a class="nav-link fw-bold" href="#">Your Balance:</a>
-                  </li>
-                <!-- <li class="nav-item"><a class="nav-link" href="#"><i class="fas fa-search"></i></a></li>
+                    <li class="nav-item">
+                        <a class="nav-link fw-bold" href="#"><i class="fas fa-tasks"></i> To-do</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link fw-bold" href="#"><i class="far fa-calendar-week"></i> Calender</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link fw-bold" href="#"><i class="fas fa-comments-dollar"></i> Your Transaction</a>
+                    </li>
+                    <!-- <li class="nav-item">
+                      <a class="nav-link fw-bold" href="#"><i class="fas fa-poll-h"></i> Result</a>
+                      </li>      -->
+
+                    <li class="nav-item">
+                        <a class="nav-link fw-bold" href="#">Your Balance:</a>
+                    </li>
+                    <!-- <li class="nav-item"><a class="nav-link" href="#"><i class="fas fa-search"></i></a></li>
                 <li class="nav-item"><a class="nav-link" href="#"><i class="fas fa-bell"></i></a></li>
                 <li class="nav-item dropdown"> -->
-                    <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button"
-                        data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i
-                            class="fas fa-user-circle"></i></a>
-                    <div class="dropdown-menu dropdown-menu-end mb-2" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="fas fa-user"></i> Profile</a>
-                        
-                        <a class="dropdown-item" href="logout.php"><i class="fas fa-sign-out-alt"></i> Logout</a>
+                    <li class="nav-item">
+                        <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button"
+                            data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i
+                                class="fas fa-user-circle"></i></a>
+                        <div class="dropdown-menu dropdown-menu-end mb-2" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#exampleModal"><i
+                                    class="fas fa-user"></i> Profile</a>
+
+                            <a class="dropdown-item" href="logout.php"><i class="fas fa-sign-out-alt"></i> Logout</a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+
+
+    <!-- Modal -->
+    <div class="modal fade col-md-12" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header mb-0">
+                    <h5 class="modal-title" id="exampleModalLabel">
+                        Profile</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+
+                    <div class="row mt-4">
+                        <div class="form-group mb-2 col-md-6">
+                            <label for="first" class="mb-1"> First Name:</label>
+                            <input type="text" name="firstname" id="firstnames" class="form-control text-uppercase"
+                                placeholder="<?php echo " " . $firstname . ""; ?>" aria-label="Disabled input example"
+                                disabled />
+                        </div>
+                        <div class="form-group mb-2 col-md-6">
+                            <label for="middle" class="mb-1"> Middle Name:</label>
+                            <input type="text" name="middlename" id="middlenames" class="form-control text-uppercase"
+                                placeholder="<?php echo " " . $middlename . ""; ?>" aria-label="Disabled input example"
+                                disabled />
+                        </div>
                     </div>
-                </li>
-            </ul>
-        </div>
-    </div>
-</nav>
+                    <div class="row">
+                        <div class="form-group mb-2 col-md-6">
+                            <label for="last" class="mb-1"> Last Name:</label>
+                            <input type="text" name="lastname" id="lastnames" class="form-control text-uppercase"
+                                placeholder="<?php echo " " . $lastname . ""; ?>" aria-label="Disabled input example"
+                                disabled />
+                        </div>
+                        <div class="form-group mb-2 col-md-6">
+                            <label for="email" class="form-label">Email address:</label>
+                            <input type="email" name="email" class="form-control" id="email"
+                                placeholder="<?php echo " " . $email . ""; ?>" autocomplete="off"
+                                aria-label="Disabled input example" disabled />
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="form-group mb-2 col-md-6">
+                            <label for="phone" class="form-label">Contact No:</label>
+                            <input type="phone" name="phone" class="form-control" id="phone" maxlength="10"
+                                autocomplete="off" placeholder="<?php echo " " . $phone . ""; ?>"
+                                aria-label="Disabled input example" disabled />
+                        </div>
+                        <div class="form-group mb-2 col-md-6">
+                            <label class="form-label" class="mb-0">Select user Type:</label>
+                            <input type="text" name="role" id="role" class="form-control"
+                                placeholder="<?php echo " " . $role . ""; ?>" aria-label="Disabled input example"
+                                disabled />
+                        </div>
+                    </div>
 
-
-
- <!-- Modal -->
- <div class="modal fade col-md-12" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header mb-0">
-          <h5 class="modal-title" id="exampleModalLabel"> 
-              Profile</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body">
-
-        <div class="row mt-4">
-            <div class="form-group mb-2 col-md-6">
-              <label for="first" class="mb-1"> First Name:</label>
-              <input
-                type="text"
-                name="firstname"
-                id="firstnames"
-                class="form-control text-uppercase"
-                placeholder="<?php echo " " . $firstname . ""; ?>"
-                aria-label="Disabled input example" disabled
-              />                   
-            </div>
-            <div class="form-group mb-2 col-md-6">
-              <label for="middle" class="mb-1"> Middle Name:</label>
-              <input
-                type="text"
-                name="middlename"
-                id="middlenames"
-                class="form-control text-uppercase"
-                placeholder="<?php echo " " . $middlename . ""; ?>"
-                aria-label="Disabled input example" disabled
-              />                    
-            </div>
-          </div>    
-          <div class="row">
-            <div class="form-group mb-2 col-md-6">
-              <label for="last" class="mb-1"> Last Name:</label>
-              <input
-                type="text"
-                name="lastname"
-                id="lastnames"
-                class="form-control text-uppercase"
-                placeholder="<?php echo " " . $lastname . ""; ?>"
-                aria-label="Disabled input example" disabled
-              />                   
-            </div>
-            <div class="form-group mb-2 col-md-6">
-              <label for="email" class="form-label">Email address:</label>
-              <input
-                type="email"
-                name="email"
-                class="form-control"
-                id="email"
-                placeholder="<?php echo " " . $email . ""; ?>"
-                autocomplete="off"
-                aria-label="Disabled input example" disabled
-              />                    
-            </div>
-          </div>    
-          <div class="row">
-            <div class="form-group mb-2 col-md-6">
-              <label for="phone" class="form-label">Contact No:</label>
-              <input
-                type="phone"
-                name="phone"
-                class="form-control"
-                id="phone"
-                maxlength="10"
-                autocomplete="off"
-                placeholder="<?php echo " " . $phone . ""; ?>"
-                aria-label="Disabled input example" disabled
-              />                  
-            </div>
-            <div class="form-group mb-2 col-md-6">
-              <label class="form-label" class="mb-0">Select user Type:</label>
-              <input
-              type="text"
-              name="role"
-              id="role"
-              class="form-control"
-              placeholder="<?php echo " " . $role . ""; ?>"
-              aria-label="Disabled input example" disabled
-            />
-            </div>
-          </div>  
-
-          <form  method="POST">                  
-                      <div class="row">
+                    <form method="POST">
+                        <div class="row">
                             <div class=" form-group mb-2 col-md-6">
                                 <label class="form-label" class="mb-0">Gender</label>
-    
-                                <select class="form-select" name="gender" aria-label="Default select example" id="gender">
+
+                                <select class="form-select" name="gender" aria-label="Default select example"
+                                    id="gender">
                                     <option value="">Select</option>
                                     <option value="Male">Male</option>
                                     <option value="Female">Female</option>
@@ -219,149 +187,156 @@ if (!isset($_SESSION['firstname']) || $_SESSION['role']!= "Teacher") {
                                 </select>
                                 <h6 id="gendercheck" class="mb-2"></h6>
                             </div>
-    
+
                             <div class=" form-group mb-2 col-md-6">
                                 <label for="date" class="form-label">Date Of Birth:</label>
                                 <input type="date" name="date" class="form-control" id="date" autocomplete="off">
                                 <h6 id="datecheck" aria-required="true"></h6>
                             </div>
                         </div>
-    
-                
-                                                
-                                  <div class=" form-group mb-2 col-md-6">
-                                      <label for="bloodgroup" class="form-label">Blood Group:</label>
-                                      <select class="form-select" name="bloodgroup" aria-label="Default select example" id="bloodgroup">
-                                        <option value="">Select</option>
-                                        <option value="A+">A+</option>
-                                        <option value="A-">A-</option>
-                                        <option value="B+">B+</option>
-                                        <option value="B-">B-</option>
-                                        <option value="O+">O+</option>
-                                        <option value="O-">O-</option>
-                                        <option value="AB+">AB+</option>
-                                        <option value="AB-">AB-</option>
-                                    </select>
-                                      <h6 id="bloodgroupcheck"></h6>
-                                  </div>
-                     
 
-                        <div class="form-group mb-2">
-                          <label class="form-label" >Select your Department:</label>
-                          <select class="form-select" name="department" aria-label="Default select example" id="department">
-                              <option value="">Select</option>
-                              <option value="Mechanical">Mechanical</option>
-                              <option value="Computer Science">Computer Science</option>
-                              <option value="Information Technology">Information Technology</option>
-                              <option value="EXTC">Electronics and Telecommunication</option>
-                          </select>
-                          <h6 id="departmentcheck" class="mb-2"></h6>
-                      </div>
+
+                        <div class="row">
+                            <div class=" form-group mb-2 col-md-6">
+                                <label for="bloodgroup" class="form-label">Blood Group:</label>
+                                <select class="form-select" name="bloodgroup" aria-label="Default select example"
+                                    id="bloodgroup">
+                                    <option value="">Select</option>
+                                    <option value="A+">A+</option>
+                                    <option value="A-">A-</option>
+                                    <option value="B+">B+</option>
+                                    <option value="B-">B-</option>
+                                    <option value="O+">O+</option>
+                                    <option value="O-">O-</option>
+                                    <option value="AB+">AB+</option>
+                                    <option value="AB-">AB-</option>
+                                </select>
+                                <h6 id="bloodgroupcheck"></h6>
+                            </div>
+
+
+                            <div class="form-group mb-2 col-md-6">
+                                <label class="form-label">Select your Department:</label>
+                                <select class="form-select" name="department" aria-label="Default select example"
+                                    id="department">
+                                    <option value="">Select</option>
+                                    <option value="Mechanical">Mechanical</option>
+                                    <option value="Computer Science">Computer Science</option>
+                                    <option value="Information Technology">Information Technology</option>
+                                    <option value="EXTC">Electronics and Telecommunication</option>
+                                </select>
+                                <h6 id="departmentcheck" class="mb-2"></h6>
+                            </div>
+                        </div>
 
                         <div class="form-group col-12 mb-2">
                             <label for="inputAddress" class="form-label">Address</label>
-                            <input type="text" class="form-control" name="address" id="address" placeholder="1234 Main St Apartment, studio, or floor" autocomplete="off">
+                            <input type="text" class="form-control" name="address" id="address"
+                                placeholder="1234 Main St Apartment, studio, or floor" autocomplete="off">
                             <h6 id="addresscheck" class="mb-2"></h6>
-                          </div>
-                          <!-- <div class="form-group col-12 mb-2">
+                        </div>
+                        <!-- <div class="form-group col-12 mb-2">
                             <label for="inputAddress2" class="form-label">Address 2</label>
                             <input type="text" class="form-control" id="inputAddress2" placeholder="">
                           </div> -->
-                          <div class="form-group col-12 mb-2">
+                        <div class="form-group col-12 mb-2">
                             <label for="inputCity" class="form-label">City</label>
                             <input type="text" class="form-control" name="city" id="city" autocomplete="off">
                             <h6 id="citycheck" class="mb-2"></h6>
-                          </div>
+                        </div>
 
-                          <div class="row mb-2">
-                          <div class="form-group col-md-6">
-                            <label for="inputState" class="form-label">State</label>
-                            <select  class="form-select" name="state"  aria-label="Default select example" id="state">
-                              <option value="">Choose...</option>
-                              <option value="Andhra Pradesh">Andhra Pradesh</option>
-                              <option value="Arunachal Pradesh">Arunachal Pradesh</option>
-                              <option value="Assam">Assam</option>
-                              <option value="Bihar">Bihar</option>
-                              <option value="Chhattisgarh">Chhattisgarh</option>
-                              <option value="Goa">Goa</option>
-                              <option value="Gujarat">Gujarat</option>
-                              <option value="Haryana">Haryana</option>
-                              <option value="Himachal Pradesh">Himachal Pradesh</option>
-                              <option value="Jharkhand">Jharkhand</option>
-                              <option value="Karnataka">Karnataka</option>
-                              <option value="Kerala">Kerala</option>
-                              <option value="Madhya Pradesh">Madhya Pradesh</option>
-                              <option value="Maharashtra">Maharashtra</option>
-                              <option value="Manipur">Manipur</option>
-                              <option value="Meghalaya">Meghalaya</option>
-                              <option value="Mizoram">Mizoram</option>
-                              <option value="Nagaland">Nagaland</option>
-                              <option value="Odisha">Odisha</option>
-                              <option value="Punjab">Punjab</option>
-                              <option value="Rajasthan">Rajasthan</option>
-                              <option value="Sikkim">Sikkim</option>
-                              <option value="Tamil Nadu">Tamil Nadu</option>
-                              <option value="Telangana">Telangana</option>
-                              <option value="Tripura">Tripura</option>
-                              <option value="Uttar Pradesh">Uttar Pradesh</option>
-                              <option value="Uttarakhand">Uttarakhand</option>
-                              <option value="West Bengal">West Bengal</option>
-                            </select>
-                            <h6 id="statecheck" class="mb-2"></h6>
-                          </div>
-                          <div class="form-group col-md-6">
-                            <label for="inputZip" class="form-label">Pin code</label>
-                            <input type="text" class="form-control" name="pincode" id="pincode" maxlength="6" autocomplete="off">
-                            <h6 id="pincodecheck" class="mb-2"></h6>
-                          </div>
+                        <div class="row mb-2">
+                            <div class="form-group col-md-6">
+                                <label for="inputState" class="form-label">State</label>
+                                <select class="form-select" name="state" aria-label="Default select example" id="state">
+                                    <option value="">Choose...</option>
+                                    <option value="Andhra Pradesh">Andhra Pradesh</option>
+                                    <option value="Arunachal Pradesh">Arunachal Pradesh</option>
+                                    <option value="Assam">Assam</option>
+                                    <option value="Bihar">Bihar</option>
+                                    <option value="Chhattisgarh">Chhattisgarh</option>
+                                    <option value="Goa">Goa</option>
+                                    <option value="Gujarat">Gujarat</option>
+                                    <option value="Haryana">Haryana</option>
+                                    <option value="Himachal Pradesh">Himachal Pradesh</option>
+                                    <option value="Jharkhand">Jharkhand</option>
+                                    <option value="Karnataka">Karnataka</option>
+                                    <option value="Kerala">Kerala</option>
+                                    <option value="Madhya Pradesh">Madhya Pradesh</option>
+                                    <option value="Maharashtra">Maharashtra</option>
+                                    <option value="Manipur">Manipur</option>
+                                    <option value="Meghalaya">Meghalaya</option>
+                                    <option value="Mizoram">Mizoram</option>
+                                    <option value="Nagaland">Nagaland</option>
+                                    <option value="Odisha">Odisha</option>
+                                    <option value="Punjab">Punjab</option>
+                                    <option value="Rajasthan">Rajasthan</option>
+                                    <option value="Sikkim">Sikkim</option>
+                                    <option value="Tamil Nadu">Tamil Nadu</option>
+                                    <option value="Telangana">Telangana</option>
+                                    <option value="Tripura">Tripura</option>
+                                    <option value="Uttar Pradesh">Uttar Pradesh</option>
+                                    <option value="Uttarakhand">Uttarakhand</option>
+                                    <option value="West Bengal">West Bengal</option>
+                                </select>
+                                <h6 id="statecheck" class="mb-2"></h6>
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="inputZip" class="form-label">Pin code</label>
+                                <input type="text" class="form-control" name="pincode" id="pincode" maxlength="6"
+                                    autocomplete="off">
+                                <h6 id="pincodecheck" class="mb-2"></h6>
+                            </div>
                         </div>
                         <div class="row">
-                          <div class="form-group mb-3 col-md-6">
-                            <label for="formFileSm" class="form-label">Profile picture:</label>
-                            <input class="form-control form-control-sm" name="profilepicture" id="profilepicture" type="file">
-                            <h6 id="profilepicturecheck" class="mb-2"></h6>
-                          </div>
-                          <div class="form-group mb-3 col-md-6">
-                            <label for="formFileSm" class="form-label">Signature:</label>
-                            <input class="form-control form-control-sm" name="signature" id="signature" type="file">
-                            <h6 id="signaturecheck" class="mb-2"></h6>
-                          </div>
+                            <div class="form-group mb-3 col-md-6">
+                                <label for="formFileSm" class="form-label">Profile picture:</label>
+                                <input class="form-control form-control-sm" name="profilepicture" id="profilepicture"
+                                    type="file">
+                                <h6 id="profilepicturecheck" class="mb-2"></h6>
+                            </div>
+                            <div class="form-group mb-3 col-md-6">
+                                <label for="formFileSm" class="form-label">Signature:</label>
+                                <input class="form-control form-control-sm" name="signature" id="signature" type="file">
+                                <h6 id="signaturecheck" class="mb-2"></h6>
+                            </div>
                         </div>
-                            <hr>
+                        <hr>
 
-                          <div class="d-grid gap-2 col-6 mx-auto mb-1">
-                            <button type="submit" id="submitbtn" name="submit" value="submit" class="btn btn-primary btn-lg">Save changes
+                        <div class="d-grid gap-2 col-6 mx-auto mb-1">
+                            <button type="submit" id="submitbtn" name="submit" value="submit"
+                                class="btn btn-primary btn-lg">Save changes
                             </button>
-                          </div>
-                  </form>
-        </div>
-        <!-- <div class="modal-footer">
+                        </div>
+                    </form>
+                </div>
+                <!-- <div class="modal-footer">
           
         </div> -->
-      </div>
+            </div>
+        </div>
     </div>
-  </div>
-    
+
 
     <!-- Bootstrap JS -->
-    <script type="text/javascript" src="js/bootstrap.bundle.min.js"></script>
+    <script type="text/javascript" src="../js/bootstrap.bundle.min.js"></script>
 
     <!-- javascript -->
     <script type="text/javascript">
-     
-// for the check the form
+    // for the check the form
 
- $(document).ready(function () {
-       
+    $(document).ready(function() {
+
         //for the gender check
 
         $('#gendercheck').hide();
 
         var gender_err = true;
 
-        $('#gender').click(function () {
+        $('#gender').click(function() {
             gender_check();
         });
+
         function gender_check() {
 
             var genderstr = $('#gender');
@@ -373,8 +348,7 @@ if (!isset($_SESSION['firstname']) || $_SESSION['role']!= "Teacher") {
                 $('#gendercheck').css("color", "red");
                 gender_err = false;
                 return false;
-            }
-            else {
+            } else {
                 $('#gendercheck').hide();
             }
 
@@ -386,7 +360,7 @@ if (!isset($_SESSION['firstname']) || $_SESSION['role']!= "Teacher") {
 
         var date_err = true;
 
-        $('#date').keyup(function () {
+        $('#date').keyup(function() {
             date_check();
         });
 
@@ -406,18 +380,19 @@ if (!isset($_SESSION['firstname']) || $_SESSION['role']!= "Teacher") {
         }
 
 
-       
-        
 
-         // for the blood group jquery
 
-         $('#bloodgroupcheck').hide();
+
+        // for the blood group jquery
+
+        $('#bloodgroupcheck').hide();
 
         var bloodgroup_err = true;
 
-        $('#bloodgroup').click(function () {
+        $('#bloodgroup').click(function() {
             bloodgroup_check();
         });
+
         function bloodgroup_check() {
 
             var bloodgroupstr = $('#bloodgroup');
@@ -429,23 +404,23 @@ if (!isset($_SESSION['firstname']) || $_SESSION['role']!= "Teacher") {
                 $('#bloodgroupcheck').css("color", "red");
                 bloodgroup_err = false;
                 return false;
-            }
-            else {
+            } else {
                 $('#bloodgroupcheck').hide();
             }
 
         }
 
 
-          // for the department jquery
+        // for the department jquery
 
         $('#departmentcheck').hide();
 
         var department_err = true;
 
-        $('#department').click(function () {
+        $('#department').click(function() {
             department_check();
         });
+
         function department_check() {
 
             var departmentstr = $('#department');
@@ -457,101 +432,101 @@ if (!isset($_SESSION['firstname']) || $_SESSION['role']!= "Teacher") {
                 $('#departmentcheck').css("color", "red");
                 department_err = false;
                 return false;
-            }
-            else {
+            } else {
                 $('#departmentcheck').hide();
             }
 
         }
 
 
-           // for the address jquery
+        // for the address jquery
 
-           $("#addresscheck").hide();
+        $("#addresscheck").hide();
 
-var address_err = true;
+        var address_err = true;
 
-$("#address").keyup(function () {
-  address_check();
-});
+        $("#address").keyup(function() {
+            address_check();
+        });
 
-function address_check() {
-  var address_val = $("#address").val();
+        function address_check() {
+            var address_val = $("#address").val();
 
-  if (address_val.length == "") {
-    $("#addresscheck").show();
-    $("#addresscheck").html("*please fill the address*");
-    $("#addresscheck").focus();
-    $("#addresscheck").css("color", "red");
-    address_err = false;
-    return false;
-  } else {
-    $("#addresscheck").hide();
-  }
-}
-
- 
-            // for the city jquery
-
-            $("#citycheck").hide();
-
-var city_err = true;
-
-$("#city").keyup(function () {
-  city_check();
-});
-
-function city_check() {
-  var city_val = $("#city").val();
-
-  if (city_val.length == "") {
-    $("#citycheck").show();
-    $("#citycheck").html("*please fill the city*");
-    $("#citycheck").focus();
-    $("#citycheck").css("color", "red");
-    city_err = false;
-    return false;
-  } else {
-    $("#citycheck").hide();
-  }
-
-  if (city_val.match(/([0-9])/)) {
-            $("#citycheck").show();
-            $("#citycheck").html("*please fill the valid city*");
-            $("#citycheck").focus();
-            $("#citycheck").css("color", "red");
-            city_err = false;
-            return false;
-          } else {
-            $("#citycheck").hide();
-          }
-
-          if (
-            city_val.match(
-              /([~,`,!,@,#,$,%,^,&,*,(,),_,-,+,=,{,[,},|,\,/,:,;,",',<,>,.,?,])/
-            )
-          ) {
-            $("#citycheck").show();
-            $("#citycheck").html("*please fill the valid city*");
-            $("#citycheck").focus();
-            $("#citycheck").css("color", "red");
-            city_err = false;
-            return false;
-          } else {
-            $("#citycheck").hide();
-          }
-}
+            if (address_val.length == "") {
+                $("#addresscheck").show();
+                $("#addresscheck").html("*please fill the address*");
+                $("#addresscheck").focus();
+                $("#addresscheck").css("color", "red");
+                address_err = false;
+                return false;
+            } else {
+                $("#addresscheck").hide();
+            }
+        }
 
 
-             // for the state jquery
+        // for the city jquery
 
-             $('#statecheck').hide();
+        $("#citycheck").hide();
+
+        var city_err = true;
+
+        $("#city").keyup(function() {
+            city_check();
+        });
+
+        function city_check() {
+            var city_val = $("#city").val();
+
+            if (city_val.length == "") {
+                $("#citycheck").show();
+                $("#citycheck").html("*please fill the city*");
+                $("#citycheck").focus();
+                $("#citycheck").css("color", "red");
+                city_err = false;
+                return false;
+            } else {
+                $("#citycheck").hide();
+            }
+
+            if (city_val.match(/([0-9])/)) {
+                $("#citycheck").show();
+                $("#citycheck").html("*please fill the valid city*");
+                $("#citycheck").focus();
+                $("#citycheck").css("color", "red");
+                city_err = false;
+                return false;
+            } else {
+                $("#citycheck").hide();
+            }
+
+            if (
+                city_val.match(
+                    /([~,`,!,@,#,$,%,^,&,*,(,),_,-,+,=,{,[,},|,\,/,:,;,",',<,>,.,?,])/
+                )
+            ) {
+                $("#citycheck").show();
+                $("#citycheck").html("*please fill the valid city*");
+                $("#citycheck").focus();
+                $("#citycheck").css("color", "red");
+                city_err = false;
+                return false;
+            } else {
+                $("#citycheck").hide();
+            }
+        }
+
+
+        // for the state jquery
+
+        $('#statecheck').hide();
 
         var state_err = true;
 
-        $('#state').click(function () {
+        $('#state').click(function() {
             state_check();
         });
+
         function state_check() {
 
             var statestr = $('#state');
@@ -563,224 +538,221 @@ function city_check() {
                 $('#statecheck').css("color", "red");
                 state_err = false;
                 return false;
-            }
-            else {
+            } else {
                 $('#statecheck').hide();
             }
 
         }
 
 
-              // for the pincode jquery
+        // for the pincode jquery
 
-              $("#pincodecheck").hide();
+        $("#pincodecheck").hide();
 
         var pincode_err = true;
 
-        $("#pincode").keyup(function () {
-          pincode_check();
+        $("#pincode").keyup(function() {
+            pincode_check();
         });
 
         function pincode_check() {
-          var pincode_val = $("#pincode").val();
+            var pincode_val = $("#pincode").val();
 
-          if (pincode_val.length == "") {
-            $("#pincodecheck").show();
-            $("#pincodecheck").html("*please fill the pincode*");
-            $("#pincodecheck").focus();
-            $("#pincodecheck").css("color", "red");
-            pincode_err = false;
-            return false;
-          } else {
-            $("#pincodecheck").hide();
-          }
+            if (pincode_val.length == "") {
+                $("#pincodecheck").show();
+                $("#pincodecheck").html("*please fill the pincode*");
+                $("#pincodecheck").focus();
+                $("#pincodecheck").css("color", "red");
+                pincode_err = false;
+                return false;
+            } else {
+                $("#pincodecheck").hide();
+            }
 
-          if (pincode_val.match(/([a-zA-Z])/)) {
-            $("#pincodecheck").show();
-            $("#pincodecheck").html("*please fill the valid pincode*");
-            $("#pincodecheck").focus();
-            $("#pincodecheck").css("color", "red");
-            pincode_err = false;
-            return false;
-          } else {
-            $("#pincodecheck").hide();
-          }
+            if (pincode_val.match(/([a-zA-Z])/)) {
+                $("#pincodecheck").show();
+                $("#pincodecheck").html("*please fill the valid pincode*");
+                $("#pincodecheck").focus();
+                $("#pincodecheck").css("color", "red");
+                pincode_err = false;
+                return false;
+            } else {
+                $("#pincodecheck").hide();
+            }
 
-          if (
-            pincode_val.match(
-              /([~,`,!,@,#,$,%,^,&,*,(,),_,-,+,=,{,[,},|,\,/,:,;,",',<,>,.,?,])/
-            )
-          ) {
-            $("#pincodecheck").show();
-            $("#pincodecheck").html("*please fill the valid pincode*");
-            $("#pincodecheck").focus();
-            $("#pincodecheck").css("color", "red");
-            pincode_err = false;
-            return false;
-          } else {
-            $("#pincodecheck").hide();
-          }
+            if (
+                pincode_val.match(
+                    /([~,`,!,@,#,$,%,^,&,*,(,),_,-,+,=,{,[,},|,\,/,:,;,",',<,>,.,?,])/
+                )
+            ) {
+                $("#pincodecheck").show();
+                $("#pincodecheck").html("*please fill the valid pincode*");
+                $("#pincodecheck").focus();
+                $("#pincodecheck").css("color", "red");
+                pincode_err = false;
+                return false;
+            } else {
+                $("#pincodecheck").hide();
+            }
         }
 
-               // for the profilepicture jquery
+        // for the profilepicture jquery
 
-               $("#profilepicturecheck").hide();
+        $("#profilepicturecheck").hide();
 
-                var profilepicture_err = true;
+        var profilepicture_err = true;
 
-                $("#profilepicture").click(function () {
-                    profilepicture_check();
-                });
-                function profilepicture_check() {
+        $("#profilepicture").click(function() {
+            profilepicture_check();
+        });
 
-                    var profilepicturestr = $("#profilepicture").val();
+        function profilepicture_check() {
 
-                    if (profilepicturestr.length == 0 ) {
-                        $("#profilepicturecheck").show();
-                        $("#profilepicturecheck").html("*please upload the profilepicture*");
-                        $("#profilepicturecheck").focus();
-                        $("#profilepicturecheck").css("color", "red");
-                        profilepicture_err = false;
-                        return false;
-                    }
-                    else {
-                        $("#profilepicturecheck").hide();
-                    }
+            var profilepicturestr = $("#profilepicture").val();
+
+            if (profilepicturestr.length == 0) {
+                $("#profilepicturecheck").show();
+                $("#profilepicturecheck").html("*please upload the profilepicture*");
+                $("#profilepicturecheck").focus();
+                $("#profilepicturecheck").css("color", "red");
+                profilepicture_err = false;
+                return false;
+            } else {
+                $("#profilepicturecheck").hide();
+            }
 
 
-                    if (!profilepicturestr.match(/\.(jpg|jpeg|png)$/)) {
-                        $("#profilepicturecheck").show();
-                        $("#profilepicturecheck").html("*please upload the proper format profilepicture*");
-                        $("#profilepicturecheck").focus();
-                        $("#profilepicturecheck").css("color", "red");
-                        profilepicture_err = false;
-                        return false;
-                    }
-                    else {
-                        $("#profilepicturecheck").hide();
-                    }
+            if (!profilepicturestr.match(/\.(jpg|jpeg|png)$/)) {
+                $("#profilepicturecheck").show();
+                $("#profilepicturecheck").html(
+                    "*please upload the proper format profilepicture (e.g jpg/jpeg/png)*");
+                $("#profilepicturecheck").focus();
+                $("#profilepicturecheck").css("color", "red");
+                profilepicture_err = false;
+                return false;
+            } else {
+                $("#profilepicturecheck").hide();
+            }
 
-                    var profilepicture_str =$('#profilepicture')[0].files[0].size;
+            var profilepicture_str = $('#profilepicture')[0].files[0].size;
 
-                    if (profilepicture_str > 2097152) {
-                        $("#profilepicturecheck").show();
-                        $("#profilepicturecheck").html("*File size is greater than 2MB*");
-                        $("#profilepicturecheck").focus();
-                        $("#profilepicturecheck").css("color", "red");
-                        profilepicture_err = false;
-                        return false;
-                    }
-                    else {
-                        $("#profilepicturecheck").hide();
-                    }
+            if (profilepicture_str > 2097152) {
+                $("#profilepicturecheck").show();
+                $("#profilepicturecheck").html("*File size is greater than 2MB*");
+                $("#profilepicturecheck").focus();
+                $("#profilepicturecheck").css("color", "red");
+                profilepicture_err = false;
+                return false;
+            } else {
+                $("#profilepicturecheck").hide();
+            }
 
-                }
+        }
 
-               
-                // for the signature jquery
 
+        // for the signature jquery
+
+        $('#signaturecheck').hide();
+
+        var signature_err = true;
+
+        $('#signature').click(function() {
+            signature_check();
+        });
+
+        function signature_check() {
+
+            var signaturestr = $('#signature').val();
+
+            if (signaturestr.length == 0) {
+                $('#signaturecheck').show();
+                $('#signaturecheck').html("*please upload the signature*");
+                $('#signaturecheck').focus();
+                $('#signaturecheck').css("color", "red");
+                signature_err = false;
+                return false;
+            } else {
                 $('#signaturecheck').hide();
+            }
 
-                  var signature_err = true;
+            if (!signaturestr.match(/\.(jpg|jpeg|png)$/)) {
+                $("#signaturecheck").show();
+                $("#signaturecheck").html("*please upload the proper format signature (e.g jpg/jpeg/png)*");
+                $("#signaturecheck").focus();
+                $("#signaturecheck").css("color", "red");
+                signature_err = false;
+                return false;
+            } else {
+                $("#signaturecheck").hide();
+            }
 
-                  $('#signature').click(function () {
-                      signature_check();
-                  });
-                  function signature_check() {
+            var signature_str = $('#signature')[0].files[0].size;
 
-                      var signaturestr = $('#signature').val();
+            if (signature_str > 2097152) {
+                $("#signaturecheck").show();
+                $("#signaturecheck").html("*File size is greater than 2MB*");
+                $("#signaturecheck").focus();
+                $("#signaturecheck").css("color", "red");
+                signature_err = false;
+                return false;
+            } else {
+                $("#signaturecheck").hide();
+            }
 
-                      if (signaturestr.length == 0) {
-                          $('#signaturecheck').show();
-                          $('#signaturecheck').html("*please upload the signature*");
-                          $('#signaturecheck').focus();
-                          $('#signaturecheck').css("color", "red");
-                          signature_err = false;
-                          return false;
-                      }
-                      else {
-                          $('#signaturecheck').hide();
-                      }
-
-                      if (!signaturestr.match(/\.(jpg|jpeg|png)$/)) {
-                        $("#signaturecheck").show();
-                        $("#signaturecheck").html("*please upload the proper format signature*");
-                        $("#signaturecheck").focus();
-                        $("#signaturecheck").css("color", "red");
-                        signature_err = false;
-                        return false;
-                    }
-                    else {
-                        $("#signaturecheck").hide();
-                    }
-
-                    var signature_str =$('#signature')[0].files[0].size;
-
-                    if (signature_str > 2097152) {
-                        $("#signaturecheck").show();
-                        $("#signaturecheck").html("*File size is greater than 2MB*");
-                        $("#signaturecheck").focus();
-                        $("#signaturecheck").css("color", "red");
-                        signature_err = false;
-                        return false;
-                    }
-                    else {
-                        $("#signaturecheck").hide();
-                    }
-
-                  }
+        }
 
 
-       
+
 
         // for the check submit
 
-        $("#submitbtn").click(function () {
-          
-          gender_err = true;
-          date_err = true;         
-          bloodgroup_err = true;
-          department_err = true;
-          adress_err = true;
-          city_err = true;
-          state_err = true;
-          pincode_err = true;
-         profilepicture_err = true;
-          signature_err = true;
+        $("#submitbtn").click(function() {
 
-          
-          gender_check();
-          date_check();    
-          bloodgroup_check();
-          department_check();
-          address_check();
-          city_check();
-          state_check();
-          pincode_check();
-           profilepicture_check();
-          signature_check();
-          
+            gender_err = true;
+            date_err = true;
+            bloodgroup_err = true;
+            department_err = true;
+            adress_err = true;
+            city_err = true;
+            state_err = true;
+            pincode_err = true;
+            profilepicture_err = true;
+            signature_err = true;
 
 
-         
-          if (
-            gender_err == true &&
-           date_err == true &&             
-            bloodgroup_err == true &&
-            department_err == true &&
-            adress_err == true &&
-            city_err == true &&
-            state_err == true &&
-            pincode_err == true &&
-             profilepicture_err == true &&
-            signature_err == true 
-          ) {
-            return true;
-          } else {
-            return false;
-          }
+            gender_check();
+            date_check();
+            bloodgroup_check();
+            department_check();
+            address_check();
+            city_check();
+            state_check();
+            pincode_check();
+            profilepicture_check();
+            signature_check();
+
+
+
+
+            if (
+                gender_err == true &&
+                date_err == true &&
+                bloodgroup_err == true &&
+                department_err == true &&
+                adress_err == true &&
+                city_err == true &&
+                state_err == true &&
+                pincode_err == true &&
+                profilepicture_err == true &&
+                signature_err == true
+            ) {
+                return true;
+            } else {
+                return false;
+            }
         });
-      });
+    });
     </script>
-  </body>
+</body>
+
 </html>
