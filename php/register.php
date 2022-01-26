@@ -58,14 +58,13 @@ location.replace("../register.html");
 
             {
                 $last_id =mysqli_insert_id($conn) ;
-			if($last_id){
+			if($last_id)
+                {
 					$code= rand(11111111,99999999);
 					$user_id ="$code";
 					$querynew = "UPDATE register SET user_id ='".$user_id."' WHERE id ='".$last_id."' ";
-					$resnew =mysqli_query($conn,$querynew);
-					
-
-			}
+					$resnew =mysqli_query($conn,$querynew);				
+			    }
                 
                 ?>
 <script>
