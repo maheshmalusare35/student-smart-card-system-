@@ -1,4 +1,6 @@
 <?php
+
+
         include '../database/databaseconnection.php';
 
         if(isset($_POST['submit']))
@@ -55,6 +57,16 @@ location.replace("../register.html");
             if($conn->query($sql))
 
             {
+                $last_id =mysqli_insert_id($conn) ;
+			if($last_id){
+					$code= rand(11111111,99999999);
+					$user_id ="$code";
+					$querynew = "UPDATE register SET user_id ='".$user_id."' WHERE id ='".$last_id."' ";
+					$resnew =mysqli_query($conn,$querynew);
+					
+
+			}
+                
                 ?>
 <script>
 alert("Record insert successfully");
@@ -68,7 +80,8 @@ location.replace("../register.html");
             }
             else
             {
-                ?>
+                
+               ?>
 <script>
 alert("Record insert failed");
 </script>
