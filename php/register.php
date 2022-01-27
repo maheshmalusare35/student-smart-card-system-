@@ -48,9 +48,7 @@ location.replace("../register.html");
 </script>
 <?php
         }
-        else{
-
-            
+        else{           
 
             $sql="INSERT INTO register(firstname,middlename,lastname,email,phone,role,password) VALUES('$firstname','$middlename','$lastname','$email','$phone','$role','$encpass')";
 
