@@ -61,7 +61,9 @@ location.replace("../register.html");
 					$code= rand(11111111,99999999);
 					$user_id ="$code";
 					$querynew = "UPDATE register SET user_id ='".$user_id."' WHERE id ='".$last_id."' ";
-					$resnew =mysqli_query($conn,$querynew);				
+					$resnew =mysqli_query($conn,$querynew);
+                    $querybarcode = "UPDATE register SET barcode ='".$user_id."' WHERE id ='".$last_id."' ";
+					$resbarcode =mysqli_query($conn,$querybarcode);				
 			    }
                 
                 ?>
@@ -76,9 +78,8 @@ location.replace("../register.html");
 <?php
             }
             else
-            {
-                
-               ?>
+            {                
+            ?>
 <script>
 alert("Record insert failed");
 </script>
@@ -88,7 +89,7 @@ alert("Record insert failed");
 location.replace("../register.html");
 </script>
 <?php
-                       
+
             }
         }
     }
