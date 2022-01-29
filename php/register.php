@@ -5,14 +5,14 @@
 
         if(isset($_POST['submit']))
         {
-          $firstname = $_POST['firstname'];
-          $middlename = $_POST['middlename'];
-          $lastname = $_POST['lastname'];
-          $email = $_POST['email'];
-          $phone = $_POST['phone'];
-          $role = $_POST['role'];        
-          $password = ($_POST['password']);
-          $encpass = password_hash($password, PASSWORD_BCRYPT);
+            $firstname = $_POST['firstname'];
+            $middlename = $_POST['middlename'];
+            $lastname = $_POST['lastname'];
+            $email = $_POST['email'];
+            $phone = $_POST['phone'];
+            $role = $_POST['role'];        
+            $password = ($_POST['password']);
+            $encpass = password_hash($password, PASSWORD_BCRYPT);
 
 
 
@@ -21,15 +21,15 @@
         if (mysqli_num_rows($query)>0) 
         {
             ?>
-<script>
-alert("Email is already use....");
-</script>
-<?php
-                      ?>
-<script>
-location.replace("../register.html");
-</script>
-<?php
+                <script>
+                    alert("Email is already use....");
+                </script>
+            <?php
+            ?>
+                <script>
+                    location.replace("../register.html");
+                </script>
+            <?php
         }
         else
         {
@@ -37,16 +37,16 @@ location.replace("../register.html");
         $query= mysqli_query($conn,"SELECT * FROM register WHERE phone='$phone'");
         if (mysqli_num_rows($query)>0) 
         {
-                       ?>
-<script>
-alert("contact no is already use....");
-</script>
-<?php
-                        ?>
-<script>
-location.replace("../register.html");
-</script>
-<?php
+            ?>
+                <script>
+                    alert("contact no is already use....");
+                </script>
+            <?php
+            ?>
+                <script>
+                    location.replace("../register.html");
+                </script>
+            <?php
         }
         else{           
 
@@ -64,32 +64,31 @@ location.replace("../register.html");
 					$resnew =mysqli_query($conn,$querynew);
                     $querybarcode = "UPDATE register SET barcode ='".$user_id."' WHERE id ='".$last_id."' ";
 					$resbarcode =mysqli_query($conn,$querybarcode);				
-			    }
+                }
                 
                 ?>
-<script>
-alert("Record insert successfully");
-</script>
-<?php
+                    <script>
+                        alert("Record insert successfully");
+                    </script>
+                <?php
                 ?>
-<script>
-location.replace("../register.html");
-</script>
-<?php
+                    <script>
+                        location.replace("../register.html");
+                    </script>
+                <?php
             }
             else
             {                
-            ?>
-<script>
-alert("Record insert failed");
-</script>
-<?php
-                        ?>
-<script>
-location.replace("../register.html");
-</script>
-<?php
-
+                ?>
+                    <script>
+                        alert("Record insert failed");
+                    </script>
+                <?php
+                ?>
+                    <script>
+                        location.replace("../register.html");
+                    </script>
+                <?php
             }
         }
     }
