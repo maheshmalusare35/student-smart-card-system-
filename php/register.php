@@ -56,7 +56,7 @@
 
             {
                 $last_id =mysqli_insert_id($conn) ;
-			if($last_id)
+                if($last_id)
                 {
 					$code= rand(11111111,99999999);
 					$user_id ="$code";
@@ -92,5 +92,5 @@
             }
         }
     }
-        }
+}
 ?>
