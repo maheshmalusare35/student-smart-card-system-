@@ -174,7 +174,7 @@ if (!isset($_SESSION['firstname']) || $_SESSION['role']!= "Student") {
 
 
 
-                    <form method="POST">
+                    <form action="profilestudent.php" method="POST" enctype="multipart/form-data">
                         <div class="row">
                             <div class=" form-group mb-2 col-md-6">
                                 <label class="form-label" class="mb-0">Gender</label>
@@ -301,17 +301,13 @@ if (!isset($_SESSION['firstname']) || $_SESSION['role']!= "Student") {
                             </div>
                         </div>
                         <div class="row">
-                            <div class="form-group mb-3 col-md-6">
+                            <div class="form-group mb-3 col-md-12">
                                 <label for="formFileSm" class="form-label">Profile picture:</label>
                                 <input class="form-control form-control-sm" name="profilepicture" id="profilepicture"
                                     type="file">
                                 <h6 id="profilepicturecheck" class="mb-2"></h6>
                             </div>
-                            <div class="form-group mb-3 col-md-6">
-                                <label for="formFileSm" class="form-label">Signature:</label>
-                                <input class="form-control form-control-sm" name="signature" id="signature" type="file">
-                                <h6 id="signaturecheck" class="mb-2"></h6>
-                            </div>
+                            
                         </div>
                         <hr>
 
@@ -687,56 +683,7 @@ if (!isset($_SESSION['firstname']) || $_SESSION['role']!= "Student") {
         }
 
 
-        // for the signature jquery
-
-        $('#signaturecheck').hide();
-
-        var signature_err = true;
-
-        $('#signature').click(function() {
-            signature_check();
-        });
-
-        function signature_check() {
-
-            var signaturestr = $('#signature').val();
-
-            if (signaturestr.length == 0) {
-                $('#signaturecheck').show();
-                $('#signaturecheck').html("*please upload the signature*");
-                $('#signaturecheck').focus();
-                $('#signaturecheck').css("color", "red");
-                signature_err = false;
-                return false;
-            } else {
-                $('#signaturecheck').hide();
-            }
-
-            if (!signaturestr.match(/\.(jpg|jpeg|png)$/)) {
-                $("#signaturecheck").show();
-                $("#signaturecheck").html("*please upload the proper format signature (e.g jpg/jpeg/png)*");
-                $("#signaturecheck").focus();
-                $("#signaturecheck").css("color", "red");
-                signature_err = false;
-                return false;
-            } else {
-                $("#signaturecheck").hide();
-            }
-
-            var signature_str = $('#signature')[0].files[0].size;
-
-            if (signature_str > 2097152) {
-                $("#signaturecheck").show();
-                $("#signaturecheck").html("*File size is greater than 2MB*");
-                $("#signaturecheck").focus();
-                $("#signaturecheck").css("color", "red");
-                signature_err = false;
-                return false;
-            } else {
-                $("#signaturecheck").hide();
-            }
-
-        }
+      
 
 
 
@@ -755,7 +702,7 @@ if (!isset($_SESSION['firstname']) || $_SESSION['role']!= "Student") {
             state_err = true;
             pincode_err = true;
             profilepicture_err = true;
-            signature_err = true;
+            
 
 
             gender_check();
@@ -768,7 +715,7 @@ if (!isset($_SESSION['firstname']) || $_SESSION['role']!= "Student") {
             state_check();
             pincode_check();
             profilepicture_check();
-            signature_check();
+            
 
 
 
@@ -783,8 +730,7 @@ if (!isset($_SESSION['firstname']) || $_SESSION['role']!= "Student") {
                 city_err == true &&
                 state_err == true &&
                 pincode_err == true &&
-                profilepicture_err == true &&
-                signature_err == true
+                profilepicture_err == true                
             ) {
                 return true;
             } else {

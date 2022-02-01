@@ -4,8 +4,7 @@
     if(isset($_POST['submit']))
     {
         $gender = $_POST['gender'];
-        $date = $_POST['date'];
-        $selectyear = $_POST['selectyear'];
+        $date = $_POST['date'];      
         $bloodgroup = $_POST['bloodgroup'];
         $department = $_POST['department'];
         $address = $_POST['address'];        
@@ -13,11 +12,9 @@
         $state = $_POST['state'];
         $pincode = $_POST['pincode'];
         $profilepicture = $_FILES['profilepicture'];
-        $signature = $_FILES['signature'];        
-    }
-    else
-    {         
-        $sql="INSERT INTO register(gender,date,selectyear,bloodgroup,department,address,city,state,pincode,profilepicture,signature) VALUES('$gender','$date','$selectyear','$bloodgroup','$department','$address','$city','$state','$pincode','$profilepicture','$signature')";
+                
+           
+        $sql="INSERT INTO register(gender,date,bloodgroup,department,address,city,state,pincode,profilepicture) VALUES('$gender','$date','$bloodgroup','$department','$address','$city','$state','$pincode','$profilepicture')";
 
         if($conn->query($sql))
         {
