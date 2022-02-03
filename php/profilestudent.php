@@ -13,6 +13,7 @@
         $state = $_POST['state'];
         $pincode = $_POST['pincode'];
         $profilepicture = $_FILES['profilepicture'];  
+        
                     
              
         $sql="INSERT INTO register(gender,date,selectyear,bloodgroup,department,address,city,state,pincode,profilepicture) VALUES('$gender','$date','$selectyear','$bloodgroup','$department','$address','$city','$state','$pincode','$profilepicture')";
