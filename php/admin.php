@@ -190,10 +190,8 @@ if (!isset($_SESSION['firstname']) || $_SESSION['role']!= "Admin")  {
             aria-expanded="false" aria-label="Toggle navigation"><span
                 class="navbar-toggler-icon"></span></button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav ms-auto mt-2 mt-lg-0">
-                
-               
-    
+            <ul class="navbar-nav ms-auto mt-2 mt-lg-0">              
+                  
                 <li class="nav-item"><a class="nav-link" href="#"><i class="fas fa-search"></i></a></li>
                 <li class="nav-item"><a class="nav-link" href="#"><i class="fas fa-bell"></i></a></li>
                 <li class="nav-item dropdown">
@@ -211,7 +209,6 @@ if (!isset($_SESSION['firstname']) || $_SESSION['role']!= "Admin")  {
     </div>
 </nav>
 
-           
 
             <!-- Page content-->
             <div class="container-fluid p-4">
@@ -221,8 +218,7 @@ if (!isset($_SESSION['firstname']) || $_SESSION['role']!= "Admin")  {
                     <div class="col-sm-4">
                       <div class="card">
                         <div class="card-body">
-                          <h5 class="card-title">Students enroll</h5>
-                                                
+                          <h5 class="card-title">Students enroll</h5>                                                
                         </div>
                       </div>
                     </div>
@@ -230,21 +226,10 @@ if (!isset($_SESSION['firstname']) || $_SESSION['role']!= "Admin")  {
                     <div class="col-sm-4">
                       <div class="card">
                         <div class="card-body">
-                          <h5 class="card-title">Teachers enroll</h5>
-                                                 
+                          <h5 class="card-title">Teachers enroll</h5>                                                 
                         </div>
                       </div>
-                    </div>
-                                     
-
-                    <div class="col-sm-4">
-                        <div class="card">
-                          <div class="card-body">
-                            <h5 class="card-title">Parents enroll</h5>
-                                                     
-                          </div>
-                        </div>
-                      </div>                      
+                    </div>                                                          
                   </div>
 
             </div>
