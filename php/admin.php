@@ -209,7 +209,6 @@ if (!isset($_SESSION['firstname']) || $_SESSION['role']!= "Admin")  {
     </div>
 </nav>
 
-
             <!-- Page content-->
             <div class="container-fluid p-4">
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi unde quos voluptatem porro nostrum. Ipsa architecto quae aliquid ducimus magnam pariatur aspernatur quia qui? Ut, neque. Harum necessitatibus obcaecati eos.</p>
