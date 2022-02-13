@@ -15,7 +15,7 @@
 
         $tempname = $_FILES['$profilepicture']['tmp_name'];  
     
-            $folder = "../upload/".$filename;  
+            $folder = "../upload/".$filename; 
 
 
         $sql="INSERT INTO register(gender,date,bloodgroup,department,address,city,state,pincode,profilepicture) VALUES('$gender','$date','$bloodgroup','$department','$address','$city','$state','$pincode','$filename')";
