@@ -8,31 +8,74 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta http-equiv="X-UA-Compatible" content="ie-edge" />
-
-    <!-- Bootstrap CSS -->
-    <!-- <link href="css/bootstrap.min.css" rel="stylesheet" /> -->
-
-    <!-- font awesome icons link -->
-    <link
-      rel="stylesheet"
-      href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
-      integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p"
-      crossorigin="anonymous"
-    />
-
-    <!-- Stylesheet CSS -->
-    <link href="" rel="stylesheet" />
-
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-
     <title>login form Student Smart Card</title>
 
-    <style></style>
+    <style>
+      * {
+        margin: 0;
+        top: 0;
+        box-sizing: border-box;
+      }
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        background: rgb(169, 250, 182);
+        background-attachment: fixed;
+      }
+      .card {
+        width: 640px;
+        height: 480px;
+        border: 1px solid black;
+        border-radius: 15px;
+      }
+      .card .head {
+        height: 140px;
+        background: rgb(0, 68, 255);
+        border-radius: 15px;
+      }
+      .card .head img {
+        width: 120px;
+        height: 120px;
+        padding: 5px;
+      }
+      .head_main {
+        margin-top: 0;
+        padding-left: 10px;
+      }
+      .card .main img {
+        width: 175px;
+        height: 200px;
+        border-radius: 5px;
+      }
+    </style>
   </head>
   <body>
-    <div class="container-fluid"></div>
-
-    <!-- Bootstrap JS -->
-    <!-- <script type="text/javascript" src="js/bootstrap.bundle.min.js"></script> -->
+    <div class="card">
+      <div class="head">
+        <img src="logo/college logo.png" alt="logo" />
+        <p class="head_main">KONKAN GYANPEETH COLLEGE OF ENGINEERING</p>
+        <p class="head_down">
+          Konkan Gyanpeeth College of Engineering, Karjat Konkan Gyanpeeth
+          Shaiskshnik Sankul, At. Vengaon Road, Dahivali / Parade, Post: Tiware,
+          Tal: Karjat, Dist: Raigad, MS 410201
+        </p>
+      </div>
+      <div class="main">
+        <img src="images/img_avatar.png" alt="profile" />
+        <img src="images/signature.png" alt="signature" />
+        <p>Id No:</p>
+        <p>Name:</p>
+        <p>Phone No:</p>
+        <p>Branch:</p>
+        <p>Class:</p>
+        <p>Blood group:</p>
+        <p>Address:</p>
+      </div>
+      <div class="footer">
+        <img src="images/barcode.png" alt="barcode" />
+      </div>
+    </div>
   </body>
 </html>
