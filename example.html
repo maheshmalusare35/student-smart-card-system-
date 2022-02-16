@@ -23,6 +23,7 @@
         min-height: 100vh;
         background: rgb(169, 250, 182);
         background-attachment: fixed;
+        background-size: cover;
       }
       .card {
         width: 640px;
@@ -32,22 +33,65 @@
       }
       .card .head {
         height: 140px;
-        background: rgb(0, 68, 255);
-        border-radius: 15px;
+        background-color: rgb(0, 68, 255);
+        border-top-right-radius: 15px;
+        border-top-left-radius: 15px;
+        display: flex;
+        padding: 10px 10px 10px 10px;
       }
       .card .head img {
         width: 120px;
         height: 120px;
-        padding: 5px;
+        text-align: center;
+      }
+      .card .head .header {
+        float: right;
+        text-align: center;
       }
       .head_main {
-        margin-top: 0;
-        padding-left: 10px;
+        padding-top: 15px;
+        color: white;
+        font-weight: lighter;
+        font-size: 20px;
+        margin-bottom: 10px;
       }
-      .card .main img {
-        width: 175px;
-        height: 200px;
+      .head_down {
+        color: white;
+        font-size: 17px;
+      }
+      .card .main {
+        padding: 10px 10px 10px 10px;
+        height: 270px;
+        display: flex;
+      }
+      .card .main .img_set {
+        padding: 0px 10px 0px 0px;
+        display: table;
+      }
+      .card .main #profile {
+        display: table-cell;
+        width: 150px;
+        height: 175px;
         border-radius: 5px;
+      }
+      .card .main #signature {
+        display: table-cell;
+        width: 150px;
+        height: 50px;
+        border-radius: 5px;
+      }
+      .card .main p {
+        float: right;
+      }
+      .card .footer {
+        height: 70px;
+        padding: 10px 0px 0px 10px;
+        display: flex;
+        justify-content: center;
+      }
+      .card .footer img {
+        width: 325px;
+        height: 50px;
       }
     </style>
   </head>
@@ -55,26 +99,39 @@
     <div class="card">
       <div class="head">
         <img src="logo/college logo.png" alt="logo" />
-        <p class="head_main">KONKAN GYANPEETH COLLEGE OF ENGINEERING</p>
-        <p class="head_down">
-          Konkan Gyanpeeth College of Engineering, Karjat Konkan Gyanpeeth
-          Shaiskshnik Sankul, At. Vengaon Road, Dahivali / Parade, Post: Tiware,
-          Tal: Karjat, Dist: Raigad, MS 410201
-        </p>
+        <div class="header">
+          <p class="head_main">KONKAN GYANPEETH COLLEGE OF ENGINEERING</p>
+          <p class="head_down">
+            Konkan Gyanpeeth College of Engineering, Karjat Konkan Gyanpeeth
+            Shaiskshnik Sankul, At. Vengaon Road, Dahivali / Parade, Post:
+            Tiware, Tal: Karjat, Dist: Raigad, MS 410201
+          </p>
+        </div>
       </div>
       <div class="main">
-        <img src="images/img_avatar.png" alt="profile" />
-        <img src="images/signature.png" alt="signature" />
-        <p>Id No:</p>
-        <p>Name:</p>
-        <p>Phone No:</p>
-        <p>Branch:</p>
-        <p>Class:</p>
-        <p>Blood group:</p>
-        <p>Address:</p>
+        <div class="img_set">
+          <img src="images/img_avatar.png" alt="profile" id="profile" />
+          <img src="images/signature.png" alt="signature" id="signature" />
+        </div>
+        <div class="info">
+          <p>Id No:</p>
+          <br />
+          <p>Name:</p>
+          <br />
+          <p>Phone No:</p>
+          <br />
+          <p>Branch:</p>
+          <br />
+          <p>Class:</p>
+          <br />
+          <p>Blood group:</p>
+          <br />
+          <p>Address:</p>
+          <br />
+        </div>
       </div>
       <div class="footer">
-        <img src="images/barcode.png" alt="barcode" />
+        <img src="images/barcode.png" alt="barcode" class="center" />
       </div>
     </div>
   </body>
