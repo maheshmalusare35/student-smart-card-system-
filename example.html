@@ -65,7 +65,7 @@
         display: flex;
       }
       .card .main .img_set {
-        padding: 0px 10px 0px 0px;
+        padding: 30px 10px 30px 0px;
         display: table;
       }
       .card .main #profile {
@@ -80,8 +80,20 @@
         height: 50px;
         border-radius: 5px;
       }
-      .card .main p {
+      .card .main .info {
         float: right;
+        padding: 10px 0px 0px 20px;
+      }
+      .card .main .info p {
+        margin-bottom: 12px;
+        font-weight: bold;
+      }
+      .card .main .info .info_class {
+        display: flex;
+      }
+      .card .main .info .class_info {
+        float: right;
+        padding-left: 200px;
       }
       .card .footer {
         height: 70px;
@@ -100,7 +112,9 @@
       <div class="head">
         <img src="logo/college logo.png" alt="logo" />
         <div class="header">
-          <p class="head_main">KONKAN GYANPEETH COLLEGE OF ENGINEERING</p>
+          <b>
+            <p class="head_main">KONKAN GYANPEETH COLLEGE OF ENGINEERING</p>
+          </b>
           <p class="head_down">
             Konkan Gyanpeeth College of Engineering, Karjat Konkan Gyanpeeth
             Shaiskshnik Sankul, At. Vengaon Road, Dahivali / Parade, Post:
@@ -115,19 +129,14 @@
         </div>
         <div class="info">
           <p>Id No:</p>
-          <br />
           <p>Name:</p>
-          <br />
           <p>Phone No:</p>
-          <br />
-          <p>Branch:</p>
-          <br />
-          <p>Class:</p>
-          <br />
+          <div class="info_class">
+            <p>Branch:</p>
+            <p class="class_info">Class:</p>
+          </div>
           <p>Blood group:</p>
-          <br />
           <p>Address:</p>
-          <br />
         </div>
       </div>
       <div class="footer">

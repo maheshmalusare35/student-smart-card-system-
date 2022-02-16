@@ -8,29 +8,14 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta http-equiv="X-UA-Compatible" content="ie-edge" />
-
-    <!-- Bootstrap CSS -->
-    <link href="css/bootstrap.min.css" rel="stylesheet" />
-
-    <!-- font awesome icons link -->
-    <link
-      rel="stylesheet"
-      href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
-      integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p"
-      crossorigin="anonymous"
-    />
-
-    <!-- Stylesheet CSS -->
-    <link href="" rel="stylesheet" />
-
-    <!-- JQuery plugin-->
-    <script
-      src="https://code.jquery.com/jquery-3.6.0.min.js"
-      integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
-      crossorigin="anonymous"
-    ></script>
+    <title>login form Student Smart Card</title>
 
     <style>
+      * {
+        margin: 0;
+        top: 0;
+        box-sizing: border-box;
+      }
       body {
         display: flex;
         justify-content: center;
@@ -38,84 +23,125 @@
         min-height: 100vh;
         background: rgb(169, 250, 182);
         background-attachment: fixed;
+        background-size: cover;
+      }
+      .card {
+        width: 640px;
+        height: 480px;
+        border: 1px solid black;
+        border-radius: 15px;
+      }
+      .card .head {
+        height: 140px;
+        background-color: rgb(0, 68, 255);
+        border-top-right-radius: 15px;
+        border-top-left-radius: 15px;
+        display: flex;
+        padding: 10px 10px 10px 10px;
+      }
+      .card .head img {
+        width: 120px;
+        height: 120px;
+        text-align: center;
+      }
+      .card .head .header {
+        float: right;
+        text-align: center;
+      }
+      .head_main {
+        padding-top: 15px;
+        color: white;
+        font-weight: lighter;
+        font-size: 20px;
+        margin-bottom: 10px;
+      }
+      .head_down {
+        color: white;
+        font-size: 17px;
+      }
+      .card .main {
+        padding: 10px 10px 10px 10px;
+        height: 270px;
+        display: flex;
+      }
+      .card .main .img_set {
+        padding: 30px 10px 30px 0px;
+        display: table;
+      }
+      .card .main #profile {
+        display: table-cell;
+        width: 150px;
+        height: 175px;
+        border-radius: 5px;
+      }
+      .card .main #signature {
+        display: table-cell;
+        width: 150px;
+        height: 50px;
+        border-radius: 5px;
+      }
+      .card .main .info {
+        float: right;
+        padding: 10px 0px 0px 20px;
+      }
+      .card .main .info p {
+        margin-bottom: 12px;
+        font-weight: bold;
+      }
+      .card .main .info .info_class {
+        display: flex;
+      }
+      .card .main .info .class_info {
+        float: right;
+        padding-left: 200px;
+      }
+      .card .footer {
+        height: 70px;
+        padding: 10px 0px 0px 10px;
+        display: flex;
+        justify-content: center;
+      }
+      .card .footer img {
+        width: 325px;
+        height: 50px;
       }
     </style>
-    <title>Student Smart Card</title>
   </head>
   <body>
-    <div class="card rounded-3" style="width: 640px; height: 480px">
-      <div class="card-header bg-primary h-25">
-        <div class="row">
-          <div class="col-md-3">
-            <img
-              src="logo/college logo.png"
-              class="img-top"
-              alt="logo"
-              style="width: 105px; height: 105px"
-            />
-          </div>
-          <div class="col-md">
-            <p
-              class="text-center mb-1"
-              style="font-size: 18px; font-weight: 500; color: cornsilk"
-            >
-              KONKAN GYANPEETH COLLEGE OF ENGINEERING
-            </p>
-            <p class="text-center" style="font-size: 15px; color: cornsilk">
-              Konkan Gyanpeeth College of Engineering, Karjat Konkan Gyanpeeth
-              Shaiskshnik Sankul, At. Vengaon Road, Dahivali / Parade, Post:
-              Tiware, Tal: Karjat, Dist: Raigad, MS 410201
-            </p>
-          </div>
+    <div class="card">
+      <div class="head">
+        <img src="logo/college logo.png" alt="logo" />
+        <div class="header">
+          <b>
+            <p class="head_main">KONKAN GYANPEETH COLLEGE OF ENGINEERING</p>
+          </b>
+          <p class="head_down">
+            Konkan Gyanpeeth College of Engineering, Karjat Konkan Gyanpeeth
+            Shaiskshnik Sankul, At. Vengaon Road, Dahivali / Parade, Post:
+            Tiware, Tal: Karjat, Dist: Raigad, MS 410201
+          </p>
         </div>
       </div>
-      <div class="row">
-        <div class="col-md-4">
-          <div class="container-fluid">
-            <div class="row">
-              <img
-                src="images/img_avatar.png"
-                class="rounded-3 p-3"
-                style="width: 175px; height: 200px"
-              />
-            </div>
-            <div class="row">
-              <img
-                src="images/signature.png"
-                class="rounded-3 p-3"
-                style="width: 175px; height: 75px"
-              />
-            </div>
+      <div class="main">
+        <div class="img_set">
+          <img src="images/img_avatar.png" alt="profile" id="profile" />
+          <img src="images/signature.png" alt="signature" id="signature" />
+        </div>
+        <div class="info">
+          <p>Id No:</p>
+          <p>Name:</p>
+          <p>Phone No:</p>
+          <div class="info_class">
+            <p>Branch:</p>
+            <p class="class_info">Class:</p>
           </div>
+          <p>Blood group:</p>
+          <p>Address:</p>
         </div>
-        <div class="col-md-8 p-1">
-          <p class=""><b>Id No :</b></p>
-          <p class=""><b> Name :</b></p>
-          <div class="row">
-            <div class="col">
-              <p class=""><b>Class :</b></p>
-            </div>
-            <div class="col">
-              <p class=""><b>Branch :</b></p>
-            </div>
-          </div>
-          <p class="">
-            <b>Address :</b>
-          </p>
-          <p class=""><b>Phone No :</b></p>
-        </div>
-        <div class="d-grid col-6 mx-auto mb-3">
-          <img
-            src="images/barcode.png"
-            class="rounded-3"
-            style="width: 320px; height: 50px"
-          />
-        </div>
+      </div>
+      <div class="footer">
+        <img src="images/barcode.png" alt="barcode" class="center" />
       </div>
     </div>
-
-    <!-- Bootstrap JS -->
-    <script type="text/javascript" src="js/bootstrap.bundle.min.js"></script>
-    <script></script>
   </body>
 </html>
