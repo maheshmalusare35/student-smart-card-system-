@@ -12,6 +12,7 @@
         $city = $_POST['city'];
         $state = $_POST['state'];
         $pincode = $_POST['pincode'];
+        
         $filename = $_FILES['$profilepicture']['name'];
 
         $tempname = $_FILES['$profilepicture']['tmp_name'];  
