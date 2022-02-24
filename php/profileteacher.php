@@ -28,7 +28,6 @@ $query = "SELECT * FROM register WHERE email='$email'";
         $state = $_POST['state'];
         $pincode = $_POST['pincode'];
         $filename = $_FILES['profilepicture']['name'];
-
         $tempname = $_FILES['profilepicture']['tmp_name'];  
     
             $folder = "../upload/".$filename; 
@@ -36,7 +35,7 @@ $query = "SELECT * FROM register WHERE email='$email'";
 
         $sql="INSERT INTO register(email,gender,date,bloodgroup,department,address,city,state,pincode,profilepicture) VALUES('$email','$gender','$date','$bloodgroup','$department','$address','$city','$state','$pincode','$filename')";
 
-       
+
         if(mysqli_query($conn,$sql)) 
         {
             ?>
