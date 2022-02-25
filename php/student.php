@@ -23,6 +23,7 @@ if (!isset($_SESSION['firstname']) || $_SESSION['role']!= "Student") {
               $email = $row['email'];
               $phone = $row['phone'];
               $role = $row['role'];
+              $balance = $row['balance'];
           }
       }
 ?>
@@ -94,7 +95,7 @@ if (!isset($_SESSION['firstname']) || $_SESSION['role']!= "Student") {
                     </li>      -->
 
                     <li class="nav-item">
-                        <a class="nav-link fw-bold" href="#">Your Balance:</a>
+                        <a class="nav-link fw-bold" href="#">Your Balance:<?php echo " " . $balance . ""; ?></a>
                     </li>
                     <!-- <li class="nav-item"><a class="nav-link" href="#"><i class="fas fa-search"></i></a></li>
                 <li class="nav-item"><a class="nav-link" href="#"><i class="fas fa-bell"></i></a></li>
@@ -132,7 +133,7 @@ if (!isset($_SESSION['firstname']) || $_SESSION['role']!= "Student") {
                     <div class="row mt-4">
                         <div class="form-group mb-2 col-md-6">
                             <label for="first" class="mb-1"> First Name:</label>
-                            <input type="text" name="firstname" id="firstnames" class="form-control text-uppercase"
+                            <input type="text" class="form-control text-uppercase"
                                 placeholder="<?php echo " " . $firstname . ""; ?>" aria-label="Disabled input example"
                                 disabled />
                         </div>
@@ -303,8 +304,8 @@ if (!isset($_SESSION['firstname']) || $_SESSION['role']!= "Student") {
                         <div class="row">
                             <div class="form-group mb-3 col-md-12">
                                 <label for="formFileSm" class="form-label">Profile picture:</label>
-                                <input class="form-control form-control-sm" name="profilepicture" id="profilepicture"
-                                    type="file">
+                                <input type="file" class="form-control form-control-sm" name="profilepicture" id="profilepicture"
+                                    >
                                 <h6 id="profilepicturecheck" class="mb-2"></h6>
                             </div>
                             
@@ -324,10 +325,6 @@ if (!isset($_SESSION['firstname']) || $_SESSION['role']!= "Student") {
             </div>
         </div>
     </div>
-
-
-    <!-- main content -->
-    
 
 
     <!-- Bootstrap JS -->

@@ -23,6 +23,7 @@ if (!isset($_SESSION['firstname']) || $_SESSION['role']!= "Teacher") {
               $email = $row['email'];
               $phone = $row['phone'];
               $role = $row['role'];
+              $balance = $row['balance'];
           }
       }
 
@@ -95,7 +96,7 @@ if (!isset($_SESSION['firstname']) || $_SESSION['role']!= "Teacher") {
                       </li>      -->
 
                     <li class="nav-item">
-                        <a class="nav-link fw-bold" href="#">Your Balance:</a>
+                        <a class="nav-link fw-bold" href="#">Your Balance:<?php echo " " . $balance . ""; ?></a>
                     </li>
                     <!-- <li class="nav-item"><a class="nav-link" href="#"><i class="fas fa-search"></i></a></li>
                 <li class="nav-item"><a class="nav-link" href="#"><i class="fas fa-bell"></i></a></li>
