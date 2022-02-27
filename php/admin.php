@@ -1,5 +1,6 @@
 <?php
 session_start();
+include("../database/databaseconnection.php");
 if (!isset($_SESSION['firstname']) || $_SESSION['role']!= "Admin")  {
     header("Location: ../login.html");
 }
@@ -33,7 +34,10 @@ if (!isset($_SESSION['firstname']) || $_SESSION['role']!= "Admin")  {
     <title>Admin Login Student Smart Card</title>
     <style>
         #sidebar-wrapper {
-            width: 350px;
+            width: 200px;
+        }
+        .navbar{
+            width: 900px;
         }
 
     </style>
@@ -201,32 +205,84 @@ if (!isset($_SESSION['firstname']) || $_SESSION['role']!= "Admin")  {
         </div>
     </div>
 </nav>
-        
+
+           
 
             <!-- Page content-->
             <div class="container-fluid p-4">
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi unde quos voluptatem porro nostrum. Ipsa architecto quae aliquid ducimus magnam pariatur aspernatur quia qui? Ut, neque. Harum necessitatibus obcaecati eos.</p>
+                <!--<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi unde quos voluptatem porro nostrum. Ipsa architecto quae aliquid ducimus magnam pariatur aspernatur quia qui? Ut, neque. Harum necessitatibus obcaecati eos.</p>-->
             
-                <div class="row">
-                    <div class="col-sm-4">
-                      <div class="card">
-                        <div class="card-body">
-                          <h5 class="card-title">Students enroll</h5>
+                <!--<div class="row">-->
+                <!--    <div class="col-sm-4">-->
+                <!--      <div class="card">-->
+                <!--        <div class="card-body">-->
+                <!--          <h5 class="card-title">Students enroll</h5>-->
                                                 
-                        </div>
-                      </div>
-                    </div>
+                <!--        </div>-->
+                <!--      </div>-->
+                <!--    </div>-->
 
-                    <div class="col-sm-4">
-                      <div class="card">
-                        <div class="card-body">
-                          <h5 class="card-title">Teachers enroll</h5>
-                                            
-                        </div>
-                      </div>
-                    </div>                                  
-                  </div>
+                <!--    <div class="col-sm-4">-->
+                <!--      <div class="card">-->
+                <!--        <div class="card-body">-->
+                <!--          <h5 class="card-title">Teachers enroll</h5>-->
+                                              
+                <!--        </div>-->
+                <!--      </div>-->
+                <!--    </div>-->
+                <!--  </div>-->
+                  
+                  <br>
+                  
+                  <!--table show data-->
+                  <div class="table-responsive">
+		<table class="table table-bordered table-striped table-hover text-center">
+			<thead class="bg-dark text-white">
+				<th>Id</th>
+				<th>FIRSTNAME</th>
+				<th>MIDDLENAME</th>
+				<th>LASTNAME</th>
+				<th>EMAIL</th>
+				<th>PHONE NO</th>
+				<th>GENERATE_ID</th>
+				<th>ADD_MONEY</th>
+				<th>EDIT</th>
+				<th>DELETE</th>
+			</thead>
 
+			<tbody>
+				<?php
+						$displayquery = "select * from register";
+						$querydisplay = mysqli_query($conn,$displayquery);
+
+						//$row =mysqli_num_rows($querydisplay);
+
+
+						while ($result = mysqli_fetch_array($querydisplay)) {
+							?>
+
+								<tr>
+									<td><?php echo $result ['id'];?></td>
+									<td><?php echo $result ['firstname'];?></td>
+									<td><?php echo $result ['middlename'];?></td>
+									<td><?php echo $result ['lastname'];?></td>
+									<td><?php echo $result ['email'];?></td>
+									<td><?php echo $result ['phone'];?></td>
+									<td><button>Add_Money</button></td>
+									<td><button>Generate</button></td>
+									<td><button>Edit</button></td>
+									<td><button>Delete</button></td>
+									
+								</tr>
+
+							<?php
+						}
+				?>
+			</tbody>
+		</table>
+	</div>
+                  
+                 
             </div>
         </div>
     </div>

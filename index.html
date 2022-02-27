@@ -293,7 +293,7 @@
                     <h2>Student Name</h2>
                     <p>
                       <img
-                        src="images/barcode.png"
+                        src="images/barcode1.png"
                         style="width: 200px; height: 30px"
                       />
                     </p>
@@ -345,7 +345,7 @@
               <form>
                 <div class="form-floating mb-3">
                   <input
-                    type="Name"
+                    type="name"
                     class="form-control"
                     id="floatingName"
                     placeholder="Name"
@@ -363,6 +363,7 @@
                 </div>
                 <div class="form-floating mb-3">
                   <textarea
+                    name="comments"
                     class="form-control"
                     placeholder="Leave a comment here"
                     id="floatingTextarea"
@@ -383,192 +384,12 @@
 
     <!-- Footer -->
     <footer
-      class="
-        p-2
-        bg-dark
-        text-white text-center
-        position-relative
-        border border-warning border-2
-      "
+      class="p-2 bg-dark text-white text-center position-relative border border-warning border-2"
     >
       <div class="container">
         <p class="lead">Copyright &copy; 2022 Student Smart Card</p>
       </div>
     </footer>
-
-    <!-- login and register form -->
-    <!-- add in login in class   data-bs-toggle="modal" data-bs-target="#login" -->
-    <!-- <div class="modal fade1" id="login" tabindex="-1" aria-labelledby="enrollLabel" aria-hidden="true">
-
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div id="first">
-          <div class="modal-header">
-            <h2 class="modal-title">Login</h2>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-          </div>
-          <div class="modal-body">
-            <form action="" method="POST">
-              <div class="mb-3">
-                <label for="exampleInputusername" class="form-label">User Name:</label>
-                <input type="text" class="form-control" id="exampleInputusername">
-                <h5 id="usercheck"></h5>
-              </div>
-              <div class="mb-3">
-                <label for="exampleInputPassword1" class="form-label">Password:</label>
-                <input type="password" class="form-control" id="exampleInputPassword1">
-                <h5 id="passcheck"></h5>
-              </div>
-
-              <div class="mb-3">
-                <label class="form-label">Select User Type:</label>
-                <h5 id="selectcheck"></h5>
-              </div>
-              <select class="form-select mb-3" name="role" aria-label="Default select example">
-                <option selected value="user">Select</option>
-                <option value="admin">Admin</option>
-                <option value="office">Office</option>
-                <option value="cafeteria">Cafeteria</option>
-                <option value="student">Student</option>
-                <option value="teacher">Teacher</option>
-                <option value="parents">Parents</option>
-              </select>
-              <div class="d-grid gap-2 col-6 mx-auto mb-3 ">
-                <button type="submit" id="submitbtn" value="submit" class="btn btn-primary btn-lg">Sign In</button>
-              </div>
-              <div class="form-group">
-                <p class="text-center">Don't have account? <a href="#" id="signup">Sign up here</a></p>
-              </div>
-            </form>
-          </div>
-        </div>
-
-        <div id="second">
-          <div class="modal-header">
-            <h2 class="modal-title">Register</h2>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-          </div>
-          <div class="modal-body">
-            <form class="row g-3" action="" method="POST">
-              <div class="mb-0 col-md-6">
-                <label for="first-name" class="col-form-label">First Name:</label>
-                <input type="text" class="form-control" id="first-name" />
-              </div>
-              <div class="mb-1 col-md-6">
-                <label for="middle-name" class="col-form-label">Middle Name:</label>
-                <input type="text" class="form-control" id="middle-name" />
-              </div>
-              <div class="mb-1">
-                <label for="last-name" class="col-form-label">Last Name:</label>
-                <input type="text" class="form-control" id="last-name" />
-              </div>
-              <div class="mb-1">
-                <label for="email" class="col-form-label">Email:</label>
-                <input type="email" class="form-control" id="email" />
-              </div>
-              <div class="mb-1">
-                <label for="phone" class="col-form-label">Phone:</label>
-                <input type="tel" class="form-control" id="phone" />
-              </div>
-              <div class="mb-1">
-                <label for="gender" class="col-form-label">Gender:</label>
-                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1"
-                  value="option1">
-                <label class="form-check-label" for="inlineRadio1">Male</label>
-                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2"
-                  value="option2">
-                <label class="form-check-label" for="inlineRadio1">Female</label>
-              </div>
-              <div class="mb-1">
-                <label for="inputyear" class="form-label">Year</label>
-                <select id="inputyear" class="form-select">
-                  <option selected>Choose...</option>
-                  <option value="1">FE</option>
-                  <option value="2">SE</option>
-                  <option value="3">TE</option>
-                  <option value="4">BE</option>
-                </select>
-              </div>
-
-              <div class="mb-1">
-                <label for="inputPassword4" class="col-form-label">Password:</label>
-                <input type="password" class="form-control" id="inputPassword">
-              </div>
-
-              <div class="mb-1">
-                <label for="inputPassword4" class="col-form-label">Confirm Password:</label>
-                <input type="password" class="form-control" id="inputPassword">
-              </div>
-              <!-- <div class="col-12">
-                <label for="inputAddress" class="form-label">Address</label>
-                <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
-              </div>
-              <div class="col-12">
-                <label for="inputAddress2" class="form-label">Address 2</label>
-                <input type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor">
-              </div>
-              <div class="col-12">
-                <label for="inputCity" class="form-label">City</label>
-                <input type="text" class="form-control" id="inputCity">
-              </div>
-              <div class="col-md-6">
-                <label for="inputState" class="form-label">State</label>
-                <select id="inputState" class="form-select">
-                  <option selected>Choose...</option>
-                  <option>Andhra Pradesh</option>
-                  <option>Arunachal Pradesh</option>
-                  <option>Assam</option>
-                  <option>Bihar</option>
-                  <option>Chhattisgarh</option>
-                  <option>Goa</option>
-                  <option>Gujarat</option>
-                  <option>Haryana</option>
-                  <option>Himachal Pradesh</option>
-                  <option>Jharkhand</option>
-                  <option>Karnataka</option>
-                  <option>Kerala</option>
-                  <option>Madhya Pradesh</option>
-                  <option>Maharashtra</option>
-                  <option>Manipur</option>
-                  <option>Meghalaya</option>
-                  <option>Mizoram</option>
-                  <option>Nagaland</option>
-                  <option>Odisha</option>
-                  <option>Punjab</option>
-                  <option>Rajasthan</option>
-                  <option>Sikkim</option>
-                  <option>Tamil Nadu</option>
-                  <option>Telangana</option>
-                  <option>Tripura</option>
-                  <option>Uttar Pradesh</option>
-                  <option>Uttarakhand</option>
-                  <option>West Bengal</option>
-                </select>
-              </div>
-              <div class="col-md-6">
-                <label for="inputZip" class="form-label">Pin code</label>
-                <input type="text" class="form-control" id="inputZip">
-              </div>
-              <div class="mb-3">
-                <label for="formFileSm" class="form-label">Profile picture:</label>
-                <input class="form-control form-control-sm" id="formFileSm" type="file">
-              </div> -->
-
-    <!-- <div class="d-grid gap-2 col-6 mx-auto text-center mb-1">
-                <button type="submit" class="btn btn-primary btn-lg">Sign Up </button>
-              </div>
-
-              <div class="col-md-12 ">
-                <div class="form-group">
-                  <p class="text-center">Already have an account?<a href="#" id="signin">Sign in here</a></p>
-                </div>
-              </div>
-            </form>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div> -->
 
     <!-- Bootstrap JS -->
     <script type="text/javascript" src="js/bootstrap.bundle.min.js"></script>
