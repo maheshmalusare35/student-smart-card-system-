@@ -209,46 +209,24 @@ if (!isset($_SESSION['firstname']) || $_SESSION['role']!= "Admin")  {
            
 
             <!-- Page content-->
-            <div class="container-fluid p-4">
-                <!--<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi unde quos voluptatem porro nostrum. Ipsa architecto quae aliquid ducimus magnam pariatur aspernatur quia qui? Ut, neque. Harum necessitatibus obcaecati eos.</p>-->
-            
-                <!--<div class="row">-->
-                <!--    <div class="col-sm-4">-->
-                <!--      <div class="card">-->
-                <!--        <div class="card-body">-->
-                <!--          <h5 class="card-title">Students enroll</h5>-->
-                                                
-                <!--        </div>-->
-                <!--      </div>-->
-                <!--    </div>-->
-
-                <!--    <div class="col-sm-4">-->
-                <!--      <div class="card">-->
-                <!--        <div class="card-body">-->
-                <!--          <h5 class="card-title">Teachers enroll</h5>-->
-                                              
-                <!--        </div>-->
-                <!--      </div>-->
-                <!--    </div>-->
-                <!--  </div>-->
+            <div class="container-fluid p-4">            
+                                  <br>
                   
-                  <br>
-                  
-                  <!--table show data-->
+                  <!--table show data fetching from database-->
                   <div class="table-responsive">
-		<table class="table table-bordered table-striped table-hover text-center">
-			<thead class="bg-dark text-white">
-				<th>Id</th>
-				<th>FIRSTNAME</th>
-				<th>MIDDLENAME</th>
-				<th>LASTNAME</th>
-				<th>EMAIL</th>
-				<th>PHONE NO</th>
-				<th>GENERATE_ID</th>
-				<th>ADD_MONEY</th>
-				<th>EDIT</th>
-				<th>DELETE</th>
-			</thead>
+                  <table class="table table-bordered table-striped table-hover text-center">
+                    <thead class="bg-dark text-white">
+                      <th>Id</th>
+                      <th>FIRSTNAME</th>
+                      <th>MIDDLENAME</th>
+                      <th>LASTNAME</th>
+                      <th>EMAIL</th>
+                      <th>PHONE NO</th>
+                      <th>ADD_MONEY</th>
+                      <th>GENERATE_ID</th>                     
+                      <th>EDIT</th>
+                      <th>DELETE</th>
+                    </thead>
 
 			<tbody>
 				<?php
