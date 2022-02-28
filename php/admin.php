@@ -206,11 +206,11 @@ if (!isset($_SESSION['firstname']) || $_SESSION['role']!= "Admin")  {
     </div>
 </nav>
 
-           
+
 
             <!-- Page content-->
             <div class="container-fluid p-4">            
-                                  <br>
+            <br>
                   
                   <!--table show data fetching from database-->
                   <div class="table-responsive">
@@ -228,47 +228,44 @@ if (!isset($_SESSION['firstname']) || $_SESSION['role']!= "Admin")  {
                       <th>DELETE</th>
                     </thead>
 
-			<tbody>
-				<?php
-						$displayquery = "select * from register";
-						$querydisplay = mysqli_query($conn,$displayquery);
+                        <tbody>
+                          <?php
+                              $displayquery = "select * from register";
+                              $querydisplay = mysqli_query($conn,$displayquery);
 
-						//$row =mysqli_num_rows($querydisplay);
+                              //$row =mysqli_num_rows($querydisplay);
 
 
-						while ($result = mysqli_fetch_array($querydisplay)) {
-							?>
+                              while ($result = mysqli_fetch_array($querydisplay)) {
+                                ?>
 
-								<tr>
-									<td><?php echo $result ['id'];?></td>
-									<td><?php echo $result ['firstname'];?></td>
-									<td><?php echo $result ['middlename'];?></td>
-									<td><?php echo $result ['lastname'];?></td>
-									<td><?php echo $result ['email'];?></td>
-									<td><?php echo $result ['phone'];?></td>
-									<td><button>Add_Money</button></td>
-									<td><button>Generate</button></td>
-									<td><button>Edit</button></td>
-									<td><button>Delete</button></td>
-									
-								</tr>
+                                  <tr>
+                                    <td><?php echo $result ['id'];?></td>
+                                    <td><?php echo $result ['firstname'];?></td>
+                                    <td><?php echo $result ['middlename'];?></td>
+                                    <td><?php echo $result ['lastname'];?></td>
+                                    <td><?php echo $result ['email'];?></td>
+                                    <td><?php echo $result ['phone'];?></td>
+                                    <td><button>Add_Money</button></td>
+                                    <td><button>Generate</button></td>
+                                    <td><button>Edit</button></td>
+                                    <td><button>Delete</button></td>
+                                    
+                                  </tr>
 
-							<?php
-						}
-				?>
-			</tbody>
-		</table>
-	</div>
-                  
-                 
+                                <?php
+                              }
+                          ?>
+                        </tbody>
+                    </table>
+                  </div>
             </div>
         </div>
     </div>
 
-        
 
 
- <!-- Bootstrap JS -->
+<!-- Bootstrap JS -->
     <script type="text/javascript" src="../js/bootstrap.bundle.min.js"> </script>
 
 
