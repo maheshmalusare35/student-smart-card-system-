@@ -235,7 +235,6 @@ if (!isset($_SESSION['firstname']) || $_SESSION['role']!= "Admin")  {
 
                               //$row =mysqli_num_rows($querydisplay);
 
-
                               while ($result = mysqli_fetch_array($querydisplay)) {
                                 ?>
 
@@ -246,11 +245,10 @@ if (!isset($_SESSION['firstname']) || $_SESSION['role']!= "Admin")  {
                                     <td><?php echo $result ['lastname'];?></td>
                                     <td><?php echo $result ['email'];?></td>
                                     <td><?php echo $result ['phone'];?></td>
-                                    <td><button>Add_Money</button></td>
+                                    <td><button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">Add_Money</button></td>
                                     <td><button>Generate</button></td>
-                                    <td><button>Edit</button></td>
-                                    <td><button>Delete</button></td>
-                                    
+                                    <td><button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal1">Edit</button></td>
+                                    <td><button>Delete</button></td>                                    
                                   </tr>
 
                                 <?php
@@ -262,6 +260,65 @@ if (!isset($_SESSION['firstname']) || $_SESSION['role']!= "Admin")  {
             </div>
         </div>
     </div>
+
+    <!-- model for Add_Money -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">ADD_MONEY</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+      <form>
+        <div class="mb-3">
+          <label for="id_no" class="form-label">ID_NO</label>
+          <input type="text" class="form-control" id="id_no">    
+        </div>
+        <div class="mb-3">
+          <label for="amount" class="form-label">Add_Amount</label>
+          <input type="text" class="form-control" id="amount">
+        </div>
+        
+      </div>
+      <div class="modal-footer">
+      <button type="submit" class="btn btn-primary">Submit</button>
+      </div>
+    </form>
+    </div>
+  </div>
+</div>
+
+
+
+
+    <!-- model for Edit -->
+    <div class="modal fade" id="exampleModal1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">EDIT_PROFILE</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+      <form>
+        <div class="mb-3">
+          <label for="id_no" class="form-label">ID_NO</label>
+          <input type="text" class="form-control" id="id_no">    
+        </div>
+        <div class="mb-3">
+          <label for="amount" class="form-label">Add_Amount</label>
+          <input type="text" class="form-control" id="amount">
+        </div>
+        
+      </div>
+      <div class="modal-footer">
+      <button type="submit" class="btn btn-primary">Submit</button>
+      </div>
+    </form>
+    </div>
+  </div>
+</div>
 
 
 
