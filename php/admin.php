@@ -429,7 +429,6 @@ if (!isset($_SESSION['firstname']) || $_SESSION['role']!= "Admin")  {
                             <input type="text" class="form-control" name="city" id="city" autocomplete="off">
                             <h6 id="citycheck" class="mb-2"></h6>
                         </div>
-
                         <div class="row mb-2">
                             <div class="form-group col-md-6">
                                 <label for="inputState" class="form-label">State</label>
