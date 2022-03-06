@@ -320,7 +320,7 @@ if (!isset($_SESSION['firstname']) || $_SESSION['role']!= "Student") {
                     </form>
                 </div>
                 <!-- <div class="modal-footer">
-          
+        
         </div> -->
             </div>
         </div>
