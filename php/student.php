@@ -311,7 +311,6 @@ if (!isset($_SESSION['firstname']) || $_SESSION['role']!= "Student") {
                             
                         </div>
                         <hr>
-
                         <div class="d-grid gap-2 col-6 mx-auto mb-1">
                             <button type="submit" id="submitbtn" name="submit" value="submit"
                                 class="btn btn-primary btn-lg">Save changes
