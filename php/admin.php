@@ -169,7 +169,6 @@ if (!isset($_SESSION['firstname']) || $_SESSION['role']!= "Admin")  {
 
         <!-- Page content wrapper-->
         <div id="page-content-wrapper">
-
           
    <!-- Top navigation-->
    <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
