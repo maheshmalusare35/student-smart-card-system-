@@ -126,7 +126,7 @@ if (!isset($_SESSION['firstname']) || $_SESSION['role']!= "Admin")  {
                       <div class="accordion-item">
                         <h2 class="accordion-header" id="headingFive">
                           <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
-                            Management
+                            Library
                           </button>
                         </h2>
                         <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive" data-bs-parent="#accordionExample">
@@ -141,7 +141,7 @@ if (!isset($_SESSION['firstname']) || $_SESSION['role']!= "Admin")  {
                       <div class="accordion-item">
                         <h2 class="accordion-header" id="headingSix">
                           <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
-                            Others
+                            Management
                           </button>
                         </h2>
                         <div id="collapseSix" class="accordion-collapse collapse" aria-labelledby="headingSix" data-bs-parent="#accordionExample">
@@ -187,7 +187,7 @@ if (!isset($_SESSION['firstname']) || $_SESSION['role']!= "Admin")  {
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav ms-auto mt-2 mt-lg-0">
                 
-               
+              
     
                 <li class="nav-item"><a class="nav-link" href="#"><i class="fas fa-search"></i></a></li>
                 <li class="nav-item"><a class="nav-link" href="#"><i class="fas fa-bell"></i></a></li>

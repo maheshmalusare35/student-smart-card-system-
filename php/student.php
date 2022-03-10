@@ -325,6 +325,7 @@ if (!isset($_SESSION['firstname']) || $_SESSION['role']!= "Student") {
         </div>
     </div>
 
+    
     <!-- Bootstrap JS -->
     <script type="text/javascript" src="../js/bootstrap.bundle.min.js"></script>
 
