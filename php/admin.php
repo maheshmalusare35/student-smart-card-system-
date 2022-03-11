@@ -37,7 +37,7 @@ if (!isset($_SESSION['firstname']) || $_SESSION['role']!= "Admin")  {
             width: 200px;
         }
         .navbar{
-            width: 900px;
+            width: 100vw;
         }
 
     </style>
@@ -49,7 +49,7 @@ if (!isset($_SESSION['firstname']) || $_SESSION['role']!= "Admin")  {
 
 
 
-    <div class="d-flex" id="wrapper">
+    <div class="d-flex" id="wrapper" >
 
         <!-- Sidebar-->
         <div class="border-end bg-white" id="sidebar-wrapper">
@@ -70,9 +70,10 @@ if (!isset($_SESSION['firstname']) || $_SESSION['role']!= "Admin")  {
                           </button>
                         </h2>
                         <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
-                            <a class="dropdown-item" href="#">Page 1</a>
-                            <a class="dropdown-item" href="#">Page 2</a>
-                            <a class="dropdown-item" href="#">Page 3</a> 
+                            <a class="dropdown-item" href="#">Generate_Id</a>
+                            <a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#exampleModal">ADD_Money</a>
+                            <a class="dropdown-item" href="#">ADD_New_Student</a>
+                            <a class="dropdown-item" href="#">Delete_Student_Data</a> 
                         </div>
                       </div>
 
@@ -85,9 +86,10 @@ if (!isset($_SESSION['firstname']) || $_SESSION['role']!= "Admin")  {
                           </button>
                         </h2>
                         <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
-                            <a class="dropdown-item" href="#">Page 1</a>
-                            <a class="dropdown-item" href="#">Page 2</a>
-                            <a class="dropdown-item" href="#">Page 3</a> 
+                        <a class="dropdown-item" href="#">Generate_Id</a>
+                            <a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#exampleModal">ADD_Money</a>
+                            <a class="dropdown-item" href="#">ADD_New_Teacher</a>
+                            <a class="dropdown-item" href="#">Delete_Teacher_Data</a> 
                         </div>
                       </div>  
 
@@ -121,7 +123,7 @@ if (!isset($_SESSION['firstname']) || $_SESSION['role']!= "Admin")  {
                         </div>
                       </div>
 
-                     <!-- example5 -->           
+                    <!-- example5 -->           
 
                       <div class="accordion-item">
                         <h2 class="accordion-header" id="headingFive">
@@ -220,9 +222,7 @@ if (!isset($_SESSION['firstname']) || $_SESSION['role']!= "Admin")  {
                       <th>MIDDLENAME</th>
                       <th>LASTNAME</th>
                       <th>EMAIL</th>
-                      <th>PHONE NO</th>
-                      <th>ADD_MONEY</th>
-                      <th>GENERATE_ID</th>                     
+                      <th>PHONE NO</th>                     
                       <th>EDIT</th>
                       <th>DELETE</th>
                     </thead>
@@ -244,8 +244,6 @@ if (!isset($_SESSION['firstname']) || $_SESSION['role']!= "Admin")  {
                                     <td><?php echo $result ['lastname'];?></td>
                                     <td><?php echo $result ['email'];?></td>
                                     <td><?php echo $result ['phone'];?></td>
-                                    <td><button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">Add_Money</button></td>
-                                    <td><button>Generate</button></td>
                                     <td><button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal1">Edit</button></td>
                                     <td><button>Delete</button></td>                                    
                                   </tr>
@@ -305,43 +303,47 @@ if (!isset($_SESSION['firstname']) || $_SESSION['role']!= "Admin")  {
                         <div class="form-group mb-2 col-md-6">
                             <label for="first" class="mb-1"> First Name:</label>
                             <input type="text" class="form-control text-uppercase"
-                                placeholder="<?php echo " " . $firstname . ""; ?>" aria-label="Disabled input example"
-                                disabled />
+                                placeholder="" />
                         </div>
                         <div class="form-group mb-2 col-md-6">
                             <label for="middle" class="mb-1"> Middle Name:</label>
                             <input type="text" name="middlename" id="middlenames" class="form-control text-uppercase"
-                                placeholder="<?php echo " " . $middlename . ""; ?>" aria-label="Disabled input example"
-                                disabled />
+                                placeholder=""  />
                         </div>
                     </div>
                     <div class="row">
                         <div class="form-group mb-2 col-md-6">
                             <label for="last" class="mb-1"> Last Name:</label>
                             <input type="text" name="lastname" id="lastnames" class="form-control text-uppercase"
-                                placeholder="<?php echo " " . $lastname . ""; ?>" aria-label="Disabled input example"
-                                disabled />
+                                placeholder="" />
                         </div>
                         <div class="form-group mb-2 col-md-6">
                             <label for="email" class="form-label">Email address:</label>
                             <input type="email" name="email" class="form-control" id="email"
-                                placeholder="<?php echo " " . $email . ""; ?>" autocomplete="off"
-                                aria-label="Disabled input example" disabled />
+                                placeholder="" autocomplete="off"
+                                />
                         </div>
                     </div>
                     <div class="row">
                         <div class="form-group mb-2 col-md-6">
                             <label for="phone" class="form-label">Contact No:</label>
                             <input type="phone" name="phone" class="form-control" id="phone" maxlength="10"
-                                autocomplete="off" placeholder="<?php echo " " . $phone . ""; ?>"
-                                aria-label="Disabled input example" disabled />
+                                autocomplete="off" placeholder=""
+                                />
                         </div>
                         <div class="form-group mb-2 col-md-6">
-                            <label class="form-label" class="mb-0">Select user Type:</label>
-                            <input type="text" name="role" id="role" class="form-control"
-                                placeholder="<?php echo " " . $role . ""; ?>" aria-label="Disabled input example"
-                                disabled />
-                        </div>
+                          <label class="form-label" class="mb-0">Select user Type:</label>
+                          <select
+                            class="form-select"
+                            name="role"
+                            aria-label="Default select example"
+                            id="role"
+                          >
+                            <option value="">Select</option>
+                            <option value="Student">Student</option>
+                            <option value="Teacher">Teacher</option>
+                          </select>
+                          </div>
                     </div>
 
 
