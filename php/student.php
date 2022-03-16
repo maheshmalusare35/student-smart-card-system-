@@ -250,7 +250,7 @@ if (!isset($_SESSION['firstname']) || $_SESSION['role']!= "Student") {
                         <!-- <div class="form-group col-12 mb-2">
                             <label for="inputAddress2" class="form-label">Address 2</label>
                             <input type="text" class="form-control" id="inputAddress2" placeholder="">
-                          </div> -->
+                        </div> -->
                         <div class="form-group col-12 mb-2">
                             <label for="inputCity" class="form-label">City</label>
                             <input type="text" class="form-control" name="city" id="city" autocomplete="off">
@@ -680,7 +680,6 @@ if (!isset($_SESSION['firstname']) || $_SESSION['role']!= "Student") {
             }
 
         }
-
 
     
 
