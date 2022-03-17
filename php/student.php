@@ -173,7 +173,6 @@ if (!isset($_SESSION['firstname']) || $_SESSION['role']!= "Student") {
                         </div>
                     </div>
 
-
                     <form action="profilestudent.php" method="POST" enctype="multipart/form-data">
                         <div class="row">
                             <div class=" form-group mb-2 col-md-6">
