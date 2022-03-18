@@ -195,7 +195,6 @@ if (!isset($_SESSION['firstname']) || $_SESSION['role']!= "Student") {
                             </div>
                         </div>
 
-
                         <div class="row">
                             <div class="form-group mb-2 col-md-6">
                                 <label class="form-label" class="mb-0">Select year:</label>
