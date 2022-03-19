@@ -288,7 +288,6 @@ if (!isset($_SESSION['firstname']) || $_SESSION['role']!= "Admin")  {
 
 
 
-
     <!-- model for Edit -->
     <div class="modal fade" id="exampleModal1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog">
