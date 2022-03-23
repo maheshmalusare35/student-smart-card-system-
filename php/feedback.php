@@ -9,7 +9,6 @@
             $email = $_POST['email'];
             $comments = $_POST['comments'];        
 
-       
 
             $sql="INSERT INTO feedback(name,email,comments) VALUES('$name','$email','$comments')";
 
