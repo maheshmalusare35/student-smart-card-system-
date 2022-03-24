@@ -115,8 +115,10 @@ if (!isset($_SESSION['firstname']) || $_SESSION['role']!= "Student") {
             </div>
         </div>
     </nav>
-
-
+  
+    <div>
+        <a class="btn btn-primary" href="card.php"> generate card</a>
+    </div>
 
     <!-- Modal -->
     <div class="modal fade col-md-12" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"

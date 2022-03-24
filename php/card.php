@@ -1,3 +1,42 @@
+<?php 
+session_start();
+include("../database/databaseconnection.php");
+ 
+ $email=$_SESSION['email'];
+ 
+ $query = "SELECT * FROM register WHERE email='$email'";
+    $res = mysqli_query($conn,$query);
+    $check = mysqli_num_rows($res);
+
+    if($check > 0)
+      {
+          while ( $row = mysqli_fetch_assoc($res))
+          {
+              $user_id = $row['user_id'];
+              $firstname = $row['firstname'];
+              $middlename = $row['middlename'];
+              $lastname = $row['lastname'];
+              $email = $row['email'];
+              $phone = $row['phone'];
+          }
+      }
+
+      // $query = "SELECT * FROM profile WHERE email='$email'";
+      // $res1 = mysqli_query($conn,$query);
+      // $check1 = mysqli_num_rows($res1);
+  
+  
+      // if($check1 > 0)
+      //   {
+      //       while ( $row = mysqli_fetch_assoc($res))
+      //       {
+      //           $branch = $row['branch'];
+      //           $class = $row['class'];
+      //           $bloodgroup = $row['bloodgroup'];
+      //           $address = $row['address'];                
+      //       }
+      //   }
+?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -111,7 +150,7 @@
   <body>
     <div class="card">
       <div class="head">
-        <img src="logo/college logo.png" alt="logo" />
+        <img src="../logo/college logo.png" alt="logo" />
         <div class="header">
           <b>
             <p class="head_main">KONKAN GYANPEETH COLLEGE OF ENGINEERING</p>
@@ -125,23 +164,29 @@
       </div>
       <div class="main">
         <div class="img_set">
-          <img src="images/img_avatar.png" alt="profile" id="profile" />
-          <img src="images/signature.png" alt="signature" id="signature" />
+          <img src="../images/img_avatar.png" alt="profile" id="profile" />
+          <img src="../images/signature.png" alt="signature" id="signature" />
         </div>
         <div class="info">
-          <p>Id No:</p>
-          <p>Name:</p>
-          <p>Phone No:</p>
+          <p>Id No:<?php echo " " . $user_id . ""; ?></p>
+
+          <p>Name:<?php echo " " . $firstname . ""; ?> <?php echo " " . $middlename . ""; ?> <?php echo " " . $lastname . ""; ?></p>
+
+          <p>Phone No:<?php echo " " . $phone . ""; ?></p>
+
           <div class="info_class">
-            <p>Branch:</p>
-            <p class="class_info">Class:</p>
+            <p>Branch:<?php echo " " . $branch . ""; ?></p>
+            <p class="class_info">Class:<?php echo " " . $class . ""; ?></p>
           </div>
-          <p>Blood group:</p>
-          <p>Address:</p>
+
+          <p>Blood group:<?php echo " " . $bloodgroup . ""; ?></p>
+
+          <p>Address:<?php echo " " . $address . ""; ?></p>
+
         </div>
       </div>
       <div class="footer">
-        <img src="images/barcode.jpg" alt="barcode" class="center" />
+        <img src="../images/barcode.jpg" alt="barcode" class="center" />
       </div>
     </div>
   </body>
