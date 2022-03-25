@@ -20,6 +20,7 @@ include("../database/databaseconnection.php");
               $phone = $row['phone'];
           }
       }
+      
 
       // $query = "SELECT * FROM profile WHERE email='$email'";
       // $res1 = mysqli_query($conn,$query);
