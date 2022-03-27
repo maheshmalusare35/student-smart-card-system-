@@ -21,7 +21,6 @@ include("../database/databaseconnection.php");
           }
       }
       
-
       // $query = "SELECT * FROM profile WHERE email='$email'";
       // $res1 = mysqli_query($conn,$query);
       // $check1 = mysqli_num_rows($res1);
@@ -183,7 +182,6 @@ include("../database/databaseconnection.php");
           <p>Blood group:<?php echo " " . $bloodgroup . ""; ?></p>
 
           <p>Address:<?php echo " " . $address . ""; ?></p>
-
         </div>
       </div>
       <div class="footer">
