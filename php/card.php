@@ -182,6 +182,7 @@ include("../database/databaseconnection.php");
           <p>Blood group:<?php echo " " . $bloodgroup . ""; ?></p>
 
           <p>Address:<?php echo " " . $address . ""; ?></p>
+          
         </div>
       </div>
       <div class="footer">
