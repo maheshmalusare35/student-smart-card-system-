@@ -130,6 +130,7 @@ if (!isset($_SESSION['firstname']) || $_SESSION['role']!= "Student") {
                         Profile</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
+                
                 <div class="modal-body">
 
                     <div class="row mt-4">

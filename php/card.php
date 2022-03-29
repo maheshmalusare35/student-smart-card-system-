@@ -185,6 +185,7 @@ include("../database/databaseconnection.php");
           
         </div>
       </div>
+      
       <div class="footer">
         <img src="../images/barcode.jpg" alt="barcode" class="center" />
       </div>
