@@ -228,6 +228,7 @@ if (!isset($_SESSION['firstname']) || $_SESSION['role']!= "Student") {
                                 <h6 id="bloodgroupcheck"></h6>
                             </div>
                         </div>
+                        
 
                         <div class="form-group mb-2">
                             <label class="form-label">Select your Department:</label>
