@@ -18,23 +18,13 @@ include("../database/databaseconnection.php");
               $lastname = $row['lastname'];
               $email = $row['email'];
               $phone = $row['phone'];
-          }
-      }
-      
-      // $query = "SELECT * FROM profile WHERE email='$email'";
-      // $res1 = mysqli_query($conn,$query);
-      // $check1 = mysqli_num_rows($res1);
-  
-      // if($check1 > 0)
-      //   {
-      //       while ( $row = mysqli_fetch_assoc($res))
-      //       {
       //           $branch = $row['branch'];
       //           $class = $row['class'];
       //           $bloodgroup = $row['bloodgroup'];
-      //           $address = $row['address'];                
-      //       }
-      //   }
+      //           $address = $row['address'];  
+
+          }
+      }
 ?>
 <!DOCTYPE html>
 <html lang="en">
