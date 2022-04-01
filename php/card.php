@@ -25,7 +25,6 @@ include("../database/databaseconnection.php");
       // $res1 = mysqli_query($conn,$query);
       // $check1 = mysqli_num_rows($res1);
   
-
       // if($check1 > 0)
       //   {
       //       while ( $row = mysqli_fetch_assoc($res))
