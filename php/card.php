@@ -173,8 +173,7 @@ include("../database/databaseconnection.php");
           <p>Address:<?php echo " " . $address . ""; ?></p>
           
         </div>
-      </div>
-      
+      </div>      
       <div class="footer">
         <img src="../images/barcode.jpg" alt="barcode" class="center" />
       </div>
