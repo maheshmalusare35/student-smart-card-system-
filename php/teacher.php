@@ -12,7 +12,6 @@ if (!isset($_SESSION['firstname']) || $_SESSION['role']!= "Teacher") {
      $res = mysqli_query($conn,$query);
      $check = mysqli_num_rows($res);
 
-
      if($check > 0)
      {
           while ( $row = mysqli_fetch_assoc($res))
@@ -26,7 +25,6 @@ if (!isset($_SESSION['firstname']) || $_SESSION['role']!= "Teacher") {
               $balance = $row['balance'];
           }
       }
-
 ?>
 <!DOCTYPE html>
 <html lang="en">
