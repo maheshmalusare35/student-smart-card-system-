@@ -115,8 +115,6 @@ if (!isset($_SESSION['firstname']) || $_SESSION['role']!= "Teacher") {
         </div>
     </nav>
 
-
-
     <!-- Modal -->
     <div class="modal fade col-md-12" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
         aria-hidden="true">
