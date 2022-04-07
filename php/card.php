@@ -18,10 +18,10 @@ include("../database/databaseconnection.php");
               $lastname = $row['lastname'];
               $email = $row['email'];
               $phone = $row['phone'];
-      //           $branch = $row['branch'];
-      //           $class = $row['class'];
-      //           $bloodgroup = $row['bloodgroup'];
-      //           $address = $row['address'];  
+              $department = $row['department'];
+              $selectyear = $row['selectyear'];
+              $bloodgroup = $row['bloodgroup'];
+              $address = $row['address'];  
 
           }
       }
@@ -49,9 +49,7 @@ include("../database/databaseconnection.php");
         justify-content: center;
         align-items: center;
         min-height: 100vh;
-        background: rgb(169, 250, 182);
-        background-attachment: fixed;
-        background-size: cover;
+        background: rgb(169, 250, 182);       
       }
       .card {
         background: white;
@@ -164,8 +162,8 @@ include("../database/databaseconnection.php");
           <p>Phone No:<?php echo " " . $phone . ""; ?></p>
 
           <div class="info_class">
-            <p>Branch:<?php echo " " . $branch . ""; ?></p>
-            <p class="class_info">Class:<?php echo " " . $class . ""; ?></p>
+            <p>Branch:<?php echo " " . $department . ""; ?></p>
+            <p class="class_info">Class:<?php echo " " . $selectyear . ""; ?></p>
           </div>
 
           <p>Blood group:<?php echo " " . $bloodgroup . ""; ?></p>

@@ -33,7 +33,9 @@ $query = "SELECT * FROM register WHERE email='$email'";
             $folder = "../upload/".$filename; 
 
 
-        $sql="INSERT INTO register(email,gender,date,bloodgroup,department,address,city,state,pincode,profilepicture) VALUES('$email','$gender','$date','$bloodgroup','$department','$address','$city','$state','$pincode','$filename')";
+        // $sql="INSERT INTO register(email,gender,date,bloodgroup,department,address,city,state,pincode,profilepicture) VALUES('$email','$gender','$date','$bloodgroup','$department','$address','$city','$state','$pincode','$filename')";
+
+        $sql = "UPDATE register SET gender='$gender', date='$date', bloodgroup='$bloodgroup', department='$department', address='$address', city='$city', state='$state', pincode='$pincode', profilepicture='$filename' WHERE email='$email' ";
 
 
         if(mysqli_query($conn,$sql)) 
