@@ -167,7 +167,7 @@ include("../database/databaseconnection.php");
           </div>
 
           <p>Blood group:<?php echo " " . $bloodgroup . ""; ?></p>
-
+          
           <p>Address:<?php echo " " . $address . ""; ?></p>
           
         </div>
