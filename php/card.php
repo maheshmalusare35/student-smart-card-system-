@@ -30,25 +30,26 @@ include("../database/databaseconnection.php");
 <html lang="en">
   <head>
     <!-- Favicon -->
-    <link rel="icon" href="logo/icons8-bank-cards-48.png" />
+    <link rel="icon" href="../logo/icons8-bank-cards-48.png" />
 
     <!-- Required meta tags -->
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta http-equiv="X-UA-Compatible" content="ie-edge" />
-    <title>login form Student Smart Card</title>
+    <title>Student Smart Card</title>
 
     <style>
       * {
         margin: 0;
         top: 0;
         box-sizing: border-box;
+        min-width: 100vw;
+        min-height: 100vh;
       }
       body {
         display: flex;
         justify-content: center;
-        align-items: center;
-        min-height: 100vh;
+        align-items: center;        
         background: rgb(169, 250, 182);       
       }
       .card {
