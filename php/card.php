@@ -149,8 +149,7 @@ include("../database/databaseconnection.php");
             Tiware, Tal: Karjat, Dist: Raigad, MS 410201
           </p>
         </div>
-      </div>
-      
+      </div>      
       <div class="main">
         <div class="img_set">
           <img src="../images/img_avatar.png" alt="profile" id="profile" />
