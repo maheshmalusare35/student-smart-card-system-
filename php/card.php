@@ -42,9 +42,7 @@ include("../database/databaseconnection.php");
       * {
         margin: 0;
         top: 0;
-        box-sizing: border-box;
-        min-width: 100vw;
-        min-height: 100vh;
+        box-sizing: border-box;      
       }
       body {
         display: flex;
