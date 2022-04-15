@@ -47,7 +47,8 @@ include("../database/databaseconnection.php");
       body {
         display: flex;
         justify-content: center;
-        align-items: center;        
+        align-items: center;
+        min-height: 100vh;        
         background: rgb(169, 250, 182);       
       }
       .card {
@@ -108,7 +109,7 @@ include("../database/databaseconnection.php");
       }
       .card .main .info {
         float: right;
-        padding: 10px 0px 0px 20px;
+        padding: 10px 0px 0px 0px;
       }
       .card .main .info p {
         margin-bottom: 12px;
