@@ -11,7 +11,8 @@ include("../database/databaseconnection.php");
     if($check > 0)
       {
           while ( $row = mysqli_fetch_assoc($res))
-          {
+          {   
+              $barcode = $row['barcode'];
               $user_id = $row['user_id'];
               $firstname = $row['firstname'];
               $middlename = $row['middlename'];
@@ -203,7 +204,7 @@ body{
       }
      .main .info {
         float: right;
-        padding: 10px 0px 0px 0px;
+        padding: 10px 0px 0px 30px;
       }
      .main .info p {
         margin-bottom: 12px;
@@ -247,7 +248,7 @@ body{
       <div class="main">
        <div class="img_set">
           <img src="<?php echo " " . $profilrpicture . ""; ?>" alt="profile" class="profile" />
-          <img src="../upload/signature.png" alt="signature" class="signature" />
+          <!-- <img src="../upload/signature.png" alt="signature" class="signature" /> -->
         </div>
       <div class="info">
           <p>Id No: <?php echo " " . $user_id . ""; ?></p>
@@ -269,7 +270,7 @@ body{
         </div>
       </div>
       <div class="footer">
-        <img src="../images/barcode.jpg" alt="barcode" class="barcode" />
+      <img src="../barcode/barcode.php?text=<?php echo " " . $barcode . ""; ?>" alt="testing" />
       </div>
     </div>
 
