@@ -117,7 +117,7 @@ if (!isset($_SESSION['firstname']) || $_SESSION['role']!= "Student") {
     </nav>
     
   
-    <div>
+    <div class="container">
         <a class="btn btn-primary" href="card.php"> generate card</a>
     </div>
 
