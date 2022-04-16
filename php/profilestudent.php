@@ -31,10 +31,10 @@ session_start();
         $filename = $_FILES['profilepicture']['name'];
 
     $tempname = $_FILES['profilepicture']['tmp_name']; 
-    $filetmp =$filename['tmp_name']; 
+    // $filetmp =$filename['tmp_name']; 
 
         $folder = '../upload/'.$filename;  
-        move_uploaded_file($filetmp, $folder); 
+        move_uploaded_file($tempname, $folder); 
         
         // $sql="INSERT INTO profile(email,gender,date,selectyear,bloodgroup,department,address,city,state,pincode,profilepicture) VALUES ('$email','$gender','$date','$selectyear','$bloodgroup','$department','$address','$city','$state','$pincode','$filename')";
 

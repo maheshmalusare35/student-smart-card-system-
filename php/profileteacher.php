@@ -28,16 +28,17 @@ $query = "SELECT * FROM register WHERE email='$email'";
         $state = $_POST['state'];
         $pincode = $_POST['pincode'];
         $filename = $_FILES['profilepicture']['name'];
-        $tempname = $_FILES['profilepicture']['tmp_name'];  
-    
-            $folder = "../upload/".$filename; 
 
+    $tempname = $_FILES['profilepicture']['tmp_name']; 
+    // $filetmp =$filename['tmp_name']; 
 
-        // $sql="INSERT INTO register(email,gender,date,bloodgroup,department,address,city,state,pincode,profilepicture) VALUES('$email','$gender','$date','$bloodgroup','$department','$address','$city','$state','$pincode','$filename')";
+        $folder = '../upload/'.$filename;  
+        move_uploaded_file($tempname, $folder); 
+        
+        // $sql="INSERT INTO profile(email,gender,date,selectyear,bloodgroup,department,address,city,state,pincode,profilepicture) VALUES ('$email','$gender','$date','$selectyear','$bloodgroup','$department','$address','$city','$state','$pincode','$filename')";
 
-        $sql = "UPDATE register SET gender='$gender', date='$date', bloodgroup='$bloodgroup', department='$department', address='$address', city='$city', state='$state', pincode='$pincode', profilepicture='$filename' WHERE email='$email' ";
-
-
+        $sql = "UPDATE register SET gender='$gender', date='$date', selectyear='$selectyear',bloodgroup='$bloodgroup', department='$department', address='$address', city='$city', state='$state', pincode='$pincode', profilepicture='$folder' WHERE email='$email' ";
+       
         if(mysqli_query($conn,$sql)) 
         {
             ?>

@@ -22,7 +22,7 @@ include("../database/databaseconnection.php");
               $selectyear = $row['selectyear'];
               $bloodgroup = $row['bloodgroup'];
               $address = $row['address'];  
-              $profilepicture = $row['profilepicture'];
+              $profilrpicture = $row['profilepicture'];
 
           }
       }
@@ -247,7 +247,7 @@ body{
     </div>
       <div class="main">
        <div class="img_set">
-          <img src="../upload/img_avatar.png" alt="profile" class="profile" />
+       <img src="<?php echo " " . $profilrpicture . ""; ?>" alt="profile" class="profile" />
           <img src="../images/signature.png" alt="signature" class="signature" />
         </div>
       <div class="info">
