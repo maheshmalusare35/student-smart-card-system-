@@ -118,7 +118,7 @@ if (!isset($_SESSION['firstname']) || $_SESSION['role']!= "Student") {
     
   
     <div class="container">
-        <a class="btn btn-primary" href="card.php"> generate card</a>
+        <a class="btn btn-primary" href="studentcard.php"> generate card</a>
     </div>
 
     <!-- Modal -->

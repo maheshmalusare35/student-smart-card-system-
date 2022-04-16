@@ -22,6 +22,7 @@ include("../database/databaseconnection.php");
               $selectyear = $row['selectyear'];
               $bloodgroup = $row['bloodgroup'];
               $address = $row['address'];  
+              $profilepicture = $row['profilepicture'];
 
           }
       }
@@ -246,7 +247,7 @@ body{
     </div>
       <div class="main">
        <div class="img_set">
-          <img src="../images/img_avatar.png" alt="profile" class="profile" />
+          <img src="../upload/img_avatar.png" alt="profile" class="profile" />
           <img src="../images/signature.png" alt="signature" class="signature" />
         </div>
       <div class="info">
@@ -258,7 +259,7 @@ body{
 
           <div class="info_class">
             <p>Branch: <?php echo " " . $department . ""; ?></p>
-            <p class="class_info">Class: <?php echo " " . $selectyear . ""; ?></p>
+            <!-- <p class="class_info">Class: <?php echo " " . $selectyear . ""; ?></p> -->
           </div>
 
           <p>Blood group: <?php echo " " . $bloodgroup . ""; ?></p>
