@@ -267,7 +267,7 @@ if (!isset($_SESSION['firstname']) || $_SESSION['role']!= "Admin")  {
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-      <form>
+      <form action="">
         <div class="mb-3">
           <label for="id_no" class="form-label">ID_NO</label>
           <input type="text" class="form-control" id="id_no">    
