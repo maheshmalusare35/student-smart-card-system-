@@ -157,7 +157,7 @@ body{
 }
      .head {
         height: 140px;
-        background-color: rgb(0, 68, 255);
+        background-color: rgb(255, 0, 208);
         border-top-right-radius: 15px;
         border-top-left-radius: 15px;
         display: flex;
@@ -173,13 +173,13 @@ body{
         text-align: center;
       }
       .head_main {        
-        color: white;
+        color: black;
         font-weight: lighter;
         font-size: 20px;
         margin-bottom: 10px;
       }
       .head_down {
-        color: white;
+        color: black;
         font-size: 17px;
       }
      .main {

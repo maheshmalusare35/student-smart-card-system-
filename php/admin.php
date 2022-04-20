@@ -276,7 +276,6 @@ if (!isset($_SESSION['firstname']) || $_SESSION['role']!= "Admin")  {
           <label for="amount" class="form-label">Add_Amount</label>
           <input type="text" class="form-control" id="amount">
         </div>
-        
       </div>
       <div class="modal-footer">
       <button type="submit" class="btn btn-primary">Submit</button>
