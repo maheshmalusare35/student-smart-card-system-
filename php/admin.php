@@ -106,7 +106,7 @@ if (!isset($_SESSION['firstname']) || $_SESSION['role']!= "Admin")  {
                             <a class="dropdown-item" href="#">Page 2</a>
                             <a class="dropdown-item" href="#">Page 3</a> 
                         </div>
-                      </div>  
+                      </div>
                       
                     <!-- example4 -->
 
