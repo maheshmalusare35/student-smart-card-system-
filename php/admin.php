@@ -108,7 +108,7 @@ if (!isset($_SESSION['firstname']) || $_SESSION['role']!= "Admin")  {
                         </div>
                       </div>
                       
-                    <!-- example4 -->
+                      <!-- example4 -->
 
                       <div class="accordion-item">
                         <h2 class="accordion-header" id="headingFour">
@@ -123,7 +123,7 @@ if (!isset($_SESSION['firstname']) || $_SESSION['role']!= "Admin")  {
                         </div>
                       </div>
 
-                    <!-- example5 -->           
+                    <!-- example5 -->        
 
                       <div class="accordion-item">
                         <h2 class="accordion-header" id="headingFive">
