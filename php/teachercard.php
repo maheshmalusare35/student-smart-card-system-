@@ -275,7 +275,7 @@ body{
       </div>
     </div>
 
-
+    <div class="container"><button onclick="window.print()">Print this page</button></div>
     <!-- <div class="center">
       <div class="head">
         <img src="../logo/college logo.png" alt="logo" />

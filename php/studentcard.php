@@ -274,6 +274,7 @@ body{
       </div>
     </div>
 
+<div class="container"><button onclick="window.print()">Print this page</button></div>
 
     <!-- <div class="center">
       <div class="head">
@@ -317,5 +318,11 @@ body{
         <img src="../images/barcode.jpg" alt="barcode" class="barcode" />
       </div>
     </div> -->
+
+
+    <!-- javascript -->
+    <script type="text/javascript" src="">
+      
+    </script>
   </body>
 </html>
