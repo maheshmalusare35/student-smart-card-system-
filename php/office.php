@@ -29,7 +29,7 @@ $email=$_SESSION['email'];
 <html>
 <head>
    <!-- Favicon -->
-   <link rel="icon" href="logo/icons8-bank-cards-48.png" />
+   <link rel="icon" href="../logo/icons8-bank-cards-48.png" />
 
 <!-- Required meta tags -->
 <meta charset="utf-8" />
@@ -68,12 +68,7 @@ $email=$_SESSION['email'];
             
             <ul class="navbar-nav ms-auto mt-2 mt-lg-0">
 
-<li class="nav-item">
-    <a class="nav-link fw-bold" href="#"><i class="fas fa-tasks"></i> To-do</a>
-</li>
-<li class="nav-item">
-    <a class="nav-link fw-bold" href="#"><i class="far fa-calendar-week"></i> Calender</a>
-</li>
+
 <li class="nav-item">
     <a class="nav-link fw-bold" href="#"><i class="fas fa-comments-dollar"></i> Your Transaction</a>
 </li>

@@ -10,7 +10,7 @@ if (!isset($_SESSION['firstname']) || $_SESSION['role']!= "Admin")  {
 
 <head>
     <!-- Favicon -->
-    <link rel="icon" href="logo/icons8-bank-cards-48.png">
+    <link rel="icon" href="../logo/icons8-bank-cards-48.png">
 
     <!-- Required meta tags -->
     <meta charset="utf-8">
@@ -70,10 +70,9 @@ if (!isset($_SESSION['firstname']) || $_SESSION['role']!= "Admin")  {
                           </button>
                         </h2>
                         <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
-                            <a class="dropdown-item" href="#">Generate_Id</a>
                             <a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#exampleModal">ADD_Money</a>
-                            <a class="dropdown-item" href="#">ADD_New_Student</a>
-                            <a class="dropdown-item" href="#">Delete_Student_Data</a> 
+                            <!-- <a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#exampleModal1">ADD_New_Student</a> -->
+                            <a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#exampleModal3">Delete_Student_Data</a> 
                         </div>
                       </div>
 
@@ -86,10 +85,9 @@ if (!isset($_SESSION['firstname']) || $_SESSION['role']!= "Admin")  {
                           </button>
                         </h2>
                         <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
-                        <a class="dropdown-item" href="#">Generate_Id</a>
-                            <a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#exampleModal">ADD_Money</a>
-                            <a class="dropdown-item" href="#">ADD_New_Teacher</a>
-                            <a class="dropdown-item" href="#">Delete_Teacher_Data</a> 
+                        <a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#exampleModal">ADD_Money</a>
+                            <!-- <a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#exampleModal2">ADD_New_Teacher</a>-->
+                             <a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#exampleModal3">Delete_Teacher_Data</a>  
                         </div>
                       </div>  
 
@@ -138,22 +136,7 @@ if (!isset($_SESSION['firstname']) || $_SESSION['role']!= "Admin")  {
                         </div>
                       </div>  
 
-                    <!-- example6 -->
-
-                      <div class="accordion-item">
-                        <h2 class="accordion-header" id="headingSix">
-                          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
-                            Management
-                          </button>
-                        </h2>
-                        <div id="collapseSix" class="accordion-collapse collapse" aria-labelledby="headingSix" data-bs-parent="#accordionExample">
-                            <a class="dropdown-item" href="#">Page 1</a>
-                            <a class="dropdown-item" href="#">Page 2</a>
-                            <a class="dropdown-item" href="#">Page 3</a> 
-                        </div>
-                      </div>  
-
-
+                    
                 </div>
 
 
@@ -223,8 +206,8 @@ if (!isset($_SESSION['firstname']) || $_SESSION['role']!= "Admin")  {
                       <th>LASTNAME</th>
                       <th>EMAIL</th>
                       <th>PHONE NO</th>                     
-                      <th>EDIT</th>
-                      <th>DELETE</th>
+                      <!-- <th>EDIT</th>
+                      <th>DELETE</th> -->
                     </thead>
 
                         <tbody>
@@ -244,8 +227,8 @@ if (!isset($_SESSION['firstname']) || $_SESSION['role']!= "Admin")  {
                                     <td><?php echo $result ['lastname'];?></td>
                                     <td><?php echo $result ['email'];?></td>
                                     <td><?php echo $result ['phone'];?></td>
-                                    <td><button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal1">Edit</button></td>
-                                    <td><button>Delete</button></td>                                    
+                                    <!-- <td><button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal1">Edit</button></td>
+                                    <td><button>Delete</button></td>                                     -->
                                   </tr>
 
                                 <?php
@@ -267,218 +250,361 @@ if (!isset($_SESSION['firstname']) || $_SESSION['role']!= "Admin")  {
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-      <form action="">
+      <form action="../php/transfer.php" method="POST">
         <div class="mb-3">
           <label for="id_no" class="form-label">ID_NO</label>
-          <input type="text" class="form-control" id="id_no">    
+          <input type="text" class="form-control" name="user_id" id="id_no">    
         </div>
         <div class="mb-3">
           <label for="amount" class="form-label">Add_Amount</label>
-          <input type="text" class="form-control" id="amount">
+          <input type="text" class="form-control" name="amount" id="amount">
         </div>
       </div>
       <div class="modal-footer">
-      <button type="submit" class="btn btn-primary">Submit</button>
+      <button type="submit" name="submit" class="btn btn-primary">Submit</button>
       </div>
     </form>
     </div>
   </div>
 </div>
 
-    <!-- model for Edit -->
-    <div class="modal fade" id="exampleModal1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <!-- model for Add_student -->
+    <!-- <div class="modal fade" id="exampleModal1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Add new student</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+            <div class="modal-body">
+            
+          <form action="../php/register.php" method="post">
+            <div class="row mt-4">
+              <div class="form-group mb-2 col-md-6">
+                <label for="first" class="mb-1"> First Name:</label>
+                <input
+                  type="text"
+                  name="firstname"
+                  id="firstnames"
+                  class="form-control text-uppercase"
+                />
+                <h6 id="firstcheck"></h6>
+              </div>
+              <div class="form-group mb-2 col-md-6">
+                <label for="middle" class="mb-1"> Middle Name:</label>
+                <input
+                  type="text"
+                  name="middlename"
+                  id="middlenames"
+                  class="form-control text-uppercase"
+                />
+                <h6 id="middlecheck"></h6>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="form-group mb-2 col-md-6">
+                <label for="last" class="mb-1"> Last Name:</label>
+                <input
+                  type="text"
+                  name="lastname"
+                  id="lastnames"
+                  class="form-control text-uppercase"
+                />
+                <h6 id="lastcheck"></h6>
+              </div>
+              <div class="form-group mb-2 col-md-6">
+                <label for="email" class="form-label">Email address:</label>
+                <input
+                  type="email"
+                  name="email"
+                  class="form-control"
+                  id="email"
+                  placeholder="name@example.com"
+                  autocomplete="off"
+                />
+                <h6 id="emailcheck"></h6>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="form-group mb-2 col-md-6">
+                <label for="phone" class="form-label">Contact No:</label>
+                <input
+                  type="phone"
+                  name="phone"
+                  class="form-control"
+                  id="phone"
+                  maxlength="10"
+                  autocomplete="off"
+                />
+                <h6 id="phonecheck"></h6>
+              </div>
+              <div class="form-group mb-2 col-md-6">
+                <label class="form-label" class="mb-0">Select user Type:</label>
+                <select
+                  class="form-select"
+                  name="role"
+                  aria-label="Default select example"
+                  id="role"
+                >
+                 
+                  <option value="Student">Student</option>
+                  
+                </select>
+                <h6 id="rolecheck" class="mb-2"></h6>
+              </div>
+            </div>
+
+           
+
+            <div class="row">
+              <div class="form-group mb-2 col-md-6">
+                <label for="password" class="mb-1"> Password:</label>
+                <input
+                  type="password"
+                  name="password"
+                  id="password"
+                  class="form-control"
+                  data-toggle="popover"
+                  data-trigger="hover"
+                  data-placement="bottom"
+                  data-content="My popover content."
+                  placeholder="Xyz@1kos"
+                  autocomplete="off"
+                />
+                <h6 id="passwordcheck"></h6>
+              </div>
+              <div class="form-group mb-2 col-md-6">
+                <label for=" confirmpassword" class="mb-1"
+                  >Confirm Password:</label
+                >
+                <input
+                  type="password"
+                  name="confirmpass"
+                  id="confirmpassword"
+                  class="form-control"
+                  autocomplete="off"
+                />
+                <h6 id="confirmpasscheck"></h6>
+              </div>
+            </div>
+
+            <div class="form-check">
+              <input
+                class="form-check-input"
+                type="checkbox"
+                value=""
+                id="flexCheckDefault"
+                onclick="myFunction()"
+              />
+              <label class="form-check-label" for="flexCheckDefault">
+                <p class="text-center">Show Password</p>
+              </label>
+            </div>
+
+            
+
+            <div class="d-grid gap-2 col-6 mx-auto mb-1">
+              <button
+                type="submit"
+                id="submitbtn"
+                name="submit"
+                value="submit"
+                class="btn btn-primary btn-lg"
+              >
+               ADD_STUDENT
+              </button>
+            </div>
+
+          </form>
+        </div>
+      </div>
+    </div>                 
+          </div>
+        </div>
+      </div>
+    </div> -->
+
+
+    <!-- model for Add_teacher -->
+    <!-- <div class="modal fade" id="exampleModal2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Add new teacher</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+            <div class="modal-body">
+            
+          <form action="../php/register.php" method="post">
+            <div class="row mt-4">
+              <div class="form-group mb-2 col-md-6">
+                <label for="first" class="mb-1"> First Name:</label>
+                <input
+                  type="text"
+                  name="firstname"
+                  id="firstnames"
+                  class="form-control text-uppercase"
+                />
+                <h6 id="firstcheck"></h6>
+              </div>
+              <div class="form-group mb-2 col-md-6">
+                <label for="middle" class="mb-1"> Middle Name:</label>
+                <input
+                  type="text"
+                  name="middlename"
+                  id="middlenames"
+                  class="form-control text-uppercase"
+                />
+                <h6 id="middlecheck"></h6>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="form-group mb-2 col-md-6">
+                <label for="last" class="mb-1"> Last Name:</label>
+                <input
+                  type="text"
+                  name="lastname"
+                  id="lastnames"
+                  class="form-control text-uppercase"
+                />
+                <h6 id="lastcheck"></h6>
+              </div>
+              <div class="form-group mb-2 col-md-6">
+                <label for="email" class="form-label">Email address:</label>
+                <input
+                  type="email"
+                  name="email"
+                  class="form-control"
+                  id="email"
+                  placeholder="name@example.com"
+                  autocomplete="off"
+                />
+                <h6 id="emailcheck"></h6>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="form-group mb-2 col-md-6">
+                <label for="phone" class="form-label">Contact No:</label>
+                <input
+                  type="phone"
+                  name="phone"
+                  class="form-control"
+                  id="phone"
+                  maxlength="10"
+                  autocomplete="off"
+                />
+                <h6 id="phonecheck"></h6>
+              </div>
+              <div class="form-group mb-2 col-md-6">
+                <label class="form-label" class="mb-0">Select user Type:</label>
+                <select
+                  class="form-select"
+                  name="role"
+                  aria-label="Default select example"
+                  id="role"
+                >                          
+                  <option value="Teacher">Teacher</option>
+                </select>
+                <h6 id="rolecheck" class="mb-2"></h6>
+              </div>
+            </div>
+
+            
+            <div class="row">
+              <div class="form-group mb-2 col-md-6">
+                <label for="password" class="mb-1"> Password:</label>
+                <input
+                  type="password"
+                  name="password"
+                  id="password"
+                  class="form-control"
+                  data-toggle="popover"
+                  data-trigger="hover"
+                  data-placement="bottom"
+                  data-content="My popover content."
+                  placeholder="Xyz@1kos"
+                  autocomplete="off"
+                />
+                <h6 id="passwordcheck"></h6>
+              </div>
+              <div class="form-group mb-2 col-md-6">
+                <label for=" confirmpassword" class="mb-1"
+                  >Confirm Password:</label
+                >
+                <input
+                  type="password"
+                  name="confirmpass"
+                  id="confirmpassword"
+                  class="form-control"
+                  autocomplete="off"
+                />
+                <h6 id="confirmpasscheck"></h6>
+              </div>
+            </div>
+
+            <div class="form-check">
+              <input
+                class="form-check-input"
+                type="checkbox"
+                value=""
+                id="flexCheckDefault"
+                onclick="myFunction()"
+              />
+              <label class="form-check-label" for="flexCheckDefault">
+                <p class="text-center">Show Password</p>
+              </label>
+            </div>
+
+            
+
+            <div class="d-grid gap-2 col-6 mx-auto mb-1">
+              <button
+                type="submit"
+                id="submitbtn"
+                name="submit"
+                value="submit"
+                class="btn btn-primary btn-lg"
+              >
+               ADD_TEACHER
+              </button>
+            </div>
+
+          </form>
+        </div>
+      </div>
+    </div>                 
+          </div>
+        </div>
+      </div>
+    </div> -->
+
+
+
+     <!-- model for Delete data -->
+     <div class="modal fade" id="exampleModal3" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">EDIT_PROFILE</h5>
+        <h5 class="modal-title" id="exampleModalLabel">Delete_Data</h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-
-                    <div class="row mt-4">
-                        <div class="form-group mb-2 col-md-6">
-                            <label for="first" class="mb-1"> First Name:</label>
-                            <input type="text" class="form-control text-uppercase"
-                                placeholder="" />
-                        </div>
-                        <div class="form-group mb-2 col-md-6">
-                            <label for="middle" class="mb-1"> Middle Name:</label>
-                            <input type="text" name="middlename" id="middlenames" class="form-control text-uppercase"
-                                placeholder=""  />
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="form-group mb-2 col-md-6">
-                            <label for="last" class="mb-1"> Last Name:</label>
-                            <input type="text" name="lastname" id="lastnames" class="form-control text-uppercase"
-                                placeholder="" />
-                        </div>
-                        <div class="form-group mb-2 col-md-6">
-                            <label for="email" class="form-label">Email address:</label>
-                            <input type="email" name="email" class="form-control" id="email"
-                                placeholder="" autocomplete="off"
-                                />
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="form-group mb-2 col-md-6">
-                            <label for="phone" class="form-label">Contact No:</label>
-                            <input type="phone" name="phone" class="form-control" id="phone" maxlength="10"
-                                autocomplete="off" placeholder=""
-                                />
-                        </div>
-                        <div class="form-group mb-2 col-md-6">
-                          <label class="form-label" class="mb-0">Select user Type:</label>
-                          <select
-                            class="form-select"
-                            name="role"
-                            aria-label="Default select example"
-                            id="role"
-                          >
-                            <option value="">Select</option>
-                            <option value="Student">Student</option>
-                            <option value="Teacher">Teacher</option>
-                          </select>
-                          </div>
-                    </div>
-
-                    <form action="profilestudent.php" method="POST" enctype="multipart/form-data">
-                        <div class="row">
-                            <div class=" form-group mb-2 col-md-6">
-                                <label class="form-label" class="mb-0">Gender</label>
-
-                                <select class="form-select" name="gender" aria-label="Default select example"
-                                    id="gender">
-                                    <option value="">Select</option>
-                                    <option value="Male">Male</option>
-                                    <option value="Female">Female</option>
-                                    <option value="Other">Other</option>
-                                </select>
-                                <h6 id="gendercheck" class="mb-2"></h6>
-                            </div>
-
-                            <div class=" form-group mb-2 col-md-6">
-                                <label for="date" class="form-label">Date Of Birth:</label>
-                                <input type="date" name="date" class="form-control" id="date" autocomplete="off">
-                                <h6 id="datecheck" aria-required="true"></h6>
-                            </div>
-                        </div>
-
-                        <div class="row">
-                            <div class="form-group mb-2 col-md-6">
-                                <label class="form-label" class="mb-0">Select year:</label>
-                                <select class="form-select" name="selectyear" aria-label="Default select example"
-                                    id="selectyear">
-                                    <option value="">Select</option>
-                                    <option value="FE">FE</option>
-                                    <option value="SE">SE</option>
-                                    <option value="TE">TE</option>
-                                    <option value="BE">BE</option>
-                                </select>
-                                <h6 id="selectyearcheck" class="mb-2"></h6>
-                            </div>
-                            <div class=" form-group mb-2 col-md-6">
-                                <label for="bloodgroup" class="form-label">Blood Group:</label>
-                                <select class="form-select" name="bloodgroup" aria-label="Default select example"
-                                    id="bloodgroup">
-                                    <option value="">Select</option>
-                                    <option value="A+">A+</option>
-                                    <option value="A-">A-</option>
-                                    <option value="B+">B+</option>
-                                    <option value="B-">B-</option>
-                                    <option value="O+">O+</option>
-                                    <option value="O-">O-</option>
-                                    <option value="AB+">AB+</option>
-                                    <option value="AB-">AB-</option>
-                                </select>
-                                <h6 id="bloodgroupcheck"></h6>
-                            </div>
-                        </div>
-                        
-                        <div class="form-group mb-2">
-                            <label class="form-label">Select your Department:</label>
-                            <select class="form-select" name="department" aria-label="Default select example"
-                                id="department">
-                                <option value="">Select</option>
-                                <option value="Mechanical">Mechanical</option>
-                                <option value="Computer Science">Computer Science</option>
-                                <option value="Information Technology">Information Technology</option>
-                                <option value="EXTC">Electronics and Telecommunication</option>
-                            </select>
-                            <h6 id="departmentcheck" class="mb-2"></h6>
-                        </div>
-
-                        <div class="form-group col-12 mb-2">
-                            <label for="inputAddress" class="form-label">Address</label>
-                            <input type="text" class="form-control" name="address" id="address"
-                                placeholder="1234 Main St Apartment, studio, or floor" autocomplete="off">
-                            <h6 id="addresscheck" class="mb-2"></h6>
-                        </div>
-                        <!-- <div class="form-group col-12 mb-2">
-                            <label for="inputAddress2" class="form-label">Addr8k,ess 2</label>
-                            <input type="text" class="form-control" id="inputAddress2" placeholder="">
-                          </div> -->
-                        <div class="form-group col-12 mb-2">
-                            <label for="inputCity" class="form-label">City</label>
-                            <input type="text" class="form-control" name="city" id="city" autocomplete="off">
-                            <h6 id="citycheck" class="mb-2"></h6>
-                        </div>
-                        
-                        <div class="row mb-2">
-                            <div class="form-group col-md-6">
-                                <label for="inputState" class="form-label">State</label>
-                                <select class="form-select" name="state" aria-label="Default select example" id="state">
-                                    <option value="">Choose...</option>
-                                    <option value="Andhra Pradesh">Andhra Pradesh</option>
-                                    <option value="Arunachal Pradesh">Arunachal Pradesh</option>
-                                    <option value="Assam">Assam</option>
-                                    <option value="Bihar">Bihar</option>
-                                    <option value="Chhattisgarh">Chhattisgarh</option>
-                                    <option value="Goa">Goa</option>
-                                    <option value="Gujarat">Gujarat</option>
-                                    <option value="Haryana">Haryana</option>
-                                    <option value="Himachal Pradesh">Himachal Pradesh</option>
-                                    <option value="Jharkhand">Jharkhand</option>
-                                    <option value="Karnataka">Karnataka</option>
-                                    <option value="Kerala">Kerala</option>
-                                    <option value="Madhya Pradesh">Madhya Pradesh</option>
-                                    <option value="Maharashtra">Maharashtra</option>
-                                    <option value="Manipur">Manipur</option>
-                                    <option value="Meghalaya">Meghalaya</option>
-                                    <option value="Mizoram">Mizoram</option>
-                                    <option value="Nagaland">Nagaland</option>
-                                    <option value="Odisha">Odisha</option>
-                                    <option value="Punjab">Punjab</option>
-                                    <option value="Rajasthan">Rajasthan</option>
-                                    <option value="Sikkim">Sikkim</option>
-                                    <option value="Tamil Nadu">Tamil Nadu</option>
-                                    <option value="Telangana">Telangana</option>
-                                    <option value="Tripura">Tripura</option>
-                                    <option value="Uttar Pradesh">Uttar Pradesh</option>
-                                    <option value="Uttarakhand">Uttarakhand</option>
-                                    <option value="West Bengal">West Bengal</option>
-                                </select>
-                                <h6 id="statecheck" class="mb-2"></h6>
-                            </div>
-                            <div class="form-group col-md-6">
-                                <label for="inputZip" class="form-label">Pin code</label>
-                                <input type="text" class="form-control" name="pincode" id="pincode" maxlength="6"
-                                    autocomplete="off">
-                                <h6 id="pincodecheck" class="mb-2"></h6>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="form-group mb-3 col-md-12">
-                                <label for="formFileSm" class="form-label">Profile picture:</label>
-                                <input type="file" class="form-control form-control-sm" name="profilepicture" id="profilepicture"
-                                    >
-                                <h6 id="profilepicturecheck" class="mb-2"></h6>
-                            </div>
-                            
-                        </div>
-                  </div>
-                </div>
-
+      <form action="../php/delete.php" method="POST">
+      <div class="mb-3">
+          <label for="id_no" class="form-label">ID_NO</label>
+          <input type="text" class="form-control" name="user_id" id="id_no">    
+        </div>
+        <div class="modal-footer">
+      <button type="submit" name="submit" class="btn btn-primary">Delete</button>
+      </div>
+    </form>
+    </div>
+  </div>
+</div>
 
 <!-- Bootstrap JS -->
     <script type="text/javascript" src="../js/bootstrap.bundle.min.js"> </script>

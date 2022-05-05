@@ -39,6 +39,13 @@ include("../database/databaseconnection.php");
     <meta http-equiv="X-UA-Compatible" content="ie-edge" />
     <title>Student Smart Card</title>
 
+    <!-- JQuery plugin-->
+    <script
+      src="https://code.jquery.com/jquery-3.6.0.min.js"
+      integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+      crossorigin="anonymous"
+    ></script>
+
     <!-- <style type="text/css">
     @import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@700&family=Poppins:wght@400;500;600&display=swap');
 *{
@@ -274,7 +281,7 @@ body{
       </div>
     </div>
 
-<div class="container"><button onclick="window.print()">Print this page</button></div>
+<div class="container" id="print_page"><button onclick="print_data()">Print this page</button></div>
 
     <!-- <div class="center">
       <div class="head">
@@ -321,8 +328,11 @@ body{
 
 
     <!-- javascript -->
-    <script type="text/javascript" src="">
-      
+    <script type="text/javascript" >
+      function print_data(){
+      $('#print_page').hide();
+      window.print();
+      }
     </script>
   </body>
 </html>

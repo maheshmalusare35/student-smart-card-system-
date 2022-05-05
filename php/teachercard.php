@@ -38,6 +38,13 @@ include("../database/databaseconnection.php");
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta http-equiv="X-UA-Compatible" content="ie-edge" />
+
+    <!-- JQuery plugin-->
+    <script
+      src="https://code.jquery.com/jquery-3.6.0.min.js"
+      integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+      crossorigin="anonymous"
+    ></script>
     <title>Student Smart Card</title>
 
     <!-- <style type="text/css">
@@ -275,7 +282,7 @@ body{
       </div>
     </div>
 
-    <div class="container"><button onclick="window.print()">Print this page</button></div>
+    <div class="container" id="print_page"><button onclick="print_data()">Print this page</button></div>
     <!-- <div class="center">
       <div class="head">
         <img src="../logo/college logo.png" alt="logo" />
@@ -318,5 +325,14 @@ body{
         <img src="../images/barcode.jpg" alt="barcode" class="barcode" />
       </div>
     </div> -->
+
+
+      <!-- javascript -->
+      <script type="text/javascript" >
+      function print_data(){
+      $('#print_page').hide();
+      window.print();
+      }
+    </script>
   </body>
 </html>
