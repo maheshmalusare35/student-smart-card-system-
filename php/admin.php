@@ -16,7 +16,7 @@ $email=$_SESSION['email'];
           while ( $row = mysqli_fetch_assoc($res))
           {
               $user_id = $row['user_id'];              
-              $balance = $row['balance'];
+              $balance_to = $row['balance_to'];
           }
       }
 ?>
@@ -151,11 +151,25 @@ $email=$_SESSION['email'];
                         </div>
                       </div>  
 
+
+                      <!-- example6 -->
+                    
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingSix">
+                          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
+                           Management
+                          </button>
+                        </h2>
+                        <div id="collapseSix" class="accordion-collapse collapse" aria-labelledby="headingSix" data-bs-parent="#accordionExample">
+                            <a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#exampleModal4">ADD_Money</a>                           
+                        </div>
+                      </div>
+
                     
                 </div>
 
 
-                <a class="list-group-item-action list-group-item-light p-3" href="#!"></a>
+                <a class="list-group-item-action list-group-item-light p-3" href="#" ></a>
                 <a class="list-group-item-action list-group-item-light p-3" href="#!"></a>
                 <a class="list-group-item-action list-group-item-light p-3" href="#!"></a>
                 <a class="list-group-item-action list-group-item-light p-3" href="#!"></a>
@@ -179,6 +193,8 @@ $email=$_SESSION['email'];
                 class="fas fa-bars"></i> Menu</button></div>
                 <?php echo "<h5>Welcome " . $_SESSION['firstname'] . "</h5>"; ?>  
 
+                
+
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
             data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
             aria-expanded="false" aria-label="Toggle navigation"><span
@@ -186,7 +202,7 @@ $email=$_SESSION['email'];
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav ms-auto mt-2 mt-lg-0">
             <li class="nav-item">
-                        <a class="nav-link fw-bold" href="#">Your Balance:<?php echo " " . $balance . ""; ?></a>
+                        <a class="nav-link fw-bold" href="#">Your Balance:<?php echo " " . $balance_to . ""; ?></a>
                     </li>
               
     
@@ -269,11 +285,11 @@ $email=$_SESSION['email'];
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-      <form action="../php/transfer.php" method="POST">
+      <form action="../php/transferadmin.php" method="POST">
         <div class="mb-3">
           <label for="id_no" class="form-label">From_id_no</label>
-          <!-- <input type="text" class="form-control" name="from_user_id" > -->
-          <input type="text" class="form-control text-uppercase" name="from_user_id" placeholder="<?php echo " " . $user_id . ""; ?>" aria-label="Disabled input example" disabled />    
+          <input type="text" class="form-control" name="from_user_id" >
+          <!-- <input type="text" class="form-control text-uppercase" name="from_user_id" placeholder="<?php echo " " . $user_id . ""; ?>" aria-label="Disabled input example" disabled />     -->
         </div>
         <div class="mb-3">
           <label for="id_no" class="form-label">To_id_no</label>
@@ -298,6 +314,9 @@ $email=$_SESSION['email'];
     </div>
   </div>
 </div>
+
+ 
+ 
 
     <!-- model for Add_student -->
     <!-- <div class="modal fade" id="exampleModal1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -636,6 +655,9 @@ $email=$_SESSION['email'];
     </div>
   </div>
 </div>
+
+
+
 
 <!-- Bootstrap JS -->
     <script type="text/javascript" src="../js/bootstrap.bundle.min.js"> </script>

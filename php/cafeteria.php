@@ -22,7 +22,7 @@ $email=$_SESSION['email'];
             //   $email = $row['email'];
             //   $phone = $row['phone'];
             //   $role = $row['role'];
-              $balance = $row['balance'];
+              $balance_to = $row['balance_to'];
           }
       }
 ?>
@@ -80,7 +80,7 @@ $email=$_SESSION['email'];
 </li>      -->
 
 <li class="nav-item">
-    <a class="nav-link fw-bold" href="#">Your Balance:<?php echo " " . $balance . ""; ?></a>
+    <a class="nav-link fw-bold" href="#">Your Balance:<?php echo " " . $balance_to . ""; ?></a>
 </li>
 <!-- <li class="nav-item"><a class="nav-link" href="#"><i class="fas fa-search"></i></a></li>
 <li class="nav-item"><a class="nav-link" href="#"><i class="fas fa-bell"></i></a></li>
@@ -106,11 +106,11 @@ $email=$_SESSION['email'];
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-      <form action="../php/transfer.php" method="POST">
+      <form action="../php/transfercafeteria.php" method="POST">
         <div class="mb-3">
           <label for="id_no" class="form-label">From_id_no</label>
-          <!-- <input type="text" class="form-control" name="from_user_id" > -->
-          <input type="text" class="form-control text-uppercase" placeholder="<?php echo " " . $user_id . ""; ?>" aria-label="Disabled input example" disabled />    
+          <input type="text" class="form-control" name="from_user_id" >
+          <!-- <input type="text" class="form-control text-uppercase" placeholder="<?php echo " " . $user_id . ""; ?>" aria-label="Disabled input example" disabled />     -->
         </div>
         <div class="mb-3">
           <label for="id_no" class="form-label">To_id_no</label>

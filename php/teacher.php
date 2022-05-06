@@ -16,14 +16,16 @@ if (!isset($_SESSION['firstname']) || $_SESSION['role']!= "Teacher") {
      {
           while ( $row = mysqli_fetch_assoc($res))
           {
-              $firstname = $row['firstname'];
-              $middlename = $row['middlename'];
-              $lastname = $row['lastname'];
-              $email = $row['email'];
-              $phone = $row['phone'];
-              $role = $row['role'];
-              $balance = $row['balance'];
-          }
+            $user_id = $row['user_id'];
+            $firstname = $row['firstname'];
+            $middlename = $row['middlename'];
+            $lastname = $row['lastname'];
+            $email = $row['email'];
+            $phone = $row['phone'];
+            $role = $row['role'];
+            $balance = $row['balance'];
+        }
+        $_SESSION['user_id'] = $user_id;
       }
 ?>
 <!DOCTYPE html>

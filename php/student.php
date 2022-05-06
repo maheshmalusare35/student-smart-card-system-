@@ -16,7 +16,8 @@ if (!isset($_SESSION['firstname']) || $_SESSION['role']!= "Student") {
     if($check > 0)
       {
           while ( $row = mysqli_fetch_assoc($res))
-          {
+          {   
+            $user_id = $row['user_id'];
               $firstname = $row['firstname'];
               $middlename = $row['middlename'];
               $lastname = $row['lastname'];
@@ -25,6 +26,7 @@ if (!isset($_SESSION['firstname']) || $_SESSION['role']!= "Student") {
               $role = $row['role'];
               $balance = $row['balance'];
           }
+          $_SESSION['user_id'] = $user_id;
       }
 ?>
 <!DOCTYPE html>
