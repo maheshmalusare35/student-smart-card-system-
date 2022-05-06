@@ -4,6 +4,21 @@ include("../database/databaseconnection.php");
 if (!isset($_SESSION['firstname']) || $_SESSION['role']!= "Admin")  {
     header("Location: ../login.html");
 }
+$email=$_SESSION['email'];
+ 
+ $query = "SELECT * FROM register WHERE email='$email'";
+    $res = mysqli_query($conn,$query);
+    $check = mysqli_num_rows($res);
+
+
+    if($check > 0)
+      {
+          while ( $row = mysqli_fetch_assoc($res))
+          {
+              $user_id = $row['user_id'];              
+              $balance = $row['balance'];
+          }
+      }
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -170,11 +185,13 @@ if (!isset($_SESSION['firstname']) || $_SESSION['role']!= "Admin")  {
                 class="navbar-toggler-icon"></span></button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav ms-auto mt-2 mt-lg-0">
-                
+            <li class="nav-item">
+                        <a class="nav-link fw-bold" href="#">Your Balance:<?php echo " " . $balance . ""; ?></a>
+                    </li>
               
     
-                <li class="nav-item"><a class="nav-link" href="#"><i class="fas fa-search"></i></a></li>
-                <li class="nav-item"><a class="nav-link" href="#"><i class="fas fa-bell"></i></a></li>
+                <!-- <li class="nav-item"><a class="nav-link" href="#"><i class="fas fa-search"></i></a></li>
+                <li class="nav-item"><a class="nav-link" href="#"><i class="fas fa-bell"></i></a></li> -->
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button"
                         data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i
@@ -200,7 +217,8 @@ if (!isset($_SESSION['firstname']) || $_SESSION['role']!= "Admin")  {
                   <div class="table-responsive">
                   <table class="table table-bordered table-striped table-hover text-center">
                     <thead class="bg-dark text-white">
-                      <th>Id</th>
+                      <th>SR_NO</th>
+                      <th>USER_ID</th>
                       <th>FIRSTNAME</th>
                       <th>MIDDLENAME</th>
                       <th>LASTNAME</th>
@@ -222,6 +240,7 @@ if (!isset($_SESSION['firstname']) || $_SESSION['role']!= "Admin")  {
 
                                   <tr>
                                     <td><?php echo $result ['id'];?></td>
+                                    <td><?php echo $result ['user_id'];?></td>
                                     <td><?php echo $result ['firstname'];?></td>
                                     <td><?php echo $result ['middlename'];?></td>
                                     <td><?php echo $result ['lastname'];?></td>
@@ -252,14 +271,26 @@ if (!isset($_SESSION['firstname']) || $_SESSION['role']!= "Admin")  {
       <div class="modal-body">
       <form action="../php/transfer.php" method="POST">
         <div class="mb-3">
-          <label for="id_no" class="form-label">ID_NO</label>
-          <input type="text" class="form-control" name="user_id" id="id_no">    
+          <label for="id_no" class="form-label">From_id_no</label>
+          <!-- <input type="text" class="form-control" name="from_user_id" > -->
+          <input type="text" class="form-control text-uppercase" name="from_user_id" placeholder="<?php echo " " . $user_id . ""; ?>" aria-label="Disabled input example" disabled />    
+        </div>
+        <div class="mb-3">
+          <label for="id_no" class="form-label">To_id_no</label>
+          <input type="text" class="form-control" name="to_user_id" >    
         </div>
         <div class="mb-3">
           <label for="amount" class="form-label">Add_Amount</label>
-          <input type="text" class="form-control" name="amount" id="amount">
+          <input type="text" class="form-control" name="amount" >
         </div>
-      </div>
+        <div class="form-group mb-3">
+          <label class="form-label" class="mb-0">What Purpose Amount Add</label>
+          <select class="form-select" name="amount_purpose" aria-label="Default select example" >
+            <option value="">Select</option>
+            <option value="Recharge">Recharge card</option>           
+          </select>                                
+        </div>
+      <!-- </div> -->
       <div class="modal-footer">
       <button type="submit" name="submit" class="btn btn-primary">Submit</button>
       </div>

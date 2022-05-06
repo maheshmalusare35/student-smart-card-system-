@@ -15,7 +15,8 @@ $email=$_SESSION['email'];
       {
           while ( $row = mysqli_fetch_assoc($res))
           {
-              $firstname = $row['firstname'];
+            $firstname = $row['firstname'];
+            $user_id = $row['user_id'];
             //   $middlename = $row['middlename'];
             //   $lastname = $row['lastname'];
             //   $email = $row['email'];
@@ -67,7 +68,9 @@ $email=$_SESSION['email'];
 
             
             <ul class="navbar-nav ms-auto mt-2 mt-lg-0">
-
+            <li class="nav-item">
+    <a class="nav-link fw-bold" href="#" data-bs-toggle="modal" data-bs-target="#exampleModal"> Payment</a>
+</li>
 
 <li class="nav-item">
     <a class="nav-link fw-bold" href="#"><i class="fas fa-comments-dollar"></i> Your Transaction</a>
@@ -93,6 +96,46 @@ $email=$_SESSION['email'];
         </div>
     </nav>
 
+    <!-- model for Add_Money -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Payment</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+      <form action="../php/transfer.php" method="POST">
+        <div class="mb-3">
+          <label for="id_no" class="form-label">From_id_no</label>
+          <input type="text" class="form-control" name="from_user_id" >
+          <!-- <input type="text" class="form-control" name="from_user_id" placeholder="<?php echo " " . $user_id . ""; ?>" aria-label="Disabled input example" disabled />     -->
+        </div>
+        <div class="mb-3">
+          <label for="id_no" class="form-label">To_id_no</label>
+          <input type="text" class="form-control" name="to_user_id" >    
+        </div>
+        <div class="mb-3">
+          <label for="amount" class="form-label">Add_Amount</label>
+          <input type="text" class="form-control" name="amount" >
+        </div>
+        <div class="form-group mb-3">
+          <label class="form-label" class="mb-0">What Purpose Amount Add</label>
+          <select class="form-select" name="amount_purpose" aria-label="Default select example" >
+            <option value="">Select</option>
+            <option value="Fees">Fees</option>
+            <option value="Marksheet_Fine">Marksheet_Fine</option>            
+          
+          </select>                                
+        </div>
+      <!-- </div> -->
+      <div class="modal-footer">
+      <button type="submit" name="submit" class="btn btn-primary">Submit</button>
+      </div>
+    </form>
+    </div>
+  </div>
+</div>
 
     <!-- Bootstrap JS -->
     <script type="text/javascript" src="../js/bootstrap.bundle.min.js"></script>
