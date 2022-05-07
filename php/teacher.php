@@ -82,14 +82,14 @@ if (!isset($_SESSION['firstname']) || $_SESSION['role']!= "Teacher") {
 
                 <ul class="navbar-nav ms-auto mt-2 mt-lg-0">
 
-                    <li class="nav-item">
+                    <!-- <li class="nav-item">
                         <a class="nav-link fw-bold" href="#"><i class="fas fa-tasks"></i> To-do</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link fw-bold" href="#"><i class="far fa-calendar-week"></i> Calender</a>
-                    </li>
+                    </li> -->
                     <li class="nav-item">
-                        <a class="nav-link fw-bold" href="#"><i class="fas fa-comments-dollar"></i> Your Transaction</a>
+                        <a class="nav-link fw-bold" href="../php/teacher_your_transaction.php"><i class="fas fa-comments-dollar" ></i> Your Transaction</a>
                     </li>
                     <!-- <li class="nav-item">
                       <a class="nav-link fw-bold" href="#"><i class="fas fa-poll-h"></i> Result</a>
@@ -316,6 +316,20 @@ if (!isset($_SESSION['firstname']) || $_SESSION['role']!= "Teacher") {
         </div>
     </div>
 
+<!-- model for your transaction -->
+<!-- <div class="modal fade" id="exampleModalnew" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Your Transaction</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        
+      
+    </div>
+  </div>
+</div> -->
 
     <!-- Bootstrap JS -->
     <script type="text/javascript" src="../js/bootstrap.bundle.min.js"></script>

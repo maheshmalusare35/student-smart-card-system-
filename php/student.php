@@ -82,12 +82,12 @@ if (!isset($_SESSION['firstname']) || $_SESSION['role']!= "Student") {
 
                 <ul class="navbar-nav ms-auto mt-2 mt-lg-0">
 
-                    <li class="nav-item">
+                    <!-- <li class="nav-item">
                         <a class="nav-link fw-bold" href="#"><i class="fas fa-tasks"></i> To-do</a>
-                    </li>
-                    <li class="nav-item">
+                    </li> -->
+                    <!-- <li class="nav-item">
                         <a class="nav-link fw-bold" href="#"><i class="far fa-calendar-week"></i> Calender</a>
-                    </li>
+                    </li> -->
                     <li class="nav-item">
                         <a class="nav-link fw-bold" href="#"><i class="fas fa-comments-dollar"></i> Your Transaction</a>
                     </li>

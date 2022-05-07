@@ -87,7 +87,7 @@ $email=$_SESSION['email'];
                         <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
                             <a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#exampleModal">ADD_Money</a>
                             <!-- <a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#exampleModal1">ADD_New_Student</a> -->
-                            <a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#exampleModal3">Delete_Student_Data</a> 
+                            <a class="dropdown-item" href="../php/delete_student.php">Delete_Student_Data</a> 
                         </div>
                       </div>
 
@@ -102,7 +102,7 @@ $email=$_SESSION['email'];
                         <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
                         <a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#exampleModal">ADD_Money</a>
                             <!-- <a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#exampleModal2">ADD_New_Teacher</a>-->
-                             <a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#exampleModal3">Delete_Teacher_Data</a>  
+                             <a class="dropdown-item" href="../php/delete_student.php">Delete_Teacher_Data</a>  
                         </div>
                       </div>  
 
@@ -161,7 +161,7 @@ $email=$_SESSION['email'];
                           </button>
                         </h2>
                         <div id="collapseSix" class="accordion-collapse collapse" aria-labelledby="headingSix" data-bs-parent="#accordionExample">
-                            <a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#exampleModal4">ADD_Money</a>                           
+                            <a class="dropdown-item" href="../php/admin_recharge.php">Self_Recharge</a>                           
                         </div>
                       </div>
 
@@ -169,7 +169,7 @@ $email=$_SESSION['email'];
                 </div>
 
 
-                <a class="list-group-item-action list-group-item-light p-3" href="#" ></a>
+                <a class="list-group-item-action list-group-item-light p-3" href="#!"></a>
                 <a class="list-group-item-action list-group-item-light p-3" href="#!"></a>
                 <a class="list-group-item-action list-group-item-light p-3" href="#!"></a>
                 <a class="list-group-item-action list-group-item-light p-3" href="#!"></a>
@@ -634,7 +634,7 @@ $email=$_SESSION['email'];
 
 
      <!-- model for Delete data -->
-     <div class="modal fade" id="exampleModal3" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+     <!-- <div class="modal fade" id="exampleModal3" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
@@ -653,7 +653,7 @@ $email=$_SESSION['email'];
     </form>
     </div>
   </div>
-</div>
+</div> -->
 
 
 
