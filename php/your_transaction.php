@@ -2,7 +2,7 @@
 session_start();
 include("../database/databaseconnection.php");
 
-// $email=$_SESSION['email'];
+$user_id=$_SESSION['user_id'];
  
 //  $query = "SELECT * FROM register WHERE email='$email'";
 //     $res = mysqli_query($conn,$query);
@@ -44,7 +44,7 @@ include("../database/databaseconnection.php");
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"
         integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 
-    <title>Admin Login Student Smart Card</title>
+    <title> Student Smart Card</title>
     <style>
         #sidebar-wrapper {
             width: 200px;
@@ -82,14 +82,14 @@ include("../database/databaseconnection.php");
                       <th>AMOUNT</th>
                       <th>AMOUNT_PURPOSE</th>
                       <th>DATE & TIME</th>
-                      <!-- <th>PHONE NO</th>                      -->
+                      
                       <!-- <th>EDIT</th>
                       <th>DELETE</th> -->
                     </thead>
 
                         <tbody>
                           <?php
-                              $displayquery = "SELECT * FROM transaction";
+                              $displayquery = "SELECT * FROM transaction WHERE user_id='$user_id'";
                               $querydisplay = mysqli_query($conn,$displayquery);
 
                               //$row =mysqli_num_rows($querydisplay);

@@ -25,6 +25,7 @@ $email=$_SESSION['email'];
               $balance_to = $row['balance_to'];
           }
       }
+      $_SESSION['user_id'] = $user_id;
 ?>
 <!DOCTYPE html>
 <html>
@@ -73,7 +74,7 @@ $email=$_SESSION['email'];
 </li>
 
 <li class="nav-item">
-    <a class="nav-link fw-bold" href="#"><i class="fas fa-comments-dollar"></i> Your Transaction</a>
+    <a class="nav-link fw-bold" href="../php/your_transaction.php"><i class="fas fa-comments-dollar"></i> Your Transaction</a>
 </li>
 <!-- <li class="nav-item">
   <a class="nav-link fw-bold" href="#"><i class="fas fa-poll-h"></i> Result</a>

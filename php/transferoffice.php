@@ -56,7 +56,7 @@ if(isset($_POST['submit']))
             }
             else{
                     
-                    $sql="INSERT INTO transaction(from_user_id,to_user_id,amount,amount_purpose) VALUES('$from_user_id','$to_user_id','$amount','$amount_purpose')";
+                    $sql="INSERT INTO transaction(user_id,from_user_id,to_user_id,amount,amount_purpose) VALUES('$from_user_id','$from_user_id','$to_user_id','$amount','$amount_purpose')";
 
                     if($conn->query($sql))
 

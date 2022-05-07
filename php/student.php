@@ -26,8 +26,8 @@ if (!isset($_SESSION['firstname']) || $_SESSION['role']!= "Student") {
               $role = $row['role'];
               $balance = $row['balance'];
           }
-          $_SESSION['user_id'] = $user_id;
       }
+      $_SESSION['user_id'] = $user_id;
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -89,7 +89,7 @@ if (!isset($_SESSION['firstname']) || $_SESSION['role']!= "Student") {
                         <a class="nav-link fw-bold" href="#"><i class="far fa-calendar-week"></i> Calender</a>
                     </li> -->
                     <li class="nav-item">
-                        <a class="nav-link fw-bold" href="#"><i class="fas fa-comments-dollar"></i> Your Transaction</a>
+                        <a class="nav-link fw-bold" href="../php/your_transaction.php"><i class="fas fa-comments-dollar"></i> Your Transaction</a>
                     </li>
                     <!-- <li class="nav-item">
                       <a class="nav-link fw-bold" href="#"><i class="fas fa-poll-h"></i> Result</a>
