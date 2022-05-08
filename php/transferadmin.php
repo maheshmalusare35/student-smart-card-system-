@@ -38,6 +38,7 @@ if(isset($_POST['submit']))
                 while ( $row = mysqli_fetch_assoc($res1))
                 {
                     $balance = $row['balance'];
+                    $card_status = $row['card_status'];
                 }
             }
           

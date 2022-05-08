@@ -88,6 +88,7 @@ $email=$_SESSION['email'];
                             <a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#exampleModal">ADD_Money</a>
                             <!-- <a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#exampleModal1">ADD_New_Student</a> -->
                             <a class="dropdown-item" href="../php/delete_student.php">Delete_Student_Data</a> 
+                            <a class="dropdown-item" href="../php/card_status.php">Card_status</a>
                         </div>
                       </div>
 
@@ -115,9 +116,7 @@ $email=$_SESSION['email'];
                           </button>
                         </h2>
                         <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
-                            <a class="dropdown-item" href="#">Page 1</a>
-                            <a class="dropdown-item" href="#">Page 2</a>
-                            <a class="dropdown-item" href="#">Page 3</a> 
+                        <a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#exampleModal">ADD_Money</a> 
                         </div>
                       </div>
                       
@@ -130,9 +129,7 @@ $email=$_SESSION['email'];
                           </button>
                         </h2>
                         <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#accordionExample">
-                            <a class="dropdown-item" href="#">Page 1</a>
-                            <a class="dropdown-item" href="#">Page 2</a>
-                            <a class="dropdown-item" href="#">Page 3</a> 
+                        <a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#exampleModal">ADD_Money</a> 
                         </div>
                       </div>
 
@@ -145,9 +142,7 @@ $email=$_SESSION['email'];
                           </button>
                         </h2>
                         <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive" data-bs-parent="#accordionExample">
-                            <a class="dropdown-item" href="#">Page 1</a>
-                            <a class="dropdown-item" href="#">Page 2</a>
-                            <a class="dropdown-item" href="#">Page 3</a> 
+                        <a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#exampleModal">ADD_Money</a> 
                         </div>
                       </div>  
 
