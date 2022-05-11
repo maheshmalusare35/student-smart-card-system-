@@ -32,7 +32,6 @@ if(isset($_POST['submit']))
             $res1 = mysqli_query($conn,$query1);
             $check1 = mysqli_num_rows($res1);
 
-
             if($check1 > 0)
             {
                 while ( $row = mysqli_fetch_assoc($res1))
