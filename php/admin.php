@@ -145,7 +145,6 @@ $email=$_SESSION['email'];
                         </div>
                       </div>  
 
-
                       <!-- example6 -->
                     
                     <div class="accordion-item">
