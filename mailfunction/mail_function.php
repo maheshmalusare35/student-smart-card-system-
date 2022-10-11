@@ -10,8 +10,8 @@
   $mail->SMTPAuth = TRUE;
   $mail->SMTPSecure = 'tls'; // tls or ssl
   $mail->Port     = "587";
-  $mail->Username = "elibrarymanagement100@gmail.com";
-  $mail->Password = "Elibrary@2020#2021";
+ $mail->Username = "your email";
+  $mail->Password = "Your password";
   $mail->Host     = "smtp.gmail.com";
   $mail->Mailer   = "smtp";
   $mail->SetFrom("elibrarymanagement100@gmail.com", "E-library Management");
